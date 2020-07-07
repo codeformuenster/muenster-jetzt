@@ -1,4 +1,4 @@
-name: CI
+name: frontend-ci
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: validate-frontend
+    name: Validate, test and build frontend
     runs-on: ubuntu-18.04
     strategy:
       matrix:
@@ -26,9 +26,18 @@ jobs:
         with:
           node_version: ${{ matrix.node_version }}
 
-      - name: run CI
+      - name: install frontend dependencies
         run: |
           npm ci
+
+      - name: check frontend code style
+        run: |
           npm run lint
+
+      - name: run frontend tests
+        run: |
           npm run test
+
+      - name: build frontend
+        run: |
           npm run build
