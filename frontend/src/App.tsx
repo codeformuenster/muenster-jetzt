@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 
-function App() {
+const App: FC<Record<string, unknown>> = () => {
   return <div>muenster-jetzt</div>;
-}
+};
 
 export default App;
