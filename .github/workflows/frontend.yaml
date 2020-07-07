@@ -15,6 +15,9 @@ jobs:
     strategy:
       matrix:
         node_version: [14]
+    defaults:
+      run:
+        working-directory: frontend
 
     steps:
       - uses: actions/checkout@v1
