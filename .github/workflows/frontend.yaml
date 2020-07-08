@@ -44,14 +44,14 @@ jobs:
         run: |
           npm ci
 
-      - name: check frontend code style
+      - name: Check frontend code style
         run: |
           npm run lint
 
-      - name: run frontend tests
+      - name: Run frontend tests
         run: |
           npm run test
 
-      - name: build frontend
+      - name: Build frontend
         run: |
           npm run build
