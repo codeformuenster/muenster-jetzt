@@ -1,9 +1,9 @@
 div, body, html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
 }
 
 html, body, #root {
-    min-height: 100%;
-    user-select: none;
+  min-height: 100%;
+  user-select: none;
 }

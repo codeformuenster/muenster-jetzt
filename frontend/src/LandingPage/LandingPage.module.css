@@ -1,10 +1,10 @@
 .boxes {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .box {
-    flex: 20%;
-    align-content: center;
+  flex: 20%;
+  align-content: center;
 }
 

@@ -20,7 +20,7 @@
 
 .infoArea {
   grid-area: info;
-  background:indianred;
+  background: indianred;
 }
 
 .footerArea {
@@ -30,7 +30,7 @@
 
 .qrArea {
   grid-area: qr;
-  background:mediumslateblue;
+  background: mediumslateblue;
   align-items: center;
   justify-content: flex-end;
   display: flex;
