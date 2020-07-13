@@ -1,0 +1,46 @@
+.slide {
+  width: var(--kiosk-width);
+  height: var(--kiosk-height);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px 1fr 150px;
+  gap: 1px 1px;
+  grid-template-areas: "title title" "image info"  "footer qr";
+}
+
+.titleArea {
+  grid-area: title;
+  background: blanchedalmond;
+}
+
+.imageArea {
+  grid-area: image;
+  background: darkred;
+}
+
+.infoArea {
+  grid-area: info;
+  background:indianred;
+}
+
+.footerArea {
+  grid-area: footer;
+  background: aqua;
+}
+
+.qrArea {
+  grid-area: qr;
+  background:mediumslateblue;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.image {
+  max-width: 40vw;
+}
+
+.qr {
+  width: 120px;
+  height: 120px;
+}
