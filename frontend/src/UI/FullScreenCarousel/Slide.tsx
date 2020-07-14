@@ -4,11 +4,11 @@ import { QRCode } from "react-qr-svg";
 import styles from "./Slide.module.css";
 
 export interface ISlide {
-  backgroundImage: string;
+  imageUrl: string;
   title: string;
 }
 
-const Slide: FC<ISlide> = ({ backgroundImage, title }) => (
+const Slide: FC<ISlide> = ({ imageUrl, title }) => (
   <div className={styles.slide}>
     <div className={styles.qrArea}>
       <QRCode value={title} className={styles.qr} />
@@ -27,13 +27,9 @@ const Slide: FC<ISlide> = ({ backgroundImage, title }) => (
       </ul>
     </div>
     <div className={styles.imageArea}>
-      <img
-        alt={`Bild ${title}`}
-        className={styles.image}
-        src={backgroundImage}
-      />
+      <img alt={`Bild ${title}`} className={styles.image} src={imageUrl} />
     </div>
-    <div className={styles.footerArea}></div>
+    <div className={styles.footerArea}>Ein Projekt von Code for Münster</div>
   </div>
 );
 

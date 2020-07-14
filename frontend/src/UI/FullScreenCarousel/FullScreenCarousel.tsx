@@ -8,7 +8,7 @@ interface IFullScreenCarousel {
 const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => (
   <>
     {slides.map((slide) => (
-      <Slide key={slide.title} {...slide} />
+      <Slide key={slide.title} imageUrl={slide.imageUrl} title={slide.title} />
     ))}
   </>
 );
