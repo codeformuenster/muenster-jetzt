@@ -58,6 +58,11 @@ jobs:
         run: |
           npm run build
 
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
       - name: Build Image and Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
@@ -66,5 +71,5 @@ jobs:
           repository: codeformuenster/muenster-jetzt-frontend
           dockerfile: frontend/deployment/Dockerfile.prod
           path: frontend
-          tags: latest
+          tags: ${{ steps.extract_branch.outputs.branch }}
           tag_with_ref: true
