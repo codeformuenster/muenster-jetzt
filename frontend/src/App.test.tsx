@@ -2,8 +2,8 @@ import React from "react";
 import { render } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("renders without crashing", () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/muenster-jetzt/i);
+  const linkElement = getByText(/unused/i);
   expect(linkElement).toBeInTheDocument();
 });

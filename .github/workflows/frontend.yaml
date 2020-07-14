@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - master
+      - staging
     paths:
       - 'frontend/**'
   pull_request:
     branches:
       - master
+      - staging
     paths:
       - 'frontend/**'
 
@@ -55,3 +57,13 @@ jobs:
       - name: Build frontend
         run: |
           npm run build
+
+      - name: Build Image and Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.FRONTEND_DOCKER_HUB_USER }}
+          password: ${{ secrets.FRONTEND_DOCKER_HUB_PASS }}
+          repository: codeformuenster/muenster-jetzt-frontend
+          dockerfile: frontend/deployment/Dockerfile.prod
+          path: frontend
+          tag_with_ref: true

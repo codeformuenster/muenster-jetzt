@@ -1,0 +1,5 @@
+.kioskLayout {
+  width: var(--kiosk-width);
+  height: var(--kiosk-height);
+  overflow: hidden;
+}

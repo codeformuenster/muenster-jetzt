@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-const App: FC<Record<string, unknown>> = () => {
-  return <div>muenster-jetzt</div>;
+const App: FC = () => {
+  return <p>unused</p>;
 };
 
 export default App;
