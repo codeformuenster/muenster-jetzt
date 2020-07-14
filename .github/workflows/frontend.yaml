@@ -57,3 +57,13 @@ jobs:
       - name: Build frontend
         run: |
           npm run build
+
+      - name: Build Image and Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.FRONTEND_DOCKER_HUB_USER }}
+          password: ${{ secrets.FRONTEND_DOCKER_HUB_PASS }}
+          repository: codeformuenster/muenster-jetzt-frontend
+          dockerfile: deployment/Dockerfile.prod
+          tags: latest
+          tag_with_ref: true
