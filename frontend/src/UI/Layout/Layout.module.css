@@ -1,0 +1,12 @@
+.header {
+  height: var(--header-height);
+  border-bottom: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 960px;
+}

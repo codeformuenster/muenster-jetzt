@@ -7,9 +7,11 @@ module.exports = {
     'prettier',
     'prettier/react',
     'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:react-hooks/recommended'
   ],
-  plugins: ['react', '@typescript-eslint', 'jest'],
+  plugins: ['react', '@typescript-eslint', 'jest', 'jsx-a11y'],
   env: {
     browser: true,
     es6: true,
@@ -36,5 +38,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off'
   },
 };
