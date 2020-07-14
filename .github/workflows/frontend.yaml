@@ -65,5 +65,6 @@ jobs:
           password: ${{ secrets.FRONTEND_DOCKER_HUB_PASS }}
           repository: codeformuenster/muenster-jetzt-frontend
           dockerfile: deployment/Dockerfile.prod
+          path: frontend
           tags: latest
           tag_with_ref: true
