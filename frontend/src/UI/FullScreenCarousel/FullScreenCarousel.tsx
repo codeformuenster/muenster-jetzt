@@ -14,7 +14,7 @@ const AnimatedSlide = animated(Slide);
 
 const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
   const index = useRef(0);
-  const [props, set] = useSprings(slides.length, (i) => ({
+  const [items, set] = useSprings(slides.length, (i) => ({
     x: i * window.innerWidth,
     display: "block",
   }));
@@ -39,12 +39,13 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
       });
     }
   );
+
   return (
     <div className={styles.fullScreenCarousel}>
-      {props.map(({ x, display }, i) => (
+      {items.map(({ x, display }, i) => (
         <animated.div
           {...bind()}
-          key={i}
+          key={slides[i].title}
           style={{ display, x }}
           className={styles.animated}
         >
