@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - master
+      - staging
     paths:
       - 'frontend/**'
   pull_request:
     branches:
       - master
+      - staging
     paths:
       - 'frontend/**'
 
