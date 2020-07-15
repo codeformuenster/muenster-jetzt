@@ -55,6 +55,8 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
             }}
             title={slides[i].title}
             subtitle={slides[i].subtitle}
+            description={slides[i].description}
+            externalUrl={slides[i].externalUrl}
             imageUrl={slides[i].imageUrl}
           />
         </animated.div>
