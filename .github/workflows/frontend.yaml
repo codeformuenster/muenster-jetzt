@@ -46,7 +46,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-        if: steps.git-diff.outputs.changes == '1'
 
       - name: Run 'npm ci' to install frontend dependencies
         if: steps.git-diff.outputs.changes == '1'
