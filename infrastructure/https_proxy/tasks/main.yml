@@ -1,0 +1,24 @@
+---
+- name: create directory
+  file:
+    path: /root/https-proxy
+    state: directory
+    
+- name: Copy traefik.toml
+  copy:
+    src: files/traefik.toml
+    dest: /root/https-proxy/traefik.toml
+    owner: root
+    group: root
+    
+- name: Copy docker-compose.yml
+  copy:
+    src: files/docker-compose.yml
+    dest: /root/https-proxy/docker-compose.yml
+    owner: root
+    group: root
+    
+- name: start proxy
+  command: docker-compose up -d
+  args:
+    chdir: /root/https-proxy/

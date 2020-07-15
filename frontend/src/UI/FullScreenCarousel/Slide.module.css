@@ -72,3 +72,7 @@
 .factsList {
   font-size: var(--kiosk-facts-font-size);
 }
+
+.descriptionTxt{
+  font-size: var(--kiosk-facts-font-size);
+}

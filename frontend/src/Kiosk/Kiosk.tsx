@@ -4,9 +4,15 @@ import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
 
 const mockData: IEvent[] = [
   {
-    title: "Weihnachtsmarkt",
-    subtitle: "Festlich shoppen in der Innenstadt",
-    imageUrl: "https://placekitten.com/1080/1080",
+    title: "Wochenmarkt",
+    subtitle: "Mittwochsmarkt am Domplatz",
+    start: new Date(2020, 6, 15, 7),
+    end: new Date(2020, 6, 15, 14, 30),
+    description:
+      "Mit rund 150 Ständen ist der Wochenmarkt auf dem Domplatz der größte in Münster. Ein üppiges Angebot zieht mittwochs und besonders samstags die Besucherströme in die Innenstadt: Obst und Gemüse, Fisch und Meeresfrüchte, Gewürze, Öl und Antipasti, unzählige Käsesorten, Honig, Brot und Kuchen, Fleisch und Wurst, Wild und Geflügel und - vor allem im Spätsommer - ein wahres Blumenmeer.",
+    imageUrl:
+      "https://www.wochenmarkt-muenster.de/fileadmin/_processed_/8/f/csm_anfahrt-01_01_849037d810.jpg",
+    externalUrl: "https://www.wochenmarkt-muenster.de/",
   },
   {
     title: "Münsterland Giro",
