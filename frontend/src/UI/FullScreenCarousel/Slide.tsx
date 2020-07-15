@@ -7,12 +7,19 @@ interface ISlide extends IEvent {
   style?: CSSProperties;
 }
 
-const Slide: FC<ISlide> = ({ imageUrl, title, subtitle, description, externalUrl, style }) => (
+const Slide: FC<ISlide> = ({
+  imageUrl,
+  title,
+  subtitle,
+  description,
+  externalUrl,
+  style,
+}) => (
   <div className={styles.slide} style={style}>
     <div className={styles.qrArea}>
-      {externalUrl !== undefined &&
+      {externalUrl !== undefined && (
         <QRCode value={externalUrl} className={styles.qr} />
-      }
+      )}
     </div>
     <div className={styles.titleArea}>
       <h1 className={styles.title}>{title}</h1>
