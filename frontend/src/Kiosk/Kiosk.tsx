@@ -5,7 +5,7 @@ import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
 const mockData: IEvent[] = [
   {
     title: "Wochenmarkt",
-    subtitle: "Mittwochsmarkt auf dem Domplatz",
+    subtitle: "Mittwochsmarkt am Domplatz",
     start: new Date(2020, 6, 15, 7),
     end: new Date(2020, 6, 15, 14, 30),
     description:
