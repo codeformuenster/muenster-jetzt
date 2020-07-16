@@ -26,7 +26,7 @@ const mockData: IEvent[] = [
   },
   {
     title: "Grillen im Garten",
-    subtitle: "Ruhe und Entspannung daheim",
+    subtitle: "Ruhe und Entspannung daheim. Grillgeruch liegt in der Luft",
     imageUrl: "https://picsum.photos/1920/1080",
   },
 ];
