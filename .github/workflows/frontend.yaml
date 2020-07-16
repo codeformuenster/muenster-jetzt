@@ -4,20 +4,15 @@ on:
   push:
     branches:
       - master
-      - staging
   pull_request:
     branches:
       - master
-      - staging
-
-defaults:
-  run:
-    working-directory: frontend
 
 jobs:
   frontend:
     name: Validate, test and build frontend
     runs-on: ubuntu-18.04
+    working-directory: frontend
     steps:
       - uses: actions/checkout@v1
 
@@ -70,7 +65,7 @@ jobs:
         if: steps.git-diff.outputs.changes != '0'
         run: |
           npm run build
-
+          
       - name: Build Image and Push to Docker Hub
         if: steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
@@ -81,3 +76,33 @@ jobs:
           dockerfile: frontend/deployment/Dockerfile.prod
           path: frontend
           tag_with_ref: true
+
+  deployment:
+    runs-on: ubuntu-18.04
+    needs: frontend
+    working-directory: deployment
+    if: github.event_name === "push"
+    steps:
+      - uses: actions/checkout@v2
+      - name: copy docker-compose file to server
+        uses: easingthemes/ssh-deploy@v2.1.1
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+            # z = comrpess
+            # v = verbose
+            ARGS: "-zv"
+            SOURCE: "docker-compose.yml"
+            REMOTE_HOST: staging.muenster-jetzt.de
+            REMOTE_USER: root
+            TARGET: /root/muenster-jetzt/staging/
+      - name: run remote commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: staging.muenster-jetzt.de
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script: |
+            cd /root/muenster-jetzt/staging/
+            docker-compose pull
+            docker-compose up -d
+            docker image prune -a -f
