@@ -1,0 +1,78 @@
+.slide {
+  min-width: var(--kiosk-width);
+  min-height: var(--kiosk-height);
+  display: grid;
+  grid-template-columns: 1.61fr 1fr;
+  grid-template-rows: 150px 1fr 150px;
+  grid-template-areas: "title title" "image info"  "footer qr";
+  will-change: transform;
+  position: absolute;
+  box-shadow: 0 63px 125px -25px rgba(50, 50, 73, 0.5),
+  0 38px 75px -38px rgba(0, 0, 0, 0.6);
+}
+
+.titleArea, .imageArea, .qrArea, .footerArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleArea {
+  grid-area: title;
+  background: blanchedalmond;
+}
+
+.imageArea {
+  grid-area: image;
+  background: darkred;
+}
+
+.infoArea {
+  grid-area: info;
+  background: indianred;
+}
+
+.footerArea {
+  grid-area: footer;
+  background: aqua;
+}
+
+.qrArea {
+  grid-area: qr;
+  background: mediumslateblue;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.imageArea, .infoArea {
+  padding: 2rem;
+}
+
+.image {
+  max-width: 55vw;
+  max-height: 55vh;
+}
+
+.qr {
+  width: 150px;
+  height: 150px;
+  margin-right: 2rem;
+}
+
+.title {
+  font-size: var(--kiosk-title-font-size);
+}
+
+.subTitle {
+  margin: 0;
+  font-size: var(--kiosk-subtitle-font-size);
+}
+
+.factsList {
+  font-size: var(--kiosk-facts-font-size);
+}
+
+.descriptionTxt{
+  font-size: var(--kiosk-facts-font-size);
+}
