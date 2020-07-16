@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: '2' # for comparison
 
       - name: Determine if job is required
         id: git-diff
@@ -89,8 +91,12 @@ jobs:
           path: frontend
           tag_with_ref: true
 
+  update-release:
+    name: Update or create draft release
+    runs-on: ubuntu-18.04
+    needs: frontend
+    steps:
       - name: Update draft release
-        if: steps.git-diff.outputs.changes != '0' && steps.extract_branch.outputs.branch_name == 'master' && github.event_name == 'push'
         uses: release-drafter/release-drafter@v5
         with:
           config-name: release-template.yaml
