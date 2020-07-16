@@ -96,12 +96,12 @@ jobs:
     runs-on: ubuntu-18.04
     needs: frontend
     steps:
-      # - name: Extract branch name
-      #   id: extract_branch
-      #   run: |
-      #     echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
+      - name: Extract branch name
+        id: extract_branch
+        run: |
+          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
       - name: Update draft release
-        # if: github.event_name == 'push' && steps.extract_branch.outputs.branch_name == 'master'
+        if: github.event_name == 'push' && steps.extract_branch.outputs.branch_name == 'master'
         uses: release-drafter/release-drafter@v5
         with:
           config-name: release-template.yaml
