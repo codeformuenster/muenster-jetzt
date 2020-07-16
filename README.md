@@ -3,8 +3,8 @@
 ## Dev Setup
 ### Intro
 
-There is no need to clutter your dev machine with differnt versions of every tool (like nodejs, python).  
-We are using docker containers as a dev environment to leave your host in a clean state and prevent "works on my mashine" bugs.  
+There is no need to clutter your dev machine with differnt versions of every tool (like nodejs, python).
+We are using docker containers as a dev environment to leave your host in a clean state and prevent "works on my mashine" bugs.
 This guide will help you to setup everything in a convenient way without the typical drawbacks of developing in a container (e.g. no debugging, missing code completion etc.)
 
 ### Pre-Requirements
