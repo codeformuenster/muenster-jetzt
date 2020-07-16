@@ -16,7 +16,7 @@ const mockData: IEvent[] = [
   },
   {
     title: "Münsterland Giro",
-    subtitle: "Alle Räder wollen laufen",
+    subtitle: "Alle Räder wollen laufen - Brumm Brumm",
     imageUrl: "https://www.fillmurray.com/1920/1080",
   },
   {
