@@ -24,7 +24,7 @@ jobs:
       - name: Determine if job is required
         id: git-diff
         run: |
-          git diff HEAD^1 --name-only --exit-code frontend/
+          git diff HEAD^1 --name-only --exit-code .
           echo "##[set-output name=changes;]$?"
 
       - name: Install Node.js 14
