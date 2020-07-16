@@ -23,7 +23,7 @@ jobs:
         id: git-diff
         continue-on-error: true
         run: |
-          echo "##[set-output name=changes;]$(git diff HEAD^1 --name-only . | wc -l)"
+          echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
 
       - name: Debug
         run: |
@@ -65,6 +65,7 @@ jobs:
           npm run test
 
       - name: Extract branch name and shortened commit sha
+        if: steps.git-diff.outputs.changes != '0'
         id: extract_branch
         run: |
           echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
