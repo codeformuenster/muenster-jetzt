@@ -109,4 +109,4 @@ jobs:
         with:
           config-name: release-template.yaml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
