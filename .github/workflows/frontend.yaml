@@ -8,13 +8,16 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    working-directory: frontend
+
 jobs:
   frontend:
     name: Validate, test and build frontend
     runs-on: ubuntu-18.04
-    working-directory: frontend
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Determine if job is required
         id: git-diff
@@ -24,7 +27,7 @@ jobs:
 
       - name: Debug
         run: |
-          echo "'${{ steps.git-diff.outputs.changes }}'"
+          echo "Number of changed files in frontend directory: '${{ steps.git-diff.outputs.changes }}'"
 
       - name: Install Node.js 14
         if: steps.git-diff.outputs.changes != '0'
@@ -61,11 +64,18 @@ jobs:
         run: |
           npm run test
 
+      - name: Extract branch name and shortened commit sha
+        id: extract_branch
+        run: |
+          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
+          echo "##[set-output name=short_sha;]${GITHUB_SHA##*/}"
+
       - name: Build frontend
         if: steps.git-diff.outputs.changes != '0'
         run: |
+          export REACT_APP_VERSION="${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}"
           npm run build
-          
+
       - name: Build Image and Push to Docker Hub
         if: steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
@@ -74,35 +84,14 @@ jobs:
           password: ${{ secrets.FRONTEND_DOCKER_HUB_PASS }}
           repository: codeformuenster/muenster-jetzt-frontend
           dockerfile: frontend/deployment/Dockerfile.prod
+          tags: ${{ steps.extract_branch.outputs.branch_name }},${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}
           path: frontend
           tag_with_ref: true
 
-  deployment:
-    runs-on: ubuntu-18.04
-    needs: frontend
-    working-directory: deployment
-    if: github.event_name === "push"
-    steps:
-      - uses: actions/checkout@v2
-      - name: copy docker-compose file to server
-        uses: easingthemes/ssh-deploy@v2.1.1
-        env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-            # z = comrpess
-            # v = verbose
-            ARGS: "-zv"
-            SOURCE: "docker-compose.yml"
-            REMOTE_HOST: staging.muenster-jetzt.de
-            REMOTE_USER: root
-            TARGET: /root/muenster-jetzt/staging/
-      - name: run remote commands
-        uses: appleboy/ssh-action@master
+      - name: Update draft release
+        if: steps.git-diff.outputs.changes != '0' && steps.extract_branch.outputs.branch_name == 'master' && github.event_name == 'push'
+        uses: release-drafter/release-drafter@v5
         with:
-          host: staging.muenster-jetzt.de
-          username: root
-          key: ${{ secrets.SSH_DEPLOY_KEY }}
-          script: |
-            cd /root/muenster-jetzt/staging/
-            docker-compose pull
-            docker-compose up -d
-            docker image prune -a -f
+          config-name: release-template.yaml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

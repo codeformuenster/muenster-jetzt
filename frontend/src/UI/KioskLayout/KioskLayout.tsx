@@ -1,5 +1,6 @@
 import React, { FC, useLayoutEffect } from "react";
 import styles from "./KioskLayout.module.css";
+import VersionString from "../VersionString/VersionString";
 
 const KioskLayout: FC = ({ children }) => {
   useLayoutEffect(() => {
@@ -15,7 +16,12 @@ const KioskLayout: FC = ({ children }) => {
     });
   }, []);
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <VersionString className={styles.version} />
+    </>
+  );
 };
 
 export default KioskLayout;

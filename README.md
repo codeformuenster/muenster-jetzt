@@ -35,3 +35,31 @@ This setup does a few cool things:
 * forwards your ssh agent to allow git push from within the container
 * exposes the container ports in a way that network access from the host looks is like local host access in the container (no need to bind to `0.0.0.0`)
 
+## Deployment
+
+We use GitHub Actions for deploying containers using docker-compose.
+
+### Staging deployment
+
+Each run of workflows [frontend-ci][workflow frontend-ci], ... will update a draft release on the `master` branch.
+Each time the draft release is updated, workflow [deployment][workflow deployment] is being triggered and will deploy this.
+
+### Production deployment
+
+**to be implemented**
+
+<!--
+
+Either:
+
+- Production deployments are made using the same [deployment workflow][workflow deployment] as used for staging.
+
+Or:
+
+- Once the draft release is converted to an actual release, it will be deployed to production using the same [deployment workflow][workflow deployment] as used for staging.
+
+ -->
+
+
+[workflow frontend-ci]: .github/workflows/frontend.yaml
+[workflow deployment]: .github/workflows/deployment.yaml
