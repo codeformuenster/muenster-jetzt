@@ -80,7 +80,7 @@ jobs:
           npm run build
 
       - name: Build Image and Push to Docker Hub
-        if: steps.git-diff.outputs.changes != '0'
+        if: github.event_name == 'push' && steps.extract_branch.outputs.branch_name == 'master' && steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.FRONTEND_DOCKER_HUB_USER }}
