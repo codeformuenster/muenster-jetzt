@@ -1,0 +1,25 @@
+version: "3.6"
+
+networks:
+  default:
+    driver: bridge
+  internal:
+    internal: true
+  https-proxy_traefik:
+    external: true
+
+services:
+  frontend:
+    restart: unless-stopped
+    image: codeformuenster/muenster-jetzt-frontend:master
+    expose:
+      - "8080"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=https-proxy_traefik"
+      - "traefik.http.routers.msj-staging.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.msj-staging.entrypoints=web-secure"
+      - "traefik.http.routers.msj-staging.tls.certresolver=letsencrypt"
+      - "traefik.http.services.msj-staging.loadbalancer.server.port=8080"
+    networks:
+      - https-proxy_traefik

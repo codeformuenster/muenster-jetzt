@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - master
-      - staging
   pull_request:
     branches:
       - master
-      - staging
 
 defaults:
   run:
@@ -19,17 +17,19 @@ jobs:
     name: Validate, test and build frontend
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '2' # for comparison
 
       - name: Determine if job is required
         id: git-diff
         continue-on-error: true
         run: |
-          echo "##[set-output name=changes;]$(git diff HEAD^1 --name-only . | wc -l)"
+          echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
 
       - name: Debug
         run: |
-          echo "'${{ steps.git-diff.outputs.changes }}'"
+          echo "Number of changed files in frontend directory: '${{ steps.git-diff.outputs.changes }}'"
 
       - name: Install Node.js 14
         if: steps.git-diff.outputs.changes != '0'
@@ -66,18 +66,44 @@ jobs:
         run: |
           npm run test
 
+      - name: Extract branch name and shortened commit sha
+        if: steps.git-diff.outputs.changes != '0'
+        id: extract_branch
+        run: |
+          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
+          echo "##[set-output name=short_sha;]${GITHUB_SHA##*/}"
+
       - name: Build frontend
         if: steps.git-diff.outputs.changes != '0'
         run: |
+          export REACT_APP_VERSION="${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}"
           npm run build
 
       - name: Build Image and Push to Docker Hub
-        if: steps.git-diff.outputs.changes != '0'
+        if: github.event_name == 'push' && steps.extract_branch.outputs.branch_name == 'master' && steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.FRONTEND_DOCKER_HUB_USER }}
           password: ${{ secrets.FRONTEND_DOCKER_HUB_PASS }}
           repository: codeformuenster/muenster-jetzt-frontend
           dockerfile: frontend/deployment/Dockerfile.prod
+          tags: ${{ steps.extract_branch.outputs.branch_name }},${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}
           path: frontend
           tag_with_ref: true
+
+  update-release:
+    name: Update or create draft release
+    runs-on: ubuntu-18.04
+    needs: frontend
+    steps:
+      - name: Extract branch name
+        id: extract_branch
+        run: |
+          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
+      - name: Update draft release
+        if: github.event_name == 'push' && steps.extract_branch.outputs.branch_name == 'master'
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: release-template.yaml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
