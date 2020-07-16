@@ -8,7 +8,7 @@ services:
     # you may need to update USER_UID and USER_GID in .devcontainer/Dockerfile to match your
     # user if not 1000. See https://aka.ms/vscode-remote/containers/non-root for details.
     # user: node
-    build: 
+    build:
       context: .
       dockerfile: ./frontend/.devcontainer/Dockerfile
       args:
@@ -38,17 +38,17 @@ services:
       - .:/workspace:cached
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
-    links: 
+    links:
       - db
     environment:
       - DB_USER
       - DB_PASSWORD
       - DB_NAME
-    
+
   db:
-    image: postgres:12  
+    image: postgres:12
     restart: unless-stopped
-    ports: 
+    ports:
       - 5432:5432
     env_file: ./backend/.env
     environment:
