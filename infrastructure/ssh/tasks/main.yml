@@ -1,0 +1,38 @@
+---
+- name: Copy sshd config
+  copy:
+    src: files/sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart sshd
+  
+- ufw:
+    rule: limit
+    port: "22"
+    proto: tcp
+  
+- name: Set up authorized_keys exclusively with many keys
+  set_fact: pubkey_list="{{ lookup('file', 'files/public_keys/' + item) }}"
+  register: pubkeys
+  with_items: "{{ grant_ssh_access_for }}"
+
+- set_fact: pubkey_string="{{ pubkeys.results | map(attribute='ansible_facts.pubkey_list') | join('\n') }}"
+- authorized_key: user=root key="{{ pubkey_string }}" exclusive=yes
+
+- name: Install root private key
+  copy:
+    content: "{{ root_prkey }}"
+    dest: /root/.ssh/id_rsa
+    owner: root
+    mode: 0600
+  when: root_prkey is defined
+
+- name: Install root public key
+  copy:
+    content: "{{ root_pubkey }}"
+    dest: /root/.ssh/id_rsa.pub
+    owner: root
+    mode: 0622
+  when: root_pubkey is defined

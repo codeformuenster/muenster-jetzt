@@ -1,0 +1,8 @@
+---
+ansible_python_interpreter: /usr/bin/python3
+tz: "Europe/Berlin"
+grant_ssh_access_for:
+  - bastian
+  - github
+
+is_webserver: true

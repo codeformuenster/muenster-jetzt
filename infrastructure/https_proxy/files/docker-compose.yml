@@ -1,0 +1,42 @@
+version: "3.6"
+networks:
+  default:
+    driver: bridge
+  traefik:
+    internal: true
+  docker-socket-proxy:
+    internal: true
+
+services:
+  socket-proxy:
+    image: tecnativa/docker-socket-proxy
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      CONTAINERS: 1
+      NETWORKS: 1
+    networks:
+      - docker-socket-proxy
+  traefik:
+    image: traefik:latest
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443 
+    volumes:
+      - "./traefik.toml:/etc/traefik/traefik.toml"
+      - "./letsencrypt:/letsencrypt"
+    depends_on:
+      - socket-proxy
+    networks:
+      - docker-socket-proxy
+      - default
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.https-redirect.entrypoints=web"
+      - "traefik.docker.network=https-proxy_traefik"
+      - "traefik.http.routers.https-redirect.rule=HostRegexp(`{any:.*}`)"
+      - "traefik.http.routers.https-redirect.middlewares=https-redirect"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"

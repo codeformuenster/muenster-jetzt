@@ -1,0 +1,23 @@
+.kioskLayout {
+  width: var(--kiosk-width);
+  height: var(--kiosk-height);
+  overflow: hidden;
+}
+
+.kioskLayout_html_body {
+  overscroll-behavior-y: contain;
+  margin: 0;
+  padding: 0;
+  width: var(--kiosk-width);
+  height: var(--kiosk-height);
+  user-select: none;
+  position: fixed;
+  overflow: hidden;
+}
+
+.kioskLayout_root {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}

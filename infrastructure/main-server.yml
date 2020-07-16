@@ -1,0 +1,9 @@
+---
+  - hosts: main
+    roles:
+      - { role: common, tags: common_role }
+      - { role: auto_updates, tags: auto_updates_role }
+      - { role: ufw, tags: ufw_role }
+      - { role: ssh, tags: ssh_role }
+      - { role: docker, tags: docker_role }
+      - { role: https_proxy, tags: https_proxy_role }
