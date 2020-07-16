@@ -3,8 +3,8 @@
 ## Dev Setup
 ### Intro
 
-There is no need to clutter your dev machine with differnt versions of every tool (like nodejs, python).  
-We are using docker containers as a dev environment to leave your host in a clean state and prevent "works on my mashine" bugs.  
+There is no need to clutter your dev machine with differnt versions of every tool (like nodejs, python).
+We are using docker containers as a dev environment to leave your host in a clean state and prevent "works on my mashine" bugs.
 This guide will help you to setup everything in a convenient way without the typical drawbacks of developing in a container (e.g. no debugging, missing code completion etc.)
 
 ### Pre-Requirements
@@ -35,3 +35,4 @@ This setup does a few cool things:
 * forwards your ssh agent to allow git push from within the container
 * exposes the container ports in a way that network access from the host looks is like local host access in the container (no need to bind to `0.0.0.0`)
 
+Don't want to use Docker in development? No problem. Development is also possible without it.
