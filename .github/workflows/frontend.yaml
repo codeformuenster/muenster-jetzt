@@ -25,20 +25,20 @@ jobs:
         id: git-diff
         continue-on-error: true
         run: |
-          echo "##[set-output name=changes;]$(git diff HEAD^1 --name-only --exit-code .)"
+          echo "##[set-output name=changes;]$(git diff HEAD^1 --name-only . | wc -l)"
 
       - name: Debug
         run: |
           echo "'${{ steps.git-diff.outputs.changes }}'"
 
       - name: Install Node.js 14
-        if: steps.git-diff.outputs.changes == '1'
+        if: steps.git-diff.outputs.changes != '0'
         uses: actions/setup-node@v1
         with:
           node-version: 14
 
       - name: Cache node modules
-        if: steps.git-diff.outputs.changes == '1'
+        if: steps.git-diff.outputs.changes != '0'
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -52,27 +52,27 @@ jobs:
             ${{ runner.os }}-
 
       - name: Run 'npm ci' to install frontend dependencies
-        if: steps.git-diff.outputs.changes == '1'
+        if: steps.git-diff.outputs.changes != '0'
         run: |
           npm ci
 
       - name: Check frontend code style
-        if: steps.git-diff.outputs.changes == '1'
+        if: steps.git-diff.outputs.changes != '0'
         run: |
           npm run lint
 
       - name: Run frontend tests
-        if: steps.git-diff.outputs.changes == '1'
+        if: steps.git-diff.outputs.changes != '0'
         run: |
           npm run test
 
       - name: Build frontend
-        if: steps.git-diff.outputs.changes == '1'
+        if: steps.git-diff.outputs.changes != '0'
         run: |
           npm run build
 
       - name: Build Image and Push to Docker Hub
-        if: steps.git-diff.outputs.changes == '1'
+        if: steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.FRONTEND_DOCKER_HUB_USER }}
