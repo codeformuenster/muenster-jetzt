@@ -21,7 +21,7 @@ const mockData: IEvent[] = [
   },
   {
     title: "Münsterhack 2020 - Remote Edition",
-    subtitle: "IT-Profis aus der Region tippen sich die Finger wund",
+    subtitle: "IT-Profis aus der Region tippen sich die Finger wund.",
     imageUrl: "https://placebear.com/1920/1080",
   },
   {
