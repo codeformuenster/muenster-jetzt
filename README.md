@@ -1,5 +1,9 @@
 # muenster-jetzt
 
+## Deployment
+
+We deploy the master branch to a staging environment at https://staging.muenster-jetzt.de
+
 ## Dev Setup
 ### Intro
 
