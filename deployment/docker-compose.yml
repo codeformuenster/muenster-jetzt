@@ -3,8 +3,8 @@ version: "3.6"
 networks:
   default:
     driver: bridge
-  internal:
-    internal: true
+  # internal:
+  #   internal: true
   https-proxy_traefik:
     external: true
 
