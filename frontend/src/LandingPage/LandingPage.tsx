@@ -7,7 +7,6 @@ import styles from "./LandingPage.module.css";
 
 const LandingPage: FC = () => (
   <Layout>
-    <div>Hallo</div>
     <div className={styles.boxes}>
       <div className={styles.box}>App</div>
       <div className={styles.box}>Api</div>

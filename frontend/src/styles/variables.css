@@ -1,8 +1,8 @@
 :root {
   --header-height: 50px;
 
-  --kiosk-width: 1920px;
-  --kiosk-height: 1080px;
+  --kiosk-width: 100vh;
+  --kiosk-height: 100vw;
   --kiosk-title-font-size: 72px;
   --kiosk-subtitle-font-size: 46px;
   --kiosk-facts-font-size: 36px;
