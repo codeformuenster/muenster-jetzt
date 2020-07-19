@@ -1,9 +1,10 @@
 interface IEvent {
-  title: string;
-  subtitle: string;
+  id: number;
+  title?: string;
+  subtitle?: string;
   description?: string;
   start?: Date;
   end?: Date;
-  imageUrl: string;
+  imageUrl?: string;
   externalUrl?: string;
 }
