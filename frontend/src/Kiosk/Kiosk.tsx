@@ -14,7 +14,14 @@ const mockData: IEvent[] = [
     description:
       "Beim MÜNSTERHACK kommt die Tech-Szene in Münster zusammen und entwickelt gemeinsam Ideen und Prototypen, um die eigene Stadt noch lebenswerter zu machen.\n\n25./26. SEPTEMBER 2020",
     imageUrl: "https://www.muensterhack.de/img/logo_muensterhack.png",
-    externalUrl: "https://www.muensterhack.de/",
+    externalUrl: "https://gobeta.de/veranstaltungen/muensterhack-2020/",
+    style: {
+      backgroundColor: "#FCDD09",
+    },
+  },
+  {
+    id: 3,
+    imageUrl: "https://www.bleker-it.de/download/nafe-qr.jpg",
   },
 ];
 
