@@ -1,13 +1,9 @@
-import React, { FC, CSSProperties } from "react";
+import React, { FC } from "react";
 import { QRCode } from "react-qr-svg";
 
 import styles from "./Slide.module.css";
 
-interface ISlide extends IEvent {
-  style?: CSSProperties;
-}
-
-const Slide: FC<ISlide> = ({
+const Slide: FC<IEvent> = ({
   imageUrl,
   title,
   subtitle,

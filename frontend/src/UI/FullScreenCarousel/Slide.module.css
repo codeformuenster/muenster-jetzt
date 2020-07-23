@@ -32,6 +32,7 @@
 }
 
 .image {
+  margin: auto;
   min-width: 50vw;
   max-height: 100%;
   object-fit: contain;

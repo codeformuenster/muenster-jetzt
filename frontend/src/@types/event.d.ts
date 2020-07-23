@@ -7,4 +7,5 @@ interface IEvent {
   end?: Date;
   imageUrl?: string;
   externalUrl?: string;
+  style?: CSSProperties;
 }
