@@ -1,11 +1,16 @@
 import React, { FC } from "react";
 import VersionString from "../VersionString/VersionString";
 
-import styles from "./Layout.module.css";
+import "../../styles/base.scss";
+import styles from "./Layout.module.scss";
+
+import logo from "../../images/ms-jetzt-logo.svg";
 
 const Layout: FC = ({ children }) => (
   <>
-    <header className={styles.header}>Münster Jetzt</header>
+    <header className={styles.header}>
+      <img src={logo} alt="Münster Jetzt" className={styles.logo} />
+    </header>
     <section className={styles.mainSection}>{children}</section>
     <VersionString />
   </>

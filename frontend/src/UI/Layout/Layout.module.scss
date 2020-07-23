@@ -1,0 +1,19 @@
+@import "../../styles/base.scss";
+
+.header {
+  height: $header-height;
+  border-bottom: 1px solid $secondary;
+  margin: $spacer * 0.5 $spacer * 2;
+  display: flex;
+}
+
+.mainSection {
+  @include make-container();
+  max-width: 960px;
+}
+
+.logo {
+  height: $header-logo-height;
+  align-self: center;
+  margin: auto;
+}
