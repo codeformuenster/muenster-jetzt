@@ -30,6 +30,7 @@ To understand the details behind this, take a look at these links:
 * Use the command "Remote-Container: Open Folder in Container" (from Menu -> View -> Command Palette)
 * select the `backend` folder (this will reload visual studio, start the container and will give you an editor instance with all the required plugins etc)
 * leave that window open, repeat all of the above steps in a new Visual Studio Code Window but select the `frontend` folder instead of `backend``
+* The Readmes of their respective folders contains more information on starting the development environment
 
 🎉 congrats you are now running your dev environment
 
@@ -45,8 +46,7 @@ We use GitHub Actions for deploying containers using docker-compose.
 
 ### Staging deployment
 
-Each run of workflows [frontend-ci][workflow frontend-ci], ... will update a draft release on the `master` branch.
-Each time the draft release is updated, workflow [deployment][workflow deployment] is being triggered and will deploy this.
+Each run of workflow [frontend-ci][workflow frontend-ci] on branch `master` builds a container image, pushes it to [docker hub](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and deploys it in on our staging server.
 
 ### Production deployment
 
