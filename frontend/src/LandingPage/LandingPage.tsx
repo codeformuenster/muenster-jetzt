@@ -1,30 +1,118 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
+import clsx from "clsx";
 
 import Layout from "../UI/Layout/Layout";
+import Box from "./Box";
 
 import styles from "./LandingPage.module.scss";
 
-import Box from "./Box";
+import logo from "../images/ms-jetzt-logo.svg";
+import c4mLogo from "../images/logo_code4ms.png";
+import githubLogo from "../images/logo_github.png";
+import mshackLogo from "../images/logo_muensterhack.png";
 
 const LandingPage: FC = () => (
-  <Layout>
-    <div className={styles.welcomeText}>
-      Alle Veranstaltungen in Münster im Überblick
-    </div>
-    <div className={styles.welcomeText2}>
-      Münster Jetzt ist deine zentrale Anlaufstelle für alle Veranstaltungen in
-      Münster.
-      <br />
-      Mit unserer App bist du immer bestens informiert. Die API bietet Zugriff
-      auf maschinenlesbare Veranstaltungsinformationen als Open Data.
-    </div>
-    <div className={styles.boxes}>
-      <Box title="App" />
-      <Box title="API" />
-      <Box title="Kiosk">
-        <Link to="/kiosk">Kiosk</Link>
-      </Box>
+  <Layout hideHeader>
+    <div className={styles.container}>
+      <div className={styles.logoContainer}>
+        <img src={logo} alt="Münster Jetzt" className={styles.logo} />
+      </div>
+      <div className={styles.welcomeText}>
+        Alle Veranstaltungen im Überblick
+      </div>
+      <div className={styles.welcomeText2}>
+        <div className={styles.maxWidthContainer}>
+          <span
+            className={clsx(styles.styledName, styles.styledNameBackground)}
+          >
+            Münster Jetzt
+          </span>{" "}
+          ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.
+          <br />
+          Mit unserer App bist du immer bestens informiert. Die API bietet
+          Zugriff auf maschinen&shy;lesbare Veranstaltungs&shy;informationen als
+          Offene Daten.
+        </div>
+      </div>
+      <div className={styles.boxes}>
+        <Box title="App" linkText="zur App" linkTo="/kiosk">
+          Mit der App verpasst du keine Veranstaltung mehr. Egal ob auf deinem
+          Handy, Tablet oder Laptop, die{" "}
+          <span className={styles.styledName}>Münster Jetzt</span> App ist
+          einfach immer dabei.
+        </Box>
+        <Box title="API" linkText="zur Dokumentation" linkTo="/kiosk">
+          Für Alle, die schnell und einfach maschinen&shy;lesbare
+          Veranstaltungs&shy;informationen brauchen.
+        </Box>
+        <Box title="Kiosk" linkText="zur Kiosk-Ansicht" linkTo="/kiosk">
+          Die Kiosk-Ansicht ist für große Displays geeignet und zeigt
+          Informationen zu ausgewählten Veranstaltungen.
+        </Box>
+      </div>
+      <div className={styles.footer}>
+        <div className={styles.footerItem}>
+          <small>&nbsp;</small>
+          <a href="https://muensterhack.de">
+            <img
+              src={mshackLogo}
+              alt="MÜNSTERHACK 2019 Logo"
+              className={styles.footerItemImg}
+            />
+          </a>
+          <small>
+            Gestartet auf dem{" "}
+            <a
+              className={styles.footerItemLink}
+              href="https://muensterhack.de/"
+            >
+              MÜNSTERHACK 2019
+            </a>
+          </small>
+        </div>
+        <div className={styles.footerItem}>
+          <small>&nbsp;</small>
+          <img
+            src={githubLogo}
+            alt="GitHub Logo - Link zum Repository muenster-jetzt"
+            className={styles.footerItemImg}
+          />
+          <small>
+            Freie und Offene Software. Quellcode auf{" "}
+            <a
+              className={styles.footerItemLink}
+              href="https://github.com/codeformuenster/muenster-jetzt/"
+            >
+              GitHub
+            </a>
+          </small>
+        </div>
+        <div className={styles.footerItem}>
+          <small>Ein Projekt von</small>
+          <a href="https://codeformuenster.org/">
+            <img
+              src={c4mLogo}
+              alt="Code for Münster Logo"
+              className={styles.footerItemImg}
+            />
+          </a>
+          <small>
+            <a
+              className={styles.footerItemLink}
+              href="https://codeformuenster.org/impressum/#impressum"
+            >
+              Impressum
+            </a>{" "}
+            &amp;{" "}
+            <a
+              className={styles.footerItemLink}
+              href="https://codeformuenster.org/impressum/#datenschutz"
+            >
+              Datenschutz
+            </a>
+          </small>
+        </div>
+      </div>
     </div>
   </Layout>
 );

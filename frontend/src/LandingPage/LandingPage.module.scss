@@ -1,34 +1,133 @@
 @import "../styles/base.scss";
 
-.boxes {
-  @include make-row();
+.container {
+  @include make-container(0);
 }
 
-.box {
-  @include make-col-ready();
+.logo {
+  max-width: 800px;
+  margin: 0 $spacer;
+}
 
-  @include media-breakpoint-up(sm) {
+.logoContainer {
+  margin-top: $spacer * 5;
+  display: flex;
+  justify-content: center;
+}
+
+.maxWidthContainer {
+  max-width: $landing-page-max-width;
+  margin: auto;
+}
+
+.boxes,
+.footer {
+  @include make-row(0);
+  max-width: $landing-page-max-width;
+  margin: auto;
+}
+
+.box,
+.footerItem {
+  @include make-col-ready();
+  margin-bottom: $spacer;
+  background: $white;
+  will-change: transform;
+  transition: transform 500ms ease;
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+
+  @include media-breakpoint-up(md) {
     @include make-col(4);
   }
 }
 
-.boxTitle, .welcomeText, .welcomeText2 {
+
+.box:hover {
+  transform: perspective(1px) scale(1.03) translateY(4px);
+}
+
+.boxInner {
+  @include box-shadow($box-shadow);
+  @include border-radius();
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.boxBody {
+  flex: 1;
   text-align: center;
 }
 
-.welcomeText, .welcomeText2 {
+.boxBody,
+.boxFooter {
+  padding: $spacer;
+}
+
+.boxLink {
+  @extend .btn;
+  @extend .btn-outline-primary;
+  @extend .btn-lg;
+  @extend .btn-block;
+}
+
+.styledName {
+  color: $primary;
+  white-space: nowrap;
+}
+
+.styledNameBackground {
+  background-color: darken($secondary, 10%);
+  clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+  padding: 0 10px;
+}
+
+.boxTitle,
+.welcomeText,
+.welcomeText2,
+.footerItem {
+  text-align: center;
+}
+
+.welcomeText,
+.welcomeText2 {
   font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
   padding: $spacer * 3;
 }
 
 .welcomeText {
   @include font-size($h3-font-size);
+  color: $headings-color;
+  line-height: $headings-line-height;
 }
 
 .welcomeText2 {
+  @include box-shadow($box-shadow-sm);
   @include font-size($h5-font-size);
   background-color: $secondary;
+  color: $gray-100;
+  line-height: $headings-line-height * 1.5;
+  margin-bottom: $spacer * 4;
+}
+
+.footer {
+  margin-top: $spacer * 5;
+  padding-top: $spacer * 3;
+  border-top: $border-color 1px solid;
+}
+
+.footerItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerItemLink {
+  color: $text-muted;
+}
+
+.footerItemImg {
+  max-height: 44px;
+  object-fit: contain;
+  margin: $spacer 0;
 }
