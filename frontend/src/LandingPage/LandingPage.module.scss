@@ -10,9 +10,12 @@
 }
 
 .logoContainer {
-  margin-top: $spacer * 5;
+  margin-top: $spacer * 2;
   display: flex;
   justify-content: center;
+  @include media-breakpoint-up(xxl) {
+    margin-top: $spacer * 5;
+  }
 }
 
 .maxWidthContainer {
