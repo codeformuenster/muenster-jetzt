@@ -33,7 +33,7 @@ jobs:
 
       - name: Install Node.js 14
         if: steps.git-diff.outputs.changes != '0'
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.1.1
         with:
           node-version: 14
 
