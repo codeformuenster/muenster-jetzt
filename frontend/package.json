@@ -20,7 +20,7 @@
     "react-spring": "^9.0.0-rc.3",
     "react-use-gesture": "^7.0.15",
     "swiper": "^6.0.4",
-    "typescript": "^3.7.5"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
