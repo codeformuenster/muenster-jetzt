@@ -78,12 +78,24 @@
 .styledName {
   color: $primary;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .styledNameBackground {
-  background-color: darken($secondary, 10%);
-  clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
   padding: 0 10px;
+}
+
+.styledNameBackground:after {
+  content: "";
+  background-color: darken($secondary, 10%);
+  position: absolute;
+  width: calc(100% - 10px);
+  height: 100%;
+  right: 5px;
+  top: 0;
+  z-index: -1;
+  transform: skew(-10deg);
 }
 
 .boxTitle,
