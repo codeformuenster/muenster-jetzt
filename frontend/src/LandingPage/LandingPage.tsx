@@ -35,13 +35,13 @@ const LandingPage: FC = () => (
         </div>
       </div>
       <div className={styles.boxes}>
-        <Box title="App" linkText="zur App" linkTo="/kiosk">
+        <Box title="App" linkText="Bald" linkTo="/app" disabled>
           Mit der App verpasst du keine Veranstaltung mehr. Egal ob auf deinem
           Handy, Tablet oder Laptop, die{" "}
           <span className={styles.styledName}>Münster Jetzt</span> App ist
           einfach immer dabei.
         </Box>
-        <Box title="API" linkText="zur Dokumentation" linkTo="/kiosk">
+        <Box title="API" linkText="Bald" linkTo="/api-docs" disabled>
           Für Alle, die schnell und einfach maschinen&shy;lesbare
           Veranstaltungs&shy;informationen brauchen.
         </Box>
@@ -109,6 +109,15 @@ const LandingPage: FC = () => (
               href="https://codeformuenster.org/impressum/#datenschutz"
             >
               Datenschutz
+            </a>
+          </small>
+        </div>
+        <div className={styles.footerItem}>
+          <small>&nbsp;</small>
+          <span className={styles.atSign}>@</span>
+          <small>
+            <a href="mailto:muenster-jetzt@codeformuenster.org">
+              muenster-jetzt@codeformuenster.org
             </a>
           </small>
         </div>

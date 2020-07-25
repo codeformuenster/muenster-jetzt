@@ -30,8 +30,7 @@
   margin: auto;
 }
 
-.box,
-.footerItem {
+.box {
   @include make-col-ready();
   margin-bottom: $spacer;
   background: $white;
@@ -45,9 +44,20 @@
   }
 }
 
-
 .box:hover {
   transform: translateY(-10px);
+}
+
+.comingSoonBox:after {
+  content: "In Arbeit";
+  background: $warning;
+  position: absolute;
+  top: 34px;
+  right: -16px;
+  transform: rotate(45deg);
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  clip-path: polygon(16% 0%, 84% 0%, 100% 100%, 0% 100%);
 }
 
 .boxInner {
@@ -73,6 +83,12 @@
   @extend .btn-outline-primary;
   @extend .btn-lg;
   @extend .btn-block;
+}
+
+.disabledBoxLink {
+  @extend .btn-outline-light;
+  @extend .disabled;
+  color: $gray-600 !important;
 }
 
 .styledName {
@@ -133,8 +149,13 @@
 }
 
 .footerItem {
+  @include make-col-ready();
   display: flex;
   flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
+  }
 }
 
 .footerItemLink {
@@ -144,5 +165,14 @@
 .footerItemImg {
   max-height: 44px;
   object-fit: contain;
+}
+
+
+.footerItemImg, .atSign {
   margin: $spacer 0;
+}
+
+.atSign {
+  font-size: 44px;
+  line-height: 44px;
 }
