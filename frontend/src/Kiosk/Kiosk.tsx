@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import KioskLayout from "../UI/KioskLayout/KioskLayout";
 import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
 
-const mockData: IEvent[] = [
+const mockData: ISlide[] = [
   {
     id: 1,
     imageUrl: "https://www.bleker-it.de/download/db_lambus_1.png",
@@ -22,6 +22,12 @@ const mockData: IEvent[] = [
   {
     id: 3,
     imageUrl: "https://www.bleker-it.de/download/nafe-qr.jpg",
+  },
+  {
+    id: 4,
+    title: "Code for Münster Website",
+    externalUrl: "https://codeformuenster.org",
+    iFrame: { url: "https://codeformuenster.org" },
   },
 ];
 

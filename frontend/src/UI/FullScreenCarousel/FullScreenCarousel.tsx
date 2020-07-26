@@ -12,7 +12,7 @@ import Slide from "./Slide";
 SwiperCore.use([Autoplay, Navigation]);
 
 interface IFullScreenCarousel {
-  slides: IEvent[];
+  slides: ISlide[];
 }
 
 const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
