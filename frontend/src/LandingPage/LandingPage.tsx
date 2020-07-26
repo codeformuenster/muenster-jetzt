@@ -10,6 +10,7 @@ import logo from "../images/ms-jetzt-logo.svg";
 import c4mLogo from "../images/logo_code4ms.png";
 import githubLogo from "../images/logo_github.png";
 import mshackLogo from "../images/logo_muensterhack.png";
+import bahnLogo from "../images/logo_db_gobeta.svg";
 
 const LandingPage: FC = () => (
   <Layout hideHeader>
@@ -133,10 +134,20 @@ const LandingPage: FC = () => (
         </div>
         <div className={styles.footerItem}>
           <small>&nbsp;</small>
-          <span className={styles.atSign}>@</span>
+          <a href="https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/">
+            <img
+              src={bahnLogo}
+              alt="Zukunftsbahnhof Münster"
+              className={styles.footerItemImg}
+            />
+          </a>
           <small>
-            <a href="mailto:muenster-jetzt@codeformuenster.org">
-              muenster-jetzt@codeformuenster.org
+            Teil des{" "}
+            <a
+              className={styles.footerItemLink}
+              href="https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/"
+            >
+              Zukunftsbahnhof Münster
             </a>
           </small>
         </div>
