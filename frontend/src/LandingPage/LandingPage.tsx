@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, HTMLProps } from "react";
 import clsx from "clsx";
 
 import Layout from "../UI/Layout/Layout";
@@ -11,6 +11,21 @@ import c4mLogo from "../images/logo_code4ms.png";
 import githubLogo from "../images/logo_github.png";
 import mshackLogo from "../images/logo_muensterhack.png";
 import bahnLogo from "../images/logo_db_gobeta.svg";
+
+const ExternalLink: FC<HTMLProps<HTMLLinkElement>> = ({
+  children,
+  href,
+  className,
+}) => (
+  <a
+    href={href}
+    className={className}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {children}
+  </a>
+);
 
 const LandingPage: FC = () => (
   <Layout hideHeader>
@@ -78,8 +93,10 @@ const LandingPage: FC = () => (
           <h5 className={styles.projectPlanTitle}>App &amp; API</h5>
           <p className={styles.projectPlanText}>
             Bereits auf dem{" "}
-            <a href="https://muensterhack.de/">MÜNSTERHACK 2019</a> wurden die
-            ersten Grundsteine für{" "}
+            <ExternalLink href="https://muensterhack.de/">
+              MÜNSTERHACK 2019
+            </ExternalLink>{" "}
+            wurden die ersten Grundsteine für{" "}
             <span className={styles.styledName}>Münster Jetzt</span> gelegt. Wir
             hatten versprochen, bis zur kommenden Ausgabe des MÜNSTERHACK
             (2020), eine einfache und offene API für Veranstaltungsinformationen
@@ -92,31 +109,37 @@ const LandingPage: FC = () => (
           <h5 className={styles.projectPlanTitle}>Kiosk</h5>
           <p className={styles.projectPlanText}>
             Im Rahmen des Projekts{" "}
-            <a href="https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/">
+            <ExternalLink href="https://gobeta.de/projekte/bahnhof-muenster/">
               Zukunftsbahnhof Münster
-            </a>{" "}
+            </ExternalLink>{" "}
             entwickeln wir speziell für große Displays eine Kiosk-Ansicht.
+            <br />
+            Weitere Informationen auf{" "}
+            <ExternalLink href="https://gobeta.de/projekte/muenster-jetzt/">
+              gobeta.de
+            </ExternalLink>
+            .
           </p>
         </div>
       </div>
       <div className={styles.row}>
         <div className={styles.footerItem}>
           <small>&nbsp;</small>
-          <a href="https://muensterhack.de">
+          <ExternalLink href="https://muensterhack.de">
             <img
               src={mshackLogo}
               alt="MÜNSTERHACK 2019 Logo"
               className={styles.footerItemImg}
             />
-          </a>
+          </ExternalLink>
           <small>
             Gestartet auf dem{" "}
-            <a
+            <ExternalLink
               className={styles.footerItemLink}
               href="https://muensterhack.de/"
             >
               MÜNSTERHACK 2019
-            </a>
+            </ExternalLink>
           </small>
         </div>
         <div className={styles.footerItem}>
@@ -128,56 +151,56 @@ const LandingPage: FC = () => (
           />
           <small>
             Freie und Offene Software. Quellcode auf{" "}
-            <a
+            <ExternalLink
               className={styles.footerItemLink}
               href="https://github.com/codeformuenster/muenster-jetzt/"
             >
               GitHub
-            </a>
+            </ExternalLink>
           </small>
         </div>
         <div className={styles.footerItem}>
           <small>Ein Projekt von</small>
-          <a href="https://codeformuenster.org/">
+          <ExternalLink href="https://codeformuenster.org/">
             <img
               src={c4mLogo}
               alt="Code for Münster Logo"
               className={styles.footerItemImg}
             />
-          </a>
+          </ExternalLink>
           <small>
-            <a
+            <ExternalLink
               className={styles.footerItemLink}
               href="https://codeformuenster.org/impressum/#impressum"
             >
               Impressum
-            </a>{" "}
+            </ExternalLink>{" "}
             &amp;{" "}
-            <a
+            <ExternalLink
               className={styles.footerItemLink}
               href="https://codeformuenster.org/impressum/#datenschutz"
             >
               Datenschutz
-            </a>
+            </ExternalLink>
           </small>
         </div>
         <div className={styles.footerItem}>
           <small>&nbsp;</small>
-          <a href="https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/">
+          <ExternalLink href="https://gobeta.de/projekte/bahnhof-muenster/">
             <img
               src={bahnLogo}
               alt="Zukunftsbahnhof Münster"
               className={styles.footerItemImg}
             />
-          </a>
+          </ExternalLink>
           <small>
             Teil des{" "}
-            <a
+            <ExternalLink
               className={styles.footerItemLink}
-              href="https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/"
+              href="https://gobeta.de/projekte/bahnhof-muenster/"
             >
               Zukunftsbahnhof Münster
-            </a>
+            </ExternalLink>
           </small>
         </div>
       </div>
