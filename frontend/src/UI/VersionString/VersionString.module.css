@@ -1,9 +1,0 @@
-.version {
-  font-size: 10px;
-  float: right;
-  color: lightgray;
-}
-
-.version:hover {
-  color: gray;
-}
