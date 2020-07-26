@@ -50,6 +50,25 @@ const LandingPage: FC = () => (
           Informationen zu ausgewählten Veranstaltungen.
         </Box>
       </div>
+      <div className={styles.actionRow}>
+        <div className={styles.actionColumn}>
+          <h3 className={styles.contactTitle}>
+            Verbesserungsvorschläge oder fehlende Veranstaltungen?
+          </h3>
+          <p className={styles.contactText}>
+            Das wichtigste Ziel von{" "}
+            <span className={styles.styledName}>Münster Jetzt</span>: App und
+            API so benutzerfreundlich wie möglich gestalten und alle
+            Veranstaltungskalender vereinen.
+          </p>
+          <a
+            href="mailto:muenster-jetzt@codeformuenster.org?subject=Hallo"
+            className={styles.contactLink}
+          >
+            Kontakt aufnehmen
+          </a>
+        </div>
+      </div>
       <div className={styles.footer}>
         <div className={styles.footerItem}>
           <small>&nbsp;</small>
