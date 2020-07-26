@@ -13,18 +13,14 @@ const Slide: FC<IEvent> = ({
 }) => (
   <div className={styles.slide} style={style}>
     <div className={styles.slideContainer}>
-      {imageUrl !== undefined && (
+      {imageUrl && (
         <img alt={`Bild ${title}`} className={styles.image} src={imageUrl} />
       )}
       <div className={styles.slideDescription}>
-        {title !== undefined && <h1 className={styles.title}>{title}</h1>}
-        {subtitle !== undefined && (
-          <h4 className={styles.subTitle}>{subtitle}</h4>
-        )}
-        {description !== undefined && (
-          <p className={styles.descriptionTxt}>{description}</p>
-        )}
-        {externalUrl !== undefined && (
+        {title && <h1 className={styles.title}>{title}</h1>}
+        {subtitle && <h4 className={styles.subTitle}>{subtitle}</h4>}
+        {description && <p className={styles.descriptionTxt}>{description}</p>}
+        {externalUrl && (
           <div className={styles.qrContainer}>
             <QRCode value={externalUrl} className={styles.qr} />
           </div>
