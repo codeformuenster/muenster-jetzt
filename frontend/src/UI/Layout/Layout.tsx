@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import VersionString from "../VersionString/VersionString";
 
 import "../../styles/base.scss";
 import styles from "./Layout.module.scss";
@@ -18,7 +17,6 @@ const Layout: FC<ILayout> = ({ children, hideHeader }) => (
       </header>
     )}
     <section className={styles.mainSection}>{children}</section>
-    <VersionString />
   </>
 );
 
