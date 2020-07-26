@@ -35,7 +35,7 @@ const LandingPage: FC = () => (
           Offene Daten.
         </div>
       </div>
-      <div className={styles.boxes}>
+      <div className={styles.row}>
         <Box title="App" linkText="Bald" linkTo="/app" disabled>
           Mit der App verpasst du keine Veranstaltung mehr. Egal ob auf deinem
           Handy, Tablet oder Laptop, die{" "}
@@ -51,9 +51,9 @@ const LandingPage: FC = () => (
           Informationen zu ausgewählten Veranstaltungen.
         </Box>
       </div>
-      <div className={styles.actionRow}>
+      <div className={styles.row}>
         <div className={styles.actionColumn}>
-          <h3 className={styles.contactTitle}>
+          <h3 className={styles.rowTitle}>
             Verbesserungsvorschläge oder fehlende Veranstaltungen?
           </h3>
           <p className={styles.contactText}>
@@ -70,7 +70,36 @@ const LandingPage: FC = () => (
           </a>
         </div>
       </div>
-      <div className={styles.footer}>
+      <div className={styles.row}>
+        <div className={styles.projectPlanHeader}>
+          <h3 className={styles.rowTitle}>Projektplan</h3>
+        </div>
+        <div className={styles.projectPlanColumn}>
+          <h5 className={styles.projectPlanTitle}>App &amp; API</h5>
+          <p className={styles.projectPlanText}>
+            Bereits auf dem{" "}
+            <a href="https://muensterhack.de/">MÜNSTERHACK 2019</a> wurden die
+            ersten Grundsteine für{" "}
+            <span className={styles.styledName}>Münster Jetzt</span> gelegt. Wir
+            hatten versprochen, bis zur kommenden Ausgabe des MÜNSTERHACK
+            (2020), eine einfache und offene API für Veranstaltungsinformationen
+            in Münster zu liefern.
+            <br />
+            Wenn alles klappt, wird es bis dahin so weit sein!
+          </p>
+        </div>
+        <div className={styles.projectPlanColumn}>
+          <h5 className={styles.projectPlanTitle}>Kiosk</h5>
+          <p className={styles.projectPlanText}>
+            Im Rahmen des Projekts{" "}
+            <a href="https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/">
+              Zukunftsbahnhof Münster
+            </a>{" "}
+            entwickeln wir speziell für große Displays eine Kiosk-Ansicht.
+          </p>
+        </div>
+      </div>
+      <div className={styles.row}>
         <div className={styles.footerItem}>
           <small>&nbsp;</small>
           <a href="https://muensterhack.de">

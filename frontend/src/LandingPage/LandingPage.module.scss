@@ -23,17 +23,10 @@
   margin: auto;
 }
 
-.boxes,
-.footer,
-.actionRow {
+.row {
   @include make-row(0);
   max-width: $landing-page-max-width;
-  margin: auto;
-}
-
-.boxes,
-.actionRow {
-  margin-bottom: $spacer * 3;
+  margin: auto auto $spacer * 3;
   padding-bottom: $spacer * 3;
   border-bottom: $border-color 1px solid;
 }
@@ -108,7 +101,7 @@
   @extend .btn-primary;
 }
 
-.contactTitle {
+.rowTitle {
   @include font-size($h4-font-size);
   font-family: $headings-font-family;
   line-height: $headings-line-height;
@@ -160,7 +153,9 @@
 .welcomeText,
 .welcomeText2,
 .footerItem,
-.actionColumn {
+.actionColumn,
+.rowTitle,
+.projectPlanTitle {
   text-align: center;
 }
 
@@ -202,8 +197,31 @@
 .footerItemImg {
   max-height: 44px;
   object-fit: contain;
+  margin: $spacer 0;
 }
 
-.footerItemImg {
-  margin: $spacer 0;
+.projectPlanHeader {
+  @include make-col(12);
+}
+
+.projectPlanColumn {
+  @include make-col-ready();
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+}
+
+.projectPlanTitle {
+  @include font-size($h5-font-size);
+  color: $headings-color;
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  font-weight: $headings-font-weight;
+  margin-bottom: $spacer * 2;
+}
+
+.projectPlanText {
+  line-height: $line-height-base * 1.1;
 }
