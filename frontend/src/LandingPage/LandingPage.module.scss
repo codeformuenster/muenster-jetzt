@@ -57,9 +57,8 @@
   transform: translateY(-10px);
 }
 
-.comingSoonBox:after {
-  content: "In Arbeit";
-  background: $warning;
+.comingSoonBox:after,
+.previewBox:after {
   position: absolute;
   top: 34px;
   right: -16px;
@@ -67,6 +66,16 @@
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   clip-path: polygon(16% 0%, 84% 0%, 100% 100%, 0% 100%);
+}
+
+.comingSoonBox:after {
+  content: "In Arbeit";
+  background: $warning;
+}
+
+.previewBox:after {
+  content: "Vorschau";
+  background: $primary;
 }
 
 .boxInner {

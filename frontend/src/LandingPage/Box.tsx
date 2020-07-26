@@ -8,13 +8,24 @@ interface IBox {
   linkText: string;
   linkTo: string;
   disabled?: boolean;
+  preview?: boolean;
 }
 
-const Box: FC<IBox> = ({ title, children, linkText, linkTo, disabled }) => {
+const Box: FC<IBox> = ({
+  title,
+  children,
+  linkText,
+  linkTo,
+  disabled,
+  preview,
+}) => {
   return (
     <div className={styles.box}>
       <div
-        className={clsx(styles.boxInner, { [styles.comingSoonBox]: disabled })}
+        className={clsx(styles.boxInner, {
+          [styles.comingSoonBox]: disabled,
+          [styles.previewBox]: preview,
+        })}
       >
         <h2 className={styles.boxTitle}>{title}</h2>
         <div className={styles.boxBody}>{children}</div>

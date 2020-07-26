@@ -61,7 +61,7 @@ const LandingPage: FC = () => (
           Für Alle, die schnell und einfach maschinen&shy;lesbare
           Veranstaltungs&shy;informationen brauchen.
         </Box>
-        <Box title="Kiosk" linkText="zur Kiosk-Ansicht" linkTo="/kiosk">
+        <Box title="Kiosk" linkText="zur Kiosk-Ansicht" linkTo="/kiosk" preview>
           Die Kiosk-Ansicht ist für große Displays geeignet und zeigt
           Informationen zu ausgewählten Veranstaltungen.
         </Box>
