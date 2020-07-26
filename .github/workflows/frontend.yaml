@@ -105,7 +105,7 @@ jobs:
           echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
 
       - name: Copy docker-compose file to server
-        uses: easingthemes/ssh-deploy@v2.1.1
+        uses: easingthemes/ssh-deploy@v2.1.4
         env:
             SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
             # z = compress
