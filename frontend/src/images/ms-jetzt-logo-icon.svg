@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 237 237" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-1295.34,-1589.01)">
+        <g transform="matrix(1.04626,0,0,0.95231,-101.773,51.9728)">
+            <path d="M1561.12,1642.87C1561.12,1626.94 1549.35,1614.01 1534.86,1614.01L1361.61,1614.01C1347.11,1614.01 1335.35,1626.94 1335.35,1642.87L1335.35,1833.21C1335.35,1849.13 1347.11,1862.06 1361.61,1862.06L1534.86,1862.06C1549.35,1862.06 1561.12,1849.13 1561.12,1833.21L1561.12,1642.87Z" style="fill:rgb(34,205,94);"/>
+        </g>
+        <g id="Calendar" transform="matrix(0.442071,0,0,0.442071,880.24,701.369)">
+            <g id="Calendar-Frame" serif:id="Calendar Frame">
+                <path d="M991.168,2173.45L1419.35,2172.77" style="fill:none;stroke:white;stroke-width:18.75px;"/>
+                <path d="M991.122,2086.75L991.806,2491.53L1419,2491.29L1419.35,2086.75L1391.4,2086.93" style="fill:none;stroke:white;stroke-width:18.75px;"/>
+                <path d="M1018.25,2086.93L991.122,2086.75" style="fill:none;stroke:white;stroke-width:18.75px;"/>
+            </g>
+            <g transform="matrix(2.26208,0,0,2.26208,-1991.17,-1586.55)">
+                <g id="Calendar-Top" serif:id="Calendar Top">
+                    <path d="M1339.35,1636.29L1339.29,1612.1L1339.35,1636.29ZM1387.98,1636.29L1387.92,1612.1L1387.98,1636.29ZM1338.91,1636.29L1338.85,1612.1L1338.91,1636.29ZM1363.41,1636.29L1363.35,1612.1L1363.41,1636.29ZM1412.72,1636.29L1412.65,1612.1L1412.72,1636.29ZM1437.68,1636.29L1437.62,1612.1L1437.68,1636.29ZM1461.91,1636.29L1461.85,1612.1L1461.91,1636.29ZM1486.69,1636.29L1486.62,1612.1L1486.69,1636.29ZM1347.72,1624.44L1354.9,1624.42L1347.72,1624.44ZM1372.41,1624.46L1379.6,1624.44L1372.41,1624.46ZM1396.66,1624.48L1403.85,1624.46L1396.66,1624.48ZM1421.74,1624.19L1428.92,1624.17L1421.74,1624.19ZM1446.19,1624.17L1453.37,1624.15L1446.19,1624.17ZM1470.78,1624.43L1477.96,1624.41L1470.78,1624.43Z" style="fill:none;stroke:white;stroke-width:8.33px;"/>
+                </g>
+            </g>
+            <g id="Heart">
+                <path d="M1205.08,2282.08C1203.5,2270.86 1174.21,2234.22 1139.53,2257.46C1089.83,2290.76 1127.98,2370.87 1204.34,2414.43" style="fill:none;stroke:white;stroke-width:16.67px;"/>
+                <g transform="matrix(-1,0,0,1,2410.17,0)">
+                    <path d="M1205.08,2282.08C1203.5,2270.86 1174.21,2234.22 1139.53,2257.46C1089.83,2290.76 1127.98,2370.87 1204.34,2414.43" style="fill:none;stroke:white;stroke-width:16.67px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,236 @@
+@import "../styles/base.scss";
+
+.container {
+  @include make-container(0);
+}
+
+.logo {
+  max-width: 800px;
+  margin: 0 $spacer;
+}
+
+.logoContainer {
+  margin-top: $spacer * 2;
+  display: flex;
+  justify-content: center;
+  @include media-breakpoint-up(xxl) {
+    margin-top: $spacer * 5;
+  }
+}
+
+.maxWidthContainer {
+  max-width: $landing-page-max-width;
+  margin: auto;
+}
+
+.row {
+  @include make-row(0);
+  max-width: $landing-page-max-width;
+  margin: auto auto $spacer * 3;
+  padding-bottom: $spacer * 3;
+  border-bottom: $border-color 1px solid;
+}
+
+.actionColumn {
+  @include make-col-ready();
+  @include media-breakpoint-up(md) {
+    @include make-col-offset(2);
+    @include make-col(8);
+  }
+}
+
+.box {
+  @include make-col-ready();
+  margin-bottom: $spacer;
+  background: $white;
+  will-change: transform;
+  transition: transform 500ms ease;
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+}
+
+.box:hover {
+  transform: translateY(-10px);
+}
+
+.comingSoonBox:after,
+.previewBox:after {
+  position: absolute;
+  top: 34px;
+  right: -16px;
+  transform: rotate(45deg);
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  clip-path: polygon(16% 0%, 84% 0%, 100% 100%, 0% 100%);
+}
+
+.comingSoonBox:after {
+  content: "In Arbeit";
+  background: $warning;
+}
+
+.previewBox:after {
+  content: "Vorschau";
+  background: $primary;
+}
+
+.boxInner {
+  @include box-shadow($box-shadow);
+  @include border-radius();
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.boxBody {
+  flex: 1;
+}
+
+.boxBody,
+.boxFooter {
+  padding: $spacer;
+}
+
+.boxLink,
+.contactLink {
+  @extend .btn;
+  @extend .btn-lg;
+}
+
+.boxLink {
+  @extend .btn-outline-primary;
+  @extend .btn-block;
+}
+
+.contactLink {
+  @extend .btn-primary;
+}
+
+.rowTitle {
+  @include font-size($h4-font-size);
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  font-weight: $headings-font-weight;
+  margin-bottom: $spacer;
+}
+
+.contactText {
+  @include font-size($lead-font-size);
+  font-weight: $lead-font-weight;
+  margin-bottom: $spacer;
+}
+
+.disabledBoxLink {
+  @extend .btn-outline-light;
+  @extend .disabled;
+  color: $gray-600 !important;
+}
+
+.boxTitle {
+  margin: $spacer 0;
+}
+
+.styledName {
+  color: $primary;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.styledNameBackground {
+  padding: 0 10px;
+}
+
+.styledNameBackground:after {
+  content: "";
+  background-color: darken($secondary, 10%);
+  position: absolute;
+  width: calc(100% - 10px);
+  height: 100%;
+  right: 5px;
+  top: 0;
+  z-index: -1;
+  transform: skew(-10deg);
+}
+
+.boxTitle,
+.boxBody,
+.welcomeText,
+.welcomeText2,
+.footerItem,
+.actionColumn,
+.rowTitle,
+.projectPlanTitle {
+  text-align: center;
+}
+
+.welcomeText,
+.welcomeText2 {
+  font-family: $headings-font-family;
+  padding: $spacer * 3;
+}
+
+.welcomeText {
+  @include font-size($h3-font-size);
+  color: $headings-color;
+  line-height: $headings-line-height;
+}
+
+.welcomeText2 {
+  @include box-shadow($box-shadow);
+  @include font-size($h5-font-size);
+  background-color: $secondary;
+  color: $gray-100;
+  line-height: $headings-line-height * 1.5;
+  margin-bottom: $spacer * 4;
+}
+
+.footerItem {
+  @include make-col-ready();
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
+  }
+}
+
+.footerItemLink {
+  color: $text-muted;
+}
+
+.footerItemImg {
+  max-height: 44px;
+  object-fit: contain;
+  margin: $spacer 0;
+}
+
+.projectPlanHeader {
+  @include make-col(12);
+}
+
+.projectPlanColumn {
+  @include make-col-ready();
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+}
+
+.projectPlanTitle {
+  @include font-size($h5-font-size);
+  color: $headings-color;
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  font-weight: $headings-font-weight;
+  margin-bottom: $spacer * 2;
+}
+
+.projectPlanText {
+  line-height: $line-height-base * 1.1;
+}

@@ -5,10 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Kiosk from "./Kiosk/Kiosk";
 import LandingPage from "./LandingPage/LandingPage";
 
-import "purecss/build/base.css";
-import "./styles/variables.css";
-import "./styles/base.css";
-
 ReactDOM.render(
   <React.StrictMode>
     <Router>
