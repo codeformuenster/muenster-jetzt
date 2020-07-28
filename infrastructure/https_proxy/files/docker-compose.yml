@@ -19,7 +19,7 @@ services:
     networks:
       - docker-socket-proxy
   traefik:
-    image: traefik:latest
+    build: "."
     restart: unless-stopped
     ports:
       - 80:80

@@ -13,3 +13,13 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+  # infrastructure
+  - package-ecosystem: "docker"
+    directory: "/infrastructure/https_proxy/files/"
+    schedule:
+      interval: "daily"
+    default_reviewers:
+      - "bCyberBasti"
+    labels:
+      - "dependencies"
+      - "deployment"
