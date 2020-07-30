@@ -1,14 +1,16 @@
 import os
 
 import peewee
-from playhouse.db_url import connect
+from playhouse.postgres_ext import PostgresqlExtDatabase
 
 
-DATABASE_URL = os.getenv(
-    'DATABASE_URL', 'postgres://postgres:pgpass@localhost:5432/muensterjetzt')
-
-
-db = connect(DATABASE_URL)
+db = PostgresqlExtDatabase(
+    os.getenv('DB_NAME', 'muensterjetzt'),
+    user=os.getenv('DB_USER', 'postgres'),
+    password=os.getenv('DB_PASSWORD', 'pgpass'),
+    host=os.getenv('DB_HOST', 'localhost'),
+    port=os.getenv('DB_PORT', 5432),
+)
 
 
 class MJModel(peewee.Model):
