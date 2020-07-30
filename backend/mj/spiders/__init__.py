@@ -23,9 +23,12 @@ class DatabaseExportPipeline:
                     name=item['organizer'])
             values['source'], _ = EventSource.get_or_create(
                 name=item['source'])
-            event, _ = Event.get_or_create(
-                source=values['source'],
-                source_event_id=values['source_event_id'])
+            try:
+                event = Event.get(
+                    source=values['source'],
+                    source_event_id=values['source_event_id'])
+            except Event.DoesNotExist:
+                event = Event()
             for k, v in values.items():
                 setattr(event, k, v)
             event.save()
