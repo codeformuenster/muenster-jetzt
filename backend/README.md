@@ -1,23 +1,22 @@
-# muenster-jetzt API
-This project uses [FastAPI](https://fastapi.tiangolo.com/).
+# muenster-jetzt database management, data import, and API
 
-## Available Scripts
+Based on [peewee](https://peewee-orm.com/), [Scrapy](https://scrapy.org/), and
+[FastAPI](https://fastapi.tiangolo.com/).
 
-In the project directory, you can run:
+## Development Quickstart
 
-### `uvicorn main:app --reload`
+1. Copy `.env.example` to `.env` and edit it to match your local setup.
+2. Run `python -m virtualenv .venv && .venv/bin/activate` to create an activate
+   a virtual environment for Python packages.
 
-Runs the app in the development mode.
+   (Whenever you want to develop, run `.venv/bin/activate` to activate the
+   existing environment.)
+3. Install all dependencies via `pip install -r requirements.txt`.
+4. Run `python -m mj migrate` to migrate your database.
+5. Run `python -m mj crawl` to crawl events and store them in your database.
+6. Run `python -m mj serve` to start the API.
 
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
-
-The app will reload if you make edits.
-
-## common tasks
-
-### install a new python dependency
-* `pip install mydep`
-* `pip freeze > requirements.txt`
 
 ## Naming Convention
+
 Whenever you need to name a property, try to use the name that is used in https://schema.org/ e.g. for events take a look at: https://schema.org/Event
