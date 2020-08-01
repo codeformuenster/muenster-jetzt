@@ -77,9 +77,9 @@ jobs:
           echo "##[set-output name=short_sha;]${short_sha}"
           echo "##[set-env name=REACT_APP_VERSION;]${branch_name}-${short_sha}"
           if [ "$branch_name" = "production" ]; then
-            echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.staging.muenster-jetzt.de"
-          else
             echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.muenster-jetzt.de"
+          else
+            echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.staging.muenster-jetzt.de"
           fi
 
       - name: Build frontend
