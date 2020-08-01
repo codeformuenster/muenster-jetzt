@@ -66,17 +66,27 @@ jobs:
         run: |
           npm run test
 
-      - name: Extract branch name and shortened commit sha
+      - name: Extract branch name, shortened commit sha and build env variables
         if: steps.git-diff.outputs.changes != '0'
         id: extract_branch
         run: |
-          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
-          echo "##[set-output name=short_sha;]${GITHUB_SHA##*/}"
+          branch_name=${GITHUB_REF##*/}
+          short_sha=${GITHUB_SHA:0:7}
+
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+          echo "##[set-env name=REACT_APP_VERSION;]${branch_name}-${short_sha}"
+          if [ "$branch_name" = "merge" ]; then
+            echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.staging.muenster-jetzt.de"
+          else
+            echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.muenster-jetzt.de"
+          fi
+
 
       - name: Build frontend
         if: steps.git-diff.outputs.changes != '0'
         run: |
-          export REACT_APP_VERSION="${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}"
+          echo "Executing npm run build with env REACT_APP_VERSION='${REACT_APP_VERSION}' and REACT_APP_BACKEND_BASE_PATH='${REACT_APP_BACKEND_BASE_PATH}'"
           npm run build
 
       - name: Build Image and Push to Docker Hub

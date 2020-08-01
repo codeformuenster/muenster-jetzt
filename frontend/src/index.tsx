@@ -6,9 +6,12 @@ import { RestfulProvider } from "restful-react";
 import Kiosk from "./Kiosk/Kiosk";
 import LandingPage from "./LandingPage/LandingPage";
 
+const backendBasePath =
+  process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
+
 ReactDOM.render(
   <React.StrictMode>
-    <RestfulProvider base="http://localhost:8000">
+    <RestfulProvider base={backendBasePath}>
       <Router>
         <Switch>
           <Route path="/kiosk">
