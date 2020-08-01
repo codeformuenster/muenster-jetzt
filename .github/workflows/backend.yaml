@@ -27,6 +27,13 @@ jobs:
         run: |
           echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
 
+      - name: Extract branch name and shortened commit sha
+        if: steps.git-diff.outputs.changes != '0'
+        id: extract_branch
+        run: |
+          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
+          echo "##[set-output name=short_sha;]${GITHUB_SHA:0:7}"
+
       - name: Build Image and Push to Docker Hub
         # if: github.event_name == 'push' && steps.extract_branch.outputs.branch_name == 'master' && steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
