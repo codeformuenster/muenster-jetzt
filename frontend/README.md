@@ -43,3 +43,9 @@ Formats your code according the code style of this project.
 Checks your code against the code style of this project.
 
 **Code which is fails to satisfy the linter will not be accepted into the `master` branch**
+
+### `npm run generate-client`
+
+We're using the OpenAPI v3 specification of our backend to generate an API client which talks to the backend.
+Running `npm run generate-client` regenerates the file `src/generated-api-client.tsx`.
+Execute this each time the backend API schema changes.

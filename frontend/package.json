@@ -19,6 +19,7 @@
     "react-qr-svg": "^2.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "restful-react": "^14.3.0",
     "swiper": "^6.0.4",
     "typescript": "^3.9.7"
   },
@@ -29,7 +30,9 @@
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && prettier --check src/**/*.ts{,x} && eslint src/**/*.ts{,x}",
-    "format-and-lint": "npm run format && npm run lint"
+    "format-and-lint": "npm run format && npm run lint",
+    "generate-client": "restful-react import --file api-client/spec.json --output src/generated-api-client.tsx",
+    "postgenerate-client": "prettier src/generated-api-client.tsx --write"
   },
   "eslintConfig": {
     "extends": "react-app"
