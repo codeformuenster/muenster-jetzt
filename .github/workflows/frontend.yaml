@@ -76,17 +76,16 @@ jobs:
           echo "##[set-output name=branch_name;]${branch_name}"
           echo "##[set-output name=short_sha;]${short_sha}"
           echo "##[set-env name=REACT_APP_VERSION;]${branch_name}-${short_sha}"
-          if [ "$branch_name" = "merge" ]; then
+          if [ "$branch_name" = "production" ]; then
             echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.staging.muenster-jetzt.de"
           else
             echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.muenster-jetzt.de"
           fi
 
-
       - name: Build frontend
         if: steps.git-diff.outputs.changes != '0'
         run: |
-          echo "Executing npm run build with env REACT_APP_VERSION='${REACT_APP_VERSION}' and REACT_APP_BACKEND_BASE_PATH='${REACT_APP_BACKEND_BASE_PATH}'"
+          echo "Executing npm run build with env REACT_APP_VERSION='$REACT_APP_VERSION' and REACT_APP_BACKEND_BASE_PATH='$REACT_APP_BACKEND_BASE_PATH'"
           npm run build
 
       - name: Build Image and Push to Docker Hub
