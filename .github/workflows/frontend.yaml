@@ -66,6 +66,7 @@ jobs:
         if: steps.git-diff.outputs.changes != '0'
         run: |
           docker run --rm -d --name backend muenster-jetzt-api:in-ci serve
+          sleep 3
           docker exec -t backend curl localhost:8000/openapi.json > api-client/spec.json
 
       - name: Run 'npm run generate-client'
