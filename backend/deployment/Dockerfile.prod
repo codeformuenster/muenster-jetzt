@@ -14,3 +14,5 @@ COPY setup.py .
 RUN pip install .
 
 ENTRYPOINT ["python", "-m", "mj"]
+
+CMD ["serve", "--host", "0.0.0.0"]
