@@ -1,7 +1,7 @@
 import React, { FC, HTMLProps } from "react";
 import clsx from "clsx";
 
-import { useRootGet, useEventsEventsGet } from "../generated-api-client";
+import { useEventsEventsGet } from "../generated-api-client";
 
 import Layout from "../UI/Layout/Layout";
 import Box from "./Box";
@@ -30,7 +30,7 @@ const ExternalLink: FC<HTMLProps<HTMLLinkElement>> = ({
 );
 
 const LandingPage: FC = () => {
-  const { data, loading, error } = useEventsEventsGet({
+  const { loading /* , error, data */ } = useEventsEventsGet({
     queryParams: { limit: 40 },
   });
 
