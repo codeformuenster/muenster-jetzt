@@ -6,6 +6,7 @@
 
 .logo {
   max-width: 800px;
+  min-width: 250px;
   margin: 0 $spacer;
 }
 
@@ -171,7 +172,10 @@
 .welcomeText,
 .welcomeText2 {
   font-family: $headings-font-family;
-  padding: $spacer * 3;
+  padding: $spacer * 2;
+  @include media-breakpoint-up(md) {
+    padding: $spacer * 3;
+  }
 }
 
 .welcomeText {
