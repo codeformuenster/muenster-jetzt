@@ -77,6 +77,7 @@ jobs:
       - name: Check for changes according to git
         if: steps.git-diff.outputs.changes != '0'
         run: |
+          git update-index --refresh
           git diff-index --exit-code -p HEAD
 
   frontend:
