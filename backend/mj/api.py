@@ -29,6 +29,9 @@ def events(
         min_date: Optional[datetime.date] = None,
         max_date: Optional[datetime.date] = None,
         page: int = 1, limit: int = 50):
+    """
+    Get events. Retrieves events ordered by start_date and start_time.
+    """
     events = Event.select().order_by(Event.start_date, Event.start_time)
     if min_date:
         events = events.where(Event.start_date >= min_date)
