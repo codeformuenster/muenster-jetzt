@@ -16,7 +16,9 @@ const Layout: FC<ILayout> = ({ children, hideHeader }) => (
         <img src={logo} alt="Münster Jetzt" className={styles.logo} />
       </header>
     )}
-    <section className={styles.mainSection}>{children}</section>
+    <section className={styles.mainSection}>
+      <div className={styles.container}>{children}</div>
+    </section>
   </>
 );
 

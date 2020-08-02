@@ -1,9 +1,5 @@
 @import "../styles/base.scss";
 
-.container {
-  @include make-container(0);
-}
-
 .logo {
   max-width: 800px;
   min-width: 250px;

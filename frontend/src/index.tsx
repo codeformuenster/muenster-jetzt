@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { RestfulProvider } from "restful-react";
 
+import App from "./App/App";
 import Kiosk from "./Kiosk/Kiosk";
 import LandingPage from "./LandingPage/LandingPage";
 
@@ -14,6 +15,9 @@ ReactDOM.render(
     <RestfulProvider base={backendBasePath}>
       <Router>
         <Switch>
+          <Route path="/app">
+            <App />
+          </Route>
           <Route path="/kiosk">
             <Kiosk />
           </Route>
