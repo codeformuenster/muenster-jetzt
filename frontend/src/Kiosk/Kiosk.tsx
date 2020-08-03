@@ -1,34 +1,29 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import KioskLayout from "../UI/KioskLayout/KioskLayout";
 import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
+import useQuery from "../hooks/useQuery";
 
-const mockData: IEvent[] = [
-  {
-    id: 1,
-    imageUrl: "https://www.bleker-it.de/download/db_lambus_1.png",
-  },
-  {
-    id: 2,
-    title: "MÜNSTERHACK 2020",
-    subtitle: "Hackathon Für Münster",
-    description:
-      "Beim MÜNSTERHACK kommt die Tech-Szene in Münster zusammen und entwickelt gemeinsam Ideen und Prototypen, um die eigene Stadt noch lebenswerter zu machen.\n\n25./26. SEPTEMBER 2020",
-    imageUrl: "https://www.muensterhack.de/img/logo_muensterhack.png",
-    externalUrl: "https://gobeta.de/veranstaltungen/muensterhack-2020/",
-    style: {
-      backgroundColor: "#FCDD09",
-    },
-  },
-  {
-    id: 3,
-    imageUrl: "https://www.bleker-it.de/download/nafe-qr.jpg",
-  },
-];
+import { mockData, mockData2 } from "./mockdata";
+
+const useMockData = () => {
+  const query = useQuery();
+
+  return useMemo(() => {
+    switch (query?.device) {
+      case "ms-display1":
+        return mockData2;
+      default:
+        return mockData;
+    }
+  }, [query]);
+};
 
 const Kiosk: FC = () => {
+  const mockedSlideData = useMockData();
+
   return (
     <KioskLayout>
-      <FullScreenCarousel slides={mockData} />
+      <FullScreenCarousel slides={mockedSlideData} />
     </KioskLayout>
   );
 };
