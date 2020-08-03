@@ -33,7 +33,7 @@ jobs:
           echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
           echo "##[set-output name=short_sha;]${GITHUB_SHA:0:7}"
 
-      - name: Build backend Image and Push to Docker Hub
+      - name: Build backend container image (and push to Docker Hub on master branch)
         if: steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
@@ -115,7 +115,7 @@ jobs:
           export REACT_APP_VERSION="${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}"
           npm run build
 
-      - name: Build frontend Image and Push to Docker Hub
+      - name: Build frontend container image (and push to Docker Hub on master branch)
         if: steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
