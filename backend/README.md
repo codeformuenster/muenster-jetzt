@@ -20,3 +20,7 @@ Based on [peewee](https://peewee-orm.com/), [Scrapy](https://scrapy.org/), and
 ## Naming Convention
 
 Whenever you need to name a property, try to use the name that is used in https://schema.org/ e.g. for events take a look at: https://schema.org/Event
+
+## Dependency management
+
+We're using [pip-tools](https://github.com/jazzband/pip-tools) to make sure all deployments are using the same dependency versions.

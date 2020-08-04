@@ -22,8 +22,9 @@ def migrate():
 @click.option(
     '--reload/--no-reload', default=False,
     help='Reload server on source code changes')
-def serve(reload):
-    uvicorn.run('mj.api:app', reload=reload)
+@click.option('--host', default='127.0.0.1', help='host address to bind to')
+def serve(reload, host):
+    uvicorn.run('mj.api:app', reload=reload, host=host)
 
 
 @cli.command(help='Crawl events')

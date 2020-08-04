@@ -5,8 +5,8 @@
     state: directory
 
 - name: Copy staging .env
-  copy:
-    src: files/env-staging
+  template:
+    src: files/env-staging.j2
     dest: /root/muenster-jetzt/staging/.env
     owner: root
     group: root
