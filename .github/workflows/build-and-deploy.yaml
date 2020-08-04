@@ -1,4 +1,4 @@
-name: frontend-ci
+name: Build and deploy
 
 on:
   push:
@@ -8,14 +8,48 @@ on:
     branches:
       - master
 
-defaults:
-  run:
-    working-directory: frontend
-
 jobs:
+  backend:
+    name: Build backend
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '2' # for comparison
+
+      - name: Determine if job is required
+        id: git-diff
+        continue-on-error: true
+        run: |
+          echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+
+      - name: Extract branch name and shortened commit sha
+        if: steps.git-diff.outputs.changes != '0'
+        id: extract_branch
+        run: |
+          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
+          echo "##[set-output name=short_sha;]${GITHUB_SHA:0:7}"
+
+      - name: Build backend container image (and push to Docker Hub on master branch)
+        if: steps.git-diff.outputs.changes != '0'
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_PASS }}
+          repository: codeformuenster/muenster-jetzt-api
+          dockerfile: backend/deployment/Dockerfile.prod
+          tags: ${{ steps.extract_branch.outputs.branch_name }},${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}
+          path: backend
+          tag_with_ref: true
+          push: ${{ github.event_name == 'push' }}
+
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
     runs-on: ubuntu-18.04
+    needs: backend
     steps:
       - uses: actions/checkout@v2
         with:
@@ -58,7 +92,7 @@ jobs:
         with:
           push: false
           repository: muenster-jetzt-api
-          dockerfile: backend/Dockerfile # TODO change this once 77 is in master
+          dockerfile: backend/deployment/Dockerfile.prod
           tags: in-ci
           path: backend
 
@@ -84,6 +118,9 @@ jobs:
     name: Validate, test and build frontend
     runs-on: ubuntu-18.04
     needs: check-api-client-up-to-date
+    defaults:
+      run:
+        working-directory: frontend
     steps:
       - uses: actions/checkout@v2
         with:
@@ -156,22 +193,36 @@ jobs:
           echo "Executing npm run build with env REACT_APP_VERSION='$REACT_APP_VERSION' and REACT_APP_BACKEND_BASE_PATH='$REACT_APP_BACKEND_BASE_PATH'"
           npm run build
 
-      - name: Build Image and Push to Docker Hub
-        if: github.event_name == 'push' && steps.extract_branch.outputs.branch_name == 'master' && steps.git-diff.outputs.changes != '0'
+      - name: Build frontend container image (and push to Docker Hub on master branch)
+        if: steps.git-diff.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
-          username: ${{ secrets.FRONTEND_DOCKER_HUB_USER }}
-          password: ${{ secrets.FRONTEND_DOCKER_HUB_PASS }}
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_PASS }}
           repository: codeformuenster/muenster-jetzt-frontend
           dockerfile: frontend/deployment/Dockerfile.prod
           tags: ${{ steps.extract_branch.outputs.branch_name }},${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}
           path: frontend
           tag_with_ref: true
+          push: ${{ github.event_name == 'push' }}
+
+  validate-compose:
+    name: Validate deployment docker-compose
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run docker-compose config
+        run: |
+          docker-compose -f deployment/docker-compose.yml config --quiet
 
   deploy:
     name: deploy to server
     runs-on: ubuntu-18.04
-    needs: frontend
+    needs:
+      - backend
+      - frontend
+      - validate-compose
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2
@@ -205,4 +256,5 @@ jobs:
             cd muenster-jetzt/staging
             docker-compose pull
             docker-compose up --detach --remove-orphans
+            docker-compose exec -T api python -m mj migrate
             docker image prune --all --force
