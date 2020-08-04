@@ -1,7 +1,7 @@
 version: "3.6"
 
 networks:
-  default:
+  outgoing:
     driver: bridge
   internal:
     internal: true
@@ -38,7 +38,7 @@ services:
     networks:
       - https-proxy_traefik
       - internal
-      - default
+      - outgoing
   db:
     image: postgres:12.3
     restart: unless-stopped
