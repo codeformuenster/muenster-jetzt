@@ -2,7 +2,15 @@
 
 ## Deployment
 
-We deploy the master branch to a staging environment at https://staging.muenster-jetzt.de
+We use GitHub Actions and docker-compose to deploy the master branch to a staging environment at https://staging.muenster-jetzt.de
+
+### Staging deployment
+
+Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and pushes container images [`docker.io/muenster-jetzt-frontend:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and [`docker.io/muenster-jetzt-api:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api). Then it deploys them in on our staging server environment.
+
+### Production deployment
+
+**to be implemented**
 
 ## Dev Setup
 ### Intro
@@ -39,17 +47,5 @@ To understand the details behind this, take a look at these links:
 This setup does a few cool things:
 * forwards your ssh agent to allow git push from within the container
 * exposes the container ports in a way that network access from the host looks is like local host access in the container (no need to bind to `0.0.0.0`)
-
-## Deployment
-
-We use GitHub Actions for deploying containers using docker-compose.
-
-### Staging deployment
-
-Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and pushes container images [`docker.io/muenster-jetzt-frontend:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and [`docker.io/muenster-jetzt-api:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api). Then it deploys them in on our staging server environment.
-
-### Production deployment
-
-**to be implemented**
 
 [workflow 'Build and deploy']: .github/workflows/build-and-deploy.yaml
