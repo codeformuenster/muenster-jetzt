@@ -3,8 +3,8 @@ version: "3.6"
 networks:
   default:
     driver: bridge
-  # internal:
-  #   internal: true
+  internal:
+    internal: true
   https-proxy_traefik:
     external: true
 
@@ -23,3 +23,31 @@ services:
       - "traefik.http.services.msj-staging.loadbalancer.server.port=8080"
     networks:
       - https-proxy_traefik
+  api:
+    restart: unless-stopped
+    image: codeformuenster/muenster-jetzt-api:master
+    expose:
+      - "8000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=https-proxy_traefik"
+      - "traefik.http.routers.msj-staging-api.rule=Host(`api.${DOMAIN}`)"
+      - "traefik.http.routers.msj-staging-api.entrypoints=web-secure"
+      - "traefik.http.routers.msj-staging-api.tls.certresolver=letsencrypt"
+      - "traefik.http.services.msj-staging-api.loadbalancer.server.port=8000"
+    networks:
+      - https-proxy_traefik
+      - internal
+      - default
+  db:
+    restart: unless-stopped
+    db:
+      image: postgres:12.3
+      restart: unless-stopped
+      expose: "5432"
+      environment:
+        POSTGRES_USER: "${DB_USER}"
+        POSTGRES_PASSWORD: "${DB_PASSWORD}"
+        POSTGRES_DB: "${DB_NAME}"
+      networks:
+        - internal

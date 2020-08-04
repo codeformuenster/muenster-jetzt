@@ -6,3 +6,7 @@ grant_ssh_access_for:
   - github
 
 is_webserver: true
+db_user: "{{vault_db_user}}"
+db_password: "{{vault_db_password}}"
+db_name: "{{vault_db_name}}"
+api_token_muensterland: "{{vault_api_token_muensterland}}"
