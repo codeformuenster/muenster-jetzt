@@ -43,7 +43,8 @@ services:
     image: postgres:12.3
     restart: unless-stopped
     shm_size: 256MB
-    expose: "5432"
+    expose:
+      - "5432"
     environment:
       POSTGRES_USER: "${DB_USER}"
       POSTGRES_PASSWORD: "${DB_PASSWORD}"
