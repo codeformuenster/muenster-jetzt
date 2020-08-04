@@ -46,24 +46,10 @@ We use GitHub Actions for deploying containers using docker-compose.
 
 ### Staging deployment
 
-Each run of workflow [frontend-ci][workflow frontend-ci] on branch `master` builds a container image, pushes it to [docker hub](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and deploys it in on our staging server.
+Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and pushes container images [`docker.io/muenster-jetzt-frontend:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and [`docker.io/muenster-jetzt-api:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api). Then it deploys them in on our staging server environment.
 
 ### Production deployment
 
 **to be implemented**
 
-<!--
-
-Either:
-
-- Production deployments are made using the same [deployment workflow][workflow deployment] as used for staging.
-
-Or:
-
-- Once the draft release is converted to an actual release, it will be deployed to production using the same [deployment workflow][workflow deployment] as used for staging.
-
- -->
-
-
-[workflow frontend-ci]: .github/workflows/frontend.yaml
-[workflow deployment]: .github/workflows/deployment.yaml
+[workflow 'Build and deploy']: .github/workflows/build-and-deploy.yaml
