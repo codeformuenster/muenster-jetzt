@@ -17,7 +17,7 @@ const useQuery: () => Record<string, string> | null = () => {
           const pair = tuple.split("=");
 
           if (typeof pair[1] === "undefined") {
-            pair[1] = "";
+            pair[1] = true;
           }
 
           return pair;
