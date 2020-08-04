@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 
-const useQuery: () => Record<string, string> | null = () => {
+const useQuery: () => Record<string, string | boolean> | null = () => {
   const { search } = useLocation();
 
   return useMemo(() => {
@@ -14,18 +14,20 @@ const useQuery: () => Record<string, string> | null = () => {
         .substr(1)
         .split("&")
         .map((tuple) => {
-          const pair = tuple.split("=");
+          let key = "";
+          let value: string | undefined | boolean;
+          [key, value] = tuple.split("=");
 
-          if (typeof pair[1] === "undefined") {
-            pair[1] = true;
+          if (typeof value === "undefined") {
+            value = true;
           }
 
-          return pair;
+          return [key, value];
         })
         // remove empty keys
         .filter(([key]) => key !== "")
     );
   }, [search]);
-};
+}
 
 export default useQuery;
