@@ -31,7 +31,7 @@
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && prettier --check src/**/*.ts{,x} && eslint src/**/*.ts{,x}",
     "format-and-lint": "npm run format && npm run lint",
-    "generate-client": "restful-react import --file api-client/spec.json --output src/generated-api-client.tsx",
+    "generate-client": "restful-react import --url http://localhost:8000/openapi.json --output src/generated-api-client.tsx",
     "postgenerate-client": "prettier src/generated-api-client.tsx --write"
   },
   "eslintConfig": {
