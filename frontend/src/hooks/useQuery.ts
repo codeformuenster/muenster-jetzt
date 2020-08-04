@@ -18,6 +18,8 @@ const useQuery: () => Record<string, string | boolean> | null = () => {
           let value: string | undefined | boolean;
           [key, value] = tuple.split("=");
 
+          // set empty values to 'true' to allow easy
+          // existence checking
           if (typeof value === "undefined") {
             value = true;
           }
@@ -28,6 +30,6 @@ const useQuery: () => Record<string, string | boolean> | null = () => {
         .filter(([key]) => key !== "")
     );
   }, [search]);
-}
+};
 
 export default useQuery;
