@@ -168,3 +168,4 @@ jobs:
             docker-compose pull
             docker-compose up --detach --remove-orphans
             docker image prune --all --force
+            docker-compose exec api migrate
