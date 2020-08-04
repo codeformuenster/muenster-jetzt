@@ -98,6 +98,7 @@ jobs:
           dockerfile: backend/deployment/Dockerfile.prod
           tags: in-ci
           path: backend
+          cache_froms: codeformuenster/muenster-jetzt-api:master
 
       - name: Start container from backend image
         if: steps.git-diff.outputs.changes != '0'
