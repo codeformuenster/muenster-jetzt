@@ -1,23 +1,27 @@
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ky from "ky";
 import useQuery from "./useQuery";
 
-const useNavigationTracking = () => {
+const useTrackingRequest = () => {
   const params = useQuery();
   const location = useLocation();
 
-  useEffect(() => {
+  const sendRequest: (additionalParams?: Record<string, string>) => void = (
+    additionalParams
+  ) => {
     if (params?.track) {
       // send params somewhere
       ky.get(`/track`, {
         searchParams: {
           "x-path": location.pathname,
           ...params,
+          ...additionalParams,
         },
       });
     }
-  }, [params, location.pathname]);
+  };
+
+  return sendRequest;
 };
 
-export default useNavigationTracking;
+export default useTrackingRequest;

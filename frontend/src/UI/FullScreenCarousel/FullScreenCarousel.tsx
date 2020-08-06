@@ -2,14 +2,13 @@ import React, { FC } from "react";
 import clsx from "clsx";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useHistory, useLocation } from "react-router-dom";
-import useQuery from "../../hooks/useQuery";
 
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import styles from "./FullScreenCarousel.module.css";
 
 import Slide from "./Slide";
+import useKioskTracking from "../../hooks/useKioskTracking";
 
 SwiperCore.use([Autoplay, Navigation]);
 
@@ -18,9 +17,7 @@ interface IFullScreenCarousel {
 }
 
 const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
-  const params = useQuery();
-  const history = useHistory();
-  const location = useLocation();
+  const { sendRequest: sendTrackingRequest, onSlide } = useKioskTracking();
 
   return (
     <Swiper
@@ -32,37 +29,26 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
       }}
       spaceBetween={40}
       onSlideChange={(state) => {
-        const currSlideDiv: HTMLElement = state.slides[
-          state.realIndex
-        ] as HTMLElement;
-
-        const slideId = currSlideDiv.dataset.kioskSlideId ?? "";
-
-        if (params?.track) {
-          const strParams = Object.entries({
-            ...params,
-            slide: slideId,
-          } as Record<string, string | boolean>)
-            .map((pair) => {
-              if (pair[1] === true) {
-                return pair[0];
-              }
-              return pair.join("=");
-            })
-            .join("&");
-
-          const newURL = `${location.pathname}?${strParams}${location.hash}`;
-          history.replace(newURL);
-        }
+        onSlide(state);
       }}
     >
-      <div className={clsx("swiper-button-prev", styles.nav, styles.prev)} />
+      <div
+        className={clsx("swiper-button-prev", styles.nav, styles.prev)}
+        onClick={() => {
+          sendTrackingRequest({ source: "click-prev" });
+        }}
+      />
       {slides.map((slide) => (
         <SwiperSlide key={slide.id} data-kiosk-slide-id={slide.id}>
           <Slide {...slide} />
         </SwiperSlide>
       ))}
-      <div className={clsx("swiper-button-next", styles.nav, styles.next)} />
+      <div
+        className={clsx("swiper-button-next", styles.nav, styles.next)}
+        onClick={() => {
+          sendTrackingRequest({ source: "click-next" });
+        }}
+      />
     </Swiper>
   );
 };
