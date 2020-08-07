@@ -38,7 +38,7 @@ export const mockData: IEvent[] = [
   { id: 1, ...lambusEvent },
   { id: 2, ...msHack },
   { id: 3, ...nafeEvent },
-  { id: 4, ...mindbox }
+  { id: 4, ...mindbox },
 ];
 export const mockData2: IEvent[] = [
   { id: 0, ...hygiene },
