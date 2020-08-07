@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import clsx from "clsx";
-import SwiperCore, { Navigation, Autoplay } from "swiper";
+import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/swiper.scss";
@@ -32,22 +32,28 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
         onSlide(state);
       }}
     >
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <div
         className={clsx("swiper-button-prev", styles.nav, styles.prev)}
         onClick={() => {
           sendTrackingRequest({ source: "click-prev" });
         }}
+        role="button"
+        tabIndex={0}
       />
       {slides.map((slide) => (
         <SwiperSlide key={slide.id} data-kiosk-slide-id={slide.id}>
           <Slide {...slide} />
         </SwiperSlide>
       ))}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <div
         className={clsx("swiper-button-next", styles.nav, styles.next)}
         onClick={() => {
           sendTrackingRequest({ source: "click-next" });
         }}
+        role="button"
+        tabIndex={0}
       />
     </Swiper>
   );

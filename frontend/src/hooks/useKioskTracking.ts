@@ -1,9 +1,14 @@
 import SwiperCore from "swiper";
 import { useHistory, useLocation } from "react-router-dom";
-import useTrackingRequest from "./useTrackingRequest";
+import useTrackingRequest, { ISendRequest } from "./useTrackingRequest";
 import useQuery from "./useQuery";
 
-const useKioskTracking = () => {
+interface IUseKioskTrackingHook {
+  onSlide: (state: SwiperCore) => void;
+  sendRequest: ISendRequest;
+}
+
+const useKioskTracking: () => IUseKioskTrackingHook = () => {
   const params = useQuery();
   const history = useHistory();
   const location = useLocation();
