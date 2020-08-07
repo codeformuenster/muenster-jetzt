@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.2",
-    "@testing-library/react": "^10.4.7",
+    "@testing-library/react": "^10.4.8",
     "@testing-library/user-event": "^12.1.0",
     "@types/jest": "^26.0.8",
     "@types/node": "^14.0.27",
@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^5.1.5",
     "bootstrap": "^4.5.0",
     "clsx": "^1.1.1",
+    "ky": "^0.23.0",
     "purecss": "^2.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
