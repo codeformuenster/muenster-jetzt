@@ -23,26 +23,8 @@ services:
       - "traefik.http.services.msj-staging.loadbalancer.server.port=8080"
     networks:
       - https-proxy_traefik
-    logging:
-      driver: loki
-      options:
-        loki-url: "${LOKI_URL}"
-  static:
-    restart: unless-stopped
-    image: nginx:1.19-alpine
-    expose:
-      - "80"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=https-proxy_traefik"
-      - "traefik.http.routers.msj-staging-static.rule=Host(`static.${DOMAIN}`)"
-      - "traefik.http.routers.msj-staging-static.entrypoints=web-secure"
-      - "traefik.http.routers.msj-staging-static.tls.certresolver=letsencrypt"
-      - "traefik.http.services.msj-staging-static.loadbalancer.server.port=80"
     volumes:
-      - "../uploads/static:/usr/share/nginx/html:ro"
-    networks:
-      - https-proxy_traefik
+      - "../uploads:/www/static/uploads:ro"
     logging:
       driver: loki
       options:
