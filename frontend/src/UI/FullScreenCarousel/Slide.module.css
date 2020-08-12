@@ -40,8 +40,11 @@
 }
 
 .qrContainer{
+  position: absolute;
   text-align: right;
-  width: 100%;
+  width: 200px;
+  bottom: 30px;
+  right: 30px;
 }
 
 .qr {
