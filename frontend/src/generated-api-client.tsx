@@ -5,8 +5,62 @@ import { Get, GetProps, useGet, UseGetProps } from "restful-react";
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
+export interface Event {
+  id: number;
+  /**
+   * Web source from which event was scraped
+   */
+  source: EventSource;
+  /**
+   * Event ID used at source
+   */
+  sourceEventId: string;
+  /**
+   * Event details URL at source
+   */
+  sourceUrl?: string;
+  /**
+   * License under which source published event data
+   */
+  sourceLicense?: string;
+  name: string;
+  description: string;
+  url?: string;
+  startDate: string;
+  startTime?: string;
+  endDate?: string;
+  endTime?: string;
+  location: Location;
+  performer?: string;
+  mode?: string;
+  organizer?: Organizer;
+}
+
+export interface EventSource {
+  id: number;
+  name: string;
+}
+
+export interface EventsResponse {
+  events: Event[];
+}
+
 export interface HTTPValidationError {
   detail?: ValidationError[];
+}
+
+export interface Location {
+  id: number;
+  description: string;
+}
+
+export interface Organizer {
+  id: number;
+  name: string;
+}
+
+export interface RootResponse {
+  version: string;
 }
 
 export interface ValidationError {
@@ -15,10 +69,8 @@ export interface ValidationError {
   type: string;
 }
 
-export interface RootGetResponse {}
-
 export type RootGetProps = Omit<
-  GetProps<RootGetResponse, unknown, void, void>,
+  GetProps<RootResponse, unknown, void, void>,
   "path"
 >;
 
@@ -26,11 +78,11 @@ export type RootGetProps = Omit<
  * Root
  */
 export const RootGet = (props: RootGetProps) => (
-  <Get<RootGetResponse, unknown, void, void> path={`/`} {...props} />
+  <Get<RootResponse, unknown, void, void> path={`/`} {...props} />
 );
 
 export type UseRootGetProps = Omit<
-  UseGetProps<RootGetResponse, unknown, void, void>,
+  UseGetProps<RootResponse, unknown, void, void>,
   "path"
 >;
 
@@ -38,20 +90,30 @@ export type UseRootGetProps = Omit<
  * Root
  */
 export const useRootGet = (props: UseRootGetProps) =>
-  useGet<RootGetResponse, unknown, void, void>(`/`, props);
-
-export interface EventsEventsGetResponse {}
+  useGet<RootResponse, unknown, void, void>(`/`, props);
 
 export interface EventsEventsGetQueryParams {
-  min_date?: string;
-  max_date?: string;
+  /**
+   * Earliest start date
+   */
+  minDate?: string;
+  /**
+   * Latest start date
+   */
+  maxDate?: string;
+  /**
+   * Page number
+   */
   page?: number;
+  /**
+   * Results per page
+   */
   limit?: number;
 }
 
 export type EventsEventsGetProps = Omit<
   GetProps<
-    EventsEventsGetResponse,
+    EventsResponse,
     HTTPValidationError,
     EventsEventsGetQueryParams,
     void
@@ -63,12 +125,7 @@ export type EventsEventsGetProps = Omit<
  * Events
  */
 export const EventsEventsGet = (props: EventsEventsGetProps) => (
-  <Get<
-    EventsEventsGetResponse,
-    HTTPValidationError,
-    EventsEventsGetQueryParams,
-    void
-  >
+  <Get<EventsResponse, HTTPValidationError, EventsEventsGetQueryParams, void>
     path={`/events`}
     {...props}
   />
@@ -76,7 +133,7 @@ export const EventsEventsGet = (props: EventsEventsGetProps) => (
 
 export type UseEventsEventsGetProps = Omit<
   UseGetProps<
-    EventsEventsGetResponse,
+    EventsResponse,
     HTTPValidationError,
     EventsEventsGetQueryParams,
     void
@@ -88,9 +145,7 @@ export type UseEventsEventsGetProps = Omit<
  * Events
  */
 export const useEventsEventsGet = (props: UseEventsEventsGetProps) =>
-  useGet<
-    EventsEventsGetResponse,
-    HTTPValidationError,
-    EventsEventsGetQueryParams,
-    void
-  >(`/events`, props);
+  useGet<EventsResponse, HTTPValidationError, EventsEventsGetQueryParams, void>(
+    `/events`,
+    props
+  );
