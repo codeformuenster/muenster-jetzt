@@ -26,6 +26,35 @@ jobs:
         run: |
           echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
 
+      - name: Install python 3.8
+        if: steps.git-diff.outputs.changes != '0'
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.x'
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache python dependencies
+        if: steps.git-diff.outputs.changes != '0'
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-python-deps
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ env.cache-name }}-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ env.cache-name }}-
+            ${{ runner.os }}-pip-
+
+      - name: Install and execute 'tox'
+        if: steps.git-diff.outputs.changes != '0'
+        run: |
+          pip install tox
+          tox
+
       - name: Extract branch name and shortened commit sha
         if: steps.git-diff.outputs.changes != '0'
         id: extract_branch
@@ -85,7 +114,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
-            ${{ runner.os }}-
 
       - name: Run 'npm ci' to install frontend dependencies
         if: steps.git-diff.outputs.changes != '0'
