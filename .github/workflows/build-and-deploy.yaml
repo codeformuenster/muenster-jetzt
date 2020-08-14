@@ -49,7 +49,7 @@ jobs:
             ${{ runner.os }}-pip-${{ env.cache-name }}-
             ${{ runner.os }}-pip-
 
-      - name: Install and execute 'tox' for
+      - name: Install and execute 'tox'
         if: steps.git-diff.outputs.changes != '0'
         run: |
           pip install tox
