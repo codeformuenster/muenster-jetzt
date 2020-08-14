@@ -1,7 +1,7 @@
 import datetime
 from typing import List, Optional
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from fastapi_camelcase import CamelModel
 from fastapi.middleware.cors import CORSMiddleware
 from playhouse.shortcuts import model_to_dict
@@ -36,9 +36,12 @@ class EventsResponse(CamelModel):
 
 @app.get('/events', response_model=EventsResponse)
 def events(
-        min_date: Optional[datetime.date] = None,
-        max_date: Optional[datetime.date] = None,
-        page: int = 1, limit: int = 50):
+        min_date: Optional[datetime.date] = Query(
+            None, alias="minDate", description="Earliest start date"),
+        max_date: Optional[datetime.date] = Query(
+            None, alias="maxDate", description="Latest start date"),
+        page: int = Query(1, description="Page number"),
+        limit: int = Query(50, description="Results per page")):
     events = Event.select().order_by(Event.start_date, Event.start_time)
     if min_date:
         events = events.where(Event.start_date >= min_date)
