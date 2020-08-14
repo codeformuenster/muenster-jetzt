@@ -1,11 +1,13 @@
 import datetime
-from typing import Optional
+from typing import List, Optional
 
 from fastapi import FastAPI
+from fastapi_camelcase import CamelModel
 from fastapi.middleware.cors import CORSMiddleware
 from playhouse.shortcuts import model_to_dict
 
 import mj
+from mj import schema
 from mj.db import Event
 
 
@@ -19,12 +21,20 @@ app.add_middleware(
 )
 
 
-@app.get('/')
+class RootResponse(CamelModel):
+    version: str
+
+
+@app.get('/', response_model=RootResponse)
 def root():
     return {'version': f'mj-{mj.__version__}'}
 
 
-@app.get('/events')
+class EventsResponse(CamelModel):
+    events: List[schema.Event]
+
+
+@app.get('/events', response_model=EventsResponse)
 def events(
         min_date: Optional[datetime.date] = None,
         max_date: Optional[datetime.date] = None,
