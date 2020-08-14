@@ -11,7 +11,8 @@ const useTrackingRequest: () => ISendRequest = () => {
   const location = useLocation();
 
   const sendRequest: ISendRequest = (additionalParams) => {
-    if (params?.track) {
+    // Only send tracking requests if the `device` query parameter is present
+    if (params?.device) {
       // send params somewhere
       ky.get(`/track`, {
         searchParams: {

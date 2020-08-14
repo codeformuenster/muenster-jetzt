@@ -16,13 +16,14 @@ const useKioskTracking: () => IUseKioskTrackingHook = () => {
 
   return {
     onSlide: (state: SwiperCore) => {
-      const currSlideDiv: HTMLElement = state.slides[
-        state.realIndex
-      ] as HTMLElement;
+      // only enable tracking when `device` parameter is present
+      if (params?.device) {
+        const currSlideDiv: HTMLElement = state.slides[
+          state.realIndex
+        ] as HTMLElement;
 
-      const slideId = currSlideDiv.dataset.kioskSlideId ?? "";
+        const slideId = currSlideDiv.dataset.kioskSlideId ?? "";
 
-      if (params?.track) {
         const strParams = Object.entries({
           ...params,
           slide: slideId,
