@@ -13,6 +13,7 @@ click==7.1.2              # via mj (setup.py), uvicorn
 constantly==15.1.0        # via twisted
 cryptography==3.0         # via pyopenssl, scrapy, service-identity
 cssselect==1.1.0          # via parsel, scrapy
+fastapi-camelcase==1.0.2  # via mj (setup.py)
 fastapi==0.60.1           # via mj (setup.py)
 h11==0.9.0                # via uvicorn
 httptools==0.1.1          # via uvicorn
@@ -28,9 +29,10 @@ psycopg2-binary==2.8.5    # via mj (setup.py)
 pyasn1-modules==0.2.8     # via service-identity
 pyasn1==0.4.8             # via pyasn1-modules, service-identity
 pycparser==2.20           # via cffi
-pydantic==1.6.1           # via fastapi
+pydantic==1.6.1           # via fastapi, fastapi-camelcase
 pydispatcher==2.0.5       # via scrapy
 pyhamcrest==2.0.2         # via twisted
+pyhumps==1.6.1            # via fastapi-camelcase
 pyopenssl==19.1.0         # via scrapy
 queuelib==1.5.0           # via scrapy
 requests==2.24.0          # via mj (setup.py)

@@ -12,6 +12,7 @@ setup(
     install_requires=[
         'click',
         'fastapi',
+        'fastapi-camelcase',
         'peewee',
         'psycopg2-binary',
         'requests',
