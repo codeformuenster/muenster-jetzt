@@ -10,7 +10,7 @@ const EventsListItem: FC<IAugmentedEvent> = ({
   return (
     <div>
       <h2>
-        {id}: {name} ({start.toISOString()})
+        {id}: {name} ({start && start.toISOString()})
       </h2>
       <p>{description}</p>
     </div>

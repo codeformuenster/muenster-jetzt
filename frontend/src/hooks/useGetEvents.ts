@@ -8,8 +8,8 @@ import {
 } from "../generated-api-client";
 
 export interface IAugmentedEvent extends Event {
-  start: Date;
-  end: Date;
+  start?: Date;
+  end?: Date;
 }
 
 interface IUseGetEvents {
@@ -20,16 +20,36 @@ interface IUseGetEvents {
   };
 }
 
+const parseDate: (date: string, time?: string) => Date | undefined = (
+  date,
+  time = "00:00:00"
+) => {
+  try {
+    return new Date(`${date}T${time}Z`);
+  } catch (e) {
+    return undefined;
+  }
+};
+
 const useGetEvents: IUseGetEvents = () => {
   const { loading, data, error } = useEventsEventsGet({
     resolve: (responseData: EventsResponse) => {
       return {
         ...responseData,
-        events: responseData.events.map((event) => ({
-          ...event,
-          start: new Date(),
-          end: new Date(),
-        })),
+        events: responseData.events.map((event) => {
+          const start = parseDate(event.startDate, event.startTime);
+          let end;
+          if (event.endDate) {
+            end = parseDate(event.endDate, event.endTime);
+          }
+
+          // try to parse dates
+          return {
+            ...event,
+            start,
+            end,
+          };
+        }),
       };
     },
   });
