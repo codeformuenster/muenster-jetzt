@@ -4,16 +4,16 @@ import styles from "./App.module.scss";
 import Layout from "../UI/Layout/Layout";
 import EventsList from "./EventsList/EventsList";
 
-import { useEventsEventsGet } from "../generated-api-client";
+import useGetEvents from "../hooks/useGetEvents";
 
 const App: FC = () => {
-  const { loading, error } = useEventsEventsGet({});
+  const { loading, error, events } = useGetEvents();
 
   return (
     <Layout>
       <div className={styles.container}>
-        {JSON.stringify({ loading, error })}
-        <EventsList />
+        {error}
+        {!loading && events && <EventsList events={events} />}
       </div>
     </Layout>
   );

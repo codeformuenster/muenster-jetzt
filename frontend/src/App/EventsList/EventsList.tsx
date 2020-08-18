@@ -1,12 +1,18 @@
 import React, { FC } from "react";
 
 import EventsListItem from "../EventsListItem/EventListItem";
+import { IAugmentedEvent } from "../../hooks/useGetEvents";
 
-const EventsList: FC = () => {
+interface IEventsList {
+  events: IAugmentedEvent[];
+}
+
+const EventsList: FC<IEventsList> = ({ events }) => {
   return (
     <div>
-      <p>EventsList</p>
-      <EventsListItem />
+      {events.map((e) => (
+        <EventsListItem key={e.id} {...e} />
+      ))}
     </div>
   );
 };
