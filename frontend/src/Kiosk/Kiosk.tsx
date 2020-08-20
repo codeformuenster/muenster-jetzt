@@ -25,9 +25,7 @@ const mockData: ISlide[] = [
   },
   {
     id: 4,
-    title: "Code for Münster Website",
-    externalUrl: "https://codeformuenster.org",
-    iFrame: { url: "https://codeformuenster.org" },
+    iFrame: { url: "https://bike-frontend.azurewebsites.net" },
   },
 ];
 
