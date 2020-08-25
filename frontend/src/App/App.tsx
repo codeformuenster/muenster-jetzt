@@ -12,6 +12,7 @@ const App: FC = () => {
   return (
     <Layout>
       <div className={styles.container}>
+        {loading && <p>Daten werden geladen</p>}
         {error}
         {!loading && events && <EventsList events={events} />}
       </div>

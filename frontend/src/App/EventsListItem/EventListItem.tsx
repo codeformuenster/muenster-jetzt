@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { IAugmentedEvent } from "../../hooks/useGetEvents";
+import RelativeTime from "../../Helpers/RelativeTime";
 
 const EventsListItem: FC<IAugmentedEvent> = ({
   id,
@@ -10,7 +11,7 @@ const EventsListItem: FC<IAugmentedEvent> = ({
   return (
     <div>
       <h2>
-        {id}: {name} ({start && start.toISOString()})
+        {id}: {name} (<RelativeTime datetime={start} />)
       </h2>
       <p>{description}</p>
     </div>

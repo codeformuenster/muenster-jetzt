@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import Layout from "../UI/Layout/Layout";
 import Box from "./Box";
-import ExternalLink from "../ExternalLink";
+import ExternalLink from "../Helpers/ExternalLink";
 
 import styles from "./LandingPage.module.scss";
 
