@@ -22,3 +22,12 @@
   pip:
     name:
       - docker-compose
+
+- name: check loki plugin installed
+  shell: docker plugin ls | grep -q loki
+  ignore_errors: true
+  register: loki_check
+
+- name: install loki docker log plugin
+  command: docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
+  when: loki_check.rc == 1

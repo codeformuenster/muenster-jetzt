@@ -1,4 +1,9 @@
 ---
+- name: create uploads dir
+  file:
+    path: /root/muenster-jetzt/uploads/static
+    state: directory
+
 - name: create staging dir
   file:
     path: /root/muenster-jetzt/staging

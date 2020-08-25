@@ -23,6 +23,12 @@ services:
       - "traefik.http.services.msj-staging.loadbalancer.server.port=8080"
     networks:
       - https-proxy_traefik
+    volumes:
+      - "../uploads:/www/static/uploads:ro"
+    logging:
+      driver: loki
+      options:
+        loki-url: "${LOKI_URL}"
   api:
     restart: unless-stopped
     image: codeformuenster/muenster-jetzt-api:master
@@ -46,6 +52,10 @@ services:
       - https-proxy_traefik
       - internal
       - outgoing
+    logging:
+      driver: loki
+      options:
+        loki-url: "${LOKI_URL}"
   db:
     image: postgres:12.3
     restart: unless-stopped
@@ -58,3 +68,7 @@ services:
       POSTGRES_DB: "${DB_NAME}"
     networks:
       - internal
+    logging:
+      driver: loki
+      options:
+        loki-url: "${LOKI_URL}"
