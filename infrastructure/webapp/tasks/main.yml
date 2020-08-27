@@ -1,7 +1,7 @@
 ---
 - name: create uploads dir
   file:
-    path: /root/muenster-jetzt/uploads/static
+    path: /root/muenster-jetzt/uploads/
     state: directory
 
 - name: create staging dir
@@ -20,3 +20,10 @@
   file:
     path: /root/muenster-jetzt/production
     state: directory
+
+- name: Copy production .env
+  template:
+    src: files/env-production.j2
+    dest: /root/muenster-jetzt/production/.env
+    owner: root
+    group: root

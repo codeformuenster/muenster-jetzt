@@ -6,8 +6,11 @@ grant_ssh_access_for:
   - github
 
 is_webserver: true
-db_user: "{{vault_db_user}}"
-db_password: "{{vault_db_password}}"
-db_name: "{{vault_db_name}}"
+db_user_staging: "{{vault_db_user_staging}}"
+db_password_staging: "{{vault_db_password_staging}}"
+db_name_staging: "{{vault_db_name_staging}}"
+db_user_production: "{{vault_db_user_production}}"
+db_password_production: "{{vault_db_password_production}}"
+db_name_production: "{{vault_db_name_production}}"
 api_token_muensterland: "{{vault_api_token_muensterland}}"
 loki_url: "{{vault_loki_url}}"
