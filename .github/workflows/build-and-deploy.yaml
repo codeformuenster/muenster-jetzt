@@ -21,14 +21,23 @@ jobs:
         with:
           fetch-depth: '2' # for comparison
 
-      - name: Determine if job is required
-        id: git-diff
+      - name: Gather branch information
+        id: branch_info
         continue-on-error: true
         run: |
-          echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          branch_name=${GITHUB_REF##*/}
+          short_sha=#{GITHUB_SHA:0:7}
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          if [ "$branch_name" = "production" ]; then
+            echo "##[set-output name=changes;]1"
+          else
+            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          fi
 
       - name: Install python 3.8
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-python@v2
         with:
           python-version: '3.8.x'
@@ -39,7 +48,7 @@ jobs:
           echo "::set-output name=dir::$(pip cache dir)"
 
       - name: Cache python dependencies
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: actions/cache@v2
         env:
           cache-name: cache-python-deps
@@ -51,27 +60,20 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install and execute 'tox'
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           pip install tox
           tox
 
-      - name: Extract branch name and shortened commit sha
-        if: steps.git-diff.outputs.changes != '0'
-        id: extract_branch
-        run: |
-          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
-          echo "##[set-output name=short_sha;]${GITHUB_SHA:0:7}"
-
       - name: Build backend container image (and push to Docker Hub on master branch)
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASS }}
           repository: codeformuenster/muenster-jetzt-api
           dockerfile: backend/deployment/Dockerfile.prod
-          tags: ${{ steps.extract_branch.outputs.branch_name }},${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}
+          tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
           path: backend
           tag_with_ref: true
           push: ${{ github.event_name == 'push' }}
@@ -87,24 +89,33 @@ jobs:
         with:
           fetch-depth: '2' # for comparison
 
-      - name: Determine if job is required
-        id: git-diff
+      - name: Gather branch information
+        id: branch_info
         continue-on-error: true
         run: |
-          echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          branch_name=${GITHUB_REF##*/}
+          short_sha=#{GITHUB_SHA:0:7}
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          if [ "$branch_name" = "production" ]; then
+            echo "##[set-output name=changes;]1"
+          else
+            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          fi
 
       - name: Debug
         run: |
-          echo "Number of changed files in frontend directory: '${{ steps.git-diff.outputs.changes }}'"
+          echo "Number of changed files in frontend directory: '${{ steps.branch_info.outputs.changes }}'"
 
       - name: Install Node.js 14
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-node@v2.1.1
         with:
           node-version: 14
 
       - name: Cache node modules
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -117,42 +128,35 @@ jobs:
             ${{ runner.os }}-build-
 
       - name: Run 'npm ci' to install frontend dependencies
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm ci
 
       - name: Check frontend code style
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm run lint
 
       - name: Run frontend tests
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm run test
 
-      - name: Extract branch name and shortened commit sha
-        if: steps.git-diff.outputs.changes != '0'
-        id: extract_branch
-        run: |
-          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
-          echo "##[set-output name=short_sha;]${GITHUB_SHA:0:7}"
-
       - name: Build frontend
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
-          export REACT_APP_VERSION="${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}"
+          export REACT_APP_VERSION="${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}"
           npm run build
 
       - name: Build frontend container image (and push to Docker Hub on master branch)
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASS }}
           repository: codeformuenster/muenster-jetzt-frontend
           dockerfile: frontend/deployment/Dockerfile.prod
-          tags: ${{ steps.extract_branch.outputs.branch_name }},${{ steps.extract_branch.outputs.branch_name }}-${{ steps.extract_branch.outputs.short_sha }}
+          tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
           path: frontend
           tag_with_ref: true
           push: ${{ github.event_name == 'push' }}
@@ -179,12 +183,12 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Extract branch name
-        id: extract_branch
+        id: branch_info
         run: |
           echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
 
       - name: STAGING Copy docker-compose file to server
-        if: steps.extract_branch.outputs.branch_name == 'master'
+        if: steps.branch_info.outputs.branch_name == 'master'
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
             SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
@@ -197,7 +201,7 @@ jobs:
             TARGET: "/root/muenster-jetzt/staging/"
 
       - name: STAGING  Run remote commands
-        if: steps.extract_branch.outputs.branch_name == 'master'
+        if: steps.branch_info.outputs.branch_name == 'master'
         uses: appleboy/ssh-action@master
         with:
           host: "staging.muenster-jetzt.de"
@@ -211,9 +215,9 @@ jobs:
             docker-compose up --detach --remove-orphans
             docker-compose exec -T api python -m mj migrate
             docker image prune --all --force
-            
+
       - name: PRODUCTION Copy docker-compose file to server
-        if: steps.extract_branch.outputs.branch_name == 'production'
+        if: steps.branch_info.outputs.branch_name == 'production'
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
             SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
@@ -226,7 +230,7 @@ jobs:
             TARGET: "/root/muenster-jetzt/production/"
 
       - name: PRODUCTION  Run remote commands
-        if: steps.extract_branch.outputs.branch_name == 'production'
+        if: steps.branch_info.outputs.branch_name == 'production'
         uses: appleboy/ssh-action@master
         with:
           host: "www.muenster-jetzt.de"
