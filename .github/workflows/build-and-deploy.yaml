@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - production
   pull_request:
     branches:
       - master
@@ -182,7 +183,8 @@ jobs:
         run: |
           echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
 
-      - name: Copy docker-compose file to server
+      - name: STAGING Copy docker-compose file to server
+        if: steps.extract_branch.outputs.branch_name == 'master'
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
             SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
@@ -194,7 +196,8 @@ jobs:
             REMOTE_USER: root
             TARGET: "/root/muenster-jetzt/staging/"
 
-      - name: Run remote commands
+      - name: STAGING  Run remote commands
+        if: steps.extract_branch.outputs.branch_name == 'master'
         uses: appleboy/ssh-action@master
         with:
           host: "staging.muenster-jetzt.de"
@@ -204,6 +207,35 @@ jobs:
           script: |
             set -e
             cd muenster-jetzt/staging
+            docker-compose pull
+            docker-compose up --detach --remove-orphans
+            docker-compose exec -T api python -m mj migrate
+            docker image prune --all --force
+            
+      - name: PRODUCTION Copy docker-compose file to server
+        if: steps.extract_branch.outputs.branch_name == 'production'
+        uses: easingthemes/ssh-deploy@v2.1.4
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+            # z = compress
+            # v = verbose
+            ARGS: "-zv"
+            SOURCE: deployment/docker-compose.yml
+            REMOTE_HOST: "www.muenster-jetzt.de"
+            REMOTE_USER: root
+            TARGET: "/root/muenster-jetzt/production/"
+
+      - name: PRODUCTION  Run remote commands
+        if: steps.extract_branch.outputs.branch_name == 'production'
+        uses: appleboy/ssh-action@master
+        with:
+          host: "www.muenster-jetzt.de"
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            cd muenster-jetzt/production
             docker-compose pull
             docker-compose up --detach --remove-orphans
             docker-compose exec -T api python -m mj migrate
