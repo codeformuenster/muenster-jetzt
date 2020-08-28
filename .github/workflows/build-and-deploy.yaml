@@ -26,11 +26,11 @@ jobs:
         continue-on-error: true
         run: |
           branch_name=${GITHUB_REF##*/}
-          short_sha=#{GITHUB_SHA:0:7}
+          short_sha=${GITHUB_SHA:0:7}
           echo "##[set-output name=branch_name;]${branch_name}"
           echo "##[set-output name=short_sha;]${short_sha}"
 
-          if [ "$branch_name" = "production" ]; then
+          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
             echo "##[set-output name=changes;]1"
           else
             echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
@@ -94,11 +94,11 @@ jobs:
         continue-on-error: true
         run: |
           branch_name=${GITHUB_REF##*/}
-          short_sha=#{GITHUB_SHA:0:7}
+          short_sha=${GITHUB_SHA:0:7}
           echo "##[set-output name=branch_name;]${branch_name}"
           echo "##[set-output name=short_sha;]${short_sha}"
 
-          if [ "$branch_name" = "production" ]; then
+          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
             echo "##[set-output name=changes;]1"
           else
             echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
