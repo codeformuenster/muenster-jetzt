@@ -11,16 +11,16 @@ networks:
 services:
   frontend:
     restart: unless-stopped
-    image: codeformuenster/muenster-jetzt-frontend:master
+    image: codeformuenster/muenster-jetzt-frontend:${TAG_NAME}
     expose:
       - "8080"
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=https-proxy_traefik"
-      - "traefik.http.routers.msj-staging.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.msj-staging.entrypoints=web-secure"
-      - "traefik.http.routers.msj-staging.tls.certresolver=letsencrypt"
-      - "traefik.http.services.msj-staging.loadbalancer.server.port=8080"
+      - "traefik.http.routers.msj-${TAG_NAME}.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.msj-${TAG_NAME}.entrypoints=web-secure"
+      - "traefik.http.routers.msj-${TAG_NAME}.tls.certresolver=letsencrypt"
+      - "traefik.http.services.msj-${TAG_NAME}.loadbalancer.server.port=8080"
     networks:
       - https-proxy_traefik
     volumes:
@@ -31,7 +31,7 @@ services:
         loki-url: "${LOKI_URL}"
   api:
     restart: unless-stopped
-    image: codeformuenster/muenster-jetzt-api:master
+    image: codeformuenster/muenster-jetzt-api:${TAG_NAME}
     expose:
       - "8000"
     environment:
@@ -44,10 +44,10 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=https-proxy_traefik"
-      - "traefik.http.routers.msj-staging-api.rule=Host(`api.${DOMAIN}`)"
-      - "traefik.http.routers.msj-staging-api.entrypoints=web-secure"
-      - "traefik.http.routers.msj-staging-api.tls.certresolver=letsencrypt"
-      - "traefik.http.services.msj-staging-api.loadbalancer.server.port=8000"
+      - "traefik.http.routers.msj-${TAG_NAME}-api.rule=Host(`api.${DOMAIN}`)"
+      - "traefik.http.routers.msj-${TAG_NAME}-api.entrypoints=web-secure"
+      - "traefik.http.routers.msj-${TAG_NAME}-api.tls.certresolver=letsencrypt"
+      - "traefik.http.services.msj-${TAG_NAME}-api.loadbalancer.server.port=8000"
     networks:
       - https-proxy_traefik
       - internal
