@@ -30,11 +30,17 @@ jobs:
           echo "##[set-output name=branch_name;]${branch_name}"
           echo "##[set-output name=short_sha;]${short_sha}"
 
+          echo "We're running on ${branch_name} (${short_sha})"
+
           if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
             echo "##[set-output name=changes;]1"
           else
             echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
           fi
+
+      - name: Debug
+        run: |
+          echo "Number of changed files in backend directory: '${{ steps.branch_info.outputs.changes }}'"
 
       - name: Install python 3.8
         if: steps.branch_info.outputs.changes != '0'
@@ -43,7 +49,7 @@ jobs:
           python-version: '3.8.x'
 
       - name: Get pip cache dir
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         id: pip-cache
         run: |
           echo "::set-output name=dir::$(pip cache dir)"
@@ -91,20 +97,31 @@ jobs:
         with:
           fetch-depth: '2' # for comparison
 
-      - name: Determine if job is required
-        id: git-diff
+      - name: Gather branch information
+        id: branch_info
         continue-on-error: true
         run: |
-          echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          branch_name=${GITHUB_REF##*/}
+          short_sha=${GITHUB_SHA:0:7}
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "We're running on ${branch_name} (${short_sha})"
+
+          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
+            echo "##[set-output name=changes;]1"
+          else
+            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          fi
 
       - name: Install Node.js 14
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-node@v2.1.1
         with:
           node-version: 14
 
       - name: Cache node modules
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -118,12 +135,12 @@ jobs:
             ${{ runner.os }}-
 
       - name: Run 'npm ci' to install frontend dependencies
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm ci
 
       - name: Build backend image
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         uses: docker/build-push-action@v1
         with:
           push: false
@@ -134,17 +151,17 @@ jobs:
           cache_froms: codeformuenster/muenster-jetzt-api:master
 
       - name: Start container from backend image
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           docker run --rm -d --name backend -p 8000:8000 muenster-jetzt-api:in-ci
 
       - name: Run 'npm run generate-client'
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm run generate-client
 
       - name: Check for changes according to git
-        if: steps.git-diff.outputs.changes != '0'
+        if: steps.branch_info.outputs.changes != '0'
         run: |
           git update-index --refresh
           git diff-index --exit-code -p HEAD
@@ -170,6 +187,8 @@ jobs:
 
           echo "##[set-output name=branch_name;]${branch_name}"
           echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "We're running on ${branch_name} (${short_sha})"
 
           echo "##[set-env name=REACT_APP_VERSION;]${branch_name}-${short_sha}"
           if [ "$branch_name" = "production" ]; then
@@ -265,7 +284,13 @@ jobs:
       - name: Extract branch name
         id: branch_info
         run: |
-          echo "##[set-output name=branch_name;]${GITHUB_REF##*/}"
+          branch_name=${GITHUB_REF##*/}
+          short_sha=${GITHUB_SHA:0:7}
+
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "We're running on ${branch_name} (${short_sha})"
 
       - name: STAGING Copy docker-compose file to server
         if: steps.branch_info.outputs.branch_name == 'master'
