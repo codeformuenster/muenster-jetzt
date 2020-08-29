@@ -4,6 +4,6 @@ import App from "./App";
 
 test("renders without crashing", () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/unused/i);
+  const linkElement = getByText(/daten werden geladen/i);
   expect(linkElement).toBeInTheDocument();
 });

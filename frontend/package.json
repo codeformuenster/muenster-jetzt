@@ -20,7 +20,10 @@
     "react-qr-svg": "^2.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "restful-react": "^14.3.0",
     "swiper": "^6.1.2",
+    "timeago-react": "^3.0.0",
+    "timeago.js": "^4.0.2",
     "typescript": "^4.0.2"
   },
   "scripts": {
@@ -30,7 +33,9 @@
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && prettier --check src/**/*.ts{,x} && eslint src/**/*.ts{,x}",
-    "format-and-lint": "npm run format && npm run lint"
+    "format-and-lint": "npm run format && npm run lint",
+    "generate-client": "restful-react import --url http://localhost:8000/openapi.json --output src/generated-api-client.tsx",
+    "postgenerate-client": "prettier src/generated-api-client.tsx --write"
   },
   "eslintConfig": {
     "extends": "react-app"
