@@ -171,8 +171,9 @@ jobs:
       - name: Check for changes according to git
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          git update-index --refresh .
-          git diff-index --exit-code -p HEAD .
+          git checkout -- ../backend/deployment/Dockerfile.prod
+          git update-index --refresh
+          git diff-index --exit-code -p HEAD
 
   frontend:
     name: Validate, test and build frontend
