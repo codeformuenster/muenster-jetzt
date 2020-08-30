@@ -1,15 +1,16 @@
-name: Import events
+name: periodic import
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    # run every hour
+    - cron: '0 * * * *'
+
 jobs:
-  scrape-and-tweet:
+  staging:
+    name: crawl events in staging
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Trigger staging import
+      - name: STAGING  Run remote commands
         uses: appleboy/ssh-action@master
         with:
           host: "staging.muenster-jetzt.de"
@@ -18,16 +19,20 @@ jobs:
           script_stop: true
           script: |
             set -e
-            docker-compose -f /root/muenster-jetzt/staging/docker-compose.yml exec -T api python -m mj crawl
-
-      - name: Trigger production import
+            cd muenster-jetzt/staging
+            docker-compose exec -T api python -m mj crawl
+  production:
+    name: crawl events in production
+    runs-on: ubuntu-18.04
+    steps:
+      - name: PRODUCTION  Run remote commands
         uses: appleboy/ssh-action@master
         with:
-          host: "www.muenster-jetzt.de"
+          host: "muenster-jetzt.de"
           username: root
           key: ${{ secrets.SSH_DEPLOY_KEY }}
           script_stop: true
           script: |
             set -e
-            cd muenster-jetzt/staging
-            docker-compose -f /root/muenster-jetzt/production/docker-compose.yml exec -T api python -m mj crawl
+            cd muenster-jetzt/production
+            docker-compose exec -T api python -m mj crawl
