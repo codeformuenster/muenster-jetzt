@@ -1,0 +1,38 @@
+name: periodic import
+
+on:
+  schedule:
+    # run every hour
+    - cron: '0 * * * *'
+
+jobs:
+  staging:
+    name: crawl events in staging
+    runs-on: ubuntu-18.04
+    steps:
+      - name: STAGING  Run remote commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: "staging.muenster-jetzt.de"
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            cd muenster-jetzt/staging
+            docker-compose exec -T api python -m mj crawl
+  production:
+    name: crawl events in production
+    runs-on: ubuntu-18.04
+    steps:
+      - name: PRODUCTION  Run remote commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: "muenster-jetzt.de"
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            cd muenster-jetzt/production
+            docker-compose exec -T api python -m mj crawl
