@@ -1,0 +1,33 @@
+name: Import events
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+jobs:
+  scrape-and-tweet:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Trigger staging import
+        uses: appleboy/ssh-action@master
+        with:
+          host: "staging.muenster-jetzt.de"
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            docker-compose -f /root/muenster-jetzt/staging/docker-compose.yml exec -T api python -m mj crawl
+
+      - name: Trigger production import
+        uses: appleboy/ssh-action@master
+        with:
+          host: "www.muenster-jetzt.de"
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            cd muenster-jetzt/staging
+            docker-compose -f /root/muenster-jetzt/production/docker-compose.yml exec -T api python -m mj crawl
