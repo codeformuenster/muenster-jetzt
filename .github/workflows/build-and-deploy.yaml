@@ -110,9 +110,9 @@ jobs:
 
           if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
             echo "##[set-output name=changes;]1"
-            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:${$branch_name}"
+            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:${branch_name}"
           else
-            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- .. | wc -l)"
             echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:master"
           fi
 
