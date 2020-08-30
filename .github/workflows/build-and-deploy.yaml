@@ -110,8 +110,10 @@ jobs:
 
           if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
             echo "##[set-output name=changes;]1"
+            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:${$branch_name}"
           else
             echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:master"
           fi
 
       - name: Install Node.js 14
@@ -139,6 +141,12 @@ jobs:
         run: |
           npm ci
 
+      - name: Replace FROM in backend Dockerfile to speed up build
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          sed -i 's/FROM .*/FROM ${{ steps.branch_info.outputs.cache_from_container_image }}/' deployment/Dockerfile.prod
+
+
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
         uses: docker/build-push-action@v1
@@ -148,7 +156,8 @@ jobs:
           dockerfile: backend/deployment/Dockerfile.prod
           tags: in-ci
           path: backend
-          cache_froms: codeformuenster/muenster-jetzt-api:master
+          always_pull: true
+          cache_froms: ${{ steps.branch_info.outputs.cache_from_container_image }}
 
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
