@@ -144,7 +144,7 @@ jobs:
       - name: Replace FROM in backend Dockerfile to speed up build
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          sed -i 's/FROM .*/FROM ${{ steps.branch_info.outputs.cache_from_container_image }}/' deployment/Dockerfile.prod
+          sed -i 's|FROM .*|FROM ${{ steps.branch_info.outputs.cache_from_container_image }}|' deployment/Dockerfile.prod
 
 
       - name: Build backend image
