@@ -144,8 +144,7 @@ jobs:
       - name: Replace FROM in backend Dockerfile to speed up build
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          sed -i 's|FROM .*|FROM ${{ steps.branch_info.outputs.cache_from_container_image }}|' deployment/Dockerfile.prod
-
+          sed -i 's|FROM .*|FROM ${{ steps.branch_info.outputs.cache_from_container_image }}|' ../backend/deployment/Dockerfile.prod
 
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
@@ -172,8 +171,8 @@ jobs:
       - name: Check for changes according to git
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          git update-index --refresh
-          git diff-index --exit-code -p HEAD
+          git update-index --refresh .
+          git diff-index --exit-code -p HEAD .
 
   frontend:
     name: Validate, test and build frontend
