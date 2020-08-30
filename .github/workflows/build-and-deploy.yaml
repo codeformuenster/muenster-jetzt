@@ -178,7 +178,6 @@ jobs:
   frontend:
     name: Validate, test and build frontend
     runs-on: ubuntu-18.04
-    needs: check-api-client-up-to-date
     defaults:
       run:
         working-directory: frontend
