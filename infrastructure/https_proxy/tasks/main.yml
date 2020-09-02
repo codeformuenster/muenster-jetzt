@@ -18,6 +18,13 @@
     owner: root
     group: root
     
+- name: Copy Dockerfile
+  copy:
+    src: files/Dockerfile
+    dest: /root/https-proxy/Dockerfile
+    owner: root
+    group: root
+    
 - name: start proxy
   command: docker-compose up -d
   args:

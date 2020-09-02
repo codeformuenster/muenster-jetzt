@@ -28,8 +28,10 @@
 
 .qrContainer{
   position: absolute;
-  bottom: 25px;
-  right: 25px
+  text-align: right;
+  width: 200px;
+  bottom: 30px;
+  right: 30px;
 }
 
 .qr {

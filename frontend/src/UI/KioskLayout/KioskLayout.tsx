@@ -1,6 +1,10 @@
 import React, { FC, useLayoutEffect } from "react";
 import styles from "./KioskLayout.module.css";
 
+import "purecss/build/base.css";
+import "./variables.css";
+import "./base.css";
+
 const KioskLayout: FC = ({ children }) => {
   useLayoutEffect(() => {
     [

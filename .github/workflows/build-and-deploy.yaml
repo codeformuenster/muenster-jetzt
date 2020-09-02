@@ -1,0 +1,359 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - master
+      - production
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  backend:
+    name: Build backend
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '2' # for comparison
+
+      - name: Gather branch information
+        id: branch_info
+        continue-on-error: true
+        run: |
+          branch_name=${GITHUB_REF##*/}
+          short_sha=${GITHUB_SHA:0:7}
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "We're running on ${branch_name} (${short_sha})"
+
+          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
+            echo "##[set-output name=changes;]1"
+          else
+            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          fi
+
+      - name: Debug
+        run: |
+          echo "Number of changed files in backend directory: '${{ steps.branch_info.outputs.changes }}'"
+
+      - name: Install python 3.8
+        if: steps.branch_info.outputs.changes != '0'
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.x'
+
+      - name: Get pip cache dir
+        if: steps.branch_info.outputs.changes != '0'
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache python dependencies
+        if: steps.branch_info.outputs.changes != '0'
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-python-deps
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ env.cache-name }}-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ env.cache-name }}-
+            ${{ runner.os }}-pip-
+
+      - name: Install and execute 'tox'
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          pip install tox
+          tox
+
+      - name: Build backend container image (and push to Docker Hub on master branch)
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_PASS }}
+          repository: codeformuenster/muenster-jetzt-api
+          dockerfile: backend/deployment/Dockerfile.prod
+          tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
+          path: backend
+          tag_with_ref: true
+          push: ${{ github.event_name == 'push' }}
+
+  check-api-client-up-to-date:
+    name: Check if generated api client is up to date
+    runs-on: ubuntu-18.04
+    needs: backend
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '2' # for comparison
+
+      - name: Gather branch information
+        id: branch_info
+        continue-on-error: true
+        run: |
+          branch_name=${GITHUB_REF##*/}
+          short_sha=${GITHUB_SHA:0:7}
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "We're running on ${branch_name} (${short_sha})"
+
+          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
+            echo "##[set-output name=changes;]1"
+            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:${branch_name}"
+          else
+            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- .. | wc -l)"
+            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:master"
+          fi
+
+      - name: Install Node.js 14
+        if: steps.branch_info.outputs.changes != '0'
+        uses: actions/setup-node@v2.1.1
+        with:
+          node-version: 14
+
+      - name: Cache node modules
+        if: steps.branch_info.outputs.changes != '0'
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Run 'npm ci' to install frontend dependencies
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          npm ci
+
+      - name: Replace FROM in backend Dockerfile to speed up build
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          sed -i 's|FROM .*|FROM ${{ steps.branch_info.outputs.cache_from_container_image }}|' ../backend/deployment/Dockerfile.prod
+
+      - name: Build backend image
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v1
+        with:
+          push: false
+          repository: muenster-jetzt-api
+          dockerfile: backend/deployment/Dockerfile.prod
+          tags: in-ci
+          path: backend
+          always_pull: true
+          cache_froms: ${{ steps.branch_info.outputs.cache_from_container_image }}
+
+      - name: Start container from backend image
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          docker run --rm -d --name backend -p 8000:8000 muenster-jetzt-api:in-ci
+
+      - name: Run 'npm run generate-client'
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          npm run generate-client
+
+      - name: Check for changes according to git
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          git checkout -- ../backend/deployment/Dockerfile.prod
+          git update-index --refresh
+          git diff-index --exit-code -p HEAD
+
+  frontend:
+    name: Validate, test and build frontend
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '2' # for comparison
+
+      - name: Gather branch information
+        id: branch_info
+        continue-on-error: true
+        run: |
+          branch_name=${GITHUB_REF##*/}
+          short_sha=${GITHUB_SHA:0:7}
+
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "We're running on ${branch_name} (${short_sha})"
+
+          echo "##[set-env name=REACT_APP_VERSION;]${branch_name}-${short_sha}"
+          if [ "$branch_name" = "production" ]; then
+            echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.muenster-jetzt.de"
+          else
+            echo "##[set-env name=REACT_APP_BACKEND_BASE_PATH;]https://api.staging.muenster-jetzt.de"
+          fi
+
+          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
+            echo "##[set-output name=changes;]1"
+          else
+            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+          fi
+
+      - name: Debug
+        run: |
+          echo "Number of changed files in frontend directory: '${{ steps.branch_info.outputs.changes }}'"
+
+      - name: Install Node.js 14
+        if: steps.branch_info.outputs.changes != '0'
+        uses: actions/setup-node@v2.1.1
+        with:
+          node-version: 14
+
+      - name: Cache node modules
+        if: steps.branch_info.outputs.changes != '0'
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+
+      - name: Run 'npm ci' to install frontend dependencies
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          npm ci
+
+      - name: Check frontend code style
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          npm run lint
+
+      - name: Run frontend tests
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          npm run test
+
+      - name: Build frontend
+        if: steps.branch_info.outputs.changes != '0'
+        run: |
+          echo "Executing npm run build with env REACT_APP_VERSION='$REACT_APP_VERSION' and REACT_APP_BACKEND_BASE_PATH='$REACT_APP_BACKEND_BASE_PATH'"
+          npm run build
+
+      - name: Build frontend container image (and push to Docker Hub on master branch)
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_PASS }}
+          repository: codeformuenster/muenster-jetzt-frontend
+          dockerfile: frontend/deployment/Dockerfile.prod
+          tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
+          path: frontend
+          tag_with_ref: true
+          push: ${{ github.event_name == 'push' }}
+
+  validate-compose:
+    name: Validate deployment docker-compose
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run docker-compose config
+        run: |
+          docker-compose -f deployment/docker-compose.yml config --quiet
+
+  deploy:
+    name: deploy to server
+    runs-on: ubuntu-18.04
+    needs:
+      - backend
+      - frontend
+      - validate-compose
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Extract branch name
+        id: branch_info
+        run: |
+          branch_name=${GITHUB_REF##*/}
+          short_sha=${GITHUB_SHA:0:7}
+
+          echo "##[set-output name=branch_name;]${branch_name}"
+          echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "We're running on ${branch_name} (${short_sha})"
+
+      - name: STAGING Copy docker-compose file to server
+        if: steps.branch_info.outputs.branch_name == 'master'
+        uses: easingthemes/ssh-deploy@v2.1.4
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+            # z = compress
+            # v = verbose
+            ARGS: "-zv"
+            SOURCE: deployment/docker-compose.yml
+            REMOTE_HOST: "staging.muenster-jetzt.de"
+            REMOTE_USER: root
+            TARGET: "/root/muenster-jetzt/staging/"
+
+      - name: STAGING  Run remote commands
+        if: steps.branch_info.outputs.branch_name == 'master'
+        uses: appleboy/ssh-action@master
+        with:
+          host: "staging.muenster-jetzt.de"
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            cd muenster-jetzt/staging
+            docker-compose pull
+            docker-compose up --detach --remove-orphans
+            docker-compose exec -T api python -m mj migrate
+            docker image prune --all --force
+
+      - name: PRODUCTION Copy docker-compose file to server
+        if: steps.branch_info.outputs.branch_name == 'production'
+        uses: easingthemes/ssh-deploy@v2.1.4
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+            # z = compress
+            # v = verbose
+            ARGS: "-zv"
+            SOURCE: deployment/docker-compose.yml
+            REMOTE_HOST: "www.muenster-jetzt.de"
+            REMOTE_USER: root
+            TARGET: "/root/muenster-jetzt/production/"
+
+      - name: PRODUCTION  Run remote commands
+        if: steps.branch_info.outputs.branch_name == 'production'
+        uses: appleboy/ssh-action@master
+        with:
+          host: "www.muenster-jetzt.de"
+          username: root
+          key: ${{ secrets.SSH_DEPLOY_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            cd muenster-jetzt/production
+            docker-compose pull
+            docker-compose up --detach --remove-orphans
+            docker-compose exec -T api python -m mj migrate
+            docker image prune --all --force

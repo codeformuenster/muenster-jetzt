@@ -1,0 +1,7 @@
+:root {
+  --kiosk-width: 100vh;
+  --kiosk-height: 100vw;
+  --kiosk-title-font-size: 72px;
+  --kiosk-subtitle-font-size: 46px;
+  --kiosk-facts-font-size: 36px;
+}

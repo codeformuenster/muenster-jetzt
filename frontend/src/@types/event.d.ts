@@ -1,5 +1,4 @@
-interface IEvent {
-  id: number;
+interface IEventBase {
   title?: string;
   subtitle?: string;
   description?: string;
@@ -7,4 +6,8 @@ interface IEvent {
   end?: Date;
   imageUrl?: string;
   externalUrl?: string;
+}
+
+interface IEvent extends IEventBase {
+  id: number;
 }

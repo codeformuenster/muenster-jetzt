@@ -53,7 +53,9 @@ const Slide: FC<ISlide> = ({
           title={title}
           className={styles.iframe}
           sandbox="allow-scripts allow-same-origin"
-          allow={`${Object.entries(iframeDefaultAllow).map(p => p.join(' ')).join('; ')};`}
+          allow={`${Object.entries(iframeDefaultAllow)
+            .map((p) => p.join(" "))
+            .join("; ")};`}
           scrolling="no"
           referrerPolicy="no-referrer"
         />
