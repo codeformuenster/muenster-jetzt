@@ -5,6 +5,22 @@ import { Get, GetProps, useGet, UseGetProps } from "restful-react";
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
+const encodingFn = encodeURIComponent;
+
+const encodingTagFactory = (encodingFn: typeof encodeURIComponent) => (
+  strings: TemplateStringsArray,
+  ...params: (string | number | boolean)[]
+) =>
+  strings.reduce(
+    (accumulatedPath, pathPart, idx) =>
+      `${accumulatedPath}${pathPart}${
+        idx < params.length ? encodingFn(params[idx]) : ""
+      }`,
+    ""
+  );
+
+const encode = encodingTagFactory(encodingFn);
+
 export interface Event {
   id: number;
   /**
@@ -78,7 +94,7 @@ export type RootGetProps = Omit<
  * Root
  */
 export const RootGet = (props: RootGetProps) => (
-  <Get<RootResponse, unknown, void, void> path={`/`} {...props} />
+  <Get<RootResponse, unknown, void, void> path={encode`/`} {...props} />
 );
 
 export type UseRootGetProps = Omit<
@@ -90,7 +106,7 @@ export type UseRootGetProps = Omit<
  * Root
  */
 export const useRootGet = (props: UseRootGetProps) =>
-  useGet<RootResponse, unknown, void, void>(`/`, props);
+  useGet<RootResponse, unknown, void, void>(encode`/`, props);
 
 export interface EventsEventsGetQueryParams {
   /**
@@ -126,7 +142,7 @@ export type EventsEventsGetProps = Omit<
  */
 export const EventsEventsGet = (props: EventsEventsGetProps) => (
   <Get<EventsResponse, HTTPValidationError, EventsEventsGetQueryParams, void>
-    path={`/events`}
+    path={encode`/events`}
     {...props}
   />
 );
@@ -146,6 +162,6 @@ export type UseEventsEventsGetProps = Omit<
  */
 export const useEventsEventsGet = (props: UseEventsEventsGetProps) =>
   useGet<EventsResponse, HTTPValidationError, EventsEventsGetQueryParams, void>(
-    `/events`,
+    encode`/events`,
     props
   );
