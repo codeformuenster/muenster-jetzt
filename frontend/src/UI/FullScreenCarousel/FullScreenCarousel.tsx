@@ -31,6 +31,7 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
       onSlideChange={(state) => {
         onSlide(state);
       }}
+      allowTouchMove={false}
     >
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <div
