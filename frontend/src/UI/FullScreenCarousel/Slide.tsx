@@ -16,6 +16,18 @@ const buildUrl = (
   return url;
 };
 
+const convertCssClass = function convertCssClass(
+  className: undefined | string | string[]
+): undefined | string {
+  if (typeof className === "undefined") {
+    return undefined;
+  }
+  if (typeof className === "string") {
+    return styles[className];
+  }
+  return className.map((x) => styles[x]).join(" ");
+};
+
 const Slide: FC<IEvent> = ({
   imageUrl,
   title,
@@ -23,11 +35,11 @@ const Slide: FC<IEvent> = ({
   description,
   externalUrl,
   style,
-  cssClassName,
+  cssClassNames,
 }) => {
   const query = useQuery();
   return (
-    <div className={cssClassName ? styles[cssClassName] : ""} style={style}>
+    <div className={convertCssClass(cssClassNames)} style={style}>
       <div className={styles.slideContainer}>
         {imageUrl && (
           <img alt={`Bild ${title}`} className={styles.image} src={imageUrl} />

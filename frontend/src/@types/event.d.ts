@@ -7,7 +7,7 @@ interface IEventBase {
   imageUrl?: string;
   externalUrl?: string;
   style?: CSSProperties;
-  cssClassName?: string;
+  cssClassNames?: string | string[];
 }
 
 interface IEvent extends IEventBase {
