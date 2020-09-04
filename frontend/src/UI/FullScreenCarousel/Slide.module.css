@@ -41,10 +41,8 @@
 
 .qrContainer{
   position: absolute;
-  text-align: right;
-  width: 200px;
-  bottom: 30px;
-  right: 30px;
+  bottom: 0;
+  right: -20px;
 }
 
 .qr {
@@ -73,4 +71,19 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
+}
+
+
+.vertical .slideContainer{
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.vertical .slideContainer .image{
+  margin-top: unset;
+  margin-bottom: unset;
+}
+
+.img-20-vh .slideContainer .image{
+  max-height: 20vh;
 }

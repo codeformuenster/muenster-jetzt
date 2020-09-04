@@ -40,7 +40,7 @@ services:
       - "traefik.http.routers.https-redirect.rule=HostRegexp(`{any:.*}`)"
       - "traefik.http.routers.https-redirect.middlewares=https-redirect"
       - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.msj-redirect.rule=Host(`www.muenster.jetzt`) || Host(`muenster.jetzt`)"
+      - "traefik.http.routers.msj-redirect.rule=Host(`www.muenster.jetzt`) || Host(`muenster.jetzt`) || Host(`app.muenster.jetzt`)"
       - "traefik.http.routers.msj-redirect.tls.certresolver=letsencrypt"
       - "traefik.http.routers.msj-redirect.middlewares=msj-main-redirect"
       - "traefik.http.middlewares.msj-main-redirect.redirectRegex.regex=.*"

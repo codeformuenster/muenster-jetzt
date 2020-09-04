@@ -3,7 +3,7 @@ import KioskLayout from "../UI/KioskLayout/KioskLayout";
 import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
 import useQuery from "../hooks/useQuery";
 
-import { mockData, mockData2 } from "./mockdata";
+import { mockData, msDisplay1 } from "./mockdata";
 
 const useMockData = () => {
   const query = useQuery();
@@ -11,7 +11,7 @@ const useMockData = () => {
   return useMemo(() => {
     switch (query?.device) {
       case "ms-display1":
-        return mockData2;
+        return msDisplay1;
       default:
         return mockData;
     }
