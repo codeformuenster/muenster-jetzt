@@ -1,19 +1,26 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { QRCode } from "react-qr-svg";
-import useQuery from "../../hooks/useQuery";
-
 import styles from "./Slide.module.css";
+import useDevice from "../../hooks/useDevice";
 
-const buildUrl = (
-  externalUrl: string,
-  query: Record<string, string | boolean> | null
-): string => {
-  let url = `${window.location.origin}/qr/`;
-  if (query != null && query.device) {
-    url += `${query.device}/`;
-  }
-  url += `?url=${encodeURI(externalUrl)}`;
-  return url;
+const useQRURL: (externalUrl?: string) => string = (externalUrl) => {
+  const device = useDevice();
+
+  return useMemo(() => {
+    if (!externalUrl) {
+      return "";
+    }
+
+    let url = `${window.location.origin}/qr/`;
+
+    if (device) {
+      url += `${device}/`;
+    }
+
+    url += `?url=${encodeURI(externalUrl)}`;
+
+    return url;
+  }, [device, externalUrl]);
 };
 
 const convertCssClass = function convertCssClass(
@@ -37,7 +44,8 @@ const Slide: FC<IEvent> = ({
   style,
   cssClassNames,
 }) => {
-  const query = useQuery();
+  const qrUrl = useQRURL(externalUrl);
+
   return (
     <div className={convertCssClass(cssClassNames)} style={style}>
       <div className={styles.slideContainer}>
@@ -52,10 +60,7 @@ const Slide: FC<IEvent> = ({
           )}
           {externalUrl && (
             <div className={styles.qrContainer}>
-              <QRCode
-                value={buildUrl(externalUrl, query)}
-                className={styles.qr}
-              />
+              <QRCode value={qrUrl} className={styles.qr} />
             </div>
           )}
         </div>
