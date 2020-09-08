@@ -10,6 +10,10 @@
   color: white;
 }
 
+.nav:focus {
+  outline: none;
+}
+
 .nav:after {
   background: rgba(12,12,12,0.3);
   padding: 50px;

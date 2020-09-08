@@ -1,21 +1,21 @@
 import React, { FC, useMemo } from "react";
 import KioskLayout from "../UI/KioskLayout/KioskLayout";
 import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
-import useQuery from "../hooks/useQuery";
+import useDevice from "../hooks/useDevice";
 
-import { mockData, mockData2 } from "./mockdata";
+import { mockData, msDisplay1 } from "./mockdata";
 
 const useMockData = () => {
-  const query = useQuery();
+  const device = useDevice();
 
   return useMemo(() => {
-    switch (query?.device) {
+    switch (device) {
       case "ms-display1":
-        return mockData2;
+        return msDisplay1;
       default:
         return mockData;
     }
-  }, [query]);
+  }, [device]);
 };
 
 const Kiosk: FC = () => {
