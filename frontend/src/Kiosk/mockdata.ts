@@ -5,7 +5,7 @@ const lambusEvent: IEventBase = {
   imageUrl: "https://www.bleker-it.de/download/db_lambus_1.png",
 };
 
-const msHack: IEventBase = {
+const msHack: Omit<ISlide, "id"> = {
   title: "MÜNSTERHACK 2020",
   subtitle: "Hackathon Für Münster",
   description:
@@ -26,7 +26,7 @@ const nafeEvent: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/nafe-qr.jpg",
 };
 
-const demoIntro: IEventBase = {
+const demoIntro: Omit<ISlide, "id"> = {
   imageUrl: msjlogo,
   title: "Demo Seite",
   description:
@@ -34,7 +34,7 @@ const demoIntro: IEventBase = {
   cssClassNames: "vertical",
 };
 
-const goBetaMs: IEventBase = {
+const goBetaMs: Omit<ISlide, "id"> = {
   externalUrl: "https://gobeta.de/ms",
   title: "Innovationen entdecken am Hauptbahnhof Münster",
   imageUrl: bahnLogo,
@@ -56,7 +56,7 @@ const goBetaIcons: IEventBase = {
     "https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/",
 };
 
-const msj: IEventBase = {
+const msj: Omit<ISlide, "id"> = {
   imageUrl: msjlogo,
   title: "Alle Veranstaltungen im Überblick",
   description:
@@ -65,8 +65,8 @@ const msj: IEventBase = {
   cssClassNames: "vertical",
 };
 
-const mindbox: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/Mindbox_Vitrine.png",
+const bikeParking: Omit<ISlide, "id"> = {
+  iFrame: { url: "https://bike-frontend.azurewebsites.net" },
 };
 
 export const mockData: IEvent[] = [
@@ -81,5 +81,5 @@ export const msDisplay1: IEvent[] = [
   { id: 2, ...msHack },
   { id: 3, ...nafeEvent },
   { id: 4, ...lambusEvent },
-  { id: 5, ...mindbox },
+  { id: 5, ...bikeParking },
 ];
