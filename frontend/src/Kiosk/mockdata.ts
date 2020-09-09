@@ -65,11 +65,7 @@ const msj: Omit<ISlide, "id"> = {
   cssClassNames: "vertical",
 };
 
-const mindbox: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/Mindbox_Vitrine.png",
-};
-
-const iFrame: Omit<ISlide, "id"> = {
+const bikeParking: Omit<ISlide, "id"> = {
   iFrame: { url: "https://bike-frontend.azurewebsites.net" },
 };
 
@@ -78,7 +74,6 @@ export const mockData: IEvent[] = [
   { id: 1, ...goBetaMs },
   { id: 2, ...msHack },
   { id: 3, ...msj },
-  { id: 4, ...iFrame },
 ];
 export const msDisplay1: IEvent[] = [
   { id: 0, ...hygiene },
@@ -86,5 +81,5 @@ export const msDisplay1: IEvent[] = [
   { id: 2, ...msHack },
   { id: 3, ...nafeEvent },
   { id: 4, ...lambusEvent },
-  { id: 5, ...mindbox },
+  { id: 5, ...bikeParking },
 ];
