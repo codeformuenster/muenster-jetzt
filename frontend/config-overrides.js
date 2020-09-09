@@ -7,7 +7,7 @@ const cspConfigPolicy = {
   'object-src': "'none'",
   'script-src': ["'self'"],
   'style-src': ["'self'"],
-  'img-src': ["'self'", "https://www.bleker-it.de", "https://www.muensterhack.de", "https://gobeta.de"],
+  'img-src': ["'self'", "https://muenster-jetzt.de", "https://www.bleker-it.de", "https://www.muensterhack.de", "https://gobeta.de"],
   'font-src': ["'self'","data:"],
   'frame-src': ["https://bike-frontend.azurewebsites.net"],
   'connect-src': ["'self'", process.env.REACT_APP_BACKEND_BASE_PATH],
