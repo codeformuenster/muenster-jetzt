@@ -5,7 +5,7 @@ const cspConfigPolicy = {
   'default-src': "'none'",
   'base-uri': "'self'",
   'object-src': "'none'",
-  'script-src': ["'self'"],
+  'script-src': [],
   'style-src': ["'self'"],
   'img-src': ["'self'", "https://muenster-jetzt.de", "https://www.bleker-it.de", "https://www.muensterhack.de", "https://gobeta.de"],
   'font-src': ["'self'","data:"],
