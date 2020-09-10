@@ -2,7 +2,7 @@ import msjlogo from "../images/ms-jetzt-logo.svg";
 import bahnLogo from "../images/logo_db_gobeta.svg";
 
 const lambusEvent: IEventBase = {
-  imageUrl: "https://www.bleker-it.de/download/db_lambus_1.png",
+  imageUrl: "https://muenster-jetzt.de/static/uploads/db_lambus_1.png",
 };
 
 const msHack: Omit<ISlide, "id"> = {
@@ -22,8 +22,12 @@ const hygiene: IEventBase = {
   externalUrl: "https://www.gemeinsamgehtdas.de/",
 };
 
-const nafeEvent: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/nafe-qr.jpg",
+// const nafeEvent: IEventBase = {
+//   imageUrl: "https://muenster-jetzt.de/static/uploads/nafe-qr.jpg",
+// };
+
+const vesputi: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/vesputi.jpg",
 };
 
 const demoIntro: Omit<ISlide, "id"> = {
@@ -43,7 +47,7 @@ const goBetaMs: Omit<ISlide, "id"> = {
     "#MünsterHbf ruft zum großen Sommertest: Im Rahmen des Projekts „Zukunftsbahnhof“ zeigen spannende Startups und lokale Partner ihre aktuellen Projekte rund um neue, komfortablere Mobilität. Und testen sie vor Ort, lokal, und mit echten Reisenden: Mit Euch!",
   style: {
     backgroundImage:
-      "url(https://gobeta.de/wp-content/uploads/2020/07/IMG_1610_begradigt_35_unschaerfe-3000x1934.png)",
+      "url(https://muenster-jetzt.de/static/uploads/go-beta-background.jpg)",
     backgroundSize: "cover",
     color: "white",
   },
@@ -79,7 +83,8 @@ export const msDisplay1: IEvent[] = [
   { id: 0, ...hygiene },
   { id: 1, ...goBetaIcons },
   { id: 2, ...msHack },
-  { id: 3, ...nafeEvent },
-  { id: 4, ...lambusEvent },
-  { id: 5, ...bikeParking },
+  { id: 3, ...vesputi },
+  { id: 4, ...bikeParking },
+  { id: 5, ...goBetaMs },
+  { id: 6, ...lambusEvent },
 ];
