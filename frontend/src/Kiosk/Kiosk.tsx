@@ -11,6 +11,7 @@ const useMockData = () => {
   return useMemo(() => {
     switch (device) {
       case "ms-display1":
+      case "ms-display9":
         return msDisplay1;
       default:
         return mockData;

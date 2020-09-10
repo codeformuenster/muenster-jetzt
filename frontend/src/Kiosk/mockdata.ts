@@ -2,10 +2,10 @@ import msjlogo from "../images/ms-jetzt-logo.svg";
 import bahnLogo from "../images/logo_db_gobeta.svg";
 
 const lambusEvent: IEventBase = {
-  imageUrl: "https://www.bleker-it.de/download/db_lambus_1.png",
+  imageUrl: "https://muenster-jetzt.de/static/uploads/db_lambus_1.png",
 };
 
-const msHack: IEventBase = {
+const msHack: Omit<ISlide, "id"> = {
   title: "MÜNSTERHACK 2020",
   subtitle: "Hackathon Für Münster",
   description:
@@ -22,11 +22,15 @@ const hygiene: IEventBase = {
   externalUrl: "https://www.gemeinsamgehtdas.de/",
 };
 
-const nafeEvent: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/nafe-qr.jpg",
+// const nafeEvent: IEventBase = {
+//   imageUrl: "https://muenster-jetzt.de/static/uploads/nafe-qr.jpg",
+// };
+
+const vesputi: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/vesputi.jpg",
 };
 
-const demoIntro: IEventBase = {
+const demoIntro: Omit<ISlide, "id"> = {
   imageUrl: msjlogo,
   title: "Demo Seite",
   description:
@@ -34,7 +38,7 @@ const demoIntro: IEventBase = {
   cssClassNames: "vertical",
 };
 
-const goBetaMs: IEventBase = {
+const goBetaMs: Omit<ISlide, "id"> = {
   externalUrl: "https://gobeta.de/ms",
   title: "Innovationen entdecken am Hauptbahnhof Münster",
   imageUrl: bahnLogo,
@@ -43,7 +47,7 @@ const goBetaMs: IEventBase = {
     "#MünsterHbf ruft zum großen Sommertest: Im Rahmen des Projekts „Zukunftsbahnhof“ zeigen spannende Startups und lokale Partner ihre aktuellen Projekte rund um neue, komfortablere Mobilität. Und testen sie vor Ort, lokal, und mit echten Reisenden: Mit Euch!",
   style: {
     backgroundImage:
-      "url(https://gobeta.de/wp-content/uploads/2020/07/IMG_1610_begradigt_35_unschaerfe-3000x1934.png)",
+      "url(https://muenster-jetzt.de/static/uploads/go-beta-background.jpg)",
     backgroundSize: "cover",
     color: "white",
   },
@@ -56,7 +60,7 @@ const goBetaIcons: IEventBase = {
     "https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/",
 };
 
-const msj: IEventBase = {
+const msj: Omit<ISlide, "id"> = {
   imageUrl: msjlogo,
   title: "Alle Veranstaltungen im Überblick",
   description:
@@ -65,8 +69,8 @@ const msj: IEventBase = {
   cssClassNames: "vertical",
 };
 
-const mindbox: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/Mindbox_Vitrine.png",
+const bikeParking: Omit<ISlide, "id"> = {
+  iFrame: { url: "https://bike-frontend.azurewebsites.net" },
 };
 
 export const mockData: IEvent[] = [
@@ -79,7 +83,8 @@ export const msDisplay1: IEvent[] = [
   { id: 0, ...hygiene },
   { id: 1, ...goBetaIcons },
   { id: 2, ...msHack },
-  { id: 3, ...nafeEvent },
-  { id: 4, ...lambusEvent },
-  { id: 5, ...mindbox },
+  { id: 3, ...vesputi },
+  { id: 4, ...bikeParking },
+  { id: 5, ...goBetaMs },
+  { id: 6, ...lambusEvent },
 ];

@@ -5,7 +5,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.2",
-    "@testing-library/user-event": "^12.1.3",
+    "@testing-library/user-event": "^12.1.4",
     "@types/jest": "^26.0.13",
     "@types/node": "^14.6.4",
     "@types/react": "^16.9.49",
@@ -21,15 +21,15 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "restful-react": "^14.5.1",
-    "swiper": "^6.1.3",
+    "swiper": "^6.2.0",
     "timeago-react": "^3.0.0",
     "timeago.js": "^4.0.2",
     "typescript": "^4.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "NODE_ENV=production INLINE_RUNTIME_CHUNK=false IMAGE_INLINE_SIZE_LIMIT=0 react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && prettier --check src/**/*.ts{,x} && eslint src/**/*.ts{,x}",
@@ -56,6 +56,8 @@
     "@types/lodash-es": "^4.17.3",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
+    "csp-html-webpack-plugin": "^4.0.0",
+    "customize-cra": "^1.0.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-typescript": "^9.0.0",
     "eslint-config-prettier": "^6.11.0",
@@ -66,6 +68,7 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
     "node-sass": "^4.14.1",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "react-app-rewired": "^2.1.6"
   }
 }
