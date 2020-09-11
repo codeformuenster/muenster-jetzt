@@ -15,6 +15,7 @@ setup(
         'fastapi',
         'fastapi-camelcase',
         'peewee',
+        'peewee_migrate',
         'psycopg2-binary',
         'requests',
         'scrapy',
