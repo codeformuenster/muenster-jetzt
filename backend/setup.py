@@ -11,6 +11,7 @@ setup(
     packages=['mj'],
     install_requires=[
         'click',
+        'python-dotenv',
         'fastapi',
         'fastapi-camelcase',
         'peewee',

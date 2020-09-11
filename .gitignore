@@ -1,3 +1,10 @@
-__pycache__
-.env
 .DS_Store
+
+# secrets
+.env
+
+# IDE
+.vscode
+
+# python
+__pycache__
