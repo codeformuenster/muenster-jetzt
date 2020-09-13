@@ -18,7 +18,7 @@ interface IFullScreenCarousel {
 }
 
 const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
-  const { sendRequest: sendTrackingRequest, onSlide } = useKioskTracking();
+  const { sendRequest: sendTrackingRequest, onSlide: onSlideTracking } = useKioskTracking();
 
   const { startAutoplayResume, stopAutoplayResume } = useAutoplayResume(30000);
 
@@ -32,7 +32,7 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
       }}
       spaceBetween={40}
       onSlideChange={(state) => {
-        onSlide(state);
+        onSlideTracking(state);
 
         startAutoplayResume(state);
       }}
@@ -55,7 +55,9 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
       />
       {slides.map((slide) => (
         <SwiperSlide key={slide.id} data-kiosk-slide-id={slide.id}>
-          <Slide {...slide} />
+          {({ isActive }: { isActive: boolean }) => (
+            <Slide {...slide} playing={isActive} />
+          )}
         </SwiperSlide>
       ))}
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
