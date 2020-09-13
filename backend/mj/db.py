@@ -1,15 +1,16 @@
 import os
 
+import dotenv
 import peewee
 from playhouse.postgres_ext import PostgresqlExtDatabase
 
-
+dotenv.load_dotenv()
 db = PostgresqlExtDatabase(
-    os.getenv('DB_NAME', 'muensterjetzt'),
-    user=os.getenv('DB_USER', 'postgres'),
-    password=os.getenv('DB_PASSWORD', 'pgpass'),
-    host=os.getenv('DB_HOST', 'localhost'),
-    port=os.getenv('DB_PORT', 5432),
+    os.getenv('DB_NAME'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD'),
+    host=os.getenv('DB_HOST'),
+    port=os.getenv('DB_PORT'),
 )
 
 

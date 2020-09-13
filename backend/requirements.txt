@@ -34,6 +34,7 @@ pydispatcher==2.0.5       # via scrapy
 pyhamcrest==2.0.2         # via twisted
 pyhumps==1.6.1            # via fastapi-camelcase
 pyopenssl==19.1.0         # via scrapy
+python-dotenv==0.14.0     # via mj (setup.py)
 queuelib==1.5.0           # via scrapy
 requests==2.24.0          # via mj (setup.py)
 scrapy==2.2.1             # via mj (setup.py)
