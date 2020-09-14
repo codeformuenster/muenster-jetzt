@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { GetDataError } from "restful-react";
 import {
   EventsResponse,
   Event,
   HTTPValidationError,
+  EventsEventsGetQueryParams,
   useEventsEventsGet,
 } from "../generated-api-client";
 
@@ -13,7 +14,7 @@ export interface IAugmentedEvent extends Event {
 }
 
 interface IUseGetEvents {
-  (): {
+  (date?: string): {
     loading: boolean;
     error: GetDataError<HTTPValidationError> | null;
     events: IAugmentedEvent[] | null;
@@ -31,8 +32,20 @@ const parseDate: (date: string, time?: string) => Date | undefined = (
   }
 };
 
-const useGetEvents: IUseGetEvents = () => {
+const useGetEvents: IUseGetEvents = (date) => {
+  const queryParams = useMemo<EventsEventsGetQueryParams>(() => {
+    if (!date) {
+      return {};
+    }
+
+    return {
+      minDate: date,
+      maxDate: date,
+    };
+  }, [date]);
+
   const { loading, data, error } = useEventsEventsGet({
+    queryParams,
     resolve: (responseData: EventsResponse) => {
       return {
         ...responseData,
@@ -56,10 +69,12 @@ const useGetEvents: IUseGetEvents = () => {
   const [events, setEvents] = useState<IAugmentedEvent[] | null>(null);
 
   useEffect(() => {
-    if (data?.events) {
+    if (loading) {
+      setEvents(null);
+    } else if (data?.events) {
       setEvents(data.events as IAugmentedEvent[]);
     }
-  }, [data]);
+  }, [data, loading]);
 
   return { loading, error, events };
 };

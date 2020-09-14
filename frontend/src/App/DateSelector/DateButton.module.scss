@@ -1,0 +1,13 @@
+@import "../../styles/base.scss";
+
+.dateButton {
+  @extend .btn;
+}
+
+.isActive {
+  color: $primary;
+}
+
+.isToday {
+  background: $secondary;
+}

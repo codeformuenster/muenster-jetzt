@@ -17,7 +17,7 @@ ReactDOM.render(
       <Router>
         <TrackingWrapper />
         <Switch>
-          <Route path="/app">
+          <Route path="/app/:date">
             <App />
           </Route>
           <Route path="/kiosk">
