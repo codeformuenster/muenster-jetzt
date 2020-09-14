@@ -18,7 +18,10 @@ interface IFullScreenCarousel {
 }
 
 const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
-  const { sendRequest: sendTrackingRequest, onSlide: onSlideTracking } = useKioskTracking();
+  const {
+    sendRequest: sendTrackingRequest,
+    onSlide: onSlideTracking,
+  } = useKioskTracking();
 
   const { startAutoplayResume, stopAutoplayResume } = useAutoplayResume(30000);
 
