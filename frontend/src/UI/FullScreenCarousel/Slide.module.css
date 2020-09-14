@@ -81,3 +81,7 @@
 .img-20-vh .slideContainer .image{
   max-height: 20vh;
 }
+
+.video {
+  display: block;
+}

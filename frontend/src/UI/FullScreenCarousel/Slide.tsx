@@ -2,6 +2,12 @@ import React, { FC, useMemo } from "react";
 import { QRCode } from "react-qr-svg";
 import styles from "./Slide.module.css";
 import useDevice from "../../hooks/useDevice";
+import IFrameSlide from "./IFrameSlide";
+import VideoSlide from "./VideoSlide";
+
+interface ISlideComponent extends ISlide {
+  playing: boolean;
+}
 
 const useQRURL: (externalUrl?: string) => string = (externalUrl) => {
   const device = useDevice();
@@ -35,40 +41,7 @@ const convertCssClass = function convertCssClass(
   return className.map((x) => styles[x]).join(" ");
 };
 
-const iframeDefaultAllow = {
-  accelerometer: "'none'",
-  "ambient-light-sensor": "'none'",
-  autoplay: "'none'",
-  battery: "'none'",
-  camera: "'none'",
-  "display-capture": "'none'",
-  "document-domain": "'none'",
-  "encrypted-media": "'none'",
-  "execution-while-not-rendered": "'none'",
-  "execution-while-out-of-viewport": "'none'",
-  fullscreen: "'none'",
-  geolocation: "'none'",
-  gyroscope: "'none'",
-  "layout-animations": "'none'",
-  "legacy-image-formats": "'none'",
-  magnetometer: "'none'",
-  microphone: "'none'",
-  midi: "'none'",
-  "navigation-override": "'none'",
-  "oversized-images": "'none'",
-  payment: "'none'",
-  "picture-in-picture": "'none'",
-  "publickey-credentials-get": "'none'",
-  "sync-xhr": "'none'",
-  usb: "'none'",
-  vr: "'none'",
-  "wake-lock": "'none'",
-  "screen-wake-lock": "'none'",
-  "web-share": "'none'",
-  "xr-spatial-tracking": "'none'",
-};
-
-const Slide: FC<ISlide> = ({
+const Slide: FC<ISlideComponent> = ({
   imageUrl,
   title,
   subtitle,
@@ -77,24 +50,19 @@ const Slide: FC<ISlide> = ({
   style,
   cssClassNames,
   iFrame,
+  video,
+  playing,
 }) => {
   const qrUrl = useQRURL(externalUrl);
 
   return (
     <div className={convertCssClass(cssClassNames)} style={style}>
       <div className={styles.slideContainer}>
-        {iFrame?.url ? (
-          <iframe
-            src={iFrame.url}
-            title={title}
-            className={styles.iframe}
-            sandbox="allow-scripts allow-same-origin"
-            allow={`${Object.entries(iframeDefaultAllow)
-              .map((p) => p.join(" "))
-              .join("; ")};`}
-            scrolling="no"
-            referrerPolicy="no-referrer"
-          />
+        {iFrame || video ? (
+          <>
+            {iFrame?.url && <IFrameSlide iFrame={iFrame} title={title} />}
+            {video?.url && <VideoSlide video={video} playing={playing} />}
+          </>
         ) : (
           <>
             {imageUrl && (
