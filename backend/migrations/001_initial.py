@@ -3,7 +3,7 @@
 import peewee as pw
 
 
-def migrate(migrator, database, fake=False, **kwargs):
+def migrate(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
 
     @migrator.create_model
     class EventSource(pw.Model):
@@ -66,7 +66,7 @@ def migrate(migrator, database, fake=False, **kwargs):
             indexes = [(('source', 'source_event_id'), True)]
 
 
-def rollback(migrator, database, fake=False, **kwargs):
+def rollback(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
     migrator.remove_model('event')
     migrator.remove_model('organizer')
     migrator.remove_model('location')

@@ -3,7 +3,7 @@
 import peewee as pw
 
 
-def migrate(migrator, database, fake=False, **kwargs):
+def migrate(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
 
     @migrator.create_model
     class EventImage(pw.Model):
@@ -21,5 +21,5 @@ def migrate(migrator, database, fake=False, **kwargs):
             table_name = "eventimage"
 
 
-def rollback(migrator, database, fake=False, **kwargs):
+def rollback(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
     migrator.remove_model('eventimage')
