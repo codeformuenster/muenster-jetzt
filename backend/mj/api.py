@@ -48,4 +48,4 @@ def events(
     if max_date:
         events = events.where(Event.start_date <= max_date)
     events = events.paginate(page, limit)
-    return {'events': [model_to_dict(e) for e in events]}
+    return {'events': [model_to_dict(e, backrefs=True) for e in events]}

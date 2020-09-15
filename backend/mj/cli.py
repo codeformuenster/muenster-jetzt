@@ -1,10 +1,12 @@
 import click
 import uvicorn
+from peewee_migrate import Router
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
 from scrapy.spiderloader import SpiderLoader
 
-from mj.db import db, Event, EventSource, Location, Organizer
+import mj
+from mj.db import db
 
 
 @click.group()
@@ -14,8 +16,20 @@ def cli():
 
 @cli.command(help='Apply all pending database migrations')
 def migrate():
+    router = Router(db)
+    # Backwards-compatibility for databases that were initialized via peewee's
+    # db.create_tables() before we added migrations
     with db:
-        db.create_tables([Event, EventSource, Location, Organizer])
+        if db.table_exists('event') and not db.table_exists('migratehistory'):
+            router.run('001_initial', fake=True)
+    router.run()
+
+
+@cli.command(help='Auto-detect model changes and create database migrations')
+@click.argument('name')
+def makemigrations(name):
+    router = Router(db, ignore=['mjmodel'])
+    router.create(name, auto=mj)
 
 
 @cli.command(help='Serve muenster-jetzt API')

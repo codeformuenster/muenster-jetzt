@@ -1,5 +1,5 @@
 import datetime
-from typing import Optional
+from typing import List, Optional
 
 from fastapi_camelcase import CamelModel
 from pydantic import Field
@@ -18,6 +18,13 @@ class Organizer(CamelModel):
 class EventSource(CamelModel):
     id: int
     name: str
+
+
+class EventImage(CamelModel):
+    id: int
+    url: str
+    description: Optional[str] = None
+    source: Optional[str] = None
 
 
 class Event(CamelModel):
@@ -45,3 +52,4 @@ class Event(CamelModel):
     performer: Optional[str] = None
     mode: Optional[str] = None
     organizer: Optional[Organizer] = None
+    images: List[EventImage]
