@@ -73,6 +73,12 @@ const bikeParking: Omit<ISlide, "id"> = {
   iFrame: { url: "https://bike-frontend.azurewebsites.net" },
 };
 
+const bahnhofLiveAppVideo: Omit<ISlide, "id"> = {
+  video: {
+    url: "https://muenster-jetzt.de/static/uploads/testvideo-notpublic.mp4",
+  },
+};
+
 export const mockData: IEvent[] = [
   { id: 0, ...demoIntro },
   { id: 1, ...goBetaMs },
@@ -87,4 +93,5 @@ export const msDisplay1: IEvent[] = [
   { id: 4, ...bikeParking },
   { id: 5, ...goBetaMs },
   { id: 6, ...lambusEvent },
+  { id: 7, ...bahnhofLiveAppVideo },
 ];

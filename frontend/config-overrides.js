@@ -11,6 +11,7 @@ const cspConfigPolicy = {
   'font-src': ["'self'","data:"],
   'frame-src': ["https://bike-frontend.azurewebsites.net"],
   'connect-src': ["'self'", process.env.REACT_APP_BACKEND_BASE_PATH],
+  'media-src': ["https://muenster-jetzt.de"],
 };
 
 function addCspHtmlWebpackPlugin(config) {

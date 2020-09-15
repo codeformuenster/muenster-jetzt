@@ -7,6 +7,15 @@ You can learn more about [Create React App](https://github.com/facebook/create-r
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Custom environment variables
+
+The app uses some custom environment variables for configuration at runtime and production building
+
+| var | description |
+| --- | --- |
+| `REACT_APP_BACKEND_BASE_PATH` | The URL used by the frontend to reach the api. Default is `http://localhost:8000`. CI sets this to `https://api(.staging).muenster-jetzt.de` depending on the branch. |
+| `REACT_APP_VERSION` | Version string used in a meta tag in index.html. CI sets this to `{branch}-{short_sha}` where `branch` is the current branch and `short_sha` are the first 7 characters of the git commit sha. |
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -18,6 +27,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+To use the staging (or production) api for development, start the app like this:
+
+```
+REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de npm run start
+```
 
 ### `npm test`
 

@@ -22,7 +22,7 @@ This guide will help you to setup everything in a convenient way without the typ
 ### Pre-Requirements
 Install the following things:
 * [Docker](https://www.docker.com/)
-* [Docker-Compose](https://docs.docker.com/compose/)
+* [Docker-Compose](https://docs.docker.com/compose/), version 1.26.2 or greater
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Visual Studio Code Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
