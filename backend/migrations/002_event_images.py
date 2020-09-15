@@ -6,7 +6,7 @@ import peewee as pw
 def migrate(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
 
     @migrator.create_model
-    class EventImage(pw.Model):
+    class EventImage(pw.Model):  # skipcq: PYL-W0612
         id = pw.AutoField()
         event = pw.ForeignKeyField(
             backref='images',

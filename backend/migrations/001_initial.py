@@ -6,7 +6,7 @@ import peewee as pw
 def migrate(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
 
     @migrator.create_model
-    class EventSource(pw.Model):
+    class EventSource(pw.Model):  # skipcq: PYL-W0612
         id = pw.AutoField()
         name = pw.CharField(max_length=255, unique=True)
 
@@ -14,7 +14,7 @@ def migrate(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
             table_name = "eventsource"
 
     @migrator.create_model
-    class Location(pw.Model):
+    class Location(pw.Model):  # skipcq: PYL-W0612
         id = pw.AutoField()
         description = pw.CharField(max_length=255, unique=True)
 
@@ -22,7 +22,7 @@ def migrate(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
             table_name = "location"
 
     @migrator.create_model
-    class Organizer(pw.Model):
+    class Organizer(pw.Model):  # skipcq: PYL-W0612
         id = pw.AutoField()
         name = pw.CharField(max_length=255, unique=True)
 
@@ -30,7 +30,7 @@ def migrate(migrator, database, fake=False, **kwargs):  # skipcq: PYL-W0613
             table_name = "organizer"
 
     @migrator.create_model
-    class Event(pw.Model):
+    class Event(pw.Model):  # skipcq: PYL-W0612
         id = pw.AutoField()
         source = pw.ForeignKeyField(
             backref='event_set',
