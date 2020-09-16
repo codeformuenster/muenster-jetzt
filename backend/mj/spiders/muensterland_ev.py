@@ -71,11 +71,15 @@ class MuensterlandEvSpider(EventSpider):
                 "end_time": end_datetime[1],
                 "location": address,
                 "performer": "",
-                "mode": event["types"][0]["name"]
-                if ("types" in event) and len(event["types"]) > 0
-                else "",
-                "organizer": event["event_organizers"][0]["name"]
-                if ("event_organizers" in event)
-                and len(event["event_organizers"]) > 0
-                else "",
+                "mode": (
+                    event["types"][0]["name"]
+                    if ("types" in event) and len(event["types"]) > 0
+                    else ""
+                ),
+                "organizer": (
+                    event["event_organizers"][0]["name"]
+                    if ("event_organizers" in event)
+                    and len(event["event_organizers"]) > 0
+                    else ""
+                ),
             }
