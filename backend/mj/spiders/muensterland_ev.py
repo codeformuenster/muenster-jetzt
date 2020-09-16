@@ -57,7 +57,7 @@ class MuensterlandEvSpider(EventSpider):
                 )
 
             yield {
-                "source_event_id": "mst-ev-" + str(event["id"]),
+                "source_event_id": str(event["id"]),
                 "name": event["name"],
                 "description": event["description_text"],
                 "url": event["external_link"],
