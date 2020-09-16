@@ -18,8 +18,12 @@ class MuensterlandEvSpider(EventSpider):
 
     def start_requests(self):
 
-        if not (os.getenv("DATENPORTAL_USER") and os.getenv("DATENPORTAL_PASSWORD")):
-            self.logger.error("Set the DATENPORTAL_USER & DATENPORTAL_PASSWORD env")
+        if not (
+            os.getenv("DATENPORTAL_USER") and os.getenv("DATENPORTAL_PASSWORD")
+        ):
+            self.logger.error(
+                "Set the DATENPORTAL_USER & DATENPORTAL_PASSWORD env"
+            )
             raise CloseSpider("missing_auth")
 
         URL = "https://www.datenportal-muensterland.de/api/v1/events"
@@ -71,6 +75,7 @@ class MuensterlandEvSpider(EventSpider):
                 if ("types" in event) and len(event["types"]) > 0
                 else "",
                 "organizer": event["event_organizers"][0]["name"]
-                if ("event_organizers" in event) and len(event["event_organizers"]) > 0
+                if ("event_organizers" in event)
+                and len(event["event_organizers"]) > 0
                 else "",
             }
