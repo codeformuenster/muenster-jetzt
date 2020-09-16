@@ -58,3 +58,11 @@ class Event(MJModel):
     performer = peewee.CharField(null=True)
     mode = peewee.CharField(null=True)
     organizer = peewee.ForeignKeyField(Organizer, null=True)
+
+
+class EventImage(MJModel):
+    id = peewee.AutoField()
+    event = peewee.ForeignKeyField(Event, backref='images')
+    url = peewee.CharField(max_length=4095)
+    description = peewee.CharField(max_length=4095, null=True)
+    source = peewee.CharField(max_length=1023, null=True)

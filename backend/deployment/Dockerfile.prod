@@ -9,6 +9,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY mj mj
+COPY migrations migrations
 COPY setup.py .
 
 RUN pip install .

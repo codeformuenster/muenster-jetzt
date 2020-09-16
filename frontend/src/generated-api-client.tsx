@@ -50,6 +50,14 @@ export interface Event {
   performer?: string;
   mode?: string;
   organizer?: Organizer;
+  images: EventImage[];
+}
+
+export interface EventImage {
+  id: number;
+  url: string;
+  description?: string;
+  source?: string;
 }
 
 export interface EventSource {
