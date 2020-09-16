@@ -10,6 +10,7 @@ interface IEventsList {
 const EventsList: FC<IEventsList> = ({ events }) => {
   return (
     <div>
+      {events.length === 0 && <p>Hier scheint heute nix los</p>}
       {events.map((e) => (
         <EventsListItem key={e.id} {...e} />
       ))}

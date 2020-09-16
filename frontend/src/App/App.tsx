@@ -7,6 +7,7 @@ import EventsList from "./EventsList/EventsList";
 
 import useGetEvents from "../hooks/useGetEvents";
 import DateSelector from "./DateSelector/DateSelector";
+import LoadingEventListItem from "./EventsListItem/LoadingEventListItem";
 
 interface IAppParams {
   date?: string;
@@ -20,7 +21,7 @@ const App: FC = () => {
     <Layout>
       <DateSelector />
       <div className={styles.container}>
-        {loading && <p>Daten werden geladen</p>}
+        {loading && <LoadingEventListItem />}
         {error && <p>{error.message}</p>}
         {!loading && events && <EventsList events={events} />}
       </div>

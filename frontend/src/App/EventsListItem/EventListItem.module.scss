@@ -1,5 +1,7 @@
 @import "../../styles/base.scss";
 
 .eventlistItem {
-
+  &:not(:last-child) {
+    border-bottom: 1px solid $secondary;
+  }
 }
