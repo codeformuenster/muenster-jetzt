@@ -45,10 +45,22 @@ export const formatDuration: IFormatDuration = (start, end) => {
   return "";
 };
 
-export const formatTime = new Intl.DateTimeFormat("de-DE", {
+const hhmmTimeFormat = new Intl.DateTimeFormat("de-DE", {
   hour: "2-digit",
   minute: "2-digit",
 }).format;
+
+interface IFormatTime {
+  (date?: Date): string;
+}
+
+export const formatTime: IFormatTime = (date) => {
+  if (date) {
+    return hhmmTimeFormat(date);
+  }
+
+  return "";
+};
 
 interface IParseDate {
   (date: string, time?: string): Date | undefined;
