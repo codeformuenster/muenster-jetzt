@@ -37,7 +37,7 @@ class MuensterlandEvSpider(EventSpider):
             + "?filter[starts_after]="
             + today.strftime("%Y-%m-%d")
             + "&sort=events.start_datetime"
-            + "&page[size]=20"
+            + "&page[size]=200"
         )
 
         auth = basic_auth_header(USER, PASSWORD)
