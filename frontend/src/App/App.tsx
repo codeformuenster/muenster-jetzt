@@ -21,7 +21,7 @@ const App: FC = () => {
       <DateSelector />
       <div className={styles.container}>
         {loading && <p>Daten werden geladen</p>}
-        {error}
+        {error && <p>{error.message}</p>}
         {!loading && events && <EventsList events={events} />}
       </div>
     </Layout>

@@ -1,20 +1,32 @@
 import React, { FC } from "react";
 import { IAugmentedEvent } from "../../hooks/useGetEvents";
-import RelativeTime from "../../Helpers/RelativeTime";
 import styles from "./EventListItem.module.scss";
+import ExternalLink from "../../Helpers/ExternalLink";
 
 const EventsListItem: FC<IAugmentedEvent> = ({
-  id,
   name,
   description,
-  start,
+  location,
+  performer,
+  externalUrl,
+  formattedStart,
+  formattedEnd,
+  duration,
 }) => {
   return (
     <div className={styles.eventlistItem}>
       <h2>
-        {id}: {name} (<RelativeTime datetime={start} />)
+        {formattedStart}
+        {formattedEnd ? <> – {formattedEnd}</> : ""}: {name}
       </h2>
+      {performer && <p>{performer}</p>}
       <p>{description}</p>
+      <p>
+        {location.description} {duration && <> ({duration})</>}{" "}
+        {externalUrl && (
+          <ExternalLink href={externalUrl}>weitere Informationen</ExternalLink>
+        )}
+      </p>
     </div>
   );
 };

@@ -7,10 +7,17 @@ import {
   EventsEventsGetQueryParams,
   useEventsEventsGet,
 } from "../generated-api-client";
+import { parseDate, formatTime, formatDuration } from "../utils/eventTime";
 
 export interface IAugmentedEvent extends Event {
   start?: Date;
   end?: Date;
+
+  duration: string;
+  formattedStart: string;
+  formattedEnd: string;
+
+  externalUrl?: string;
 }
 
 interface IUseGetEvents {
@@ -21,15 +28,12 @@ interface IUseGetEvents {
   };
 }
 
-const parseDate: (date: string, time?: string) => Date | undefined = (
-  date,
-  time = "00:00:00"
-) => {
-  try {
-    return new Date(`${date}T${time}Z`);
-  } catch (e) {
-    return undefined;
+const augmentUrl: (url?: string) => string | undefined = (url) => {
+  if (url) {
+    return `${window.location.origin}/external/?url=${encodeURI(url)}`;
   }
+
+  return undefined;
 };
 
 const useGetEvents: IUseGetEvents = (date) => {
@@ -61,6 +65,10 @@ const useGetEvents: IUseGetEvents = (date) => {
             ...event,
             start,
             end,
+            formattedStart: formatTime(start),
+            formattedEnd: formatTime(end),
+            duration: formatDuration(start, end),
+            externalUrl: augmentUrl(event.url),
           };
         }),
       };

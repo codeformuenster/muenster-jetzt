@@ -4,7 +4,7 @@ import * as timeago from "timeago.js";
 import de from "timeago.js/lib/lang/de";
 
 interface IRelativeTime {
-  datetime: Date | undefined;
+  datetime?: Date;
 }
 
 timeago.register("de", de);
