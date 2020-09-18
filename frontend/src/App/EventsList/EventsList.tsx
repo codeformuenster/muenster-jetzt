@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styles from "./EventList.module.scss"
+import styles from "./EventList.module.scss";
 
 import EventsListItem from "../EventsListItem/EventListItem";
 import { IAugmentedEvent } from "../../hooks/useGetEvents";
