@@ -2,6 +2,5 @@
 
 .container {
   @include make-row(0);
-  max-width: $app-page-max-width;
   padding: 0 0 0 $spacer * 1;
 }

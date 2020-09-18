@@ -1,7 +1,20 @@
 @import "../../styles/base.scss";
 
 .eventlistItem {
-  &:not(:last-child) {
-    border-bottom: 1px solid $secondary;
+  @include make-col-ready();
+  margin-bottom: $spacer;
+  background: $white;
+  will-change: transform;
+  transition: transform 500ms ease;
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+  @include media-breakpoint-down(sm) {
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+    }
   }
 }
