@@ -1,11 +1,55 @@
 @import "../../styles/base.scss";
 
+.dateButtonContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vw / 4);
+  padding-bottom: 5px;
+}
+
+.dateTitle {
+  font-size: 10pt;
+}
+
+.isWeekendTitle {
+  color: $primary;
+}
+
+.isTodayTitle {
+  color: $secondary;
+}
+
+
+.dateButtonWrapper {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+}
+
 .dateButton {
   @extend .btn;
+  border-radius: 50%;
+  height: calc((100vw - 20px) / 8);
+  width: calc((100vw - 20px) / 8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 2px gray;
+  background-color: #eeeeee;
+  transition: transform 0.5s linear;
 }
 
 .isActive {
-  color: $primary;
+  transform: translateY(-50%);
+}
+
+.isWeekend {
+  color: white;
+  background-color: $primary;
+
+  &:focus {
+    color: white;
+  }
 }
 
 .isToday {

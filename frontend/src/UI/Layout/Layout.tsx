@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { useLocation, useParams } from 'react-router-dom'
 import "../../styles/base.scss";
 import styles from "./Layout.module.scss";
 

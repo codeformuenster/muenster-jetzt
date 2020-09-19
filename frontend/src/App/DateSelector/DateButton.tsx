@@ -16,17 +16,34 @@ const DateButton: FC<IDateButton> = ({ shortLabel, to, label, isoDate }) => {
     return new Date().toISOString().slice(0, 10) === isoDate;
   }, [isoDate]);
 
+  const isWeekend = ['Sa', 'So'].includes(shortLabel)
+
+  const dateArray : string[] = to?.split('-');
+  const dayMonth : string = `${dateArray[2]}.${dateArray[1]}`;
+
   return (
-    <Link
-      className={clsx(styles.dateButton, {
-        [styles.isActive]: location.pathname === to,
-        [styles.isToday]: isToday,
-      })}
-      to={to}
-      title={label}
-    >
-      {shortLabel}
-    </Link>
+    <div className={styles.dateButtonContainer}>
+      <span className={clsx(styles.dateTitle, {
+          [styles.isWeekendTitle]: isWeekend,
+          [styles.isTodayTitle]: isToday,
+        })}
+      >
+        {dayMonth}
+      </span>
+      <div className={styles.dateButtonWrapper}>
+        <Link
+          className={clsx(styles.dateButton, {
+            [styles.isActive]: location.pathname === to,
+            [styles.isWeekend]: isWeekend,
+            [styles.isToday]: isToday,
+          })}
+          to={to}
+          title={label}
+        >
+          {shortLabel}
+        </Link>
+      </div>
+    </div>
   );
 };
 
