@@ -17,8 +17,14 @@ const App: FC = () => {
   const { date } = useParams<IAppParams>();
   const { loading, error, events } = useGetEvents(date);
 
+  let dayMonth : string = ''
+  if (date) {
+    const dateArray : string[] = date?.split('-');
+    dayMonth = `${dateArray[2]}.${dateArray[1]}`;
+  }
+
   return (
-    <Layout>
+    <Layout dayMonth={dayMonth} >
       <DateSelector />
       <div className={styles.container}>
         {loading && <LoadingEventListItem />}
