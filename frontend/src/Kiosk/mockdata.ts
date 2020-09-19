@@ -42,7 +42,7 @@ const goBetaMs: Omit<ISlide, "id"> = {
   externalUrl: "https://gobeta.de/ms",
   title: "Innovationen entdecken am Hauptbahnhof Münster",
   imageUrl: bahnLogo,
-  subtitle: "19. - 27. September 2020",
+  subtitle: "19. - 26. September 2020",
   description:
     "#MünsterHbf ruft zum großen Sommertest: Im Rahmen des Projekts „Zukunftsbahnhof“ zeigen spannende Startups und lokale Partner ihre aktuellen Projekte rund um neue, komfortablere Mobilität. Und testen sie vor Ort, lokal, und mit echten Reisenden: Mit Euch!",
   style: {
@@ -58,6 +58,14 @@ const goBetaIcons: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/db_icons.png",
   externalUrl:
     "https://gobeta.de/projekte/neue-angebote-am-hauptbahnhof-muenster-ausprobieren-im-sommer-2020/",
+};
+
+const singleton: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/singleton.jpg",
+};
+
+const infabSpaet: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/infab-spaetdran.jpg",
 };
 
 const msj: Omit<ISlide, "id"> = {
@@ -79,6 +87,12 @@ const bahnhofLiveAppVideo: Omit<ISlide, "id"> = {
   },
 };
 
+const goBetaVideo: Omit<ISlide, "id"> = {
+  video: {
+    url: "https://muenster-jetzt.de/static/uploads/raysono-v3.mp4",
+  },
+};
+
 export const mockData: IEvent[] = [
   { id: 0, ...demoIntro },
   { id: 1, ...goBetaMs },
@@ -94,4 +108,17 @@ export const msDisplay1: IEvent[] = [
   { id: 5, ...goBetaMs },
   { id: 6, ...lambusEvent },
   { id: 7, ...bahnhofLiveAppVideo },
+];
+
+export const msDisplay9: IEvent[] = [
+  { id: 0, ...hygiene },
+  { id: 1, ...goBetaVideo },
+  { id: 2, ...msHack },
+  { id: 3, ...singleton },
+  { id: 4, ...bikeParking },
+  { id: 5, ...hygiene },
+  { id: 6, ...goBetaMs },
+  { id: 7, ...lambusEvent },
+  { id: 8, ...bahnhofLiveAppVideo },
+  { id: 9, ...infabSpaet },
 ];
