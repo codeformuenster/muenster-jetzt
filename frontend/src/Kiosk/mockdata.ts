@@ -24,7 +24,8 @@ const hygiene: IEventBase = {
 
 const nafeEvent: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/nafe.jpg",
-  externalUrl: "https://gobeta.de/news/probiere-die-neue-mikromobilitaetsapp-nafe-aus/",
+  externalUrl:
+    "https://gobeta.de/news/probiere-die-neue-mikromobilitaetsapp-nafe-aus/",
 };
 
 const vesputi: IEventBase = {
@@ -65,7 +66,8 @@ const infabSpaet: IEventBase = {
 
 const infabMock: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-mock.jpg",
-  externalUrl: "https://gobeta.de/projekte/radparken-der-zukunft-gemeinsam-mobile-perspektiven-schaffen/",
+  externalUrl:
+    "https://gobeta.de/projekte/radparken-der-zukunft-gemeinsam-mobile-perspektiven-schaffen/",
 };
 
 const icePortal: IEventBase = {
@@ -77,7 +79,8 @@ const gornationTeam: IEventBase = {
 };
 
 const gornationSocialmedia: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/gornation-socialmedia.jpg",
+  imageUrl:
+    "https://muenster-jetzt.de/static/uploads/v1/gornation-socialmedia.jpg",
   externalUrl: "https://gobeta.de/projekte/pop-up-store-lokal-digital/",
 };
 

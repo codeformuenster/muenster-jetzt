@@ -3,7 +3,15 @@ import KioskLayout from "../UI/KioskLayout/KioskLayout";
 import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
 import useDevice from "../hooks/useDevice";
 
-import { mockData, msDisplay1, msDisplay9, msDisplay6, msPopupAussen, msVitrineAllgemein, msPopupInnen,  } from "./mockdata";
+import {
+  mockData,
+  msDisplay1,
+  msDisplay9,
+  msDisplay6,
+  msPopupAussen,
+  msVitrineAllgemein,
+  msPopupInnen,
+} from "./mockdata";
 
 const useMockData = () => {
   const device = useDevice();
