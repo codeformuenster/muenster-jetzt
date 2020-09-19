@@ -3,7 +3,7 @@ import KioskLayout from "../UI/KioskLayout/KioskLayout";
 import FullScreenCarousel from "../UI/FullScreenCarousel/FullScreenCarousel";
 import useDevice from "../hooks/useDevice";
 
-import { mockData, msDisplay1 } from "./mockdata";
+import { mockData, msDisplay1, msDisplay9 } from "./mockdata";
 
 const useMockData = () => {
   const device = useDevice();
@@ -11,8 +11,9 @@ const useMockData = () => {
   return useMemo(() => {
     switch (device) {
       case "ms-display1":
-      case "ms-display9":
         return msDisplay1;
+      case "ms-display9":
+        return msDisplay9;
       default:
         return mockData;
     }

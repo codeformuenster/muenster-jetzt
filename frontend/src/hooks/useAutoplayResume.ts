@@ -27,7 +27,9 @@ const useAutoplayResume: IUseAutoplayResume = (timeout) => {
     stopAutoplayResume();
 
     autoplayTimeout.current = window.setTimeout(() => {
-      swiperState.autoplay.start();
+      if (swiperState && swiperState.autoplay) {
+        swiperState.autoplay.start();
+      }
     }, timeout);
   };
 
