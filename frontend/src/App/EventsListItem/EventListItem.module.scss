@@ -1,6 +1,6 @@
 @import "../../styles/base.scss";
 
-.eventlistItem {
+.eventListItem {
   @include make-col-ready();
   margin-bottom: $spacer;
   background: $white;
@@ -8,6 +8,10 @@
   transition: transform 500ms ease;
   -webkit-font-smoothing: subpixel-antialiased;
   backface-visibility: hidden;
+  padding: 5px;
+  background-color: $secondary;
+  color: white;
+  box-shadow: 1px 2px 2px gray;
 
   @include media-breakpoint-up(md) {
     @include make-col(4);
@@ -17,4 +21,54 @@
       border-bottom: 1px solid $border-color;
     }
   }
+}
+
+.evenInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.eventInfoTitleRow {
+  min-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.eventInfoTitle {
+  flex: 1;
+}
+
+.eventInfoLocation {
+  min-width: 100px;
+}
+
+.eventInfoDescriptionContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionUpperRow {
+  flex: 1;
+}
+
+.descriptionBottomRow {
+  max-height: 50px;
+  min-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.extraLinkContainer {
+  flex: 1;
+}
+
+.timeContainer {
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
