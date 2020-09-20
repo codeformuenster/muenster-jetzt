@@ -4,3 +4,8 @@
   @include make-row(0);
   padding: 0;
 }
+
+.title {
+  color: $primary;
+  margin-bottom: 0;
+}

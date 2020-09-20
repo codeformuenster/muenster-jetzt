@@ -19,12 +19,8 @@
 .logo {
   height: $header-logo-height;
   @include media-breakpoint-down(xs) {
-    margin: 5px 10px;
+    margin: $spacer / 4 $spacer / 2;
   }
-}
-
-.title {
-  color: rgb(34,205,94);
 }
 
 .container {

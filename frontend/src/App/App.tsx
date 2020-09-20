@@ -8,6 +8,7 @@ import EventsList from "./EventsList/EventsList";
 import useGetEvents from "../hooks/useGetEvents";
 import DateSelector from "./DateSelector/DateSelector";
 import LoadingEventListItem from "./EventsListItem/LoadingEventListItem";
+import useDateWithoutYear from "../hooks/useDateWithoutYear";
 
 interface IAppParams {
   date?: string;
@@ -17,14 +18,16 @@ const App: FC = () => {
   const { date } = useParams<IAppParams>();
   const { loading, error, events } = useGetEvents(date);
 
-  let dayMonth : string = ''
-  if (date) {
-    const dateArray : string[] = date?.split('-');
-    dayMonth = `${dateArray[2]}.${dateArray[1]}`;
-  }
+  const dateWithoutYear = useDateWithoutYear(date);
 
   return (
-    <Layout dayMonth={dayMonth} >
+    <Layout
+      header={
+        <div>
+          <h4 className={styles.title}>Veranstaltungen am {dateWithoutYear}</h4>
+        </div>
+      }
+    >
       <DateSelector />
       <div className={styles.container}>
         {loading && <LoadingEventListItem />}

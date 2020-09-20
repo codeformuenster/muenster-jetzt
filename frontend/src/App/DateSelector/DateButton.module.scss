@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   height: calc(100vw / 4);
-  padding-bottom: 5px;
+  padding-bottom: $spacer / 2;
 }
 
 .dateTitle {
@@ -13,13 +13,12 @@
 }
 
 .isWeekendTitle {
-  color: $primary;
+  color: $app-datebutton-weekend-color;
 }
 
 .isTodayTitle {
-  color: $secondary;
+  color: $app-datebutton-today-color;
 }
-
 
 .dateButtonWrapper {
   display: flex;
@@ -35,24 +34,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 2px gray;
-  background-color: #eeeeee;
-  transition: transform 0.5s linear;
+  box-shadow: $app-datebutton-boxshadow;
+  background-color: $app-datebutton-background-color;
+  transition: transform 100ms linear;
 }
 
 .isActive {
-  transform: translateY(-50%);
+  transform: translateY(-35%);
 }
 
 .isWeekend {
-  color: white;
-  background-color: $primary;
+  color: $app-datebutton-text-weekend;
+  background-color: $app-datebutton-weekend-color;
 
   &:focus {
-    color: white;
+    color: $app-datebutton-text-weekend;
   }
 }
 
 .isToday {
-  background: $secondary;
+  background: $app-datebutton-today-color;
 }

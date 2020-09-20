@@ -3,13 +3,8 @@
 .eventListItem {
   @include make-col-ready();
   margin-bottom: $spacer;
-  background: $white;
-  will-change: transform;
-  transition: transform 500ms ease;
-  -webkit-font-smoothing: subpixel-antialiased;
-  backface-visibility: hidden;
   padding: 5px;
-  background-color: $secondary;
+  background-color: $app-eventlistitem-background-color;
   color: white;
   box-shadow: 1px 2px 2px gray;
 
@@ -23,10 +18,10 @@
   }
 }
 
-.evenInfoWrapper {
+.eventInfoWrapper {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: $spacer / 2;
 }
 
 .eventInfoTitleRow {

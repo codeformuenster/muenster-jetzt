@@ -15,7 +15,7 @@ const EventsListItem: FC<IAugmentedEvent> = ({
 }) => {
   return (
     <div className={styles.eventListItem}>
-      <div className={styles.evenInfoWrapper}>
+      <div className={styles.eventInfoWrapper}>
         <div className={styles.eventInfoTitleRow}>
           <h3 className={styles.eventInfoTitle}>{name}</h3>
           <h4 className={styles.eventInfoLocation}>{location.description}</h4>
@@ -28,11 +28,16 @@ const EventsListItem: FC<IAugmentedEvent> = ({
           <div className={styles.descriptionBottomRow}>
             <div className={styles.extraLinkContainer}>
               {externalUrl && (
-                <ExternalLink href={externalUrl}>weitere Informationen</ExternalLink>
+                <ExternalLink href={externalUrl}>
+                  weitere Informationen
+                </ExternalLink>
               )}
             </div>
             <div className={styles.timeContainer}>
-              <span>{formattedStart}{formattedEnd ? <> – {formattedEnd}</> : ""}</span>
+              <span>
+                {formattedStart}
+                {formattedEnd ? <> – {formattedEnd}</> : ""}
+              </span>
               <span>{duration ? <>({duration})</> : ""}</span>
             </div>
           </div>
