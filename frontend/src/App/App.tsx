@@ -10,12 +10,8 @@ import DateSelector from "./DateSelector/DateSelector";
 import LoadingEventListItem from "./EventsListItem/LoadingEventListItem";
 import useDateWithoutYear from "../hooks/useDateWithoutYear";
 
-export interface IAppParams {
-  date?: string;
-}
-
 const App: FC = () => {
-  const { date } = useParams<IAppParams>();
+  const { date } = useParams<IAppRouterParams>();
   const { loading, error, events } = useGetEvents(date);
 
   const dateWithoutYear = useDateWithoutYear(date);

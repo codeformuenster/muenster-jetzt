@@ -1,8 +1,7 @@
 import React, { FC, useMemo } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./DateSelector.module.scss";
 import DateButton, { IDateButton } from "./DateButton";
-import { useParams } from "react-router-dom";
-import { IAppParams } from "../App";
 import DateArrow, { Direction } from "./DateArrow";
 
 const weekdayShortFormat = new Intl.DateTimeFormat("de-DE", {
@@ -17,7 +16,7 @@ const weekdayLongFormat = new Intl.DateTimeFormat("de-DE", {
 });
 
 const usePrevNextDate: () => { prev?: string; next?: string } = () => {
-  const { date } = useParams<IAppParams>();
+  const { date } = useParams<IAppRouterParams>();
 
   if (date) {
     const dateParts = date.split("-");

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import clsx from "clsx";
-import styles from "./DateArrow.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./DateArrow.module.scss";
 
 export enum Direction {
   Right,
