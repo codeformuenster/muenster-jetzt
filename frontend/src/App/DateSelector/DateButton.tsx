@@ -2,6 +2,7 @@ import React, { FC, useMemo } from "react";
 import clsx from "clsx";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./DateButton.module.scss";
+import useDateWithoutYear from "../../hooks/useDateWithoutYear";
 
 export interface IDateButton {
   shortLabel: string;
@@ -16,19 +17,19 @@ const DateButton: FC<IDateButton> = ({ shortLabel, to, label, isoDate }) => {
     return new Date().toISOString().slice(0, 10) === isoDate;
   }, [isoDate]);
 
-  const isWeekend = ['Sa', 'So'].includes(shortLabel)
+  const isWeekend = ["Sa", "So"].includes(shortLabel);
 
-  const dateArray : string[] = to?.split('-');
-  const dayMonth : string = `${dateArray[2]}.${dateArray[1]}`;
+  const dateWithoutYear = useDateWithoutYear(to);
 
   return (
     <div className={styles.dateButtonContainer}>
-      <span className={clsx(styles.dateTitle, {
+      <span
+        className={clsx(styles.dateTitle, {
           [styles.isWeekendTitle]: isWeekend,
           [styles.isTodayTitle]: isToday,
         })}
       >
-        {dayMonth}
+        {dateWithoutYear}
       </span>
       <div className={styles.dateButtonWrapper}>
         <Link

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import "../../styles/base.scss";
 import styles from "./Layout.module.scss";
 
@@ -6,17 +6,15 @@ import logo from "../../images/ms-jetzt-logo-icon.svg";
 
 interface ILayout {
   hideHeader?: boolean;
-  dayMonth?: string;
+  header?: ReactNode;
 }
 
-const Layout: FC<ILayout> = ({ children, hideHeader, dayMonth }) => (
+const Layout: FC<ILayout> = ({ children, hideHeader, header }) => (
   <>
     {!hideHeader && (
       <header className={styles.header}>
         <img src={logo} alt="Münster Jetzt" className={styles.logo} />
-        <div>
-          <h4 className={styles.title}>Veranstaltungen am {dayMonth}</h4>
-        </div>
+        {header}
       </header>
     )}
     <section className={styles.mainSection}>

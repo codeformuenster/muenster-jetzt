@@ -19,7 +19,7 @@
 .logo {
   height: $header-logo-height;
   @include media-breakpoint-down(xs) {
-    margin: 5px 10px;
+    margin: $spacer / 4 $spacer / 2;
   }
 }
 
