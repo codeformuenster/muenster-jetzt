@@ -8,8 +8,8 @@
 }
 
 .dateTitle {
-  font-size: 10pt;
-  font-weight: 600;
+  font-size: 9pt;
+  font-weight: 500;
 }
 
 .isWeekendTitle {
@@ -29,8 +29,8 @@
 .dateButton {
   @extend .btn;
   border-radius: 50%;
-  height: calc((100vw - 20px) / 8);
-  width: calc((100vw - 20px) / 8);
+  height: calc((100vw - 20px) / 9);
+  width: calc((100vw - 20px) / 9);
   display: flex;
   justify-content: center;
   align-items: center;

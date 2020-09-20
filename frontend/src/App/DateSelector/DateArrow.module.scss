@@ -1,17 +1,18 @@
 @import "../../styles/base.scss";
 
 .dateArrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  height: 3px;
+  width: 0; 
+  height: 0; 
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent; 
+  border-right:10px solid $secondary; 
 }
 
 .right {
-  transform: rotate(-45deg);
+  transform: rotate(-180deg);
+  margin-left: 5px;
 }
 
 .left {
-  transform: rotate(135deg);
+  margin-right: 5px;
 }
