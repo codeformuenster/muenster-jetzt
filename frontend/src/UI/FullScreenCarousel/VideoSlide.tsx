@@ -1,5 +1,7 @@
 import React, { FC, useRef, useEffect } from "react";
+import SwiperCore from "swiper";
 import styles from "./Slide.module.css";
+import { IStopAutoplayResume } from "../../hooks/useAutoplayResume";
 
 interface IVideoSlide {
   video: IVideoOptions;
@@ -7,9 +9,16 @@ interface IVideoSlide {
   // setting playing to false will reset the playback position
   // in order to make sure it will always start at its start.
   playing: boolean;
+  swiperInstance: SwiperCore | null;
+  stopAutoplayResume: IStopAutoplayResume;
 }
 
-const VideoSlide: FC<IVideoSlide> = ({ video, playing }) => {
+const VideoSlide: FC<IVideoSlide> = ({
+  video,
+  playing,
+  swiperInstance,
+  stopAutoplayResume,
+}) => {
   const videoElementRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -17,12 +26,14 @@ const VideoSlide: FC<IVideoSlide> = ({ video, playing }) => {
     if (videoEl) {
       if (playing) {
         videoEl.play();
+        swiperInstance?.autoplay?.stop();
+        stopAutoplayResume();
       } else {
         videoEl.currentTime = 0;
         videoEl.pause();
       }
     }
-  }, [playing]);
+  }, [playing, stopAutoplayResume, swiperInstance]);
 
   return (
     // eslint-disable-next-line jsx-a11y/media-has-caption
@@ -35,6 +46,10 @@ const VideoSlide: FC<IVideoSlide> = ({ video, playing }) => {
       playsInline
       preload="auto"
       className={styles.video}
+      onEnded={() => {
+        swiperInstance?.slideNext();
+        swiperInstance?.autoplay?.start();
+      }}
     />
   );
 };
