@@ -6,7 +6,9 @@ import styles from "./LandingPage.module.scss";
 interface IBox {
   title: string;
   linkText: string;
-  linkTo: string;
+  /* eslint-disable-next-line @typescript-eslint/ban-types */
+  linkTo: string | object;
+  target?: string;
   disabled?: boolean;
   preview?: boolean;
 }
@@ -18,6 +20,7 @@ const Box: FC<IBox> = ({
   linkTo,
   disabled,
   preview,
+  target,
 }) => {
   return (
     <div className={styles.box}>
@@ -32,6 +35,7 @@ const Box: FC<IBox> = ({
         <div className={styles.boxFooter}>
           <Link
             to={linkTo}
+            target={target}
             className={clsx(styles.boxLink, {
               [styles.disabledBoxLink]: disabled,
             })}
