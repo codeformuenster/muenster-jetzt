@@ -67,6 +67,7 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
               {...slide}
               playing={isActive}
               swiperInstance={swiperInstance}
+              stopAutoplayResume={stopAutoplayResume}
             />
           )}
         </SwiperSlide>

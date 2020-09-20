@@ -5,7 +5,7 @@ interface IStartAutoplayResume {
   (swiperState: SwiperCore): void;
 }
 
-interface IStopAutoplayResume {
+export interface IStopAutoplayResume {
   (): void;
 }
 

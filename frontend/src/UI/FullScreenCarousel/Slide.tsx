@@ -1,14 +1,16 @@
-import React, { FC, useEffect, useMemo } from "react";
+import React, { FC, useMemo } from "react";
 import { QRCode } from "react-qr-svg";
 import SwiperCore from "swiper";
 import styles from "./Slide.module.css";
 import useDevice from "../../hooks/useDevice";
 import IFrameSlide from "./IFrameSlide";
 import VideoSlide from "./VideoSlide";
+import { IStopAutoplayResume } from "../../hooks/useAutoplayResume";
 
 interface ISlideComponent extends ISlide {
   playing: boolean;
   swiperInstance: SwiperCore | null;
+  stopAutoplayResume: IStopAutoplayResume;
 }
 
 const useQRURL: (externalUrl?: string) => string = (externalUrl) => {
@@ -55,14 +57,9 @@ const Slide: FC<ISlideComponent> = ({
   video,
   playing,
   swiperInstance,
+  stopAutoplayResume,
 }) => {
   const qrUrl = useQRURL(externalUrl);
-
-  useEffect(() => {
-    if (playing) {
-      swiperInstance?.autoplay?.stop();
-    }
-  }, [playing, swiperInstance]);
 
   return (
     <div className={convertCssClass(cssClassNames)} style={style}>
@@ -74,10 +71,8 @@ const Slide: FC<ISlideComponent> = ({
               <VideoSlide
                 video={video}
                 playing={playing}
-                onVideoEnd={() => {
-                  swiperInstance?.slideNext();
-                  swiperInstance?.autoplay?.start();
-                }}
+                swiperInstance={swiperInstance}
+                stopAutoplayResume={stopAutoplayResume}
               />
             )}
           </>
