@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import clsx from "clsx";
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,6 +22,7 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
     sendRequest: sendTrackingRequest,
     onSlide: onSlideTracking,
   } = useKioskTracking();
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
   const { startAutoplayResume, stopAutoplayResume } = useAutoplayResume(30000);
 
@@ -46,6 +47,9 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
         stopAutoplayResume();
       }}
       allowTouchMove={false}
+      onSwiper={(swiper) => {
+        setSwiperInstance(swiper);
+      }}
     >
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <div
@@ -59,7 +63,12 @@ const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
       {slides.map((slide) => (
         <SwiperSlide key={slide.id} data-kiosk-slide-id={slide.id}>
           {({ isActive }: { isActive: boolean }) => (
-            <Slide {...slide} playing={isActive} />
+            <Slide
+              {...slide}
+              playing={isActive}
+              swiperInstance={swiperInstance}
+              stopAutoplayResume={stopAutoplayResume}
+            />
           )}
         </SwiperSlide>
       ))}
