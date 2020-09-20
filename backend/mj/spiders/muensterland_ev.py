@@ -13,7 +13,7 @@ class MuensterlandEvSpider(EventSpider):
 
     defaults = {
         "source": "Münsterland e.V.",
-        "source_license": "?",
+        "source_license": None,
     }
 
     def start_requests(self):
@@ -74,7 +74,7 @@ class MuensterlandEvSpider(EventSpider):
                 "mode": (
                     event["types"][0]["name"]
                     if ("types" in event) and len(event["types"]) > 0
-                    else ""
+                    else None
                 ),
                 "organizer": (
                     event["event_organizers"][0]["name"]
