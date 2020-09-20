@@ -7,9 +7,10 @@ interface IVideoSlide {
   // setting playing to false will reset the playback position
   // in order to make sure it will always start at its start.
   playing: boolean;
+  onVideoEnd(): void;
 }
 
-const VideoSlide: FC<IVideoSlide> = ({ video, playing }) => {
+const VideoSlide: FC<IVideoSlide> = ({ video, playing, onVideoEnd }) => {
   const videoElementRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -35,6 +36,9 @@ const VideoSlide: FC<IVideoSlide> = ({ video, playing }) => {
       playsInline
       preload="auto"
       className={styles.video}
+      onEnded={() => {
+        onVideoEnd();
+      }}
     />
   );
 };
