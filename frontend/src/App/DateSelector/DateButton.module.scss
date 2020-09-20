@@ -1,13 +1,57 @@
 @import "../../styles/base.scss";
 
+.dateButtonContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vw / 4);
+  padding-bottom: $spacer / 2;
+}
+
+.dateTitle {
+  font-size: 10pt;
+  font-weight: 600;
+}
+
+.isWeekendTitle {
+  color: $app-datebutton-weekend-color;
+}
+
+.isTodayTitle {
+  color: $app-datebutton-today-color;
+}
+
+.dateButtonWrapper {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+}
+
 .dateButton {
   @extend .btn;
+  border-radius: 50%;
+  height: calc((100vw - 20px) / 8);
+  width: calc((100vw - 20px) / 8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $app-datebutton-boxshadow;
+  background-color: $app-datebutton-background-color;
+  transition: transform 100ms linear;
 }
 
 .isActive {
-  color: $primary;
+  transform: translateY(-35%);
+}
+
+.isWeekend {
+  color: $app-datebutton-text-weekend;
+  background-color: $app-datebutton-weekend-color;
+
+  &:focus {
+    color: $app-datebutton-text-weekend;
+  }
 }
 
 .isToday {
-  background: $secondary;
+  background: $app-datebutton-today-color;
 }

@@ -4,6 +4,8 @@
   height: $header-height;
   border-bottom: 1px solid rgba($secondary, 0.4);
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin: $spacer * 0.5 0;
   @include media-breakpoint-up(sm) {
     padding: 0 0 0 $spacer * 1;
@@ -17,7 +19,7 @@
 .logo {
   height: $header-logo-height;
   @include media-breakpoint-down(xs) {
-    margin: auto;
+    margin: $spacer / 4 $spacer / 2;
   }
 }
 

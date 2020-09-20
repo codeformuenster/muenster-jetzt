@@ -22,3 +22,14 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1350px
 );
+
+
+$app-datebutton-boxshadow: 0px 2px 2px gray;
+$app-datebutton-background-color: #eeeeee;
+
+$app-datebutton-today-color: $secondary;
+
+$app-datebutton-weekend-color: $primary;
+$app-datebutton-text-weekend: white;
+
+$app-eventlistitem-background-color: $secondary;
