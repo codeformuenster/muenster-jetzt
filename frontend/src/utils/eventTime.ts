@@ -66,10 +66,10 @@ interface IParseDate {
   (date: string, time?: string): Date | undefined;
 }
 
-export const parseDate: IParseDate = (date, time = "00:00:00") => {
-  try {
-    return new Date(`${date}T${time}Z`);
-  } catch (e) {
-    return undefined;
+export const parseDate: IParseDate = (date, time) => {
+  if (!time) {
+    return new Date(`${date}T00:00:00`);
   }
+
+  return new Date(`${date}T${time}`);
 };
