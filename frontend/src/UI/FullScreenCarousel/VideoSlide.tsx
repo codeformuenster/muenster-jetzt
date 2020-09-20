@@ -33,7 +33,7 @@ const VideoSlide: FC<IVideoSlide> = ({
         videoEl.pause();
       }
     }
-  }, [playing, stopAutoplayResume, swiperInstance?.autoplay]);
+  }, [playing, stopAutoplayResume, swiperInstance]);
 
   return (
     // eslint-disable-next-line jsx-a11y/media-has-caption
