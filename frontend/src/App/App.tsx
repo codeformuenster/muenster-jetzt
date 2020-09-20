@@ -10,7 +10,7 @@ import DateSelector from "./DateSelector/DateSelector";
 import LoadingEventListItem from "./EventsListItem/LoadingEventListItem";
 import useDateWithoutYear from "../hooks/useDateWithoutYear";
 
-interface IAppParams {
+export interface IAppParams {
   date?: string;
 }
 

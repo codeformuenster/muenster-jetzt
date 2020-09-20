@@ -3,5 +3,6 @@
 .dateSelectorContainer {
   display: flex;
   justify-content: space-between;
-  margin: 0px 10px;
+  align-items: center;
+  margin: 0 $spacer;
 }
