@@ -18,11 +18,7 @@ const useQRURL: (externalUrl?: string) => string = (externalUrl) => {
       return "";
     }
 
-    let url = "https://muenster-jetzt.de/qr/";
-
-    url += `?url=${encodeURI(externalUrl)}`;
-
-    return url;
+    return `https://muenster-jetzt.de/qr/?url=${encodeURI(externalUrl)}`;
   }, [externalUrl]);
 };
 
