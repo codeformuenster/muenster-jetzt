@@ -1,8 +1,9 @@
 import React, { FC, useMemo } from "react";
-import { useParams } from "react-router-dom";
 import styles from "./DateSelector.module.scss";
 import DateButton, { IDateButton } from "./DateButton";
 import DateArrow, { Direction } from "./DateArrow";
+import useParsedDateRouteParam from "../../hooks/useParsedDateRouteParam";
+import { oneDay } from "../../utils/eventTime";
 
 const weekdayShortFormat = new Intl.DateTimeFormat("de-DE", {
   weekday: "short",
@@ -15,14 +16,12 @@ const weekdayLongFormat = new Intl.DateTimeFormat("de-DE", {
   day: "2-digit",
 });
 
-const usePrevNextDate: () => { prev?: string; next?: string } = () => {
-  const { date } = useParams<IAppRouterParams>();
-
+const usePrevNextDate: (date?: Date) => { prev?: string; next?: string } = (
+  date
+) => {
   if (date) {
-    const dateParts = date.split("-");
-    const [year, month, day] = dateParts.map((d) => parseInt(d, 10));
-    const prev = new Date(Date.UTC(year, month - 1, day - 1, 0, 0, 0, 0));
-    const next = new Date(Date.UTC(year, month - 1, day + 1, 0, 0, 0, 0));
+    const prev = new Date(date.getTime() - oneDay);
+    const next = new Date(date.getTime() + oneDay);
 
     return {
       prev: prev.toISOString().slice(0, 10),
@@ -34,6 +33,8 @@ const usePrevNextDate: () => { prev?: string; next?: string } = () => {
 };
 
 const DateSelector: FC = () => {
+  const parsedDateParam = useParsedDateRouteParam();
+
   const dates = useMemo<IDateButton[]>(() => {
     const now = Date.now();
 
@@ -50,7 +51,7 @@ const DateSelector: FC = () => {
     });
   }, []);
 
-  const { prev, next } = usePrevNextDate();
+  const { prev, next } = usePrevNextDate(parsedDateParam);
 
   return (
     <div className={styles.dateSelectorContainer}>

@@ -1,7 +1,7 @@
 const oneMinute = 1000 * 60;
 const tenMinutes = oneMinute * 10;
 const oneHour = tenMinutes * 6;
-const oneDay = oneHour * 24;
+export const oneDay = oneHour * 24;
 
 interface IFormatDuration {
   (start?: Date, end?: Date): string;
@@ -67,9 +67,15 @@ interface IParseDate {
 }
 
 export const parseDate: IParseDate = (date, time) => {
+  const dateParts = date.split("-");
+  const [year, month, day] = dateParts.map((d) => parseInt(d, 10));
+
   if (!time) {
-    return new Date(`${date}T00:00:00`);
+    return new Date(Date.UTC(year, month - 1, day, 0, 0, 0, 0));
   }
 
-  return new Date(`${date}T${time}`);
+  const timeParts = time.split(":");
+  const [hour, minute, second] = timeParts.map((d) => parseInt(d, 10));
+
+  return new Date(Date.UTC(year, month - 1, day, hour, minute, second, 0));
 };
