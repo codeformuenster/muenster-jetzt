@@ -2,7 +2,6 @@ import React, { FC, useMemo } from "react";
 import { QRCode } from "react-qr-svg";
 import SwiperCore from "swiper";
 import styles from "./Slide.module.css";
-import useDevice from "../../hooks/useDevice";
 import IFrameSlide from "./IFrameSlide";
 import VideoSlide from "./VideoSlide";
 import { IStopAutoplayResume } from "../../hooks/useAutoplayResume";
@@ -14,23 +13,17 @@ interface ISlideComponent extends ISlide {
 }
 
 const useQRURL: (externalUrl?: string) => string = (externalUrl) => {
-  const device = useDevice();
-
   return useMemo(() => {
     if (!externalUrl) {
       return "";
     }
 
-    let url = `${window.location.origin}/qr/`;
-
-    if (device) {
-      url += `${device}/`;
-    }
+    let url = "https://muenster-jetzt.de/qr/";
 
     url += `?url=${encodeURI(externalUrl)}`;
 
     return url;
-  }, [device, externalUrl]);
+  }, [externalUrl]);
 };
 
 const convertCssClass = function convertCssClass(
