@@ -21,10 +21,9 @@ class MuensterlandEvSpider(EventSpider):
         if not (
             os.getenv("DATENPORTAL_USER") and os.getenv("DATENPORTAL_PASSWORD")
         ):
-            self.logger.error(
-                "Set the DATENPORTAL_USER & DATENPORTAL_PASSWORD env"
-            )
-            raise CloseSpider("missing_auth")
+            message = "Set DATENPORTAL_USER & DATENPORTAL_PASSWORD in .env"
+            self.logger.error(message)
+            raise ConnectionError(message)
 
         URL = "https://www.datenportal-muensterland.de/api/v1/events"
         USER = os.getenv("DATENPORTAL_USER")
