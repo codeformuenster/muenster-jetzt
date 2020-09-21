@@ -3,6 +3,7 @@ import "../../styles/base.scss";
 import styles from "./Layout.module.scss";
 
 import logo from "../../images/ms-jetzt-logo-icon.svg";
+import Nav from "../Nav/Nav";
 
 interface ILayout {
   hideHeader?: boolean;
@@ -15,6 +16,7 @@ const Layout: FC<ILayout> = ({ children, hideHeader, header }) => (
       <header className={styles.header}>
         <img src={logo} alt="Münster Jetzt" className={styles.logo} />
         {header}
+        <Nav />
       </header>
     )}
     <section className={styles.mainSection}>

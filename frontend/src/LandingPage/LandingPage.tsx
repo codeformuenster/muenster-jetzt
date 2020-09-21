@@ -37,7 +37,7 @@ const LandingPage: FC = () => (
       </div>
     </div>
     <div className={styles.row}>
-      <Box title="App" linkText="Zur App" linkTo={makeAppRouteLink()} disabled>
+      <Box title="App" linkText="Zur App" linkTo={makeAppRouteLink()} preview>
         Mit der App verpasst du keine Veranstaltung mehr. Egal ob auf deinem
         Handy, Tablet oder Laptop, die{" "}
         <span className={styles.styledName}>Münster Jetzt</span> App ist einfach

@@ -1,0 +1,34 @@
+@import "../../styles/base.scss";
+
+.navToggle {
+  @extend .navbar-toggler;
+}
+
+.navMenu {
+  @include box-shadow($box-shadow-sm);
+  @include border-radius();
+  border: $border-width solid $border-color;
+  background-color: $white;
+  z-index: 1;
+  padding: 0 $spacer;
+}
+
+.navList {
+  @extend .navbar-nav;
+  margin: 0;
+}
+
+.navItem {
+  margin: $spacer / 2 $spacer / 4;
+  a {
+    text-decoration: none;
+    color: $black;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.divider {
+  border-bottom: 1px solid rgba($secondary, 0.4);
+}
