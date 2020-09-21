@@ -3,7 +3,6 @@ from datetime import date
 
 import scrapy
 from mj.spiders import EventSpider
-from scrapy.exceptions import CloseSpider
 from w3lib.http import basic_auth_header
 
 
