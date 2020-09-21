@@ -40,7 +40,7 @@ const Nav: FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={styles.navToggle}
       >
-        🍔
+        &#9776;
       </button>
 
       {isOpen && (

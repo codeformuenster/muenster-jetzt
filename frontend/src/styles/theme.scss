@@ -2,13 +2,14 @@ $header-height: 50px;
 $header-logo-height: $header-height - 10px;
 
 $landing-page-max-width: 1200px;
-$app-page-max-width: 1200px;
+$app-page-max-width: 750px;
 
 $enable-shadows: true;
 
 $black: #1f201a;
 $primary: #22cd5e;
 $secondary: #2291cd;
+$red-lighten-1: #ef5350;
 
 $link-decoration: underline;
 
@@ -29,10 +30,7 @@ $app-datebutton-maxdimension: 80px;
 $app-datebutton-background-color: #eeeeee;
 $app-datebutton-arrow-color: $secondary;
 
-$app-datebutton-today-color: $secondary;
-$app-datebutton-active-color: red;
-
-$app-datebutton-weekend-color: $primary;
-$app-datebutton-text-weekend: white;
+$app-datebutton-today-color: $red-lighten-1;
+$app-datebutton-active-color: $primary;
 
 $app-eventlistitem-background-color: $secondary;

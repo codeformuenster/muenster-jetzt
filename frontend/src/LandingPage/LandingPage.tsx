@@ -61,41 +61,38 @@ const LandingPage: FC = () => (
     <div className={styles.row}>
       <div className={styles.actionColumn}>
         <h3 className={styles.rowTitle}>Datenquellen</h3>
-        <p>
-          <ul className={styles.dataSources}>
-            <li>
-              <span role="img" aria-label="Häkchen">
-                ✅
-              </span>
-              Münster Jetzt
-            </li>
-            <li>
-              <span role="img" aria-label="Häkchen">
-                ✅
-              </span>
-              <a
-                href="https://www.muensterland.digital/api"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                münsterLand.digital
-              </a>
-            </li>
-            <li>
-              <span role="img" aria-label="Häkchen">
-                ✅
-              </span>
-              <a
-                href="https://www.datenportal-muensterland.de"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Datenportal Münsterland (Münsterland e.V.)
-              </a>
-            </li>
-          </ul>
-          <br />
-        </p>
+        <ul className={styles.dataSources}>
+          <li>
+            <span role="img" aria-label="Häkchen">
+              ✅
+            </span>
+            Münster Jetzt
+          </li>
+          <li>
+            <span role="img" aria-label="Häkchen">
+              ✅
+            </span>
+            <a
+              href="https://www.muensterland.digital/api"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              münsterLand.digital
+            </a>
+          </li>
+          <li>
+            <span role="img" aria-label="Häkchen">
+              ✅
+            </span>
+            <a
+              href="https://www.datenportal-muensterland.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Datenportal Münsterland (Münsterland e.V.)
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <div className={styles.row}>

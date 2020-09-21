@@ -24,8 +24,8 @@ const usePrevNextDate: (date?: Date) => { prev?: string; next?: string } = (
     const prev = new Date(date.getTime());
     const next = new Date(date.getTime());
 
-    prev.setDate(date.getDate() - 1);
-    next.setDate(date.getDate() + 1);
+    prev.setDate(date.getDate() - 7);
+    next.setDate(date.getDate() + 7);
 
     return {
       prev: isoFormat(prev),
