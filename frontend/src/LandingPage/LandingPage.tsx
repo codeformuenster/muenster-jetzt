@@ -12,6 +12,7 @@ import c4mLogo from "../images/logo_code4ms.png";
 import githubLogo from "../images/logo_github.png";
 import mshackLogo from "../images/logo_muensterhack.png";
 import bahnLogo from "../images/logo_db_gobeta.svg";
+import { makeAppRouteLink } from "../utils/routes";
 
 const backendBasePath =
   process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
@@ -36,7 +37,7 @@ const LandingPage: FC = () => (
       </div>
     </div>
     <div className={styles.row}>
-      <Box title="App" linkText="Zur App" linkTo="/app" disabled>
+      <Box title="App" linkText="Zur App" linkTo={makeAppRouteLink()} disabled>
         Mit der App verpasst du keine Veranstaltung mehr. Egal ob auf deinem
         Handy, Tablet oder Laptop, die{" "}
         <span className={styles.styledName}>Münster Jetzt</span> App ist einfach

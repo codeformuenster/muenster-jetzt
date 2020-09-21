@@ -4,6 +4,7 @@ import DateButton, { IDateButton } from "./DateButton";
 import DateArrow, { Direction } from "./DateArrow";
 import useParsedDateRouteParam from "../../hooks/useParsedDateRouteParam";
 import { isoFormat, oneDay } from "../../utils/eventTime";
+import { makeAppRouteLink } from "../../utils/routes";
 
 const weekdayShortFormat = new Intl.DateTimeFormat("de-DE", {
   weekday: "short",
@@ -56,7 +57,7 @@ const DateSelector: FC = () => {
 
       return {
         label: weekdayLongFormat.format(d),
-        to: `/app/${isoDate}`,
+        to: makeAppRouteLink(isoDate),
         shortLabel: weekdayShortFormat.format(d),
         isoDate,
       };
@@ -67,11 +68,15 @@ const DateSelector: FC = () => {
 
   return (
     <div className={styles.dateSelectorContainer}>
-      {prev && <DateArrow direction={Direction.Left} to={`/app/${prev}`} />}
+      {prev && (
+        <DateArrow direction={Direction.Left} to={makeAppRouteLink(prev)} />
+      )}
       {dates.map((d) => (
         <DateButton key={d.to} {...d} />
       ))}
-      {next && <DateArrow direction={Direction.Right} to={`/app/${next}`} />}
+      {next && (
+        <DateArrow direction={Direction.Right} to={makeAppRouteLink(next)} />
+      )}
     </div>
   );
 };
