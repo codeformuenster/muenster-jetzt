@@ -8,7 +8,7 @@ Based on [peewee](https://peewee-orm.com/), [Scrapy](https://scrapy.org/), and
 
 1. Copy `.env.example` to `.env` and edit it to match your local setup.
 2. Create and activate a virtual environment. e.g. with: `python -m virtualenv .venv && .venv/bin/activate`
-   
+
    Run only `.venv/bin/activate` to activate an existing environment
 
 3. Install all dependencies via `pip install -r requirements.txt`
