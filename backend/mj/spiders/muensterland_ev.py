@@ -52,7 +52,8 @@ class MuensterlandEvSpider(EventSpider):
                 and event["poi"]["address"]["city"]
             ):
                 address += (
-                    f', {event["poi"]["address"]["postal_code"]} {event["poi"]["address"]["city"]}'
+                    f', {event["poi"]["address"]["postal_code"]} ',
+                    '{event["poi"]["address"]["city"]}',
                 )
 
             yield {
