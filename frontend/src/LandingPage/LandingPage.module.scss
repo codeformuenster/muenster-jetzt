@@ -234,3 +234,15 @@
 .projectPlanText {
   line-height: $line-height-base * 1.1;
 }
+
+.dataSources{
+  list-style: none;
+}
+
+.dataSources li{
+  text-align: left;
+}
+
+.dataSources span{
+  margin-right: 10px;
+}
