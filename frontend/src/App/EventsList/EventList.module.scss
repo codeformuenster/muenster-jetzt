@@ -1,0 +1,8 @@
+@import "../../styles/base.scss";
+
+.eventList {
+  @include make-row(0);
+  margin: 10px 10px 0 10px;
+  padding-bottom: $spacer * 3;
+  width: calc(100vw - 20px);
+}

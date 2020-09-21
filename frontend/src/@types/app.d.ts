@@ -1,0 +1,3 @@
+interface IAppRouterParams {
+  date?: string;
+}

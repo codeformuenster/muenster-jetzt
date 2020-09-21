@@ -1,16 +1,24 @@
 import React, { FC } from "react";
+import styles from "./EventList.module.scss";
 
 import EventsListItem from "../EventsListItem/EventListItem";
-import { IAugmentedEvent } from "../../hooks/useGetEvents";
+import { IUseGetEventsResult } from "../../hooks/useGetEvents";
+import LoadingEventListItem from "../EventsListItem/LoadingEventListItem";
 
-interface IEventsList {
-  events: IAugmentedEvent[];
-}
+const EventsList: FC<IUseGetEventsResult> = ({ events, loading, error }) => {
+  const empty = events !== null && events.length === 0;
 
-const EventsList: FC<IEventsList> = ({ events }) => {
+  if (loading || error || empty) {
+    return (
+      <div className={styles.eventList}>
+        <LoadingEventListItem error={error} loading={loading} empty={empty} />
+      </div>
+    );
+  }
+
   return (
-    <div>
-      {events.map((e) => (
+    <div className={styles.eventList}>
+      {events?.map((e) => (
         <EventsListItem key={e.id} {...e} />
       ))}
     </div>

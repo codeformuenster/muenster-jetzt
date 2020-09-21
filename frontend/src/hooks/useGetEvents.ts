@@ -1,38 +1,57 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { GetDataError } from "restful-react";
 import {
   EventsResponse,
   Event,
   HTTPValidationError,
+  EventsEventsGetQueryParams,
   useEventsEventsGet,
 } from "../generated-api-client";
+import { parseDate, formatTime, formatDuration } from "../utils/eventTime";
 
 export interface IAugmentedEvent extends Event {
   start?: Date;
   end?: Date;
+
+  duration: string;
+  formattedStart: string;
+  formattedEnd: string;
+
+  externalUrl?: string;
+}
+
+export interface IUseGetEventsResult {
+  loading: boolean;
+  error: GetDataError<HTTPValidationError> | null;
+  events: IAugmentedEvent[] | null;
 }
 
 interface IUseGetEvents {
-  (): {
-    loading: boolean;
-    error: GetDataError<HTTPValidationError> | null;
-    events: IAugmentedEvent[] | null;
-  };
+  (date?: string): IUseGetEventsResult;
 }
 
-const parseDate: (date: string, time?: string) => Date | undefined = (
-  date,
-  time = "00:00:00"
-) => {
-  try {
-    return new Date(`${date}T${time}Z`);
-  } catch (e) {
-    return undefined;
+const augmentUrl: (url?: string) => string | undefined = (url) => {
+  if (url) {
+    return `${window.location.origin}/external/?url=${encodeURI(url)}`;
   }
+
+  return undefined;
 };
 
-const useGetEvents: IUseGetEvents = () => {
+const useGetEvents: IUseGetEvents = (date) => {
+  const queryParams = useMemo<EventsEventsGetQueryParams>(() => {
+    if (!date) {
+      return {};
+    }
+
+    return {
+      minDate: date,
+      maxDate: date,
+    };
+  }, [date]);
+
   const { loading, data, error } = useEventsEventsGet({
+    queryParams,
     resolve: (responseData: EventsResponse) => {
       return {
         ...responseData,
@@ -48,6 +67,10 @@ const useGetEvents: IUseGetEvents = () => {
             ...event,
             start,
             end,
+            formattedStart: formatTime(start),
+            formattedEnd: formatTime(end),
+            duration: formatDuration(start, end),
+            externalUrl: augmentUrl(event.url),
           };
         }),
       };
@@ -56,10 +79,12 @@ const useGetEvents: IUseGetEvents = () => {
   const [events, setEvents] = useState<IAugmentedEvent[] | null>(null);
 
   useEffect(() => {
-    if (data?.events) {
+    if (loading) {
+      setEvents(null);
+    } else if (data?.events) {
       setEvents(data.events as IAugmentedEvent[]);
     }
-  }, [data]);
+  }, [data, loading]);
 
   return { loading, error, events };
 };

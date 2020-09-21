@@ -2,6 +2,15 @@
 
 .container {
   @include make-row(0);
+  padding: 0;
+}
+
+.maxWidthContainer {
   max-width: $app-page-max-width;
-  padding: 0 0 0 $spacer * 1;
+  margin: auto;
+}
+
+.title {
+  color: $primary;
+  margin-bottom: 0;
 }

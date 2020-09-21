@@ -1,0 +1,70 @@
+@import "../../styles/base.scss";
+
+.eventListItem {
+  @include make-col-ready();
+  margin-bottom: $spacer;
+  padding: 5px;
+  background-color: $app-eventlistitem-background-color;
+  color: white;
+  box-shadow: 1px 2px 2px gray;
+  
+  @include media-breakpoint-down(sm) {
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}
+
+.centeredItem {
+  margin: $spacer * 4 auto;
+  text-align: center;
+  line-height: $spacer * 3;
+}
+
+.eventInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: $spacer / 2;
+}
+
+.eventInfoTitleRow {
+  min-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.eventInfoTitle {
+  flex: 1;
+}
+
+.eventInfoDescriptionContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.descriptionUpperRow {
+  flex: 1;
+}
+
+.descriptionBottomRow {
+  max-height: 50px;
+  min-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.extraLinkContainer {
+  flex: 1;
+}
+
+.eventDescription {
+  word-break: break-word;
+}
+
+.iconContainer span{
+  margin-right: 10px;
+}

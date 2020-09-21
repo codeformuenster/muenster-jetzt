@@ -1,0 +1,55 @@
+@import "../../styles/base.scss";
+
+.dateButtonContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: $app-datebutton-maxdimension * 2;
+  padding-bottom: $spacer / 2;
+  align-items: center;
+}
+
+.dateTitle {
+  font-size: 9pt;
+  font-weight: 500;
+}
+
+.isTodayTitle {
+  color: $app-datebutton-today-color;
+}
+
+.dateButtonWrapper {
+  display: flex;
+  flex: 1;
+}
+
+.dateButton {
+  @extend .btn;
+  border-radius: 50%;
+  height: calc((100vw - 20px) / 9);
+  width: calc((100vw - 20px) / 9);
+  max-width: $app-datebutton-maxdimension;
+  max-height: $app-datebutton-maxdimension;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $app-datebutton-boxshadow;
+  background-color: $app-datebutton-background-color;
+  transition: transform 100ms linear;
+  &:focus, &:active, &:hover {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.isWeekend {
+  font-weight: bold;
+}
+
+.isActive {
+  background-color: $app-datebutton-active-color;
+  box-shadow: none;
+}
+
+.isToday {
+  border: 2px solid $app-datebutton-today-color;
+}
