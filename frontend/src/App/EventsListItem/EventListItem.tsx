@@ -23,7 +23,7 @@ const EventsListItem: FC<IAugmentedEvent> = ({
         <div className={styles.eventInfoDescriptionContainer}>
           <div className={styles.descriptionUpperRow}>
             {performer && <p>{performer}</p>}
-            <p>{description}</p>
+            <p className={styles.eventDescription}>{description}</p>
           </div>
           <div className={styles.descriptionBottomRow}>
             <div className={styles.extraLinkContainer}>
