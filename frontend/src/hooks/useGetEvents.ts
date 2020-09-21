@@ -20,12 +20,14 @@ export interface IAugmentedEvent extends Event {
   externalUrl?: string;
 }
 
+export interface IUseGetEventsResult {
+  loading: boolean;
+  error: GetDataError<HTTPValidationError> | null;
+  events: IAugmentedEvent[] | null;
+}
+
 interface IUseGetEvents {
-  (date?: string): {
-    loading: boolean;
-    error: GetDataError<HTTPValidationError> | null;
-    events: IAugmentedEvent[] | null;
-  };
+  (date?: string): IUseGetEventsResult;
 }
 
 const augmentUrl: (url?: string) => string | undefined = (url) => {

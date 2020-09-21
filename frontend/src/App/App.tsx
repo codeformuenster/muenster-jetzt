@@ -7,7 +7,6 @@ import EventsList from "./EventsList/EventsList";
 
 import useGetEvents from "../hooks/useGetEvents";
 import DateSelector from "./DateSelector/DateSelector";
-import LoadingEventListItem from "./EventsListItem/LoadingEventListItem";
 import useDateWithoutYear from "../hooks/useDateWithoutYear";
 
 const App: FC = () => {
@@ -25,9 +24,7 @@ const App: FC = () => {
       <div className={styles.maxWidthContainer}>
         <DateSelector />
         <div className={styles.container}>
-          {loading && <LoadingEventListItem />}
-          {error && <p>{error.message}</p>}
-          {!loading && events && <EventsList events={events} />}
+          <EventsList events={events} loading={loading} error={error} />
         </div>
       </div>
     </Layout>

@@ -18,6 +18,12 @@
   }
 }
 
+.centeredItem {
+  margin: $spacer * 4 auto;
+  text-align: center;
+  line-height: $spacer * 3;
+}
+
 .eventInfoWrapper {
   display: flex;
   flex-direction: column;
