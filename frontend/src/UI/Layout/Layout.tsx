@@ -15,7 +15,7 @@ const Layout: FC<ILayout> = ({ children, hideHeader, header }) => (
     {!hideHeader && (
       <header className={styles.header}>
         <img src={logo} alt="Münster Jetzt" className={styles.logo} />
-        {header}
+        <div className={styles.titleContainer}>{header}</div>
         <Nav />
       </header>
     )}

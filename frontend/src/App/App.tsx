@@ -19,16 +19,16 @@ const App: FC = () => {
   return (
     <Layout
       header={
-        <div>
-          <h4 className={styles.title}>Veranstaltungen am {dateWithoutYear}</h4>
-        </div>
+        <h4 className={styles.title}>Veranstaltungen am {dateWithoutYear}</h4>
       }
     >
-      <DateSelector />
-      <div className={styles.container}>
-        {loading && <LoadingEventListItem />}
-        {error && <p>{error.message}</p>}
-        {!loading && events && <EventsList events={events} />}
+      <div className={styles.maxWidthContainer}>
+        <DateSelector />
+        <div className={styles.container}>
+          {loading && <LoadingEventListItem />}
+          {error && <p>{error.message}</p>}
+          {!loading && events && <EventsList events={events} />}
+        </div>
       </div>
     </Layout>
   );

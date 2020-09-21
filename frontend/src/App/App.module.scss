@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+.maxWidthContainer {
+  max-width: $app-page-max-width;
+}
+
 .title {
   color: $primary;
   margin-bottom: 0;

@@ -26,3 +26,7 @@
 .container {
   @include make-container(0);
 }
+
+.titleContainer {
+  flex: 1;
+}
