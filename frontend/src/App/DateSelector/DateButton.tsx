@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./DateButton.module.scss";
 import useDateWithoutYear from "../../hooks/useDateWithoutYear";
+import { isoFormat } from "../../utils/eventTime";
 
 export interface IDateButton {
   shortLabel: string;
@@ -14,7 +15,7 @@ export interface IDateButton {
 const DateButton: FC<IDateButton> = ({ shortLabel, to, label, isoDate }) => {
   const location = useLocation();
   const isToday = useMemo(() => {
-    return new Date().toISOString().slice(0, 10) === isoDate;
+    return isoFormat(new Date()) === isoDate;
   }, [isoDate]);
 
   const isWeekend = ["Sa", "So"].includes(shortLabel);

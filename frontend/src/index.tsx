@@ -12,11 +12,12 @@ import App from "./App/App";
 import Kiosk from "./Kiosk/Kiosk";
 import LandingPage from "./LandingPage/LandingPage";
 import TrackingWrapper from "./TrackingWrapper";
+import { isoFormat } from "./utils/eventTime";
 
 const backendBasePath =
   process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
 
-const isoToday = new Date().toISOString().slice(0, 10);
+const isoToday = isoFormat(new Date());
 
 ReactDOM.render(
   <React.StrictMode>

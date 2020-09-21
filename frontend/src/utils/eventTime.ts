@@ -50,11 +50,16 @@ const hhmmTimeFormat = new Intl.DateTimeFormat("de-DE", {
   minute: "2-digit",
 }).format;
 
-interface IFormatTime {
+// let's hope sweden never changes its date format
+// https://stackoverflow.com/a/58633686
+export const isoFormat: (date: Date) => string = (date) =>
+  date.toLocaleDateString("sv-SE");
+
+interface IFormatFunction {
   (date?: Date): string;
 }
 
-export const formatTime: IFormatTime = (date) => {
+export const formatTime: IFormatFunction = (date) => {
   if (date) {
     return hhmmTimeFormat(date);
   }
@@ -71,11 +76,11 @@ export const parseDate: IParseDate = (date, time) => {
   const [year, month, day] = dateParts.map((d) => parseInt(d, 10));
 
   if (!time) {
-    return new Date(Date.UTC(year, month - 1, day, 0, 0, 0, 0));
+    return new Date(year, month - 1, day, 0, 0, 0, 0);
   }
 
   const timeParts = time.split(":");
   const [hour, minute, second] = timeParts.map((d) => parseInt(d, 10));
 
-  return new Date(Date.UTC(year, month - 1, day, hour, minute, second, 0));
+  return new Date(year, month - 1, day, hour, minute, second, 0);
 };

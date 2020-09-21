@@ -3,7 +3,7 @@ import styles from "./DateSelector.module.scss";
 import DateButton, { IDateButton } from "./DateButton";
 import DateArrow, { Direction } from "./DateArrow";
 import useParsedDateRouteParam from "../../hooks/useParsedDateRouteParam";
-import { oneDay } from "../../utils/eventTime";
+import { isoFormat, oneDay } from "../../utils/eventTime";
 
 const weekdayShortFormat = new Intl.DateTimeFormat("de-DE", {
   weekday: "short",
@@ -20,12 +20,15 @@ const usePrevNextDate: (date?: Date) => { prev?: string; next?: string } = (
   date
 ) => {
   if (date) {
-    const prev = new Date(date.getTime() - oneDay);
-    const next = new Date(date.getTime() + oneDay);
+    const prev = new Date(date.getTime());
+    const next = new Date(date.getTime());
+
+    prev.setDate(date.getDate() - 1);
+    next.setDate(date.getDate() + 1);
 
     return {
-      prev: prev.toISOString().slice(0, 10),
-      next: next.toISOString().slice(0, 10),
+      prev: isoFormat(prev),
+      next: isoFormat(next),
     };
   }
 
@@ -36,11 +39,20 @@ const DateSelector: FC = () => {
   const parsedDateParam = useParsedDateRouteParam();
 
   const dates = useMemo<IDateButton[]>(() => {
-    const now = Date.now();
+    // take the current date param and use the monday of the week
+    // as starting point
+    if (!parsedDateParam) {
+      return [];
+    }
+
+    const monday = new Date(parsedDateParam.getTime());
+    const dow = monday.getDay();
+    const diff = (dow < 1 ? 7 : 0) + dow - 1;
+    monday.setDate(monday.getDate() - diff);
 
     return Array.from({ length: 7 }, (_, i) => {
-      const d = new Date(now + 86400000 * i);
-      const isoDate = d.toISOString().slice(0, 10);
+      const d = new Date(monday.getTime() + oneDay * i);
+      const isoDate = isoFormat(d);
 
       return {
         label: weekdayLongFormat.format(d),
@@ -49,7 +61,7 @@ const DateSelector: FC = () => {
         isoDate,
       };
     });
-  }, []);
+  }, [parsedDateParam]);
 
   const { prev, next } = usePrevNextDate(parsedDateParam);
 
