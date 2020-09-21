@@ -78,6 +78,10 @@ const gornationTeam: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/gornation-team.jpg",
 };
 
+const veomo: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/veomo-v2.jpg",
+};
+
 const gornationSocialmedia: IEventBase = {
   imageUrl:
     "https://muenster-jetzt.de/static/uploads/v1/gornation-socialmedia.jpg",
@@ -150,8 +154,9 @@ export const msPopupAussen: IEvent[] = [
   { id: 9, ...bahnhofLiveAppVideo },
   { id: 10, ...infabSpaet },
   { id: 11, ...hygiene },
-  { id: 12, ...icePortal },
-  { id: 13, ...liefergruen },
+  { id: 12, ...veomo },
+  { id: 13, ...icePortal },
+  { id: 14, ...liefergruen },
   // { id: 14, ...muensterlandRadVideo },
   { id: 15, ...gornationTeam },
   { id: 16, ...gornationSocialmedia },
@@ -171,7 +176,8 @@ export const msVitrineAllgemein: IEvent[] = [
   { id: 4, ...goBetaMs },
   { id: 5, ...lambusEvent },
   { id: 6, ...hygiene },
-  { id: 7, ...bahnhofLiveAppVideo },
+  { id: 7, ...veomo },
+  { id: 8, ...bahnhofLiveAppVideo },
   // { id: 10, ...infabSpaet },
   // { id: 11, ...hygiene },
   // { id: 12, ...icePortal },
@@ -179,8 +185,8 @@ export const msVitrineAllgemein: IEvent[] = [
   // { id: 14, ...muensterlandRadVideo },
   // { id: 15, ...gornationTeam },
   // { id: 16, ...gornationSocialmedia },
-  { id: 8, ...infabMock },
-  { id: 9, ...vesputi },
+  { id: 9, ...infabMock },
+  { id: 10, ...vesputi },
 ];
 
 // db vitrinen pc neu
@@ -197,8 +203,9 @@ export const msDisplay9: IEvent[] = [
   { id: 9, ...bahnhofLiveAppVideo },
   { id: 10, ...infabSpaet },
   { id: 11, ...hygiene },
-  { id: 12, ...icePortal },
-  { id: 13, ...liefergruen },
+  { id: 12, ...veomo },
+  { id: 13, ...icePortal },
+  { id: 14, ...liefergruen },
   // { id: 14, ...muensterlandRadVideo },
   { id: 15, ...gornationTeam },
   { id: 16, ...gornationSocialmedia },
