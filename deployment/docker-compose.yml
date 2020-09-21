@@ -41,6 +41,8 @@ services:
       - DB_HOST
       - DB_PORT
       - MUENSTERLAND_API_TOKEN
+      - DATENPORTAL_USER
+      - DATENPORTAL_PASSWORD
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=https-proxy_traefik"
