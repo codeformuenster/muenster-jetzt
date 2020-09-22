@@ -1,9 +1,9 @@
 import msjlogo from "../images/ms-jetzt-logo.svg";
 import bahnLogo from "../images/logo_db_gobeta.svg";
 
-const toIEvent = function toIEvent(slides: IEventBase[]){
-  return slides.map((slide, index) => ({id: index, ...slide}));
-}
+const toIEvent = function toIEvent(slides: IEventBase[]) {
+  return slides.map((slide, index) => ({ id: index, ...slide }));
+};
 
 const lambusEvent: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus.jpg",
@@ -187,7 +187,9 @@ export const msPopupAussen: IEvent[] = toIEvent([
   tretty,
 ]);
 
-export const msPopupInnen: IEvent[] = msPopupAussen.concat(toIEvent([trettyVideo]));
+export const msPopupInnen: IEvent[] = msPopupAussen.concat(
+  toIEvent([trettyVideo])
+);
 
 export const msVitrineAllgemein: IEvent[] = toIEvent([
   hygiene,
