@@ -41,21 +41,34 @@ def serve(reload, host):
     uvicorn.run('mj.api:app', reload=reload, host=host)
 
 
-@cli.command(help='Crawl events')
+@cli.command(help="Crawl events to populate database.")
 @click.option(
-    '--list', 'list_spiders', is_flag=True, help='List available spiders')
-@click.argument('spider', nargs=-1)
-def crawl(list_spiders, spider):
-    settings = Settings({
-        'SPIDER_MODULES': ['mj.spiders'],
-    })
+    "--list", "list_spiders", is_flag=True, help="List available spiders."
+)
+@click.option(
+    "--spider", "chosen_spider",
+    help="Select a spider by its name to run in, otherwise run all.",
+)
+def crawl(list_spiders, chosen_spider):
+    settings = Settings(
+        {
+            "SPIDER_MODULES": ["mj.spiders"],
+        }
+    )
     spiders = SpiderLoader(settings)
+    # at --list flag, only print names of spiders, then exit
     if list_spiders:
+        click.echo("Available spiders (run with --spider option):")
         for spider_name in spiders.list():
-            click.echo(spider_name)
+            click.echo(f" * {spider_name}")
         return
+    # select which spider to run
+    if chosen_spider:
+        spider_list = [chosen_spider]
+    else:
+        spider_list = spiders.list()
+    # run spiders
     process = CrawlerProcess(settings=settings)
-    spider_list = spider or spiders.list()
     for spider_name in spider_list:
         process.crawl(spiders.load(spider_name))
     process.start()
