@@ -86,6 +86,7 @@ const icePortal: IEventBase = {
 
 const muensterlandmoment: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/muensterland.jpg",
+  externalUrl: "https://www.muensterland.com/deinmuensterlandmoment/",
 };
 
 const gornationTeam: IEventBase = {
