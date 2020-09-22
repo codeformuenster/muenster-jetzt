@@ -84,6 +84,10 @@ const icePortal: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/ice-portal.jpg",
 };
 
+const muensterlandmoment: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/muensterland.jpg",
+};
+
 const gornationTeam: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/gornation-team.jpg",
 };
@@ -179,6 +183,7 @@ export const msPopupAussen: IEvent[] = toIEvent([
   veomoFrame,
   icePortal,
   liefergruen,
+  muensterlandmoment,
   // muensterlandRadVideo,
   gornationTeam,
   gornationSocialmedia,
