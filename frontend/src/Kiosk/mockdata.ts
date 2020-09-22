@@ -210,7 +210,6 @@ export const msVitrineAllgemein: IEvent[] = toIEvent([
   veomo,
   veomoFrame,
   bahnhofLiveAppVideo,
-  muensterlandmoment,
   // infabSpaet,
   // hygiene,
   // icePortal,
