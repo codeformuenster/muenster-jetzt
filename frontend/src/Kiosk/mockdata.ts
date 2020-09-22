@@ -23,7 +23,7 @@ const msHack: Omit<ISlide, "id"> = {
 
 const hygiene: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/hygienemassnahmen.jpg",
-  externalUrl: "https://www.gemeinsamgehtdas.de/",
+  externalUrl: "https://www.gemeinsamgehtdas.de/muenster",
 };
 
 const nafeEvent: IEventBase = {
