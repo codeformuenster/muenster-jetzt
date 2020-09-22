@@ -9,7 +9,7 @@ const cspConfigPolicy = {
   'style-src': ["'self'"],
   'img-src': ["'self'", "https://muenster-jetzt.de", "https://www.bleker-it.de", "https://www.muensterhack.de", "https://gobeta.de"],
   'font-src': ["'self'","data:"],
-  'frame-src': ["https://bike-frontend.azurewebsites.net"],
+  'frame-src': ["https://bike-frontend.azurewebsites.net", "https://db-muenster.veomo.com/"],
   'connect-src': ["'self'", process.env.REACT_APP_BACKEND_BASE_PATH],
   'media-src': ["https://muenster-jetzt.de"],
 };

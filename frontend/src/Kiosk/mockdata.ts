@@ -111,7 +111,7 @@ const msj: Omit<ISlide, "id"> = {
   imageUrl: msjlogo,
   title: "Alle Veranstaltungen im Überblick",
   description:
-    "Münster Jetzt ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.\nKostenlos, Werbefrei und Open-Source!",
+    "Münster Jetzt ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.\nKostenlos und Open-Source!",
   externalUrl: "https://muenster-jetzt.de/",
   cssClassNames: "vertical",
 };
