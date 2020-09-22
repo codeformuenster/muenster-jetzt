@@ -10,6 +10,7 @@ setup(
     url='https://muenster-jetzt.de/',
     packages=['mj'],
     install_requires=[
+        'bleach',
         'click',
         'python-dotenv',
         'fastapi',

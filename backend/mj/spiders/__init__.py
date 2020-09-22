@@ -1,3 +1,4 @@
+import bleach
 import scrapy
 
 from mj.db import db, Event, EventSource, Location, Organizer
@@ -8,6 +9,17 @@ class SpiderDefaultsPipeline:
     def process_item(self, item, spider):
         for k, v in spider.defaults.items():
             item.setdefault(k, v)
+        return item
+
+
+class SanitizeHTMLPipeline:
+
+    SANITIZE_FIELDS = ['description']
+
+    def process_item(self, item, spider):
+        for field in self.SANITIZE_FIELDS:
+            if item.get(field):
+                item[field] = bleach.clean(item[field], tags=[], strip=True)
         return item
 
 
@@ -40,6 +52,7 @@ class EventSpider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mj.spiders.SpiderDefaultsPipeline': 100,
+            'mj.spiders.SanitizeHTMLPipeline': 200,
             'mj.spiders.DatabaseExportPipeline': 900,
         },
     }
