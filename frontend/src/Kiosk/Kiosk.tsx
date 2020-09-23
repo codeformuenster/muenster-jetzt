@@ -9,6 +9,7 @@ import {
   msDisplay9,
   msDisplay6,
   msPopupAussen,
+  msPopupKurz,
   msVitrineAllgemein,
   msPopupInnen,
 } from "./mockdata";
@@ -26,6 +27,8 @@ const useMockData = () => {
         return msPopupAussen;
       case "ms-popup-innen":
         return msPopupInnen;
+      case "ms-popup-kurz":
+        return msPopupKurz;
       case "ms-vitrine-allgemein":
         return msVitrineAllgemein;
       case "ms-display6":
