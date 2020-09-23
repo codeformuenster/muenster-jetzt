@@ -93,7 +93,8 @@ const motiontagMuensterBewegt: IEventBase = {
 };
 
 const motiontagSchritte: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_schritte_klima.png",
+  imageUrl:
+    "https://muenster-jetzt.de/static/uploads/v1/motiontag_schritte_klima.png",
 };
 
 // const motiontagPreiseGruen: IEventBase = {
@@ -101,7 +102,8 @@ const motiontagSchritte: IEventBase = {
 // };
 
 const motiontagPreiseWeiss: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_weiss.png",
+  imageUrl:
+    "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_weiss.png",
 };
 
 const muensterlandmoment: IEventBase = {
