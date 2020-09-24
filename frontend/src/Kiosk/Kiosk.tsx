@@ -27,7 +27,7 @@ const useMockData = () => {
         return msPopupAussen;
       case "ms-popup-innen":
         return msPopupInnen;
-      case "ms-popup-kurz":
+      case "ms-popup-kurz-249":
         return msPopupKurz;
       case "ms-vitrine-allgemein":
         return msVitrineAllgemein;
