@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import type { LocationDescriptor } from "history";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import styles from "./LandingPage.module.scss";
@@ -6,8 +7,7 @@ import styles from "./LandingPage.module.scss";
 interface IBox {
   title: string;
   linkText: string;
-  /* eslint-disable-next-line @typescript-eslint/ban-types */
-  linkTo: string | object;
+  linkTo: LocationDescriptor;
   target?: string;
   disabled?: boolean;
   preview?: boolean;
