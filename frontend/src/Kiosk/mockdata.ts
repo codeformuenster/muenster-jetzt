@@ -9,6 +9,15 @@ const lambusEvent: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus.jpg",
 };
 
+const lambusApp: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus-app.jpg",
+  externalUrl: "https://www.lambus.io/",
+};
+
+const lambusMap: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus-map.jpg",
+};
+
 const msHack: Omit<ISlide, "id"> = {
   title: "MÜNSTERHACK 2020",
   subtitle: "Hackathon Für Münster",
@@ -60,6 +69,12 @@ const goBetaMs: Omit<ISlide, "id"> = {
   cssClassNames: ["vertical", "img-20-vh"],
 };
 
+const arWagenreihung: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/ar-wagenreihung.jpg",
+  externalUrl:
+    "https://gobeta.de/projekte/zuginformationen-per-app-mit-augmented-reality-ar-testen/",
+};
+
 const singleton: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/singleton.jpg",
 };
@@ -67,6 +82,10 @@ const singleton: IEventBase = {
 const infabSpaet: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-spaetdran.jpg",
 };
+
+// const infabMitmachen: IEventBase = {
+//   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-mitmachen.jpg",
+// };
 
 const infabMock: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-mock.jpg",
@@ -82,6 +101,24 @@ const tretty: IEventBase = {
 
 const icePortal: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/ice-portal.jpg",
+};
+
+const motiontagMuensterBewegt: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_bike_mb.png",
+};
+
+const motiontagSchritte: IEventBase = {
+  imageUrl:
+    "https://muenster-jetzt.de/static/uploads/v1/motiontag_schritte_klima.png",
+};
+
+// const motiontagPreiseGruen: IEventBase = {
+//   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_gruen.png",
+// };
+
+const motiontagPreiseWeiss: IEventBase = {
+  imageUrl:
+    "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_weiss.png",
 };
 
 const muensterlandmoment: IEventBase = {
@@ -118,12 +155,24 @@ const msj: Omit<ISlide, "id"> = {
   description:
     "Münster Jetzt ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.\nKostenlos und Open-Source!",
   externalUrl: "https://muenster-jetzt.de/",
-  cssClassNames: "vertical",
+  cssClassNames: ["vertical", "spaced"],
 };
 
 const infabFrame: Omit<ISlide, "id"> = {
   iFrame: { url: "https://bike-frontend.azurewebsites.net" },
 };
+
+// const infabVideo: Omit<ISlide, "id"> = {
+//   video: {
+//     url: "https://muenster-jetzt.de/static/uploads/v1/infab.mov",
+//   },
+// };
+
+// const motiontagVideo: Omit<ISlide, "id"> = {
+//   video: {
+//     url: "https://muenster-jetzt.de/static/uploads/v1/motiontag.mp4",
+//   },
+// };
 
 const bahnhofLiveAppVideo: Omit<ISlide, "id"> = {
   video: {
@@ -173,24 +222,48 @@ export const msPopupAussen: IEvent[] = toIEvent([
   msHack,
   singleton,
   hygiene,
-  infabFrame,
   nafeEvent,
   goBetaMs,
   lambusEvent,
+  lambusMap,
+  lambusApp,
   bahnhofLiveAppVideo,
   infabSpaet,
+  infabFrame,
   hygiene,
   veomo,
   veomoFrame,
   icePortal,
+  arWagenreihung,
   liefergruen,
   muensterlandmoment,
   // muensterlandRadVideo,
   gornationTeam,
   gornationSocialmedia,
-  infabMock,
+  motiontagSchritte,
+  motiontagPreiseWeiss,
+  motiontagMuensterBewegt,
   vesputi,
   tretty,
+]);
+
+export const msPopupKurz: IEvent[] = toIEvent([
+  hygiene,
+  msj,
+  msHack,
+  goBetaMs,
+  goBetaVideo,
+  lambusEvent,
+  lambusMap,
+  lambusApp,
+  arWagenreihung,
+  veomo,
+  veomoFrame,
+  hygiene,
+  motiontagPreiseWeiss,
+  infabSpaet,
+  muensterlandmoment,
+  bahnhofLiveAppVideo,
 ]);
 
 export const msPopupInnen: IEvent[] = msPopupAussen.concat(
@@ -207,6 +280,10 @@ export const msVitrineAllgemein: IEvent[] = toIEvent([
   // nafeEvent,
   goBetaMs,
   lambusEvent,
+  lambusMap,
+  lambusApp,
+  motiontagPreiseWeiss,
+  motiontagSchritte,
   hygiene,
   veomo,
   veomoFrame,
