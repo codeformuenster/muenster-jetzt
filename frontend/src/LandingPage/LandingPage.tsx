@@ -85,7 +85,7 @@ const LandingPage: FC = () => (
               ✅
             </span>
             <a
-              href="https://gobeta.de/veranstaltungen/"
+              href="https://gobeta.de/alle-veranstaltungen/"
               target="_blank"
               rel="noopener noreferrer"
             >
