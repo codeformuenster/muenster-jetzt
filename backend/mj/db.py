@@ -6,11 +6,11 @@ from playhouse.postgres_ext import PostgresqlExtDatabase
 
 dotenv.load_dotenv()
 db = PostgresqlExtDatabase(
-    os.getenv('DB_NAME'),
-    user=os.getenv('DB_USER'),
-    password=os.getenv('DB_PASSWORD'),
-    host=os.getenv('DB_HOST'),
-    port=os.getenv('DB_PORT'),
+    os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    host=os.getenv("DB_HOST"),
+    port=os.getenv("DB_PORT"),
 )
 
 
@@ -36,9 +36,7 @@ class EventSource(MJModel):
 
 class Event(MJModel):
     class Meta:
-        indexes = (
-            (('source', 'source_event_id'), True),
-        )
+        indexes = ((("source", "source_event_id"), True),)
 
     id = peewee.AutoField()
 
@@ -62,7 +60,7 @@ class Event(MJModel):
 
 class EventImage(MJModel):
     id = peewee.AutoField()
-    event = peewee.ForeignKeyField(Event, backref='images')
+    event = peewee.ForeignKeyField(Event, backref="images")
     url = peewee.CharField(max_length=4095)
     description = peewee.CharField(max_length=4095, null=True)
     source = peewee.CharField(max_length=1023, null=True)

@@ -31,15 +31,19 @@ class Event(CamelModel):
     id: int
 
     source: EventSource = Field(
-        description='Web source from which event was scraped')
+        description="Web source from which event was scraped"
+    )
     source_event_id: str = Field(
-        title="Source Event ID", description="Event ID used at source")
+        title="Source Event ID", description="Event ID used at source"
+    )
     source_url: Optional[str] = Field(
-        None, title="Source URL", description="Event details URL at source")
+        None, title="Source URL", description="Event details URL at source"
+    )
     source_license: Optional[str] = Field(
         None,
         title="Source License",
-        description="License under which source published event data")
+        description="License under which source published event data",
+    )
 
     name: str
     description: str
