@@ -48,7 +48,8 @@ def serve(reload, host):
     "--list", "list_spiders", is_flag=True, help="List available spiders."
 )
 @click.option(
-    "--spider", "chosen_spider",
+    "--spider",
+    "chosen_spider",
     help="Select a spider by its name to run it, otherwise run all.",
 )
 def crawl(list_spiders, chosen_spider):
