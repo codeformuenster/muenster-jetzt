@@ -67,7 +67,8 @@ class Event(CamelModel):
     mode: Optional[str] = Field(
         None,
         title="The mode of the event",
-        description="This field describes the mode of the event. Like some sort of category",
+        description="This field describes the mode of the event. "
+        "Like some sort of category",
     )
     organizer: Optional[Organizer] = None
     images: List[EventImage]
