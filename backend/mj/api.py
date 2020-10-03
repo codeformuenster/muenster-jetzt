@@ -4,7 +4,6 @@ from typing import List, Optional
 from fastapi import FastAPI, Query
 from fastapi_camelcase import CamelModel
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.openapi.utils import get_openapi
 from playhouse.shortcuts import model_to_dict
 
 import mj
