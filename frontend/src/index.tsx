@@ -10,7 +10,6 @@ import { RestfulProvider } from "restful-react";
 
 import App from "./App/App";
 import Kiosk from "./Kiosk/Kiosk";
-import LandingPage from "./LandingPage/LandingPage";
 import TrackingWrapper from "./TrackingWrapper";
 import { isoFormat } from "./utils/eventTime";
 import {
@@ -20,6 +19,7 @@ import {
   kioskRootRoute,
   infoRootRoute,
 } from "./utils/routes";
+import InfoPage from "./InfoPage/InfoPage.";
 
 const backendBasePath =
   process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
@@ -42,7 +42,7 @@ ReactDOM.render(
             <Kiosk />
           </Route>
           <Route path={infoRootRoute}>
-            <LandingPage />
+            <InfoPage />
           </Route>
           {/* Fallback */}
           <Route>
