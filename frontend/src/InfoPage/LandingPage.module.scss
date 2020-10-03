@@ -65,7 +65,8 @@
 }
 
 .boxLink,
-.contactLink {
+.contactLink,
+.goToApiDocsLinkButton {
   @extend .btn;
   @extend .btn-lg;
 }
@@ -75,7 +76,8 @@
   @extend .btn-block;
 }
 
-.contactLink {
+.contactLink,
+.goToApiDocsLinkButton {
   @extend .btn-primary;
 }
 
@@ -132,4 +134,28 @@
   span {
     margin-right: 10px;
   }
+}
+
+.goToApiDocsBox {
+  @include box-shadow($box-shadow);
+  @include border-radius();
+  padding: $spacer * 2;
+  margin: $spacer *2 auto 0;
+  font-size: $font-size-base;
+  max-width: 650px;
+  align-self: center;
+  background-color: adjust-color($secondary, $lightness: -10%);
+  .link:hover {
+    color: adjust-color($primary, $lightness: 20%);
+  }
+}
+
+.goToApiDocsLinkButton {
+  margin-top: $spacer /2;
+  font-size: $font-size-lg;
+}
+
+.prosaText {
+  text-align: left;
+  line-height: $line-height-base * 1.1;
 }

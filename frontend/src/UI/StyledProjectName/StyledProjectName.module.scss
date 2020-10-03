@@ -13,7 +13,7 @@
 
 .styledNameBackground:after {
   content: "";
-  background-color: darken($secondary, 10%);
+  background-color: adjust-color($secondary, $lightness: -10%);
   position: absolute;
   width: calc(100% - 10px);
   height: 100%;
