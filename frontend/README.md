@@ -72,7 +72,7 @@ We're using a font called [Recursive](https://www.recursive.design/) for which w
 To update (in case we need more weights or the font received an update), go to [https://google-webfonts-helper.herokuapp.com/fonts/recursive?subsets=latin](https://google-webfonts-helper.herokuapp.com/fonts/recursive?subsets=latin) and select:
 
 - only `latin` charset
-- the weights we need `regular` for now
+- we need all weights
 - select `Modern browsers`
 - set prefix to `./fonts/` and replace the `@font-face` block in `src/styles/base.scss`
 - download the files and extract to `src/styles/fonts`
