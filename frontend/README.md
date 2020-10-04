@@ -69,11 +69,11 @@ Execute this each time the backend API schema changes.
 
 We're using a font called [Recursive](https://www.recursive.design/) for which we're self hosting the required files in directory `src/styles/fonts`.
 
-To update (in case we need more weights or the font received an update), go to [https://google-webfonts-helper.herokuapp.com/fonts/recursive?subsets=latin](https://google-webfonts-helper.herokuapp.com/fonts/recursive?subsets=latin) and select:
+To update (in case the font received an update), go to [https://github.com/arrowtype/recursive/releases](https://github.com/arrowtype/recursive/releases) and:
 
-- only `latin` charset
-- we need all weights
-- select `Modern browsers`
-- set prefix to `./fonts/` and replace the `@font-face` block in `src/styles/base.scss`
-- download the files and extract to `src/styles/fonts`
+- download the zip file
+- extract the `.woff2` files in the zip `Recursive_Web/woff2_variable_subsets/` to `src/styles/fonts`
+- copy the `@font-face` declarations to your `src/styles/base.scss`
+- change paths to `./fonts/`
 - don't forget to `git add` the new font files
+- Optional: Delete old font files
