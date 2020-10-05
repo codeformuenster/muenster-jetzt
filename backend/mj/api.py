@@ -57,10 +57,14 @@ def events(
     """
     Retrieve events available in the API.
     """
-    events = Event.select().order_by(Event.start_date, Event.start_time)
+    filtered_events = Event.select().order_by(
+        Event.start_date, Event.start_time
+    )
     if min_date:
-        events = events.where(Event.start_date >= min_date)
+        filtered_events = filtered_events.where(Event.start_date >= min_date)
     if max_date:
-        events = events.where(Event.start_date <= max_date)
-    events = events.paginate(page, limit)
-    return {"events": [model_to_dict(e, backrefs=True) for e in events]}
+        filtered_events = filtered_events.where(Event.start_date <= max_date)
+    filtered_events = filtered_events.paginate(page, limit)
+    return {
+        "events": [model_to_dict(e, backrefs=True) for e in filtered_events]
+    }
