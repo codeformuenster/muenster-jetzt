@@ -10,8 +10,14 @@ import mj
 from mj import schema
 from mj.db import Event
 
-
-app = FastAPI()
+app = FastAPI(
+    title="Münster Jetzt API",
+    description="This is the OpenAPI v3 schema specification of the "
+    "[Münster Jetzt](https://muenster-jetzt.de) API.<br>For more information, "
+    "check out the "
+    "[source code](https://github.com/codeformuenster/muenster-jetzt).",
+    version=mj.__version__,
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -25,8 +31,11 @@ class RootResponse(CamelModel):
     version: str
 
 
-@app.get("/", response_model=RootResponse)
+@app.get("/", response_model=RootResponse, tags=["public"])
 def root():
+    """
+    Get the current version of the API
+    """
     return {"version": f"mj-{mj.__version__}"}
 
 
@@ -34,7 +43,7 @@ class EventsResponse(CamelModel):
     events: List[schema.Event]
 
 
-@app.get("/events", response_model=EventsResponse)
+@app.get("/events", response_model=EventsResponse, tags=["public"])
 def events(
     min_date: Optional[datetime.date] = Query(
         None, alias="minDate", description="Earliest start date"
@@ -45,10 +54,17 @@ def events(
     page: int = Query(1, description="Page number"),
     limit: int = Query(50, description="Results per page"),
 ):
-    events = Event.select().order_by(Event.start_date, Event.start_time)
+    """
+    Retrieve events available in the API.
+    """
+    filtered_events = Event.select().order_by(
+        Event.start_date, Event.start_time
+    )
     if min_date:
-        events = events.where(Event.start_date >= min_date)
+        filtered_events = filtered_events.where(Event.start_date >= min_date)
     if max_date:
-        events = events.where(Event.start_date <= max_date)
-    events = events.paginate(page, limit)
-    return {"events": [model_to_dict(e, backrefs=True) for e in events]}
+        filtered_events = filtered_events.where(Event.start_date <= max_date)
+    filtered_events = filtered_events.paginate(page, limit)
+    return {
+        "events": [model_to_dict(e, backrefs=True) for e in filtered_events]
+    }

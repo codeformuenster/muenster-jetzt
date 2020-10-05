@@ -48,6 +48,9 @@ export interface Event {
   endTime?: string;
   location: Location;
   performer?: string;
+  /**
+   * This field describes the mode of the event. Like some sort of category
+   */
   mode?: string;
   organizer?: Organizer;
   images: EventImage[];
@@ -100,6 +103,8 @@ export type RootGetProps = Omit<
 
 /**
  * Root
+ *
+ * Get the current version of the API
  */
 export const RootGet = (props: RootGetProps) => (
   <Get<RootResponse, unknown, void, void> path={encode`/`} {...props} />
@@ -112,6 +117,8 @@ export type UseRootGetProps = Omit<
 
 /**
  * Root
+ *
+ * Get the current version of the API
  */
 export const useRootGet = (props: UseRootGetProps) =>
   useGet<RootResponse, unknown, void, void>(encode`/`, props);
@@ -147,6 +154,8 @@ export type EventsEventsGetProps = Omit<
 
 /**
  * Events
+ *
+ * Retrieve events available in the API.
  */
 export const EventsEventsGet = (props: EventsEventsGetProps) => (
   <Get<EventsResponse, HTTPValidationError, EventsEventsGetQueryParams, void>
@@ -167,6 +176,8 @@ export type UseEventsEventsGetProps = Omit<
 
 /**
  * Events
+ *
+ * Retrieve events available in the API.
  */
 export const useEventsEventsGet = (props: UseEventsEventsGetProps) =>
   useGet<EventsResponse, HTTPValidationError, EventsEventsGetQueryParams, void>(

@@ -17,3 +17,5 @@ export const makeAppRouteLink: (date?: string) => string = (date) => {
 export const kioskRootRoute = "/kiosk/";
 
 export const infoRootRoute = "/info/";
+
+export const apiInfoRoute = `${infoRootRoute}api/`;
