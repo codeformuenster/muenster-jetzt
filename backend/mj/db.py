@@ -47,6 +47,7 @@ class Event(MJModel):
 
     name = peewee.TextField()
     description = peewee.TextField()
+    formatted_description = peewee.TextField()
     url = peewee.CharField(max_length=4095, null=True)
     start_date = peewee.DateField()
     start_time = peewee.TimeField(null=True)
