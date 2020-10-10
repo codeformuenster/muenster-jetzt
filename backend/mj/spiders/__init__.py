@@ -21,15 +21,35 @@ class SanitizeHTMLPipeline:
     """Removes HTML tags from specified fields and ensures all other fields
     contain no HTML tags."""
 
-    # Event fields to sanitize HTML from. All other fields are expected to be
-    # clean of HTML, and items will be rejected if they contain unexpected HTML
-    SANITIZE_FIELDS = ["description"]
+    # Event fields to sanitize HTML from - dictionary values are a list of
+    # allowed tags. All other fields are expected to be clean of HTML, and
+    # items will be rejected if they contain unexpected HTML
+    SANITIZE_FIELDS = {
+        "description": [],
+        "formatted_description": [
+            "b",
+            "br",
+            "em",
+            "i",
+            "li",
+            "p",
+            "span",
+            "strong",
+            "ul",
+        ],
+    }
 
-    def process_item(self, item, spider):
+    def process_item(self, item, spider):  # skipcq: PYL-W0613
+        if "description" in item:
+            item["formatted_description"] = item["description"]
         for field in list(item):
             if not isinstance(item[field], str):
                 continue
-            cleaned_value = bleach.clean(item[field], tags=[], strip=True)
+            cleaned_value = bleach.clean(
+                item[field],
+                tags=self.SANITIZE_FIELDS.get(field, []),
+                strip=True,
+            )
             if field in self.SANITIZE_FIELDS:
                 item[field] = cleaned_value
             elif item[field] != cleaned_value.replace("&amp;", "&"):
