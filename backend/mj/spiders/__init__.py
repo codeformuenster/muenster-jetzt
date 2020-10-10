@@ -23,7 +23,7 @@ class SanitizeHTMLPipeline:
 
     # Event fields to sanitize HTML from. All other fields are expected to be
     # clean of HTML, and items will be rejected if they contain unexpected HTML
-    SANITIZE_FIELDS = ['description']
+    SANITIZE_FIELDS = ["description"]
 
     def process_item(self, item, spider):
         for field in list(item):
@@ -32,12 +32,14 @@ class SanitizeHTMLPipeline:
             cleaned_value = bleach.clean(item[field], tags=[], strip=True)
             if field in self.SANITIZE_FIELDS:
                 item[field] = cleaned_value
-            elif item[field] != cleaned_value.replace('&amp;', '&'):
+            elif item[field] != cleaned_value.replace("&amp;", "&"):
                 # The replace may seem quick-and-dirty-ish but it's the same
                 # thing bleach does internally when checking HTML attributes
                 logger.error(
                     "Item contains unexpected HTML in field '%s': %s",
-                    field, item)
+                    field,
+                    item,
+                )
                 raise DropItem(f"Unexpected HTML in {field}")
         return item
 
