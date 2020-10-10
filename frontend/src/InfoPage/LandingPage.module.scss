@@ -1,0 +1,161 @@
+@import "../styles/base.scss";
+
+.singleColumn {
+  @include make-col-ready();
+  @include media-breakpoint-up(md) {
+    @include make-col-offset(2);
+    @include make-col(8);
+  }
+}
+
+.box {
+  @include make-col-ready();
+  margin-bottom: $spacer;
+  background: $white;
+  will-change: transform;
+  transition: transform 500ms ease;
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+}
+
+.box:hover {
+  transform: translateY(-10px);
+}
+
+.comingSoonBox:after,
+.previewBox:after {
+  position: absolute;
+  top: 34px;
+  right: -16px;
+  transform: rotate(45deg);
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  clip-path: polygon(16% 0%, 84% 0%, 100% 100%, 0% 100%);
+}
+
+.comingSoonBox:after {
+  content: "In Arbeit";
+  background: $warning;
+}
+
+.previewBox:after {
+  content: "Vorschau";
+  background: $primary;
+}
+
+.boxInner {
+  @include box-shadow($box-shadow);
+  @include border-radius();
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.boxBody {
+  flex: 1;
+}
+
+.boxBody,
+.boxFooter {
+  padding: $spacer;
+}
+
+.boxLink,
+.contactLink,
+.goToApiDocsLinkButton {
+  @extend .btn;
+  @extend .btn-lg;
+}
+
+.boxLink {
+  @extend .btn-outline-primary;
+  @extend .btn-block;
+}
+
+.contactLink,
+.goToApiDocsLinkButton {
+  @extend .btn-primary;
+}
+
+.contactText {
+  @include font-size($lead-font-size);
+  font-weight: $lead-font-weight;
+  margin-bottom: $spacer;
+}
+
+.disabledBoxLink {
+  @extend .btn-outline-light;
+  @extend .disabled;
+  color: $gray-600 !important;
+}
+
+.boxTitle {
+  margin: $spacer 0;
+}
+
+.boxTitle,
+.boxBody,
+.singleColumn,
+.projectPlanTitle {
+  text-align: center;
+}
+
+.projectPlanColumn {
+  @include make-col-ready();
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+}
+
+.projectPlanTitle {
+  @include font-size($h5-font-size);
+  color: $headings-color;
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  font-weight: $headings-font-weight;
+  margin-bottom: $spacer * 2;
+}
+
+.projectPlanText {
+  line-height: $line-height-base * 1.1;
+}
+
+.dataSources{
+  list-style: none;
+  li {
+    text-align: left;
+  }
+  span {
+    margin-right: 10px;
+  }
+}
+
+.goToApiDocsBox {
+  @include box-shadow($box-shadow);
+  @include border-radius();
+  padding: $spacer * 2;
+  margin: $spacer *2 auto 0;
+  font-size: $font-size-base;
+  max-width: 650px;
+  align-self: center;
+  background-color: adjust-color($secondary, $lightness: -10%);
+  .link:hover {
+    color: adjust-color($primary, $lightness: 20%);
+  }
+}
+
+.goToApiDocsLinkButton {
+  margin-top: $spacer /2;
+  font-size: $font-size-lg;
+}
+
+.prosaText {
+  text-align: left;
+  line-height: $line-height-base * 1.1;
+}

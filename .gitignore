@@ -8,3 +8,5 @@
 
 # python
 __pycache__
+.tox
+*.egg-info

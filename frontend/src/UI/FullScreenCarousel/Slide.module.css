@@ -86,4 +86,9 @@
 
 .video {
   display: block;
+  width: 100%;
+}
+
+.spaced .slideContainer{
+  padding: 100px;
 }

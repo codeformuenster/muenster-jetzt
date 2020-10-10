@@ -1,8 +1,21 @@
 import msjlogo from "../images/ms-jetzt-logo.svg";
 import bahnLogo from "../images/logo_db_gobeta.svg";
 
+const toIEvent = function toIEvent(slides: IEventBase[]) {
+  return slides.map((slide, index) => ({ id: index, ...slide }));
+};
+
 const lambusEvent: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus.jpg",
+};
+
+const lambusApp: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus-app.jpg",
+  externalUrl: "https://www.lambus.io/",
+};
+
+const lambusMap: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus-map.jpg",
 };
 
 const msHack: Omit<ISlide, "id"> = {
@@ -19,7 +32,7 @@ const msHack: Omit<ISlide, "id"> = {
 
 const hygiene: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/hygienemassnahmen.jpg",
-  externalUrl: "https://www.gemeinsamgehtdas.de/",
+  externalUrl: "https://www.gemeinsamgehtdas.de/muenster",
 };
 
 const nafeEvent: IEventBase = {
@@ -56,6 +69,12 @@ const goBetaMs: Omit<ISlide, "id"> = {
   cssClassNames: ["vertical", "img-20-vh"],
 };
 
+const arWagenreihung: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/ar-wagenreihung.jpg",
+  externalUrl:
+    "https://gobeta.de/projekte/zuginformationen-per-app-mit-augmented-reality-ar-testen/",
+};
+
 const singleton: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/singleton.jpg",
 };
@@ -64,14 +83,47 @@ const infabSpaet: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-spaetdran.jpg",
 };
 
+// const infabMitmachen: IEventBase = {
+//   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-mitmachen.jpg",
+// };
+
 const infabMock: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-mock.jpg",
   externalUrl:
     "https://gobeta.de/projekte/radparken-der-zukunft-gemeinsam-mobile-perspektiven-schaffen/",
 };
 
+const tretty: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/tretty.jpg",
+  externalUrl:
+    "https://gobeta.de/projekte/tretty-tretroller-100-oekologisch-mit-muskelkraft-durch-muenster/",
+};
+
 const icePortal: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/ice-portal.jpg",
+};
+
+const motiontagMuensterBewegt: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_bike_mb.png",
+};
+
+const motiontagSchritte: IEventBase = {
+  imageUrl:
+    "https://muenster-jetzt.de/static/uploads/v1/motiontag_schritte_klima.png",
+};
+
+// const motiontagPreiseGruen: IEventBase = {
+//   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_gruen.png",
+// };
+
+const motiontagPreiseWeiss: IEventBase = {
+  imageUrl:
+    "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_weiss.png",
+};
+
+const muensterlandmoment: IEventBase = {
+  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/muensterland.jpg",
+  externalUrl: "https://www.muensterland.com/deinmuensterlandmoment/",
 };
 
 const gornationTeam: IEventBase = {
@@ -80,6 +132,10 @@ const gornationTeam: IEventBase = {
 
 const veomo: IEventBase = {
   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/veomo-v2.jpg",
+};
+
+const veomoFrame: Omit<ISlide, "id"> = {
+  iFrame: { url: "https://db-muenster.veomo.com/" },
 };
 
 const gornationSocialmedia: IEventBase = {
@@ -97,18 +153,36 @@ const msj: Omit<ISlide, "id"> = {
   imageUrl: msjlogo,
   title: "Alle Veranstaltungen im Überblick",
   description:
-    "Münster Jetzt ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.\nKostenlos, Werbefrei und Open-Source!",
+    "Münster Jetzt ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.\nKostenlos und Open-Source!",
   externalUrl: "https://muenster-jetzt.de/",
-  cssClassNames: "vertical",
+  cssClassNames: ["vertical", "spaced"],
 };
 
 const infabFrame: Omit<ISlide, "id"> = {
   iFrame: { url: "https://bike-frontend.azurewebsites.net" },
 };
 
+// const infabVideo: Omit<ISlide, "id"> = {
+//   video: {
+//     url: "https://muenster-jetzt.de/static/uploads/v1/infab.mov",
+//   },
+// };
+
+// const motiontagVideo: Omit<ISlide, "id"> = {
+//   video: {
+//     url: "https://muenster-jetzt.de/static/uploads/v1/motiontag.mp4",
+//   },
+// };
+
 const bahnhofLiveAppVideo: Omit<ISlide, "id"> = {
   video: {
     url: "https://muenster-jetzt.de/static/uploads/testvideo-notpublic.mp4",
+  },
+};
+
+const trettyVideo: Omit<ISlide, "id"> = {
+  video: {
+    url: "https://muenster-jetzt.de/static/uploads/v1/tretty.mp4",
   },
 };
 
@@ -141,76 +215,91 @@ export const msDisplay1: IEvent[] = [
   // { id: 7, ...bahnhofLiveAppVideo },
 ];
 
-export const msPopupAussen: IEvent[] = [
-  { id: 0, ...hygiene },
-  { id: 1, ...goBetaVideo },
-  { id: 2, ...msHack },
-  { id: 3, ...singleton },
-  { id: 4, ...hygiene },
-  { id: 5, ...infabFrame },
-  { id: 6, ...nafeEvent },
-  { id: 7, ...goBetaMs },
-  { id: 8, ...lambusEvent },
-  { id: 9, ...bahnhofLiveAppVideo },
-  { id: 10, ...infabSpaet },
-  { id: 11, ...hygiene },
-  { id: 12, ...veomo },
-  { id: 13, ...icePortal },
-  { id: 14, ...liefergruen },
-  // { id: 14, ...muensterlandRadVideo },
-  { id: 15, ...gornationTeam },
-  { id: 16, ...gornationSocialmedia },
-  { id: 17, ...infabMock },
-  { id: 18, ...vesputi },
-];
+export const msPopupAussen: IEvent[] = toIEvent([
+  hygiene,
+  msj,
+  goBetaVideo,
+  msHack,
+  singleton,
+  hygiene,
+  nafeEvent,
+  goBetaMs,
+  lambusEvent,
+  lambusMap,
+  lambusApp,
+  bahnhofLiveAppVideo,
+  infabSpaet,
+  infabFrame,
+  hygiene,
+  veomo,
+  veomoFrame,
+  icePortal,
+  arWagenreihung,
+  liefergruen,
+  muensterlandmoment,
+  // muensterlandRadVideo,
+  gornationTeam,
+  gornationSocialmedia,
+  motiontagSchritte,
+  motiontagPreiseWeiss,
+  motiontagMuensterBewegt,
+  vesputi,
+  tretty,
+]);
 
-export const msPopupInnen: IEvent[] = msPopupAussen;
+export const msPopupKurz: IEvent[] = toIEvent([
+  hygiene,
+  msj,
+  msHack,
+  goBetaMs,
+  goBetaVideo,
+  lambusEvent,
+  lambusMap,
+  lambusApp,
+  arWagenreihung,
+  veomo,
+  veomoFrame,
+  hygiene,
+  motiontagPreiseWeiss,
+  infabSpaet,
+  muensterlandmoment,
+  bahnhofLiveAppVideo,
+]);
 
-export const msVitrineAllgemein: IEvent[] = [
-  { id: 0, ...hygiene },
-  { id: 1, ...goBetaVideo },
-  { id: 2, ...msHack },
-  { id: 3, ...singleton },
-  // { id: 5, ...infabFrame },
-  // { id: 6, ...nafeEvent },
-  { id: 4, ...goBetaMs },
-  { id: 5, ...lambusEvent },
-  { id: 6, ...hygiene },
-  { id: 7, ...veomo },
-  { id: 8, ...bahnhofLiveAppVideo },
-  // { id: 10, ...infabSpaet },
-  // { id: 11, ...hygiene },
-  // { id: 12, ...icePortal },
-  // { id: 13, ...liefergruen },
-  // { id: 14, ...muensterlandRadVideo },
-  // { id: 15, ...gornationTeam },
-  // { id: 16, ...gornationSocialmedia },
-  { id: 9, ...infabMock },
-  { id: 10, ...vesputi },
-];
+export const msPopupInnen: IEvent[] = msPopupAussen.concat(
+  toIEvent([trettyVideo])
+);
+
+export const msVitrineAllgemein: IEvent[] = toIEvent([
+  hygiene,
+  msj,
+  goBetaVideo,
+  msHack,
+  singleton,
+  // infabFrame,
+  // nafeEvent,
+  goBetaMs,
+  lambusEvent,
+  lambusMap,
+  lambusApp,
+  motiontagPreiseWeiss,
+  motiontagSchritte,
+  hygiene,
+  veomo,
+  veomoFrame,
+  bahnhofLiveAppVideo,
+  // infabSpaet,
+  // hygiene,
+  // icePortal,
+  // liefergruen,
+  // muensterlandRadVideo,
+  // gornationTeam,
+  // gornationSocialmedia,
+  infabMock,
+  vesputi,
+]);
 
 // db vitrinen pc neu
-export const msDisplay9: IEvent[] = [
-  { id: 0, ...hygiene },
-  { id: 1, ...goBetaVideo },
-  { id: 2, ...msHack },
-  { id: 3, ...singleton },
-  { id: 4, ...hygiene },
-  { id: 5, ...infabFrame },
-  { id: 6, ...nafeEvent },
-  { id: 7, ...goBetaMs },
-  { id: 8, ...lambusEvent },
-  { id: 9, ...bahnhofLiveAppVideo },
-  { id: 10, ...infabSpaet },
-  { id: 11, ...hygiene },
-  { id: 12, ...veomo },
-  { id: 13, ...icePortal },
-  { id: 14, ...liefergruen },
-  // { id: 14, ...muensterlandRadVideo },
-  { id: 15, ...gornationTeam },
-  { id: 16, ...gornationSocialmedia },
-  { id: 17, ...infabMock },
-  { id: 18, ...vesputi },
-];
+export const msDisplay9: IEvent[] = msPopupAussen;
 
 export const msDisplay6: IEvent[] = msVitrineAllgemein;

@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 
 
 class SpiderDefaultsPipeline:
-
     def process_item(self, item, spider):
         for k, v in spider.defaults.items():
             item.setdefault(k, v)
@@ -44,21 +43,24 @@ class SanitizeHTMLPipeline:
 
 
 class DatabaseExportPipeline:
-
     def process_item(self, item, spider):
         with db.transaction():
             values = item.copy()
-            values['location'], _ = Location.get_or_create(
-                description=item['location'])
-            if item['organizer']:
-                values['organizer'], _ = Organizer.get_or_create(
-                    name=item['organizer'])
-            values['source'], _ = EventSource.get_or_create(
-                name=item['source'])
+            values["location"], _ = Location.get_or_create(
+                description=item["location"]
+            )
+            if item["organizer"]:
+                values["organizer"], _ = Organizer.get_or_create(
+                    name=item["organizer"]
+                )
+            values["source"], _ = EventSource.get_or_create(
+                name=item["source"]
+            )
             try:
                 event = Event.get(
-                    source=values['source'],
-                    source_event_id=values['source_event_id'])
+                    source=values["source"],
+                    source_event_id=values["source_event_id"],
+                )
             except Event.DoesNotExist:
                 event = Event()
             for k, v in values.items():
@@ -70,10 +72,10 @@ class DatabaseExportPipeline:
 class EventSpider(scrapy.Spider):
 
     custom_settings = {
-        'ITEM_PIPELINES': {
-            'mj.spiders.SpiderDefaultsPipeline': 100,
-            'mj.spiders.SanitizeHTMLPipeline': 200,
-            'mj.spiders.DatabaseExportPipeline': 900,
+        "ITEM_PIPELINES": {
+            "mj.spiders.SpiderDefaultsPipeline": 100,
+            "mj.spiders.SanitizeHTMLPipeline": 200,
+            "mj.spiders.DatabaseExportPipeline": 900,
         },
     }
 

@@ -3,7 +3,7 @@ import { usePopper } from "react-popper";
 import { Link } from "react-router-dom";
 
 import styles from "./Nav.module.scss";
-import { infoRootRoute } from "../../utils/routes";
+import { apiInfoRoute, infoRootRoute } from "../../utils/routes";
 import ExternalLink from "../../Helpers/ExternalLink";
 
 const Nav: FC = () => {
@@ -53,6 +53,9 @@ const Nav: FC = () => {
           <ul className={styles.navList}>
             <li className={styles.navItem}>
               <Link to={infoRootRoute}>Info</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link to={apiInfoRoute}>API</Link>
             </li>
             <li className={styles.divider} />
             <li className={styles.navItem}>

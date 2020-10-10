@@ -64,3 +64,16 @@ Checks your code against the code style of this project.
 We're using the OpenAPI v3 specification of our backend to generate an API client which talks to the backend.
 Running `npm run generate-client` regenerates the file `src/generated-api-client.tsx`.
 Execute this each time the backend API schema changes.
+
+## How to update the font
+
+We're using a font called [Recursive](https://www.recursive.design/) for which we're self hosting the required files in directory `src/styles/fonts`.
+
+To update (in case the font received an update), go to [https://github.com/arrowtype/recursive/releases](https://github.com/arrowtype/recursive/releases) and:
+
+- download the zip file
+- extract the `.woff2` files in the zip `Recursive_Web/woff2_variable_subsets/` to `src/styles/fonts`
+- copy the `@font-face` declarations to your `src/styles/base.scss`
+- change paths to `./fonts/`
+- don't forget to `git add` the new font files
+- Optional: Delete old font files
