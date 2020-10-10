@@ -40,7 +40,13 @@ export interface Event {
    */
   sourceLicense?: string;
   name: string;
+  /**
+   * Plain text event description and details
+   */
   description: string;
+  /**
+   * HTML event description and details (if available from source, otherwise matches plain text description)
+   */
   formattedDescription: string;
   url?: string;
   startDate: string;

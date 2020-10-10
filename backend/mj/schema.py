@@ -45,9 +45,18 @@ class Event(CamelModel):
         description="License under which source published event data",
     )
 
-    name: str
-    description: str
-    formatted_description: str
+    name: str = Field(title="Event title")
+    description: str = Field(
+        title="Description",
+        description="Plain text event description and details",
+    )
+    formatted_description: str = Field(
+        title="Formatted Description",
+        description=(
+            "HTML event description and details (if available from source, "
+            "otherwise matches plain text description)"
+        ),
+    )
     url: Optional[str] = Field(
         None, title="URL containing more information on the source page"
     )
@@ -64,7 +73,10 @@ class Event(CamelModel):
         None, title="End Time (optional) formatted as (HH:MM:SS)"
     )
     location: Location
-    performer: Optional[str] = None
+    performer: Optional[str] = Field(
+        None,
+        title="Main event performer (e.g. speaker, band, etc.)",
+    )
     mode: Optional[str] = Field(
         None,
         title="The mode of the event",
