@@ -40,7 +40,14 @@ export interface Event {
    */
   sourceLicense?: string;
   name: string;
+  /**
+   * Plain text event description and details
+   */
   description: string;
+  /**
+   * HTML event description and details (if available from source, otherwise matches plain text description).Will contain only HTML tags b, br, em, i, li, p, span, strong and ul.
+   */
+  formattedDescription: string;
   url?: string;
   startDate: string;
   startTime?: string;

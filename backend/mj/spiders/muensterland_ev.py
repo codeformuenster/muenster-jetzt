@@ -52,8 +52,8 @@ class MuensterlandEvSpider(EventSpider):
                 and event["poi"]["address"]["city"]
             ):
                 address += (
-                    f', {event["poi"]["address"]["postal_code"]} ',
-                    '{event["poi"]["address"]["city"]}',
+                    f', {event["poi"]["address"]["postal_code"]} '
+                    f'{event["poi"]["address"]["city"]}'
                 )
 
             yield {
@@ -66,7 +66,6 @@ class MuensterlandEvSpider(EventSpider):
                 "end_date": end_datetime[0],
                 "end_time": end_datetime[1],
                 "location": address,
-                "performer": "",
                 "mode": (
                     event["types"][0]["name"]
                     if ("types" in event) and len(event["types"]) > 0
@@ -76,6 +75,6 @@ class MuensterlandEvSpider(EventSpider):
                     event["event_organizers"][0]["name"]
                     if ("event_organizers" in event)
                     and len(event["event_organizers"]) > 0
-                    else ""
+                    else None
                 ),
             }
