@@ -41,6 +41,7 @@ export interface Event {
   sourceLicense?: string;
   name: string;
   description: string;
+  formattedDescription: string;
   url?: string;
   startDate: string;
   startTime?: string;
