@@ -54,7 +54,9 @@ class Event(CamelModel):
         title="Formatted Description",
         description=(
             "HTML event description and details (if available from source, "
-            "otherwise matches plain text description)"
+            "otherwise matches plain text description)."
+            "Will contain only HTML tags b, br, em, i, li, p, span, strong "
+            "and ul."
         ),
     )
     url: Optional[str] = Field(
