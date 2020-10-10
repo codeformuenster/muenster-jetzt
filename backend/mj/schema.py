@@ -47,6 +47,7 @@ class Event(CamelModel):
 
     name: str
     description: str
+    formatted_description: str
     url: Optional[str] = Field(
         None, title="URL containing more information on the source page"
     )
