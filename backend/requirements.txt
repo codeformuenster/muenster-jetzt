@@ -4,56 +4,47 @@
 #
 #    pip-compile
 #
+asgiref==3.2.10           # via django
 attrs==19.3.0             # via automat, service-identity, twisted
 automat==20.2.0           # via twisted
 bleach==3.2.1             # via mj (setup.py)
-cached-property==1.5.1    # via peewee-migrate
-certifi==2020.6.20        # via requests
 cffi==1.14.1              # via cryptography
-chardet==3.0.4            # via requests
-click==7.1.2              # via mj (setup.py), peewee-migrate, uvicorn
+click==7.1.2              # via mj (setup.py), uvicorn
 constantly==15.1.0        # via twisted
 cryptography==3.0         # via pyopenssl, scrapy, service-identity
 cssselect==1.1.0          # via parsel, scrapy
-fastapi-camelcase==1.0.2  # via mj (setup.py)
-fastapi==0.60.1           # via mj (setup.py)
-h11==0.9.0                # via uvicorn
-httptools==0.1.1          # via uvicorn
+django==3.1.2             # via djangorestframework, mj (setup.py)
+djangorestframework==3.12.1  # via mj (setup.py)
+h11==0.11.0               # via uvicorn
 hyperlink==19.0.0         # via twisted
-idna==2.10                # via hyperlink, requests
+idna==2.10                # via hyperlink
 incremental==17.5.0       # via twisted
 itemadapter==0.1.0        # via scrapy
 lxml==4.5.2               # via parsel, scrapy
-mock==4.0.2               # via peewee-migrate
 packaging==20.4           # via bleach
 parsel==1.6.0             # via scrapy
-peewee-migrate==1.1.6     # via mj (setup.py)
-peewee==3.13.3            # via mj (setup.py), peewee-migrate
 protego==0.1.16           # via scrapy
 psycopg2-binary==2.8.5    # via mj (setup.py)
 pyasn1-modules==0.2.8     # via service-identity
 pyasn1==0.4.8             # via pyasn1-modules, service-identity
 pycparser==2.20           # via cffi
-pydantic==1.6.1           # via fastapi, fastapi-camelcase
 pydispatcher==2.0.5       # via scrapy
 pyhamcrest==2.0.2         # via twisted
-pyhumps==1.6.1            # via fastapi-camelcase
 pyopenssl==19.1.0         # via scrapy
 pyparsing==2.4.7          # via packaging
 python-dotenv==0.14.0     # via mj (setup.py)
+pytz==2020.1              # via django
+pyyaml==5.3.1             # via mj (setup.py)
 queuelib==1.5.0           # via scrapy
-requests==2.24.0          # via mj (setup.py)
 scrapy==2.2.1             # via mj (setup.py)
 service-identity==18.1.0  # via scrapy
 six==1.15.0               # via automat, bleach, cryptography, packaging, parsel, protego, pyopenssl, w3lib
-starlette==0.13.6         # via fastapi
+sqlparse==0.4.1           # via django
 twisted==20.3.0           # via scrapy
-urllib3==1.25.10          # via requests
-uvicorn==0.11.7           # via mj (setup.py)
-uvloop==0.14.0            # via uvicorn
+uritemplate==3.0.1        # via mj (setup.py)
+uvicorn==0.12.1           # via mj (setup.py)
 w3lib==1.22.0             # via parsel, scrapy
 webencodings==0.5.1       # via bleach
-websockets==8.1           # via uvicorn
 zope.interface==5.1.0     # via scrapy, twisted
 
 # The following packages are considered to be unsafe in a requirements file:

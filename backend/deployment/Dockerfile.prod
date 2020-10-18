@@ -9,11 +9,13 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY mj mj
-COPY migrations migrations
+COPY events events
+COPY scraping scraping
 COPY setup.py .
+COPY deployment/serve.sh .
 
 RUN pip install .
 
-ENTRYPOINT ["python", "-m", "mj"]
+ENTRYPOINT ["/app/serve.sh"]
 
-CMD ["serve", "--host", "0.0.0.0"]
+CMD ["gunicorn", "mj.asgi:application", "-k", "uvicorn.workers.UvicornWorker"]
