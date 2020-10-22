@@ -4,6 +4,7 @@ import DateButton, { IDateButton } from "./DateButton";
 import useParsedDateRouteParam from "../../hooks/useParsedDateRouteParam";
 import { isoFormat, oneDay } from "../../utils/eventTime";
 import { makeAppRouteLink } from "../../utils/routes";
+import Calendar from "../Calendar/Calendar";
 
 const weekdayShortFormat = new Intl.DateTimeFormat("de-DE", {
   weekday: "short",
@@ -49,7 +50,7 @@ const DateSelector: FC = () => {
       {dates.map((d) => (
         <DateButton key={d.to} {...d} />
       ))}
-      <div role="button">&#128197;</div>
+      <Calendar />
     </div>
   );
 };

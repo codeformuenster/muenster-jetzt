@@ -1,0 +1,118 @@
+@import "../../styles/base.scss";
+@import "../DateSelector/DateButton.module.scss";
+
+.calendarButton {
+  @extend .btn;
+  margin-top: $spacer;
+}
+
+.calendarPopup {
+  @include box-shadow($box-shadow-sm);
+  @include border-radius();
+  border: $border-width solid $border-color;
+  background-color: $white;
+  z-index: 1;
+  padding: 0 $spacer;
+  width: 100%;
+}
+
+.calendar {
+  margin: 1em;
+  padding: 0.5em;
+}
+
+.monthRow {
+  display: flex;
+}
+
+.monthIndicator {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1em;
+  flex: 1;
+}
+
+.jumpMonthArrow {
+
+}
+
+.nextMonth {
+}
+
+.prevMonth {
+}
+
+/* CSS grid used for the dates */
+.dayOfWeek,
+.dateGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.dayOfWeek > * {
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+/* Dates */
+.dateGrid {
+  margin-top: 0.5em;
+}
+
+.date[data-dow='Mo'] {
+  grid-column: 1;
+}
+
+.date[data-dow='Di'] {
+  grid-column: 2;
+}
+
+.date[data-dow='Mi'] {
+  grid-column: 3;
+}
+
+.date[data-dow='Do'] {
+  grid-column: 4;
+}
+
+.date[data-dow='Fr'] {
+  grid-column: 5;
+}
+
+.date[data-dow='Sa'] {
+  @extend .isWeekend;
+  grid-column: 6;
+}
+
+.date[data-dow='So'] {
+  @extend .isWeekend;
+  grid-column: 7;
+}
+
+/* Style for each day */
+.date {
+  height: 4.5ch;
+  width: 4.5ch;
+  line-height: 4ch;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 50%;
+  color: $gray-900;
+}
+
+.date:hover,
+.date:focus {
+  outline: none;
+}
+
+.isToday {
+  border: 2px solid $app-datebutton-today-color;
+}
+
+.isActive {
+  background-color: $app-datebutton-active-color;
+}
+
