@@ -1,7 +1,6 @@
 import React, { FC, useMemo } from "react";
 import styles from "./DateSelector.module.scss";
 import DateButton, { IDateButton } from "./DateButton";
-import DateArrow, { Direction } from "./DateArrow";
 import useParsedDateRouteParam from "../../hooks/useParsedDateRouteParam";
 import { isoFormat, oneDay } from "../../utils/eventTime";
 import { makeAppRouteLink } from "../../utils/routes";
@@ -16,25 +15,6 @@ const weekdayLongFormat = new Intl.DateTimeFormat("de-DE", {
   month: "2-digit",
   day: "2-digit",
 });
-
-const usePrevNextDate: (date?: Date) => { prev?: string; next?: string } = (
-  date
-) => {
-  if (date) {
-    const prev = new Date(date.getTime());
-    const next = new Date(date.getTime());
-
-    prev.setDate(date.getDate() - 7);
-    next.setDate(date.getDate() + 7);
-
-    return {
-      prev: isoFormat(prev),
-      next: isoFormat(next),
-    };
-  }
-
-  return {};
-};
 
 const DateSelector: FC = () => {
   const parsedDateParam = useParsedDateRouteParam();
@@ -64,19 +44,12 @@ const DateSelector: FC = () => {
     });
   }, [parsedDateParam]);
 
-  const { prev, next } = usePrevNextDate(parsedDateParam);
-
   return (
     <div className={styles.dateSelectorContainer}>
-      {prev && (
-        <DateArrow direction={Direction.Left} to={makeAppRouteLink(prev)} />
-      )}
       {dates.map((d) => (
         <DateButton key={d.to} {...d} />
       ))}
-      {next && (
-        <DateArrow direction={Direction.Right} to={makeAppRouteLink(next)} />
-      )}
+      <div role="button">&#128197;</div>
     </div>
   );
 };
