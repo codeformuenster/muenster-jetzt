@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@popperjs/core": "^2.4.4",
+    "@popperjs/core": "^2.5.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
     "@testing-library/user-event": "^12.1.7",
@@ -12,7 +12,7 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "clsx": "^1.1.1",
     "interweave": "^12.5.0",
     "ky": "^0.24.0",
