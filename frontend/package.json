@@ -17,7 +17,7 @@
     "interweave": "^12.5.0",
     "ky": "^0.24.0",
     "purecss": "^2.0.3",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-popper": "^2.2.3",
     "react-qr-svg": "^2.2.2",
