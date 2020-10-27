@@ -13,7 +13,7 @@ cffi==1.14.1              # via cryptography
 chardet==3.0.4            # via requests
 click==7.1.2              # via mj (setup.py), peewee-migrate, uvicorn
 constantly==15.1.0        # via twisted
-cryptography==3.0         # via pyopenssl, scrapy, service-identity
+cryptography==3.2         # via pyopenssl, scrapy, service-identity
 cssselect==1.1.0          # via parsel, scrapy
 fastapi-camelcase==1.0.2  # via mj (setup.py)
 fastapi==0.60.1           # via mj (setup.py)
