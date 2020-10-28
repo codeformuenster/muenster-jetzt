@@ -24,7 +24,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "restful-react": "^14.5.1",
-    "swiper": "^6.2.0",
+    "swiper": "^6.3.4",
     "timeago-react": "^3.0.0",
     "timeago.js": "^4.0.2",
     "typescript": "^4.0.3"
