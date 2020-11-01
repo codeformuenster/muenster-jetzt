@@ -22,6 +22,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_HOSTS", "localhost,127.0.0.1,[::1]").split(
 INSTALLED_APPS = [
     "scraping.apps.ScrapingConfig",
     "events.apps.EventsConfig",
+    "django_filters",
     "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -124,5 +125,8 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "events.schema.CamelizingAutoSchema",
     "DEFAULT_PAGINATION_CLASS": (
         "events.pagination.PageNumberAndSizePagination"
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }

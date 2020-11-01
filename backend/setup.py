@@ -15,6 +15,7 @@ setup(
         "django",
         "djangorestframework",
         "djangorestframework-camel-case",
+        "django-filter",
         "gunicorn",
         "python-dotenv",
         "psycopg2-binary",
