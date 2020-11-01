@@ -118,11 +118,11 @@ REST_FRAMEWORK = {
         "djangorestframework_camel_case.render.CamelCaseJSONRenderer",
         "djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer",
     ),
-
     "DEFAULT_PARSER_CLASSES": (
         "djangorestframework_camel_case.parser.CamelCaseJSONParser",
     ),
     "DEFAULT_SCHEMA_CLASS": "events.schema.CamelizingAutoSchema",
     "DEFAULT_PAGINATION_CLASS": (
-        "events.pagination.PageNumberAndSizePagination"),
+        "events.pagination.PageNumberAndSizePagination"
+    ),
 }
