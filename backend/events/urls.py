@@ -5,7 +5,7 @@ from rest_framework import routers
 from . import views
 
 
-router = routers.DefaultRouter()
+router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"events", views.EventsViewSet)
 router.register(r"sources", views.EventSourcesViewSet)
 router.register(r"locations", views.LocationsViewSet)
