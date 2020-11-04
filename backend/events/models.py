@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Location(models.Model):
+    def __str__(self):
+        return self.description
 
     description = models.CharField(
         max_length=1023,
@@ -11,6 +13,8 @@ class Location(models.Model):
 
 
 class Organizer(models.Model):
+    def __str__(self):
+        return self.name
 
     name = models.CharField(
         max_length=255,
@@ -20,6 +24,8 @@ class Organizer(models.Model):
 
 
 class EventSource(models.Model):
+    def __str__(self):
+        return self.name
 
     name = models.CharField(
         max_length=255,
@@ -36,6 +42,9 @@ class Event(models.Model):
             ),
         ]
         ordering = ["start_date", "start_time"]
+
+    def __str__(self):
+        return f"{self.name} ({self.start_date})"
 
     source = models.ForeignKey(
         "EventSource",
