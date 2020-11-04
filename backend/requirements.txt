@@ -19,6 +19,7 @@ djangorestframework-camel-case==1.2.0  # via mj (setup.py)
 djangorestframework==3.12.1  # via mj (setup.py)
 gunicorn==20.0.4          # via mj (setup.py)
 h11==0.11.0               # via uvicorn
+httptools==0.1.1          # via uvicorn
 hyperlink==19.0.0         # via twisted
 idna==2.10                # via hyperlink
 incremental==17.5.0       # via twisted
@@ -35,9 +36,9 @@ pydispatcher==2.0.5       # via scrapy
 pyhamcrest==2.0.2         # via twisted
 pyopenssl==19.1.0         # via scrapy
 pyparsing==2.4.7          # via packaging
-python-dotenv==0.14.0     # via mj (setup.py)
+python-dotenv==0.14.0     # via mj (setup.py), uvicorn
 pytz==2020.1              # via django
-pyyaml==5.3.1             # via mj (setup.py)
+pyyaml==5.3.1             # via mj (setup.py), uvicorn
 queuelib==1.5.0           # via scrapy
 scrapy==2.2.1             # via mj (setup.py)
 service-identity==18.1.0  # via scrapy
@@ -45,9 +46,12 @@ six==1.15.0               # via automat, bleach, cryptography, packaging, parsel
 sqlparse==0.4.1           # via django
 twisted==20.3.0           # via scrapy
 uritemplate==3.0.1        # via mj (setup.py)
-uvicorn==0.12.1           # via mj (setup.py)
+uvicorn[standard]==0.12.1  # via mj (setup.py)
+uvloop==0.14.0            # via uvicorn
 w3lib==1.22.0             # via parsel, scrapy
+watchgod==0.6             # via uvicorn
 webencodings==0.5.1       # via bleach
+websockets==8.1           # via uvicorn
 zope.interface==5.1.0     # via scrapy, twisted
 
 # The following packages are considered to be unsafe in a requirements file:

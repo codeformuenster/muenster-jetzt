@@ -21,7 +21,7 @@ setup(
         "psycopg2-binary",
         "scrapy",
         "uritemplate",
-        "uvicorn",
+        "uvicorn[standard]",
         "pyyaml",
     ],
 )
