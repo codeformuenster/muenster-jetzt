@@ -52,7 +52,7 @@ class EventsFilterSet(FilterSet):
 
 
 class EventsViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Event.objects.all()
+    queryset = Event.objects.filter(visible=True)
     serializer_class = EventSerializer
     filterset_class = EventsFilterSet
 

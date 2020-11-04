@@ -1,4 +1,17 @@
+from django import forms
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
+
+
+class ChoiceArrayField(ArrayField):
+    def formfield(self, **kwargs):
+        defaults = {
+            "form_class": forms.MultipleChoiceField,
+            "widget": forms.CheckboxSelectMultiple,
+            "choices": self.base_field.choices,
+        }
+        defaults.update(kwargs)
+        return super(ArrayField, self).formfield(**defaults)
 
 
 class Location(models.Model):
@@ -132,6 +145,33 @@ class Event(models.Model):
         blank=True,
         related_name="events",
     )
+
+    OVERRIDABLE_FIELDS = [
+        (field, field)
+        for field in [
+            "source_url",
+            "source_license",
+            "name",
+            "description",
+            "formatted_description",
+            "url",
+            "start_date",
+            "start_time",
+            "end_date",
+            "end_time",
+            "location",
+            "performer",
+            "mode",
+            "organizer",
+        ]
+    ]
+
+    dirty_fields = ChoiceArrayField(
+        models.CharField(max_length=63, choices=OVERRIDABLE_FIELDS),
+        default=list,
+        blank=True,
+    )
+    visible = models.BooleanField(default=True)
 
 
 class EventImage(models.Model):

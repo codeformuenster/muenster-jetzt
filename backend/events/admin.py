@@ -13,7 +13,8 @@ class SalesAdmin(admin.ModelAdmin):
         "location",
         "organizer",
         "source",
+        "visible",
     ]
     list_display_links = ["id", "name"]
-    list_filter = ["location", "organizer", "source"]
+    list_filter = ["location", "organizer", "source", "visible"]
     search_fields = ["id", "name"]

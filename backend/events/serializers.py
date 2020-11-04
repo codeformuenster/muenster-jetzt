@@ -6,7 +6,7 @@ from .models import Event, EventSource, Location, Organizer
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = "__all__"
+        exclude = ["dirty_fields", "visible"]
         extra_fields = ["images"]
         depth = 1
 

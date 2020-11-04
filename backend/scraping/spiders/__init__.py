@@ -87,7 +87,8 @@ class DatabaseExportPipeline:
             except Event.DoesNotExist:
                 event = Event()
             for k, v in values.items():
-                setattr(event, k, v)
+                if k not in event.dirty_fields:
+                    setattr(event, k, v)
             event.save()
         return item
 
