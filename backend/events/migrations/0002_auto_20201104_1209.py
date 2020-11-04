@@ -6,13 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0001_initial'),
+        ("events", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='event',
-            name='formatted_description',
-            field=models.TextField(blank=True, help_text='HTML event description and details (if available from source, otherwise matches plain text description). Will only contain these HTML tags: b, br, em, i, li, p, span, strong, ul.', null=True),
+            model_name="event",
+            name="formatted_description",
+            field=models.TextField(
+                blank=True,
+                help_text="HTML event description and details (if available from source, otherwise matches plain text description). Will only contain these HTML tags: b, br, em, i, li, p, span, strong, ul.",
+                null=True,
+            ),
         ),
     ]
