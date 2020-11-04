@@ -81,7 +81,7 @@ class Event(models.Model):
         help_text=(
             "HTML event description and details (if available from source, "
             "otherwise matches plain text description). Will only contain "
-            "these HTML tags: b, br, em, i, li, p, span, strong, ul.",
+            "these HTML tags: b, br, em, i, li, p, span, strong, ul."
         ),
     )
     url = models.CharField(
