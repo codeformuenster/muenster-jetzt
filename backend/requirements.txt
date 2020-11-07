@@ -11,7 +11,7 @@ bleach==3.2.1             # via mj (setup.py)
 cffi==1.14.1              # via cryptography
 click==7.1.2              # via mj (setup.py), uvicorn
 constantly==15.1.0        # via twisted
-cryptography==3.0         # via pyopenssl, scrapy, service-identity
+cryptography==3.2         # via pyopenssl, scrapy, service-identity
 cssselect==1.1.0          # via parsel, scrapy
 django-filter==2.4.0      # via mj (setup.py)
 django==3.1.2             # via django-filter, djangorestframework, mj (setup.py)
