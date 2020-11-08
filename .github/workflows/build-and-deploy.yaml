@@ -96,7 +96,7 @@ jobs:
           repository: codeformuenster/muenster-jetzt-api-static
           dockerfile: backend/deployment/Dockerfile-nginx.prod
           tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
-          build_args: |
+          build-args: |
             SOURCE_TAG=${{ steps.branch_info.outputs.branch_name }}
           path: backend
           tag_with_ref: true
