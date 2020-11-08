@@ -34,8 +34,10 @@ jobs:
 
           if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
             echo "##[set-output name=changes;]1"
+            echo "##[set-output name=static_source_tag;]${branch_name}"
           else
             echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
+            echo "##[set-output name=static_source_tag;]master"
           fi
 
       - name: Debug
