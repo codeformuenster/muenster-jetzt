@@ -58,6 +58,24 @@ services:
       driver: loki
       options:
         loki-url: "${LOKI_URL}"
+  api:
+    restart: unless-stopped
+    image: codeformuenster/muenster-jetzt-api-static:${TAG_NAME}
+    expose:
+      - "8001"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=https-proxy_traefik"
+      - "traefik.http.routers.msj-${TAG_NAME}-api.rule=Host(`api.${DOMAIN}`) && PathPrefix(`/static`)"
+      - "traefik.http.routers.msj-${TAG_NAME}-api.entrypoints=web-secure"
+      - "traefik.http.routers.msj-${TAG_NAME}-api.tls.certresolver=letsencrypt"
+      - "traefik.http.services.msj-${TAG_NAME}-api.loadbalancer.server.port=8001"
+    networks:
+      - https-proxy_traefik
+    logging:
+      driver: loki
+      options:
+        loki-url: "${LOKI_URL}"
   db:
     image: postgres:12.3
     restart: unless-stopped

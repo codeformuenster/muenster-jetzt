@@ -85,6 +85,21 @@ jobs:
           tag_with_ref: true
           push: ${{ github.event_name == 'push' }}
 
+      - name: Build backend nginx container image (and push to Docker Hub on master branch)
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_PASS }}
+          repository: codeformuenster/muenster-jetzt-api-static
+          dockerfile: backend/deployment/Dockerfile-nginx.prod
+          tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
+          build_args: |
+            SOURCE_TAG=${{ steps.branch_info.outputs.branch_name }}
+          path: backend
+          tag_with_ref: true
+          push: ${{ github.event_name == 'push' }}
+
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
     runs-on: ubuntu-18.04
