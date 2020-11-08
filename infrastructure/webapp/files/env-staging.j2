@@ -1,4 +1,4 @@
-DOMAIN=staging.muenster-jetzt.de
+DOMAIN=staging.{{application_domain}}
 TAG_NAME=master
 DB_HOST=db
 DB_USER={{db_user_staging}}
@@ -8,3 +8,5 @@ MUENSTERLAND_API_TOKEN={{api_token_muensterland}}
 DATENPORTAL_USER={{api_user_datenportal}}
 DATENPORTAL_PASSWORD={{api_password_datenportal}}
 LOKI_URL={{loki_url}}
+DJANGO_SECRET_KEY={{api_secret_key_staging}}
+DJANGO_HOSTS=api.staging.{{application_domain}}
