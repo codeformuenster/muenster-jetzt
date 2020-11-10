@@ -89,7 +89,7 @@ jobs:
           tags: docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
           file: backend/deployment/Dockerfile.prod
           context: backend
-          cache-to: type=local,src=backend-container-cache
+          cache-to: type=local,dest=backend-container-cache
 
       - name: Build backend nginx container image (and push to Docker Hub on master branch)
         if: steps.branch_info.outputs.changes != '0'
