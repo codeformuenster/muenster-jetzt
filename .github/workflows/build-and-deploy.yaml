@@ -83,13 +83,14 @@ jobs:
 
       - name: Build backend container image (and push to Docker Hub on master branch)
         if: steps.branch_info.outputs.changes != '0'
+        id: backend_container_build
         uses: docker/build-push-action@v2
         with:
           push: ${{ github.event_name == 'push' }}
           tags: docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
           file: backend/deployment/Dockerfile.prod
           context: backend
-          cache-to: type=local,dest=backend-container-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
 
       - name: Build backend nginx container image (and push to Docker Hub on master branch)
         if: steps.branch_info.outputs.changes != '0'
@@ -99,9 +100,9 @@ jobs:
           tags: docker.io/codeformuenster/muenster-jetzt-api-static:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-api-static:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
           file: backend/deployment/Dockerfile-nginx.prod
           context: backend
-          cache-from: type=local,src=backend-container-cache
+          cache-from: type=local,src=/tmp/.buildx-cache
           build-args: |
-            SOURCE_TAG=${{ steps.branch_info.outputs.branch_name }}
+            SOURCE_TAG=${{ steps.branch_info.outputs.branch_name }}@${{ steps.backend_container_build.outputs.digest }}
 
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
