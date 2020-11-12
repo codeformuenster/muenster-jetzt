@@ -1,6 +1,6 @@
-ARG SOURCE_TAG=master
+ARG SOURCE_IMAGE=codeformuenster/muenster-jetzt-api:master
 
-FROM codeformuenster/muenster-jetzt-api:${SOURCE_TAG} as staticfiles
+FROM ${SOURCE_IMAGE} as staticfiles
 
 COPY .env.example .env
 
