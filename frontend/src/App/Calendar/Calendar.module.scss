@@ -3,7 +3,18 @@
 
 .calendarButton {
   @extend .btn;
-  margin-top: $spacer;
+  border-radius: 50%;
+  height: calc((100vw - 20px) / 9);
+  width: calc((100vw - 20px) / 9);
+  max-width: $app-datebutton-maxdimension;
+  max-height: $app-datebutton-maxdimension;
+  box-shadow: $app-datebutton-boxshadow;
+  background-color: $app-datebutton-background-color;
+  padding: 0;
+  &:focus, &:active, &:hover {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 .calendarPopup {
@@ -14,6 +25,7 @@
   z-index: 1;
   padding: 0 $spacer;
   width: 100%;
+  max-width: 400px;
 }
 
 .calendar {

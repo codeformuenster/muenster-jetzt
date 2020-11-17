@@ -15,11 +15,12 @@ const Calendar: FC = () => {
     referenceElement,
     popperElement,
     {
+      placement: "bottom-end",
       modifiers: [
         {
           name: "offset",
           options: {
-            offset: [0, -70],
+            offset: [0, 10],
           },
         },
       ],
