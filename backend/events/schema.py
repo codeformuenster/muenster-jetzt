@@ -11,9 +11,12 @@ class CamelizingAutoSchema(AutoSchema):
             for field_name, schema in result["properties"].items()
         }
         new_result = {"type": "object", "properties": camelized_properties}
-        if "required" in result:
-            new_result["required"] = list(
-                map(self._to_camel_case, result["required"])
-            )
+        new_result["required"] = list(
+            map(self._to_camel_case, result.get("required", []))
+        ) + [
+            field
+            for field, schema in new_result["properties"].items()
+            if schema.get("readOnly")
+        ]
 
         return new_result
