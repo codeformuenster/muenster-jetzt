@@ -196,7 +196,7 @@ jobs:
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          docker run --rm -d --name backend -p 8000:8000 muenster-jetzt-api:in-ci
+          docker run --rm -d --name backend -p 8000:8000 --env-file ../backend/.env.example muenster-jetzt-api:in-ci
 
       - name: Run 'npm run generate-client'
         if: steps.branch_info.outputs.changes != '0'
