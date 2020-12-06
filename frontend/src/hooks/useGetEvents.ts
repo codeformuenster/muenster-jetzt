@@ -1,13 +1,25 @@
 import { useEffect, useState, useMemo } from "react";
 import { GetDataError } from "restful-react";
 import {
-  EventsResponse,
+  ListEventsResponse,
   Event,
-  HTTPValidationError,
-  EventsEventsGetQueryParams,
-  useEventsEventsGet,
+  ListEventsQueryParams,
+  useListEvents,
 } from "../generated-api-client";
 import { parseDate, formatTime, formatDuration } from "../utils/eventTime";
+
+interface HTTPValidationError {
+  page?: string[];
+  limit?: string[];
+  location?: string[];
+  organizer?: string[];
+  minDate?: string[];
+  maxDate?: string[];
+}
+
+interface HTTPNotFoundError {
+  detail: string;
+}
 
 export interface IAugmentedEvent extends Event {
   start?: Date;
@@ -22,7 +34,7 @@ export interface IAugmentedEvent extends Event {
 
 export interface IUseGetEventsResult {
   loading: boolean;
-  error: GetDataError<HTTPValidationError> | null;
+  error: GetDataError<HTTPValidationError | HTTPNotFoundError> | null;
   events: IAugmentedEvent[] | null;
 }
 
@@ -30,7 +42,7 @@ interface IUseGetEvents {
   (date?: string): IUseGetEventsResult;
 }
 
-const augmentUrl: (url?: string) => string | undefined = (url) => {
+const augmentUrl: (url?: string | null) => string | undefined = (url) => {
   if (url) {
     return `${window.location.origin}/external/?url=${encodeURI(url)}`;
   }
@@ -39,7 +51,7 @@ const augmentUrl: (url?: string) => string | undefined = (url) => {
 };
 
 const useGetEvents: IUseGetEvents = (date) => {
-  const queryParams = useMemo<EventsEventsGetQueryParams>(() => {
+  const queryParams = useMemo<ListEventsQueryParams>(() => {
     if (!date) {
       return {};
     }
@@ -50,29 +62,31 @@ const useGetEvents: IUseGetEvents = (date) => {
     };
   }, [date]);
 
-  const { loading, data, error } = useEventsEventsGet({
+  const { loading, data, error } = useListEvents({
     queryParams,
-    resolve: (responseData: EventsResponse) => {
+    resolve: (responseData: ListEventsResponse) => {
       return {
         ...responseData,
-        events: responseData.events.map((event) => {
-          const start = parseDate(event.startDate, event.startTime);
-          let end;
-          if (event.endDate) {
-            end = parseDate(event.endDate, event.endTime);
-          }
+        results: responseData.results
+          ? responseData.results.map((event) => {
+              const start = parseDate(event.startDate, event.startTime);
+              let end;
+              if (event.endDate) {
+                end = parseDate(event.endDate, event.endTime);
+              }
 
-          // try to parse dates
-          return {
-            ...event,
-            start,
-            end,
-            formattedStart: formatTime(start),
-            formattedEnd: formatTime(end),
-            duration: formatDuration(start, end),
-            externalUrl: augmentUrl(event.url),
-          };
-        }),
+              // try to parse dates
+              return {
+                ...event,
+                start,
+                end,
+                formattedStart: formatTime(start),
+                formattedEnd: formatTime(end),
+                duration: formatDuration(start, end),
+                externalUrl: augmentUrl(event.url),
+              };
+            })
+          : undefined,
       };
     },
   });
@@ -81,8 +95,8 @@ const useGetEvents: IUseGetEvents = (date) => {
   useEffect(() => {
     if (loading) {
       setEvents(null);
-    } else if (data?.events) {
-      setEvents(data.events as IAugmentedEvent[]);
+    } else if (data?.results) {
+      setEvents(data.results as IAugmentedEvent[]);
     }
   }, [data, loading]);
 
