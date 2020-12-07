@@ -23,7 +23,7 @@
     "react-qr-svg": "^2.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "restful-react": "^14.5.1",
+    "restful-react": "^15.1.2",
     "swiper": "^6.2.0",
     "timeago-react": "^3.0.1",
     "timeago.js": "^4.0.2",
