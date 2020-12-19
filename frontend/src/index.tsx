@@ -20,6 +20,7 @@ import {
   infoRootRoute,
 } from "./utils/routes";
 import InfoPage from "./InfoPage/InfoPage.";
+import ScrollToTop from "./Helpers/ScrollToTop"
 
 const backendBasePath =
   process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
@@ -31,6 +32,7 @@ ReactDOM.render(
     <RestfulProvider base={backendBasePath}>
       <Router>
         <TrackingWrapper />
+        <ScrollToTop />
         <Switch>
           <Route exact path={appRootRoute}>
             <Redirect to={fallbackLink} />
