@@ -11,7 +11,7 @@ import { RestfulProvider } from "restful-react";
 import App from "./App/App";
 import Kiosk from "./Kiosk/Kiosk";
 import TrackingWrapper from "./TrackingWrapper";
-import ScrollToTop from "./Helpers/ScrollToTop"
+import ScrollToTop from "./Helpers/ScrollToTop";
 import { isoFormat } from "./utils/eventTime";
 import {
   appRootRoute,
