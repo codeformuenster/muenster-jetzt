@@ -11,6 +11,7 @@ import { RestfulProvider } from "restful-react";
 import App from "./App/App";
 import Kiosk from "./Kiosk/Kiosk";
 import TrackingWrapper from "./TrackingWrapper";
+import ScrollToTop from "./Helpers/ScrollToTop";
 import { isoFormat } from "./utils/eventTime";
 import {
   appRootRoute,
@@ -31,6 +32,7 @@ ReactDOM.render(
     <RestfulProvider base={backendBasePath}>
       <Router>
         <TrackingWrapper />
+        <ScrollToTop />
         <Switch>
           <Route exact path={appRootRoute}>
             <Redirect to={fallbackLink} />
