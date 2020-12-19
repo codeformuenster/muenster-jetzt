@@ -11,6 +11,7 @@ import { RestfulProvider } from "restful-react";
 import App from "./App/App";
 import Kiosk from "./Kiosk/Kiosk";
 import TrackingWrapper from "./TrackingWrapper";
+import ScrollToTop from "./Helpers/ScrollToTop"
 import { isoFormat } from "./utils/eventTime";
 import {
   appRootRoute,
@@ -20,7 +21,6 @@ import {
   infoRootRoute,
 } from "./utils/routes";
 import InfoPage from "./InfoPage/InfoPage.";
-import ScrollToTop from "./Helpers/ScrollToTop"
 
 const backendBasePath =
   process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
