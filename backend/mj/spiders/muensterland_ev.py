@@ -87,5 +87,6 @@ class MuensterlandEvSpider(EventSpider):
                 ),
             }
 
+
 def handle_error(failure):
     raise Exception("Scrapy returned the following error:", failure)
