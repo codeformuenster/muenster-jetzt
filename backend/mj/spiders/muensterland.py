@@ -29,11 +29,8 @@ class MuensterlandSpider(EventSpider):
         yield scrapy.Request(
             f"https://www.muensterland.digital/api/"
             f"events?api_token={api_token}",
-            errback=self.errback,
+            errback=handle_error,
         )
-
-    def errback(self, failure):
-        raise Exception("Scrapy returned the following error:", failure)
 
     def parse(self, response):
         for event in response.json()["data"]:
@@ -53,3 +50,7 @@ class MuensterlandSpider(EventSpider):
                 "mode": event["mode"],
                 "organizer": event["organizer"],
             }
+
+
+def handle_error(failure):
+    raise Exception("Scrapy returned the following error:", failure)

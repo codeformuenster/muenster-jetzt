@@ -47,11 +47,8 @@ class MuensterlandEvSpider(EventSpider):
         yield scrapy.Request(
             event_api_url,
             headers={"Authorization": auth},
-            errback=self.errback,
+            errback=handle_error,
         )
-
-    def errback(self, failure):
-        raise Exception("Scrapy returned the following error:", failure)
 
     def parse(self, response):
         for event in response.json()["data"]:
@@ -89,3 +86,6 @@ class MuensterlandEvSpider(EventSpider):
                     else None
                 ),
             }
+
+def handle_error(failure):
+    raise Exception("Scrapy returned the following error:", failure)
