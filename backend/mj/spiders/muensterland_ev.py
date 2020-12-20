@@ -15,6 +15,10 @@ class MuensterlandEvSpider(EventSpider):
         "source_license": None,
     }
 
+    custom_settings = {
+        "CLOSESPIDER_ERRORCOUNT": 1,
+    }
+
     def start_requests(self):
 
         if not (
@@ -40,7 +44,14 @@ class MuensterlandEvSpider(EventSpider):
 
         auth = basic_auth_header(USER, PASSWORD)
 
-        yield scrapy.Request(event_api_url, headers={"Authorization": auth})
+        yield scrapy.Request(
+            event_api_url,
+            headers={"Authorization": auth},
+            errback=self.errback,
+        )
+
+    def errback(self, failure):
+        raise Exception("Scrapy returned the following error:", failure)
 
     def parse(self, response):
         for event in response.json()["data"]:
