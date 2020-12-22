@@ -68,7 +68,7 @@ export const formatTime: IFormatFunction = (date) => {
 };
 
 interface IParseDate {
-  (date: string, time?: string): Date | undefined;
+  (date: string, time?: string | null): Date | undefined;
 }
 
 export const parseDate: IParseDate = (date, time) => {

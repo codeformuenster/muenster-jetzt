@@ -22,7 +22,7 @@ const encodingTagFactory = (encodingFn: typeof encodeURIComponent) => (
 const encode = encodingTagFactory(encodingFn);
 
 export interface Event {
-  id?: number;
+  id: number;
   /**
    * Event ID used at source
    */
@@ -75,29 +75,29 @@ export interface Event {
    * Event mode (e.g. presentation, meetup, etc.)
    */
   mode?: string | null;
-  source?: {
-    id?: number;
+  source: {
+    id: number;
     /**
      * Name of event source
      */
     name: string;
   };
-  location?: {
-    id?: number;
+  location: {
+    id: number;
     /**
      * Description of event location (address or similar)
      */
     description: string;
   };
-  organizer?: {
-    id?: number;
+  organizer: {
+    id: number;
     /**
      * Name of event organizer
      */
     name: string;
   };
-  images?: {
-    id?: number;
+  images: {
+    id: number;
     url: string;
     description?: string | null;
     source?: string | null;
@@ -106,7 +106,7 @@ export interface Event {
 }
 
 export interface EventSource {
-  id?: number;
+  id: number;
   /**
    * Name of event source
    */
@@ -114,7 +114,7 @@ export interface EventSource {
 }
 
 export interface Location {
-  id?: number;
+  id: number;
   /**
    * Description of event location (address or similar)
    */
@@ -122,7 +122,7 @@ export interface Location {
 }
 
 export interface Organizer {
-  id?: number;
+  id: number;
   /**
    * Name of event organizer
    */
@@ -164,27 +164,84 @@ export interface ListEventsQueryParams {
 }
 
 export type ListEventsProps = Omit<
-  GetProps<ListEventsResponse, unknown, ListEventsQueryParams, void>,
+  GetProps<
+    ListEventsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventsQueryParams,
+    void
+  >,
   "path"
 >;
 
 export const ListEvents = (props: ListEventsProps) => (
-  <Get<ListEventsResponse, unknown, ListEventsQueryParams, void>
+  <Get<
+    ListEventsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventsQueryParams,
+    void
+  >
     path={encode`/events`}
     {...props}
   />
 );
 
 export type UseListEventsProps = Omit<
-  UseGetProps<ListEventsResponse, unknown, ListEventsQueryParams, void>,
+  UseGetProps<
+    ListEventsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventsQueryParams,
+    void
+  >,
   "path"
 >;
 
 export const useListEvents = (props: UseListEventsProps) =>
-  useGet<ListEventsResponse, unknown, ListEventsQueryParams, void>(
-    encode`/events`,
-    props
-  );
+  useGet<
+    ListEventsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventsQueryParams,
+    void
+  >(encode`/events`, props);
 
 export interface RetrieveEventQueryParams {
   /**
@@ -213,13 +270,41 @@ export interface RetrieveEventPathParams {
 }
 
 export type RetrieveEventProps = Omit<
-  GetProps<Event, unknown, RetrieveEventQueryParams, RetrieveEventPathParams>,
+  GetProps<
+    Event,
+    | {
+        id?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
+    RetrieveEventQueryParams,
+    RetrieveEventPathParams
+  >,
   "path"
 > &
   RetrieveEventPathParams;
 
 export const RetrieveEvent = ({ id, ...props }: RetrieveEventProps) => (
-  <Get<Event, unknown, RetrieveEventQueryParams, RetrieveEventPathParams>
+  <Get<
+    Event,
+    | {
+        id?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
+    RetrieveEventQueryParams,
+    RetrieveEventPathParams
+  >
     path={encode`/events/${id}`}
     {...props}
   />
@@ -228,7 +313,16 @@ export const RetrieveEvent = ({ id, ...props }: RetrieveEventProps) => (
 export type UseRetrieveEventProps = Omit<
   UseGetProps<
     Event,
-    unknown,
+    | {
+        id?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
     RetrieveEventQueryParams,
     RetrieveEventPathParams
   >,
@@ -237,7 +331,21 @@ export type UseRetrieveEventProps = Omit<
   RetrieveEventPathParams;
 
 export const useRetrieveEvent = ({ id, ...props }: UseRetrieveEventProps) =>
-  useGet<Event, unknown, RetrieveEventQueryParams, RetrieveEventPathParams>(
+  useGet<
+    Event,
+    | {
+        id?: string[];
+        location?: string[];
+        organizer?: string[];
+        minDate?: string[];
+        maxDate?: string[];
+      }
+    | {
+        detail: string;
+      },
+    RetrieveEventQueryParams,
+    RetrieveEventPathParams
+  >(
     (paramsInPath: RetrieveEventPathParams) =>
       encode`/events/${paramsInPath.id}`,
     { pathParams: { id }, ...props }
@@ -264,7 +372,13 @@ export interface ListEventSourcesQueryParams {
 export type ListEventSourcesProps = Omit<
   GetProps<
     ListEventSourcesResponse,
-    unknown,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
     ListEventSourcesQueryParams,
     void
   >,
@@ -272,7 +386,18 @@ export type ListEventSourcesProps = Omit<
 >;
 
 export const ListEventSources = (props: ListEventSourcesProps) => (
-  <Get<ListEventSourcesResponse, unknown, ListEventSourcesQueryParams, void>
+  <Get<
+    ListEventSourcesResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventSourcesQueryParams,
+    void
+  >
     path={encode`/sources`}
     {...props}
   />
@@ -281,7 +406,13 @@ export const ListEventSources = (props: ListEventSourcesProps) => (
 export type UseListEventSourcesProps = Omit<
   UseGetProps<
     ListEventSourcesResponse,
-    unknown,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
     ListEventSourcesQueryParams,
     void
   >,
@@ -289,10 +420,18 @@ export type UseListEventSourcesProps = Omit<
 >;
 
 export const useListEventSources = (props: UseListEventSourcesProps) =>
-  useGet<ListEventSourcesResponse, unknown, ListEventSourcesQueryParams, void>(
-    encode`/sources`,
-    props
-  );
+  useGet<
+    ListEventSourcesResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventSourcesQueryParams,
+    void
+  >(encode`/sources`, props);
 
 export interface RetrieveEventSourcePathParams {
   /**
@@ -302,7 +441,17 @@ export interface RetrieveEventSourcePathParams {
 }
 
 export type RetrieveEventSourceProps = Omit<
-  GetProps<EventSource, unknown, void, RetrieveEventSourcePathParams>,
+  GetProps<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >,
   "path"
 > &
   RetrieveEventSourcePathParams;
@@ -311,14 +460,34 @@ export const RetrieveEventSource = ({
   id,
   ...props
 }: RetrieveEventSourceProps) => (
-  <Get<EventSource, unknown, void, RetrieveEventSourcePathParams>
+  <Get<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >
     path={encode`/sources/${id}`}
     {...props}
   />
 );
 
 export type UseRetrieveEventSourceProps = Omit<
-  UseGetProps<EventSource, unknown, void, RetrieveEventSourcePathParams>,
+  UseGetProps<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >,
   "path"
 > &
   RetrieveEventSourcePathParams;
@@ -327,7 +496,17 @@ export const useRetrieveEventSource = ({
   id,
   ...props
 }: UseRetrieveEventSourceProps) =>
-  useGet<EventSource, unknown, void, RetrieveEventSourcePathParams>(
+  useGet<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >(
     (paramsInPath: RetrieveEventSourcePathParams) =>
       encode`/sources/${paramsInPath.id}`,
     { pathParams: { id }, ...props }
@@ -352,27 +531,68 @@ export interface ListLocationsQueryParams {
 }
 
 export type ListLocationsProps = Omit<
-  GetProps<ListLocationsResponse, unknown, ListLocationsQueryParams, void>,
+  GetProps<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >,
   "path"
 >;
 
 export const ListLocations = (props: ListLocationsProps) => (
-  <Get<ListLocationsResponse, unknown, ListLocationsQueryParams, void>
+  <Get<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >
     path={encode`/locations`}
     {...props}
   />
 );
 
 export type UseListLocationsProps = Omit<
-  UseGetProps<ListLocationsResponse, unknown, ListLocationsQueryParams, void>,
+  UseGetProps<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >,
   "path"
 >;
 
 export const useListLocations = (props: UseListLocationsProps) =>
-  useGet<ListLocationsResponse, unknown, ListLocationsQueryParams, void>(
-    encode`/locations`,
-    props
-  );
+  useGet<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >(encode`/locations`, props);
 
 export interface RetrieveLocationPathParams {
   /**
@@ -382,20 +602,50 @@ export interface RetrieveLocationPathParams {
 }
 
 export type RetrieveLocationProps = Omit<
-  GetProps<Location, unknown, void, RetrieveLocationPathParams>,
+  GetProps<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >,
   "path"
 > &
   RetrieveLocationPathParams;
 
 export const RetrieveLocation = ({ id, ...props }: RetrieveLocationProps) => (
-  <Get<Location, unknown, void, RetrieveLocationPathParams>
+  <Get<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >
     path={encode`/locations/${id}`}
     {...props}
   />
 );
 
 export type UseRetrieveLocationProps = Omit<
-  UseGetProps<Location, unknown, void, RetrieveLocationPathParams>,
+  UseGetProps<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >,
   "path"
 > &
   RetrieveLocationPathParams;
@@ -404,7 +654,17 @@ export const useRetrieveLocation = ({
   id,
   ...props
 }: UseRetrieveLocationProps) =>
-  useGet<Location, unknown, void, RetrieveLocationPathParams>(
+  useGet<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >(
     (paramsInPath: RetrieveLocationPathParams) =>
       encode`/locations/${paramsInPath.id}`,
     { pathParams: { id }, ...props }
@@ -429,27 +689,68 @@ export interface ListOrganizersQueryParams {
 }
 
 export type ListOrganizersProps = Omit<
-  GetProps<ListOrganizersResponse, unknown, ListOrganizersQueryParams, void>,
+  GetProps<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >,
   "path"
 >;
 
 export const ListOrganizers = (props: ListOrganizersProps) => (
-  <Get<ListOrganizersResponse, unknown, ListOrganizersQueryParams, void>
+  <Get<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >
     path={encode`/organizers`}
     {...props}
   />
 );
 
 export type UseListOrganizersProps = Omit<
-  UseGetProps<ListOrganizersResponse, unknown, ListOrganizersQueryParams, void>,
+  UseGetProps<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >,
   "path"
 >;
 
 export const useListOrganizers = (props: UseListOrganizersProps) =>
-  useGet<ListOrganizersResponse, unknown, ListOrganizersQueryParams, void>(
-    encode`/organizers`,
-    props
-  );
+  useGet<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >(encode`/organizers`, props);
 
 export interface RetrieveOrganizerPathParams {
   /**
@@ -459,20 +760,50 @@ export interface RetrieveOrganizerPathParams {
 }
 
 export type RetrieveOrganizerProps = Omit<
-  GetProps<Organizer, unknown, void, RetrieveOrganizerPathParams>,
+  GetProps<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >,
   "path"
 > &
   RetrieveOrganizerPathParams;
 
 export const RetrieveOrganizer = ({ id, ...props }: RetrieveOrganizerProps) => (
-  <Get<Organizer, unknown, void, RetrieveOrganizerPathParams>
+  <Get<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >
     path={encode`/organizers/${id}`}
     {...props}
   />
 );
 
 export type UseRetrieveOrganizerProps = Omit<
-  UseGetProps<Organizer, unknown, void, RetrieveOrganizerPathParams>,
+  UseGetProps<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >,
   "path"
 > &
   RetrieveOrganizerPathParams;
@@ -481,7 +812,17 @@ export const useRetrieveOrganizer = ({
   id,
   ...props
 }: UseRetrieveOrganizerProps) =>
-  useGet<Organizer, unknown, void, RetrieveOrganizerPathParams>(
+  useGet<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >(
     (paramsInPath: RetrieveOrganizerPathParams) =>
       encode`/organizers/${paramsInPath.id}`,
     { pathParams: { id }, ...props }
