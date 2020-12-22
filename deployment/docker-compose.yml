@@ -58,7 +58,7 @@ services:
       driver: loki
       options:
         loki-url: "${LOKI_URL}"
-  api:
+  api-static:
     restart: unless-stopped
     image: codeformuenster/muenster-jetzt-api-static:${TAG_NAME}
     expose:
