@@ -11,8 +11,7 @@ RUN pip install -r requirements.txt
 COPY mj mj
 COPY events events
 COPY scraping scraping
-COPY manage.py .
-COPY setup.py .
+COPY manage.py setup.py ./
 
 RUN pip install .
 
