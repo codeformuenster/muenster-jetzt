@@ -15,10 +15,6 @@ class MuensterlandSpider(EventSpider):
         "source_license": "CC BY-SA 4.0",
     }
 
-    custom_settings = {
-        "CLOSESPIDER_ERRORCOUNT": 1,
-    }
-
     def start_requests(self):
         api_token = os.getenv("MUENSTERLAND_API_TOKEN")
         if not api_token:
@@ -29,7 +25,7 @@ class MuensterlandSpider(EventSpider):
         yield scrapy.Request(
             f"https://www.muensterland.digital/api/"
             f"events?api_token={api_token}",
-            errback=handle_error,
+            errback=self.handle_error,
         )
 
     def parse(self, response):
@@ -50,7 +46,3 @@ class MuensterlandSpider(EventSpider):
                 "mode": event["mode"],
                 "organizer": event["organizer"],
             }
-
-
-def handle_error(failure):
-    raise Exception("Scrapy returned the following error:", failure)

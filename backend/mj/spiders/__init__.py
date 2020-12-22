@@ -99,6 +99,10 @@ class EventSpider(scrapy.Spider):
             "mj.spiders.SanitizeHTMLPipeline": 200,
             "mj.spiders.DatabaseExportPipeline": 900,
         },
+        "CLOSESPIDER_ERRORCOUNT": 1,
     }
 
     defaults = {}
+
+    def handle_error(self, failure):
+        raise Exception("Scrapy returned the following error:", failure)
