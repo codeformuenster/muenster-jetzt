@@ -4,6 +4,7 @@ tz: "Europe/Berlin"
 grant_ssh_access_for:
   - bastian
   - github
+  - gerald
 
 is_webserver: true
 
