@@ -20,7 +20,7 @@ jobs:
           script: |
             set -e
             cd muenster-jetzt/staging
-            docker-compose exec -T api python -m mj crawl
+            docker-compose exec -T api ./manage.py crawl
   production:
     name: crawl events in production
     runs-on: ubuntu-18.04
