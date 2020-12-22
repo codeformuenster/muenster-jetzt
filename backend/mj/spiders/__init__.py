@@ -104,5 +104,6 @@ class EventSpider(scrapy.Spider):
 
     defaults = {}
 
-    def handle_error(self, failure):
+    @staticmethod
+    def handle_error(failure):
         raise Exception("Scrapy returned the following error:", failure)
