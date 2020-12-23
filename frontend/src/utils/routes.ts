@@ -1,5 +1,5 @@
 // Routes should end with a slash (/)!
-const pathToRegexp = require("path-to-regexp");
+import * as pathToRegexp from "path-to-regexp";
 
 export const appRootRoute = "/";
 
