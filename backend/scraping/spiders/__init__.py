@@ -2,9 +2,10 @@ import logging
 
 import bleach
 import scrapy
+from django.db import transaction
 from scrapy.exceptions import DropItem
 
-from mj.db import db, Event, EventSource, Location, Organizer
+from events.models import Event, EventSource, Location, Organizer
 
 
 logger = logging.getLogger(__name__)
@@ -66,27 +67,28 @@ class SanitizeHTMLPipeline:
 
 class DatabaseExportPipeline:
     def process_item(self, item, spider):
-        with db.transaction():
+        with transaction.atomic():
             values = item.copy()
-            values["location"], _ = Location.get_or_create(
+            values["location"], _ = Location.objects.get_or_create(
                 description=item["location"]
             )
             if item["organizer"]:
-                values["organizer"], _ = Organizer.get_or_create(
+                values["organizer"], _ = Organizer.objects.get_or_create(
                     name=item["organizer"]
                 )
-            values["source"], _ = EventSource.get_or_create(
+            values["source"], _ = EventSource.objects.get_or_create(
                 name=item["source"]
             )
             try:
-                event = Event.get(
+                event = Event.objects.get(
                     source=values["source"],
                     source_event_id=values["source_event_id"],
                 )
             except Event.DoesNotExist:
                 event = Event()
             for k, v in values.items():
-                setattr(event, k, v)
+                if k not in event.dirty_fields:
+                    setattr(event, k, v)
             event.save()
         return item
 
@@ -95,9 +97,9 @@ class EventSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            "mj.spiders.SpiderDefaultsPipeline": 100,
-            "mj.spiders.SanitizeHTMLPipeline": 200,
-            "mj.spiders.DatabaseExportPipeline": 900,
+            "scraping.spiders.SpiderDefaultsPipeline": 100,
+            "scraping.spiders.SanitizeHTMLPipeline": 200,
+            "scraping.spiders.DatabaseExportPipeline": 900,
         },
     }
 

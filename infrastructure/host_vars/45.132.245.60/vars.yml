@@ -4,15 +4,24 @@ tz: "Europe/Berlin"
 grant_ssh_access_for:
   - bastian
   - github
+  - gerald
 
 is_webserver: true
+
+application_domain: "muenster-jetzt.de"
+
 db_user_staging: "{{vault_db_user_staging}}"
 db_password_staging: "{{vault_db_password_staging}}"
 db_name_staging: "{{vault_db_name_staging}}"
 db_user_production: "{{vault_db_user_production}}"
 db_password_production: "{{vault_db_password_production}}"
 db_name_production: "{{vault_db_name_production}}"
+
+api_secret_key_staging: "{{vault_api_secret_key_staging}}"
+api_secret_key_production: "{{vault_api_secret_key_production}}"
+
 api_token_muensterland: "{{vault_api_token_muensterland}}"
 api_user_datenportal: "{{vault_api_user_datenportal}}"
 api_password_datenportal: "{{vault_api_password_datenportal}}"
+
 loki_url: "{{vault_loki_url}}"

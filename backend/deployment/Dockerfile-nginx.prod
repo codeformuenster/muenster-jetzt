@@ -1,0 +1,13 @@
+ARG SOURCE_IMAGE=codeformuenster/muenster-jetzt-api:master
+
+FROM ${SOURCE_IMAGE} as staticfiles
+
+COPY .env.example .env
+
+RUN python manage.py collectstatic --no-input
+
+FROM nginxinc/nginx-unprivileged:1.18-alpine
+
+COPY --chown=101 deployment/api-static.nginx.conf /etc/nginx/conf.d/default.conf
+
+COPY --chown=101 --from=staticfiles /app/static /www/static
