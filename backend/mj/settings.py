@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
-DEBUG = bool(os.getenv("DJANGO_DEBUG", "0"))
+DEBUG = bool(os.getenv("DJANGO_DEBUG", False))
 
 ALLOWED_HOSTS = os.getenv("DJANGO_HOSTS", "localhost,127.0.0.1,[::1]").split(
     ","
