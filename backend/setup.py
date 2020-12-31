@@ -13,6 +13,7 @@ setup(
         "bleach",
         "click",
         "django",
+        "django-cors-headers",
         "djangorestframework",
         "djangorestframework-camel-case",
         "django-filter",

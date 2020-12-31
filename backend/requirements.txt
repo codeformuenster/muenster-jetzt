@@ -4,55 +4,140 @@
 #
 #    pip-compile
 #
-asgiref==3.2.10           # via django
-attrs==19.3.0             # via automat, service-identity, twisted
-automat==20.2.0           # via twisted
-bleach==3.2.1             # via mj (setup.py)
-cffi==1.14.1              # via cryptography
-click==7.1.2              # via mj (setup.py), uvicorn
-constantly==15.1.0        # via twisted
-cryptography==3.2         # via pyopenssl, scrapy, service-identity
-cssselect==1.1.0          # via parsel, scrapy
-django-filter==2.4.0      # via mj (setup.py)
-django==3.1.2             # via django-filter, djangorestframework, mj (setup.py)
-djangorestframework-camel-case==1.2.0  # via mj (setup.py)
-djangorestframework==3.12.1  # via mj (setup.py)
-gunicorn==20.0.4          # via mj (setup.py)
-h11==0.11.0               # via uvicorn
-httptools==0.1.1          # via uvicorn
-hyperlink==19.0.0         # via twisted
-idna==2.10                # via hyperlink
-incremental==17.5.0       # via twisted
-itemadapter==0.1.0        # via scrapy
-lxml==4.5.2               # via parsel, scrapy
-packaging==20.4           # via bleach
-parsel==1.6.0             # via scrapy
-protego==0.1.16           # via scrapy
-psycopg2-binary==2.8.5    # via mj (setup.py)
-pyasn1-modules==0.2.8     # via service-identity
-pyasn1==0.4.8             # via pyasn1-modules, service-identity
-pycparser==2.20           # via cffi
-pydispatcher==2.0.5       # via scrapy
-pyhamcrest==2.0.2         # via twisted
-pyopenssl==19.1.0         # via scrapy
-pyparsing==2.4.7          # via packaging
-python-dotenv==0.14.0     # via mj (setup.py), uvicorn
-pytz==2020.1              # via django
-pyyaml==5.3.1             # via mj (setup.py), uvicorn
-queuelib==1.5.0           # via scrapy
-scrapy==2.2.1             # via mj (setup.py)
-service-identity==18.1.0  # via scrapy
-six==1.15.0               # via automat, bleach, cryptography, packaging, parsel, protego, pyopenssl, w3lib
-sqlparse==0.4.1           # via django
-twisted==20.3.0           # via scrapy
-uritemplate==3.0.1        # via mj (setup.py)
-uvicorn[standard]==0.12.1  # via mj (setup.py)
-uvloop==0.14.0            # via uvicorn
-w3lib==1.22.0             # via parsel, scrapy
-watchgod==0.6             # via uvicorn
-webencodings==0.5.1       # via bleach
-websockets==8.1           # via uvicorn
-zope.interface==5.1.0     # via scrapy, twisted
+asgiref==3.2.10
+    # via django
+attrs==19.3.0
+    # via
+    #   automat
+    #   service-identity
+    #   twisted
+automat==20.2.0
+    # via twisted
+bleach==3.2.1
+    # via mj (setup.py)
+cffi==1.14.1
+    # via cryptography
+click==7.1.2
+    # via
+    #   mj (setup.py)
+    #   uvicorn
+constantly==15.1.0
+    # via twisted
+cryptography==3.2
+    # via
+    #   pyopenssl
+    #   scrapy
+    #   service-identity
+cssselect==1.1.0
+    # via
+    #   parsel
+    #   scrapy
+django-cors-headers==3.6.0
+    # via mj (setup.py)
+django-filter==2.4.0
+    # via mj (setup.py)
+django==3.1.2
+    # via
+    #   django-cors-headers
+    #   django-filter
+    #   djangorestframework
+    #   mj (setup.py)
+djangorestframework-camel-case==1.2.0
+    # via mj (setup.py)
+djangorestframework==3.12.1
+    # via mj (setup.py)
+gunicorn==20.0.4
+    # via mj (setup.py)
+h11==0.11.0
+    # via uvicorn
+httptools==0.1.1
+    # via uvicorn
+hyperlink==19.0.0
+    # via twisted
+idna==2.10
+    # via hyperlink
+incremental==17.5.0
+    # via twisted
+itemadapter==0.1.0
+    # via scrapy
+lxml==4.5.2
+    # via
+    #   parsel
+    #   scrapy
+packaging==20.4
+    # via bleach
+parsel==1.6.0
+    # via scrapy
+protego==0.1.16
+    # via scrapy
+psycopg2-binary==2.8.5
+    # via mj (setup.py)
+pyasn1-modules==0.2.8
+    # via service-identity
+pyasn1==0.4.8
+    # via
+    #   pyasn1-modules
+    #   service-identity
+pycparser==2.20
+    # via cffi
+pydispatcher==2.0.5
+    # via scrapy
+pyhamcrest==2.0.2
+    # via twisted
+pyopenssl==19.1.0
+    # via scrapy
+pyparsing==2.4.7
+    # via packaging
+python-dotenv==0.14.0
+    # via
+    #   mj (setup.py)
+    #   uvicorn
+pytz==2020.1
+    # via django
+pyyaml==5.3.1
+    # via
+    #   mj (setup.py)
+    #   uvicorn
+queuelib==1.5.0
+    # via scrapy
+scrapy==2.2.1
+    # via mj (setup.py)
+service-identity==18.1.0
+    # via scrapy
+six==1.15.0
+    # via
+    #   automat
+    #   bleach
+    #   cryptography
+    #   packaging
+    #   parsel
+    #   protego
+    #   pyopenssl
+    #   w3lib
+sqlparse==0.4.1
+    # via django
+twisted==20.3.0
+    # via scrapy
+uritemplate==3.0.1
+    # via mj (setup.py)
+uvicorn[standard]==0.12.1
+    # via mj (setup.py)
+uvloop==0.14.0
+    # via uvicorn
+w3lib==1.22.0
+    # via
+    #   parsel
+    #   scrapy
+watchgod==0.6
+    # via uvicorn
+webencodings==0.5.1
+    # via bleach
+websockets==8.1
+    # via uvicorn
+zope.interface==5.1.0
+    # via
+    #   scrapy
+    #   twisted
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
