@@ -31,3 +31,11 @@ Execute ansible as described in [Quick Usage](#quick-usage).
 
 We're using Github Actions to deploy to our server by sshing into our server and executing some commands.
 You can check the `deploy` job in [.github/workflows/build-and-deploy.yaml](../.github/workflows/build-and-deploy.yaml) to see the actual commands executed.
+
+## Create an admin user
+
+Optionally, you can create an admin user for management of events.
+
+- ssh into your server
+- `cd` into `/root/muenster-jetzt/<environment>`
+- `docker-compose exec api ./manage.py createsuperuser`
