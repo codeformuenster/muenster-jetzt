@@ -22,6 +22,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_HOSTS", "localhost,127.0.0.1,[::1]").split(
 INSTALLED_APPS = [
     "scraping.apps.ScrapingConfig",
     "events.apps.EventsConfig",
+    "corsheaders",
     "django_filters",
     "rest_framework",
     "django.contrib.admin",
@@ -33,6 +34,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -131,3 +133,7 @@ REST_FRAMEWORK = {
         "django_filters.rest_framework.DjangoFilterBackend",
     ),
 }
+
+# Cors
+
+CORS_ALLOW_ALL_ORIGINS = True

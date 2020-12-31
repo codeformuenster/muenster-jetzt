@@ -43,6 +43,8 @@ services:
       - MUENSTERLAND_API_TOKEN
       - DATENPORTAL_USER
       - DATENPORTAL_PASSWORD
+      - DJANGO_SECRET_KEY
+      - DJANGO_HOSTS
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=https-proxy_traefik"
