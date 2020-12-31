@@ -392,5 +392,5 @@ jobs:
             cd muenster-jetzt/production
             docker-compose pull
             docker-compose up --detach --remove-orphans
-            docker-compose exec -T api python -m mj migrate
+            docker-compose exec -T api ./manage.py migrate
             docker image prune --all --force
