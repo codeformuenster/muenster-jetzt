@@ -43,6 +43,8 @@ services:
       - MUENSTERLAND_API_TOKEN
       - DATENPORTAL_USER
       - DATENPORTAL_PASSWORD
+      - DJANGO_SECRET_KEY
+      - DJANGO_HOSTS
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=https-proxy_traefik"
@@ -54,6 +56,24 @@ services:
       - https-proxy_traefik
       - internal
       - outgoing
+    logging:
+      driver: loki
+      options:
+        loki-url: "${LOKI_URL}"
+  api-static:
+    restart: unless-stopped
+    image: codeformuenster/muenster-jetzt-api-static:${TAG_NAME}
+    expose:
+      - "8001"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=https-proxy_traefik"
+      - "traefik.http.routers.msj-${TAG_NAME}-api-static.rule=Host(`api.${DOMAIN}`) && PathPrefix(`/static`)"
+      - "traefik.http.routers.msj-${TAG_NAME}-api-static.entrypoints=web-secure"
+      - "traefik.http.routers.msj-${TAG_NAME}-api-static.tls.certresolver=letsencrypt"
+      - "traefik.http.services.msj-${TAG_NAME}-api-static.loadbalancer.server.port=8001"
+    networks:
+      - https-proxy_traefik
     logging:
       driver: loki
       options:
