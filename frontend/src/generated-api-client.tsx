@@ -2,25 +2,6 @@
 
 import React from "react";
 import { Get, GetProps, useGet, UseGetProps } from "restful-react";
-
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
-const encodingFn = encodeURIComponent;
-
-const encodingTagFactory = (encodingFn: typeof encodeURIComponent) => (
-  strings: TemplateStringsArray,
-  ...params: (string | number | boolean)[]
-) =>
-  strings.reduce(
-    (accumulatedPath, pathPart, idx) =>
-      `${accumulatedPath}${pathPart}${
-        idx < params.length ? encodingFn(params[idx]) : ""
-      }`,
-    ""
-  );
-
-const encode = encodingTagFactory(encodingFn);
-
 export interface Event {
   id: number;
   /**
@@ -200,7 +181,7 @@ export const ListEvents = (props: ListEventsProps) => (
     ListEventsQueryParams,
     void
   >
-    path={encode`/events`}
+    path={`/events`}
     {...props}
   />
 );
@@ -241,7 +222,7 @@ export const useListEvents = (props: UseListEventsProps) =>
       },
     ListEventsQueryParams,
     void
-  >(encode`/events`, props);
+  >(`/events`, props);
 
 export interface RetrieveEventQueryParams {
   /**
@@ -305,7 +286,7 @@ export const RetrieveEvent = ({ id, ...props }: RetrieveEventProps) => (
     RetrieveEventQueryParams,
     RetrieveEventPathParams
   >
-    path={encode`/events/${id}`}
+    path={`/events/${id}`}
     {...props}
   />
 );
@@ -345,11 +326,10 @@ export const useRetrieveEvent = ({ id, ...props }: UseRetrieveEventProps) =>
       },
     RetrieveEventQueryParams,
     RetrieveEventPathParams
-  >(
-    (paramsInPath: RetrieveEventPathParams) =>
-      encode`/events/${paramsInPath.id}`,
-    { pathParams: { id }, ...props }
-  );
+  >((paramsInPath: RetrieveEventPathParams) => `/events/${paramsInPath.id}`, {
+    pathParams: { id },
+    ...props,
+  });
 
 export type ListEventSourcesResponse = {
   count?: number;
@@ -398,7 +378,7 @@ export const ListEventSources = (props: ListEventSourcesProps) => (
     ListEventSourcesQueryParams,
     void
   >
-    path={encode`/sources`}
+    path={`/sources`}
     {...props}
   />
 );
@@ -431,7 +411,7 @@ export const useListEventSources = (props: UseListEventSourcesProps) =>
       },
     ListEventSourcesQueryParams,
     void
-  >(encode`/sources`, props);
+  >(`/sources`, props);
 
 export interface RetrieveEventSourcePathParams {
   /**
@@ -471,7 +451,7 @@ export const RetrieveEventSource = ({
     void,
     RetrieveEventSourcePathParams
   >
-    path={encode`/sources/${id}`}
+    path={`/sources/${id}`}
     {...props}
   />
 );
@@ -508,7 +488,7 @@ export const useRetrieveEventSource = ({
     RetrieveEventSourcePathParams
   >(
     (paramsInPath: RetrieveEventSourcePathParams) =>
-      encode`/sources/${paramsInPath.id}`,
+      `/sources/${paramsInPath.id}`,
     { pathParams: { id }, ...props }
   );
 
@@ -559,7 +539,7 @@ export const ListLocations = (props: ListLocationsProps) => (
     ListLocationsQueryParams,
     void
   >
-    path={encode`/locations`}
+    path={`/locations`}
     {...props}
   />
 );
@@ -592,7 +572,7 @@ export const useListLocations = (props: UseListLocationsProps) =>
       },
     ListLocationsQueryParams,
     void
-  >(encode`/locations`, props);
+  >(`/locations`, props);
 
 export interface RetrieveLocationPathParams {
   /**
@@ -629,7 +609,7 @@ export const RetrieveLocation = ({ id, ...props }: RetrieveLocationProps) => (
     void,
     RetrieveLocationPathParams
   >
-    path={encode`/locations/${id}`}
+    path={`/locations/${id}`}
     {...props}
   />
 );
@@ -666,7 +646,7 @@ export const useRetrieveLocation = ({
     RetrieveLocationPathParams
   >(
     (paramsInPath: RetrieveLocationPathParams) =>
-      encode`/locations/${paramsInPath.id}`,
+      `/locations/${paramsInPath.id}`,
     { pathParams: { id }, ...props }
   );
 
@@ -717,7 +697,7 @@ export const ListOrganizers = (props: ListOrganizersProps) => (
     ListOrganizersQueryParams,
     void
   >
-    path={encode`/organizers`}
+    path={`/organizers`}
     {...props}
   />
 );
@@ -750,7 +730,7 @@ export const useListOrganizers = (props: UseListOrganizersProps) =>
       },
     ListOrganizersQueryParams,
     void
-  >(encode`/organizers`, props);
+  >(`/organizers`, props);
 
 export interface RetrieveOrganizerPathParams {
   /**
@@ -787,7 +767,7 @@ export const RetrieveOrganizer = ({ id, ...props }: RetrieveOrganizerProps) => (
     void,
     RetrieveOrganizerPathParams
   >
-    path={encode`/organizers/${id}`}
+    path={`/organizers/${id}`}
     {...props}
   />
 );
@@ -824,6 +804,6 @@ export const useRetrieveOrganizer = ({
     RetrieveOrganizerPathParams
   >(
     (paramsInPath: RetrieveOrganizerPathParams) =>
-      encode`/organizers/${paramsInPath.id}`,
+      `/organizers/${paramsInPath.id}`,
     { pathParams: { id }, ...props }
   );
