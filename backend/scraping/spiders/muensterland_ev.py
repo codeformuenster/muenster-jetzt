@@ -2,8 +2,9 @@ import os
 from datetime import date
 
 import scrapy
-from mj.spiders import EventSpider
 from w3lib.http import basic_auth_header
+
+from scraping.spiders import EventSpider
 
 
 class MuensterlandEvSpider(EventSpider):

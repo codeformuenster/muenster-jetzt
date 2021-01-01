@@ -1,7 +1,8 @@
 # muenster-jetzt database management, data import, and API
 
-Based on [peewee](https://peewee-orm.com/), [Scrapy](https://scrapy.org/), and
-[FastAPI](https://fastapi.tiangolo.com/).
+Based on [Django](https://www.djangoproject.com/), [Django REST
+framework](https://www.django-rest-framework.org/), and
+[Scrapy](https://scrapy.org/).
 
 
 ## Development Quickstart
@@ -12,14 +13,16 @@ Based on [peewee](https://peewee-orm.com/), [Scrapy](https://scrapy.org/), and
    Run only `.venv/bin/activate` to activate an existing environment
 
 3. Install all dependencies via `pip install -r requirements.txt`
-4. Run `python -m mj migrate` to migrate your database.
-5. Run `python -m mj crawl` to crawl events and store them in your database.
-6. Run `python -m mj serve` to start the API.
+4. Run `./manage.py migrate` to migrate your database.
+5. Run `./manage.py crawl` to crawl events and store them in your database.
+6. Run `./manage.py runserver` to start the API.
 
 
 # Database schema
 
-The database schema is managed via [peewee](https://peewee-orm.com/) and [peewee_migrate](https://github.com/klen/peewee_migrate/). If you need to alter it, just add a new model to `mj.db` (or edit an existing one) and run `python -m mj makemigrations` to create a new migration.
+The database schema is managed via Django. If you need to alter it, just add a
+new model in `events/models.py` (or edit an existing one) and run `./manage.py
+makemigrations` to create a new migration.
 
 
 ## Naming Convention

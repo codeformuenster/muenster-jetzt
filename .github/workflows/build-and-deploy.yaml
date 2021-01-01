@@ -16,6 +16,11 @@ jobs:
     defaults:
       run:
         working-directory: backend
+    services:
+      registry:
+        image: registry:2
+        ports:
+          - 5000:5000
     steps:
       - uses: actions/checkout@v2
         with:
@@ -72,18 +77,48 @@ jobs:
           pip install tox
           tox
 
-      - name: Build backend container image (and push to Docker Hub on master branch)
-        if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          driver-opts: network=host
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASS }}
-          repository: codeformuenster/muenster-jetzt-api
-          dockerfile: backend/deployment/Dockerfile.prod
-          tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
-          path: backend
-          tag_with_ref: true
+
+      - name: Build backend container image (and push to Docker Hub on master branch)
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v2
+        with:
           push: ${{ github.event_name == 'push' }}
+          tags: docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
+          file: backend/deployment/Dockerfile.prod
+          context: backend
+          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
+
+      - name: Build backend container image and push to local registry
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: localhost:5000/mj-backend:ci
+          file: backend/deployment/Dockerfile.prod
+          context: backend
+          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
+
+      - name: Build backend nginx container image (and push to Docker Hub on master branch)
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v2
+        with:
+          push: ${{ github.event_name == 'push' }}
+          tags: docker.io/codeformuenster/muenster-jetzt-api-static:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-api-static:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
+          file: backend/deployment/Dockerfile-nginx.prod
+          context: backend
+          cache-from: type=local,src=/tmp/.buildx-cache
+          build-args: |
+            SOURCE_IMAGE=localhost:5000/mj-backend:ci
 
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
@@ -161,11 +196,13 @@ jobs:
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          docker run --rm -d --name backend -p 8000:8000 muenster-jetzt-api:in-ci
+          docker run -d --name backend -p 8000:8000 --env-file ../backend/.env.example muenster-jetzt-api:in-ci
 
       - name: Run 'npm run generate-client'
         if: steps.branch_info.outputs.changes != '0'
         run: |
+          sleep 10
+          docker logs backend
           npm run generate-client
 
       - name: Check for changes according to git
@@ -326,7 +363,7 @@ jobs:
             cd muenster-jetzt/staging
             docker-compose pull
             docker-compose up --detach --remove-orphans
-            docker-compose exec -T api python -m mj migrate
+            docker-compose exec -T api ./manage.py migrate
             docker image prune --all --force
 
       - name: PRODUCTION Copy docker-compose file to server
@@ -355,5 +392,5 @@ jobs:
             cd muenster-jetzt/production
             docker-compose pull
             docker-compose up --detach --remove-orphans
-            docker-compose exec -T api python -m mj migrate
+            docker-compose exec -T api ./manage.py migrate
             docker image prune --all --force

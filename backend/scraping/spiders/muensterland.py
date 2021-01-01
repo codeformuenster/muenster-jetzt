@@ -3,7 +3,7 @@ import os
 import scrapy
 from scrapy.exceptions import CloseSpider
 
-from mj.spiders import EventSpider
+from scraping.spiders import EventSpider
 
 
 class MuensterlandSpider(EventSpider):
