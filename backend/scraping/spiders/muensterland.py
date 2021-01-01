@@ -24,7 +24,8 @@ class MuensterlandSpider(EventSpider):
             raise CloseSpider("missing_auth")
         yield scrapy.Request(
             f"https://www.muensterland.digital/api/"
-            f"events?api_token={api_token}"
+            f"events?api_token={api_token}",
+            errback=self.handle_error,
         )
 
     def parse(self, response):

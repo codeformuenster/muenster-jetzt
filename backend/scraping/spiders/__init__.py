@@ -101,6 +101,11 @@ class EventSpider(scrapy.Spider):
             "scraping.spiders.SanitizeHTMLPipeline": 200,
             "scraping.spiders.DatabaseExportPipeline": 900,
         },
+        "CLOSESPIDER_ERRORCOUNT": 1,
     }
 
     defaults = {}
+
+    @staticmethod
+    def handle_error(failure):
+        raise Exception("Scrapy returned the following error:", failure)
