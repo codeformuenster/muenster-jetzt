@@ -41,7 +41,11 @@ class MuensterlandEvSpider(EventSpider):
 
         auth = basic_auth_header(USER, PASSWORD)
 
-        yield scrapy.Request(event_api_url, headers={"Authorization": auth})
+        yield scrapy.Request(
+            event_api_url,
+            headers={"Authorization": auth},
+            errback=self.handle_error,
+        )
 
     def parse(self, response):
         for event in response.json()["data"]:
