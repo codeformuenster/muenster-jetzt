@@ -12,7 +12,8 @@ logger = logging.getLogger(__name__)
 
 
 class SpiderDefaultsPipeline:
-    def process_item(self, item, spider):
+    @staticmethod
+    def process_item(item, spider):
         for k, v in spider.defaults.items():
             item.setdefault(k, v)
         return item
@@ -66,7 +67,8 @@ class SanitizeHTMLPipeline:
 
 
 class DatabaseExportPipeline:
-    def process_item(self, item, spider):
+    @staticmethod
+    def process_item(item, spider):
         with transaction.atomic():
             values = item.copy()
             values["location"], _ = Location.objects.get_or_create(

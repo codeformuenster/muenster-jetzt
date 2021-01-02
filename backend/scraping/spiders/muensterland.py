@@ -28,7 +28,8 @@ class MuensterlandSpider(EventSpider):
             errback=self.handle_error,
         )
 
-    def parse(self, response):
+    @staticmethod
+    def parse(response):
         for event in response.json()["data"]:
             if event["end_time"] and not event["end_date"]:
                 event["end_date"] = event["start_date"]

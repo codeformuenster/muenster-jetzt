@@ -46,8 +46,9 @@ class MuensterlandEvSpider(EventSpider):
             headers={"Authorization": auth},
             errback=self.handle_error,
         )
-
-    def parse(self, response):
+    
+    @staticmethod
+    def parse(response):
         for event in response.json()["data"]:
             start_datetime = event["start_datetime"].split("T")
             end_datetime = event["end_datetime"].split("T")
