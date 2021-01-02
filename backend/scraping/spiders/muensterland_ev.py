@@ -46,7 +46,7 @@ class MuensterlandEvSpider(EventSpider):
             headers={"Authorization": auth},
             errback=self.handle_error,
         )
-    
+
     @staticmethod
     def parse(response):
         for event in response.json()["data"]:
