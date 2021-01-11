@@ -24,8 +24,10 @@
   background-color: $white;
   z-index: 1;
   padding: 0 $spacer;
-  width: 100%;
   max-width: 400px;
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
 }
 
 .calendar {
@@ -127,4 +129,3 @@
 .isActive {
   background-color: $app-datebutton-active-color;
 }
-
