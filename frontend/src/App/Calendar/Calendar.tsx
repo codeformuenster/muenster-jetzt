@@ -48,7 +48,7 @@ const Calendar: FC = () => {
           {...attributes.popper}
           className={styles.calendarPopup}
         >
-          <CalendarBody />
+          <CalendarBody close={() => setIsOpen(false)} />
         </div>
       )}
     </>

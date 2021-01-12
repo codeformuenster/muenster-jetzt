@@ -5,6 +5,10 @@ import styles from "./Calendar.module.scss";
 import { isoFormat } from "../../utils/eventTime";
 import { makeAppRouteLink } from "../../utils/routes";
 
+interface ICalendarBody {
+  close: () => void;
+}
+
 interface IDate {
   label: string;
   to: string;
@@ -22,7 +26,7 @@ const monthDateFormat = new Intl.DateTimeFormat("de-DE", {
   year: "numeric",
 }).format;
 
-const CalendarBody: FC = () => {
+const CalendarBody: FC<ICalendarBody> = ({ close }) => {
   const { date: selectedDateFromParams } = useParams<IAppRouterParams>();
 
   const [baseDate, setBaseDate] = useState<Date>(
@@ -76,6 +80,14 @@ const CalendarBody: FC = () => {
 
   return (
     <div className={styles.calendar}>
+      <span
+        aria-hidden
+        role="button"
+        onClick={() => close()}
+        className={styles.close}
+      >
+        &times;
+      </span>
       <div className={styles.monthRow}>
         <span
           aria-hidden
