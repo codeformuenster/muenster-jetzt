@@ -2,19 +2,8 @@
 @import "../DateSelector/DateButton.module.scss";
 
 .calendarButton {
-  @extend .btn;
-  border-radius: 50%;
-  height: calc((100vw - 20px) / 9);
-  width: calc((100vw - 20px) / 9);
-  max-width: $app-datebutton-maxdimension;
-  max-height: $app-datebutton-maxdimension;
-  box-shadow: $app-datebutton-boxshadow;
-  background-color: $app-datebutton-background-color;
-  padding: 0;
-  &:focus, &:active, &:hover {
-    outline: none;
-    box-shadow: none;
-  }
+  @extend .dateButton;
+  margin-top: 10px;
 }
 
 .calendarPopup {
