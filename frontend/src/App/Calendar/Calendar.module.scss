@@ -1,0 +1,140 @@
+@import "../../styles/base.scss";
+@import "../DateSelector/DateButton.module.scss";
+
+.calendarButton {
+  @extend .dateButton;
+  margin-top: 10px;
+}
+
+.calendarPopup {
+  @include box-shadow($box-shadow-sm);
+  @include border-radius();
+  border: $border-width solid $border-color;
+  background-color: $white;
+  z-index: 1;
+  padding: 0 $spacer;
+  max-width: 400px;
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
+}
+
+.calendar {
+  @include media-breakpoint-up(sm) {
+    margin: $spacer * 0.5;
+    padding: $spacer * 0.5;
+  }
+}
+
+.monthRow {
+  display: flex;
+  margin-top: $spacer;
+  @include media-breakpoint-down(sm) {
+    margin-bottom: $spacer;
+  }
+}
+
+.monthIndicator {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: $spacer;
+  flex: 1;
+}
+
+.nextMonth {
+  margin-right: $spacer * 3;
+  @include media-breakpoint-up(sm) {
+    margin-right: $spacer * 2;
+  }
+}
+
+.prevMonth {
+  margin-left: $spacer * 3;
+  @include media-breakpoint-up(sm) {
+    margin-left: $spacer * 2;
+  }
+}
+
+.close {
+  @extend .btn;
+  position: absolute;
+  right: 0;
+  padding-top: 0;
+  font-size: 25px;
+  top: 0;
+  padding-bottom: 0;
+}
+
+/* CSS grid used for the dates */
+.dayOfWeek,
+.dateGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.dayOfWeek > * {
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+/* Dates */
+.dateGrid {
+  margin-top: $spacer * 0.5;
+}
+
+.date[data-dow='Mo'] {
+  grid-column: 1;
+}
+
+.date[data-dow='Di'] {
+  grid-column: 2;
+}
+
+.date[data-dow='Mi'] {
+  grid-column: 3;
+}
+
+.date[data-dow='Do'] {
+  grid-column: 4;
+}
+
+.date[data-dow='Fr'] {
+  grid-column: 5;
+}
+
+.date[data-dow='Sa'] {
+  @extend .isWeekend;
+  grid-column: 6;
+}
+
+.date[data-dow='So'] {
+  @extend .isWeekend;
+  grid-column: 7;
+}
+
+/* Style for each day */
+.date {
+  height: 4ch;
+  width: 4ch;
+  line-height: 3.75ch;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 50%;
+  color: $gray-900;
+}
+
+.date:hover,
+.date:focus {
+  outline: none;
+}
+
+.isToday {
+  border: 2px solid $app-datebutton-today-color;
+}
+
+.isActive {
+  background-color: $app-datebutton-active-color;
+}
