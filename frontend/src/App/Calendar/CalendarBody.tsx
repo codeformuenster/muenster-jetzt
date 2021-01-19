@@ -126,6 +126,7 @@ const CalendarBody: FC<ICalendarBody> = ({ close }) => {
             key={date.isoDate}
             to={date.to}
             data-dow={date.label}
+            onClick={() => close()}
             className={clsx(styles.date, {
               [styles.isToday]: date.isToday,
               [styles.isActive]: date.isSelected,
