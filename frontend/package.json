@@ -12,7 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "clsx": "^1.1.1",
     "interweave": "^12.6.0",
     "ky": "^0.26.0",
