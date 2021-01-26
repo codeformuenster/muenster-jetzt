@@ -1,0 +1,17 @@
+{% extends "rest_framework/base.html" %}
+
+{% block title %}{% if name %}{{ name }} – {% endif %}Münster Jetzt API{% endblock %}
+
+{% block meta %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="robots" content="NONE,NOARCHIVE" />
+<link rel="icon" href="https://muenster-jetzt.de/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://muenster-jetzt.de/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://muenster-jetzt.de/favicon-16x16.png">
+{% endblock %}
+
+{% block branding %}
+<a class="navbar-brand" rel="nofollow" href="https://api.muenster-jetzt.de/">
+  Münster Jetzt API
+</a>
+{% endblock %}
