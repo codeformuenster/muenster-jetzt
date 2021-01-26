@@ -47,11 +47,11 @@ jobs:
         run: |
           echo "Number of changed files in backend directory: '${{ steps.branch_info.outputs.changes }}'"
 
-      - name: Install python 3.8
+      - name: Install python 3.9
         if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8.x'
+          python-version: '3.9.x'
 
       - name: Get pip cache dir
         if: steps.branch_info.outputs.changes != '0'
