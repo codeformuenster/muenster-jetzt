@@ -13,7 +13,7 @@ attrs==19.3.0
     #   twisted
 automat==20.2.0
     # via twisted
-bleach==3.2.1
+bleach==3.3.0
     # via mj (setup.py)
 cffi==1.14.1
     # via cryptography
