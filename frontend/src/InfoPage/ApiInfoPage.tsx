@@ -11,7 +11,7 @@ import { makeAppRouteLink } from "../utils/routes";
 
 const backendBasePath =
   process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
-const apiDocsUrl = new URL("/docs", backendBasePath).toString();
+const apiDocsUrl = new URL("/", backendBasePath).toString();
 
 const ApiInfoPage: FC = () => (
   <Layout>
