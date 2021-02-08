@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Get, GetProps, useGet, UseGetProps } from "restful-react";
+export const SPEC_VERSION = "0.2.0";
 export interface Event {
   id: number;
   /**
