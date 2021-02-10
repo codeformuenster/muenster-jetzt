@@ -23,7 +23,7 @@ click==7.1.2
     #   uvicorn
 constantly==15.1.0
     # via twisted
-cryptography==3.2
+cryptography==3.3.2
     # via
     #   pyopenssl
     #   scrapy
