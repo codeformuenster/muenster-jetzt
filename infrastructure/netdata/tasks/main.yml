@@ -1,0 +1,27 @@
+---
+- name: Add Apt Key
+  apt_key:
+    url: https://packagecloud.io/netdata/netdata/gpgkey
+    state: present
+
+- name: add apt repo
+  apt_repository:
+    repo: deb https://packagecloud.io/netdata/netdata/ubuntu/ {{ansible_distribution_release}} main
+    state: present
+    
+- name: install netdata
+  apt:
+    name: netdata
+    
+- name: copy config
+  template:
+    src: netdata.conf.j2
+    dest: "/etc/netdata/netdata.conf"
+  notify: restart netdata
+
+- name: Make sure service is running
+  systemd:
+    daemon_reload: yes
+    state: started
+    enabled: yes
+    name: netdata
