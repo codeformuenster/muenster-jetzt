@@ -8,3 +8,4 @@
       - { role: docker, tags: docker_role }
       - { role: https_proxy, tags: https_proxy_role }
       - { role: webapp, tags: webapp_role }
+      - { role: netdata, tags: netdata_role }
