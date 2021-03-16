@@ -15,7 +15,7 @@ Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and
 ## Dev Setup
 ### Intro
 
-There is no need to clutter your dev machine with differnt versions of every tool (like nodejs, python).
+There is no need to clutter your dev machine with different versions of every tool (like nodejs, python).
 We are using docker containers as a dev environment to leave your host in a clean state and prevent "works on my mashine" bugs.
 This guide will help you to setup everything in a convenient way without the typical drawbacks of developing in a container (e.g. no debugging, missing code completion etc.)
 
@@ -37,7 +37,7 @@ To understand the details behind this, take a look at these links:
 * Open this project in Visual Studio Code
 * Use the command "Remote-Container: Open Folder in Container" (from Menu -> View -> Command Palette)
 * select the `backend` folder (this will reload visual studio, start the container and will give you an editor instance with all the required plugins etc)
-* leave that window open, repeat all of the above steps in a new Visual Studio Code Window but select the `frontend` folder instead of `backend``
+* leave that window open, repeat all of the above steps in a new Visual Studio Code Window but select the `frontend` folder instead of `backend`
 * The Readmes of their respective folders contains more information on starting the development environment
 
 🎉 congrats you are now running your dev environment

@@ -3,15 +3,65 @@
 {% block title %}{% if name %}{{ name }} – {% endif %}Münster Jetzt API{% endblock %}
 
 {% block meta %}
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="NONE,NOARCHIVE" />
 <link rel="icon" href="https://muenster-jetzt.de/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://muenster-jetzt.de/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://muenster-jetzt.de/favicon-16x16.png">
+<style>
+  .info-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.5em;
+    margin-top: 2em;
+  }
+  .info-footer a {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
 {% endblock %}
 
 {% block branding %}
 <a class="navbar-brand" rel="nofollow" href="https://api.muenster-jetzt.de/">
   Münster Jetzt API
 </a>
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<div>
+  <div>
+    <h3>Weitere Informationen</h3>
+    <p>Eine maschinenlesbare Spezifikation im OpenAPI v3 Format lassen sich unter <a href="/openapi.json"
+        target="_blank" rel="noopener noreferrer">/openapi.json</a> abrufen. Damit lassen sich
+      schnell und einfach eigene
+      Clients in vielen Programmiersprachen generieren.</p>
+    <p>Für Hinweise, Verbesserungsvorschläge oder Fehlerbeschreibungen rund um API
+      und App sollten am Besten als „Issue“ im <a href="https://github.com/codeformuenster/muenster-jetzt"
+        target="_blank" rel="noopener noreferrer">codeformuenster/muenster-jetzt</a> Repository auf GitHub angelegt
+      werden.<br>Alternativ sind wir auch auf <a href="https://twitter.com/codeformuenster" target="_blank"
+        rel="noopener noreferrer">Twitter</a> oder <a href="mailto:muenster-jetzt@codeformuenster.org?subject=API">per
+        Mail</a> zu erreichen.</p>
+    <p>Sowohl API als auch die App lassen sich auch auf eigenen Servern hosten.
+      Hinweise dazu finden sich ebenfalls im Repository <a href="https://github.com/codeformuenster/muenster-jetzt"
+        target="_blank" rel="noopener noreferrer">codeformuenster/muenster-jetzt</a> auf GitHub.</p>
+  </div>
+
+  <div class="info-footer">
+    <a class="c4m-link" href="https://codeformuenster.org">
+      Ein Projekt von <img src="https://codeformuenster.org/img/cfm_logo.png" alt="Code for Münster">
+    </a>
+    |
+    <a href="https://codeformuenster.org/impressum/" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block userlinks %}
+<li><a href="https://github.com/codeformuenster/muenster-jetzt">Code</a></li>
+<li><a href="https://muenster-jetzt.de/info">Info</a></li>
 {% endblock %}

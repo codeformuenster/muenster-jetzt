@@ -5,11 +5,8 @@ from rest_framework import routers
 from . import views
 
 
-router = routers.DefaultRouter(trailing_slash=False)
+router = views.DocumentedRouter(trailing_slash=False)
 router.register(r"events", views.EventsViewSet)
-router.register(r"sources", views.EventSourcesViewSet)
-router.register(r"locations", views.LocationsViewSet)
-router.register(r"organizers", views.OrganizersViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

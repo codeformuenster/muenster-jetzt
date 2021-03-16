@@ -24,5 +24,6 @@ setup(
         "uritemplate",
         "uvicorn[standard]",
         "pyyaml",
+        "markdown",
     ],
 )

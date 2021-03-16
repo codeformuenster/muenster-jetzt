@@ -64,6 +64,8 @@ lxml==4.6.2
     # via
     #   parsel
     #   scrapy
+markdown==3.3.4
+    # via mj (setup.py)
 packaging==20.4
     # via bleach
 parsel==1.6.0

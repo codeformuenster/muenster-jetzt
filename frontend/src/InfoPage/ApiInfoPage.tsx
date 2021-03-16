@@ -72,7 +72,7 @@ const ApiInfoPage: FC = () => (
         Informationen zur Nutzung und Beschreibungen aller Felder befinden sich
         in der <ExternalLink href={apiDocsUrl}>API Dokumentation</ExternalLink>.
         Mit der{" "}
-        <ExternalLink href={`${apiDocsUrl}/openapi.json`}>
+        <ExternalLink href={`${apiDocsUrl}openapi.json`}>
           OpenAPI v3 Spezifikation
         </ExternalLink>{" "}
         der <StyledProjectName noBackground />
@@ -80,7 +80,7 @@ const ApiInfoPage: FC = () => (
         Programmiersprachen generieren.
       </p>
       <p className={styles.prosaText}>
-        Für Hinweise, Verbesserungsvorschläge oder Fehlerbeschreibungen rund um
+        Hinweise, Verbesserungsvorschläge oder Fehlerbeschreibungen rund um
         API und App sollten am Besten als &bdquo;Issue&ldquo; im{" "}
         <ExternalLink href="https://github.com/codeformuenster/muenster-jetzt">
           codeformuenster/muenster-jetzt
