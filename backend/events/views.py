@@ -1,18 +1,13 @@
 from django_filters import FilterSet
 from django_filters import rest_framework as filters
-from rest_framework import viewsets, views, routers
+from rest_framework import viewsets, routers
 from rest_framework.renderers import JSONOpenAPIRenderer, OpenAPIRenderer
 from rest_framework.schemas import get_schema_view
 
 import mj
 
-from .models import Event, EventSource, Location, Organizer
-from .serializers import (
-    EventSerializer,
-    EventSourceSerializer,
-    LocationSerializer,
-    OrganizerSerializer,
-)
+from .models import Event
+from .serializers import EventSerializer
 
 
 schema_metadata = {
@@ -55,6 +50,7 @@ class EventsViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Events
     """
+
     queryset = Event.objects.filter(visible=True)
     serializer_class = EventSerializer
     filterset_class = EventsFilterSet
@@ -64,12 +60,14 @@ class MünsterJetztView(routers.APIRootView):
     """
     ## Willkommen auf der API-Dokumentation zu [Münster Jetzt].
 
-    Über die [Münster Jetzt] API können Anwendungen maschinenlesbare Veranstaltungsinformationen abrufen.
+    Über die [Münster Jetzt] API können Anwendungen maschinenlesbare
+    Veranstaltungsinformationen abrufen.
 
     Herzstück des Datenschemas sind die [Events](/events).
 
     [Münster Jetzt]: https://muenster-jetzt.de
     """
+
     pass
 
 
