@@ -48,7 +48,8 @@ class EventsFilterSet(FilterSet):
 
 class EventsViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    Events
+    Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
+    verfügbare Veranstaltungen zurück.
     """
 
     queryset = Event.objects.filter(visible=True)
