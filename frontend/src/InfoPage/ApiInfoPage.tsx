@@ -80,8 +80,8 @@ const ApiInfoPage: FC = () => (
         Programmiersprachen generieren.
       </p>
       <p className={styles.prosaText}>
-        Hinweise, Verbesserungsvorschläge oder Fehlerbeschreibungen rund um
-        API und App sollten am Besten als &bdquo;Issue&ldquo; im{" "}
+        Hinweise, Verbesserungsvorschläge oder Fehlerbeschreibungen rund um API
+        und App sollten am Besten als &bdquo;Issue&ldquo; im{" "}
         <ExternalLink href="https://github.com/codeformuenster/muenster-jetzt">
           codeformuenster/muenster-jetzt
         </ExternalLink>{" "}
