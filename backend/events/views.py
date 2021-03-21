@@ -67,6 +67,8 @@ class MünsterJetztView(routers.APIRootView):
     Über die [Münster Jetzt] API können Anwendungen maschinenlesbare Veranstaltungsinformationen abrufen.
 
     Herzstück des Datenschemas sind die [Events](/events).
+
+    [Münster Jetzt]: https://muenster-jetzt.de
     """
     pass
 
