@@ -60,7 +60,7 @@ incremental==17.5.0
     # via twisted
 itemadapter==0.1.0
     # via scrapy
-lxml==4.6.2
+lxml==4.6.3
     # via
     #   parsel
     #   scrapy
