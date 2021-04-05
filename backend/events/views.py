@@ -6,8 +6,13 @@ from rest_framework.schemas import get_schema_view
 
 import mj
 
-from .models import Event
-from .serializers import EventSerializer
+from .models import Event, EventSource, Location, Organizer
+from .serializers import (
+    EventSerializer,
+    EventSourceSerializer,
+    LocationSerializer,
+    OrganizerSerializer,
+)
 
 
 schema_metadata = {
@@ -50,13 +55,26 @@ class EventsViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
     verfügbaren Veranstaltungen zurück.
-
-
     """
 
     queryset = Event.objects.filter(visible=True)
     serializer_class = EventSerializer
     filterset_class = EventsFilterSet
+
+
+class EventSourcesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = EventSource.objects.all()
+    serializer_class = EventSourceSerializer
+
+
+class LocationsViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
+
+
+class OrganizersViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Organizer.objects.all()
+    serializer_class = OrganizerSerializer
 
 
 class MünsterJetztView(routers.APIRootView):
