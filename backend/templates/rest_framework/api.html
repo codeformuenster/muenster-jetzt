@@ -38,8 +38,9 @@
 <div>
   <div>
     <h3>Weitere Informationen</h3>
-    <p>Eine maschinenlesbare Spezifikation dieser Schnittstelle im OpenAPI v3 Format ist unter <a href="/openapi.json"
-        target="_blank" rel="noopener noreferrer">/openapi.json</a> abrufbar. Damit lassen sich
+    <p>Eine maschinenlesbare Spezifikation dieser Schnittstelle im OpenAPI v3 Format ist unter <a href="{% url
+        "openapi.json" %}" target="_blank" rel="noopener">{% url "openapi.json" %}</a> abrufbar. (Ansicht in <a
+        href="{% url "swagger-ui" %}">Swagger UI</a>, <a href="{% url "redoc" %}">ReDoc</a>) Damit lassen sich
       schnell und einfach eigene Clients in vielen Programmiersprachen generieren.</p>
     <p>Für Hinweise, Verbesserungsvorschläge oder Fehlerbeschreibungen rund um API
       und App sollten am Besten als „Issue“ im <a href="https://github.com/codeformuenster/muenster-jetzt"
@@ -64,5 +65,7 @@
 
 {% block userlinks %}
 <li><a href="https://github.com/codeformuenster/muenster-jetzt">Code</a></li>
+<li><a href="{% url "swagger-ui" %}">Swagger UI</a></li>
+<li><a href="{% url "redoc" %}">ReDoc</a></li>
 <li><a href="https://muenster-jetzt.de/info">Info</a></li>
 {% endblock %}
