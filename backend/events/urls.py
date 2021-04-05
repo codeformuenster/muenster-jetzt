@@ -19,4 +19,12 @@ urlpatterns = [
         ),
         name="swagger-ui",
     ),
+    path(
+        "redoc/",
+        TemplateView.as_view(
+            template_name="redoc.html",
+            extra_context={"schema_url": "openapi.json"},
+        ),
+        name="redoc",
+    ),
 ]
