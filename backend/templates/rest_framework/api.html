@@ -3,11 +3,12 @@
 {% block title %}{% if name %}{{ name }} – {% endif %}Münster Jetzt API{% endblock %}
 
 {% block meta %}
+{% load static %}
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="NONE,NOARCHIVE" />
-<link rel="icon" href="https://muenster-jetzt.de/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="https://muenster-jetzt.de/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://muenster-jetzt.de/favicon-16x16.png">
+<link rel="icon" href="{% static "favicon.ico" %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon-32x32.png" %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon-16x16.png" %}">
 <style>
   .info-footer {
     display: flex;
@@ -27,7 +28,7 @@
 {% endblock %}
 
 {% block branding %}
-<a class="navbar-brand" rel="nofollow" href="https://api.muenster-jetzt.de/">
+<a class="navbar-brand" rel="nofollow" href="/">
   Münster Jetzt API
 </a>
 {% endblock %}
