@@ -12,7 +12,6 @@ COPY mj mj
 COPY events events
 COPY scraping scraping
 COPY templates templates
-COPY static static
 COPY manage.py setup.py ./
 
 RUN pip install .
