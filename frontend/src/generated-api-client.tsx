@@ -87,6 +87,30 @@ export interface Event {
   }[];
 }
 
+export interface EventSource {
+  id: number;
+  /**
+   * Name of event source
+   */
+  name: string;
+}
+
+export interface Location {
+  id: number;
+  /**
+   * Description of event location (address or similar)
+   */
+  description: string;
+}
+
+export interface Organizer {
+  id: number;
+  /**
+   * Name of event organizer
+   */
+  name: string;
+}
+
 export type ListEventsResponse = {
   count?: number;
   next?: string | null;
@@ -143,7 +167,18 @@ export type ListEventsProps = Omit<
 
 /**
  * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
- * verfügbare Veranstaltungen zurück.
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
  */
 export const ListEvents = (props: ListEventsProps) => (
   <Get<
@@ -189,7 +224,18 @@ export type UseListEventsProps = Omit<
 
 /**
  * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
- * verfügbare Veranstaltungen zurück.
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
  */
 export const useListEvents = (props: UseListEventsProps) =>
   useGet<
@@ -257,7 +303,18 @@ export type RetrieveEventProps = Omit<
 
 /**
  * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
- * verfügbare Veranstaltungen zurück.
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
  */
 export const RetrieveEvent = ({ id, ...props }: RetrieveEventProps) => (
   <Get<
@@ -302,7 +359,18 @@ export type UseRetrieveEventProps = Omit<
 
 /**
  * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
- * verfügbare Veranstaltungen zurück.
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
  */
 export const useRetrieveEvent = ({ id, ...props }: UseRetrieveEventProps) =>
   useGet<
@@ -323,3 +391,588 @@ export const useRetrieveEvent = ({ id, ...props }: UseRetrieveEventProps) =>
     pathParams: { id },
     ...props,
   });
+
+export type ListEventSourcesResponse = {
+  count?: number;
+  next?: string | null;
+  previous?: string | null;
+  results?: EventSource[];
+};
+
+export interface ListEventSourcesQueryParams {
+  /**
+   * A page number within the paginated result set.
+   */
+  page?: number;
+  /**
+   * Number of results to return per page.
+   */
+  limit?: number;
+}
+
+export type ListEventSourcesProps = Omit<
+  GetProps<
+    ListEventSourcesResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventSourcesQueryParams,
+    void
+  >,
+  "path"
+>;
+
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const ListEventSources = (props: ListEventSourcesProps) => (
+  <Get<
+    ListEventSourcesResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventSourcesQueryParams,
+    void
+  >
+    path={`/sources`}
+    {...props}
+  />
+);
+
+export type UseListEventSourcesProps = Omit<
+  UseGetProps<
+    ListEventSourcesResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventSourcesQueryParams,
+    void
+  >,
+  "path"
+>;
+
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const useListEventSources = (props: UseListEventSourcesProps) =>
+  useGet<
+    ListEventSourcesResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListEventSourcesQueryParams,
+    void
+  >(`/sources`, props);
+
+export interface RetrieveEventSourcePathParams {
+  /**
+   * A unique integer value identifying this event source.
+   */
+  id: string;
+}
+
+export type RetrieveEventSourceProps = Omit<
+  GetProps<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >,
+  "path"
+> &
+  RetrieveEventSourcePathParams;
+
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const RetrieveEventSource = ({
+  id,
+  ...props
+}: RetrieveEventSourceProps) => (
+  <Get<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >
+    path={`/sources/${id}`}
+    {...props}
+  />
+);
+
+export type UseRetrieveEventSourceProps = Omit<
+  UseGetProps<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >,
+  "path"
+> &
+  RetrieveEventSourcePathParams;
+
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const useRetrieveEventSource = ({
+  id,
+  ...props
+}: UseRetrieveEventSourceProps) =>
+  useGet<
+    EventSource,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveEventSourcePathParams
+  >(
+    (paramsInPath: RetrieveEventSourcePathParams) =>
+      `/sources/${paramsInPath.id}`,
+    { pathParams: { id }, ...props }
+  );
+
+export type ListLocationsResponse = {
+  count?: number;
+  next?: string | null;
+  previous?: string | null;
+  results?: Location[];
+};
+
+export interface ListLocationsQueryParams {
+  /**
+   * A page number within the paginated result set.
+   */
+  page?: number;
+  /**
+   * Number of results to return per page.
+   */
+  limit?: number;
+}
+
+export type ListLocationsProps = Omit<
+  GetProps<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >,
+  "path"
+>;
+
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const ListLocations = (props: ListLocationsProps) => (
+  <Get<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >
+    path={`/locations`}
+    {...props}
+  />
+);
+
+export type UseListLocationsProps = Omit<
+  UseGetProps<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >,
+  "path"
+>;
+
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const useListLocations = (props: UseListLocationsProps) =>
+  useGet<
+    ListLocationsResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListLocationsQueryParams,
+    void
+  >(`/locations`, props);
+
+export interface RetrieveLocationPathParams {
+  /**
+   * A unique integer value identifying this location.
+   */
+  id: string;
+}
+
+export type RetrieveLocationProps = Omit<
+  GetProps<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >,
+  "path"
+> &
+  RetrieveLocationPathParams;
+
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const RetrieveLocation = ({ id, ...props }: RetrieveLocationProps) => (
+  <Get<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >
+    path={`/locations/${id}`}
+    {...props}
+  />
+);
+
+export type UseRetrieveLocationProps = Omit<
+  UseGetProps<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >,
+  "path"
+> &
+  RetrieveLocationPathParams;
+
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const useRetrieveLocation = ({
+  id,
+  ...props
+}: UseRetrieveLocationProps) =>
+  useGet<
+    Location,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveLocationPathParams
+  >(
+    (paramsInPath: RetrieveLocationPathParams) =>
+      `/locations/${paramsInPath.id}`,
+    { pathParams: { id }, ...props }
+  );
+
+export type ListOrganizersResponse = {
+  count?: number;
+  next?: string | null;
+  previous?: string | null;
+  results?: Organizer[];
+};
+
+export interface ListOrganizersQueryParams {
+  /**
+   * A page number within the paginated result set.
+   */
+  page?: number;
+  /**
+   * Number of results to return per page.
+   */
+  limit?: number;
+}
+
+export type ListOrganizersProps = Omit<
+  GetProps<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >,
+  "path"
+>;
+
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const ListOrganizers = (props: ListOrganizersProps) => (
+  <Get<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >
+    path={`/organizers`}
+    {...props}
+  />
+);
+
+export type UseListOrganizersProps = Omit<
+  UseGetProps<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >,
+  "path"
+>;
+
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const useListOrganizers = (props: UseListOrganizersProps) =>
+  useGet<
+    ListOrganizersResponse,
+    | {
+        page?: string[];
+        limit?: string[];
+      }
+    | {
+        detail: string;
+      },
+    ListOrganizersQueryParams,
+    void
+  >(`/organizers`, props);
+
+export interface RetrieveOrganizerPathParams {
+  /**
+   * A unique integer value identifying this organizer.
+   */
+  id: string;
+}
+
+export type RetrieveOrganizerProps = Omit<
+  GetProps<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >,
+  "path"
+> &
+  RetrieveOrganizerPathParams;
+
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const RetrieveOrganizer = ({ id, ...props }: RetrieveOrganizerProps) => (
+  <Get<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >
+    path={`/organizers/${id}`}
+    {...props}
+  />
+);
+
+export type UseRetrieveOrganizerProps = Omit<
+  UseGetProps<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >,
+  "path"
+> &
+  RetrieveOrganizerPathParams;
+
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
+export const useRetrieveOrganizer = ({
+  id,
+  ...props
+}: UseRetrieveOrganizerProps) =>
+  useGet<
+    Organizer,
+    | {
+        id?: string[];
+      }
+    | {
+        detail: string;
+      },
+    void,
+    RetrieveOrganizerPathParams
+  >(
+    (paramsInPath: RetrieveOrganizerPathParams) =>
+      `/organizers/${paramsInPath.id}`,
+    { pathParams: { id }, ...props }
+  );
