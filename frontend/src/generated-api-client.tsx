@@ -165,6 +165,21 @@ export type ListEventsProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const ListEvents = (props: ListEventsProps) => (
   <Get<
     ListEventsResponse,
@@ -207,6 +222,21 @@ export type UseListEventsProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useListEvents = (props: UseListEventsProps) =>
   useGet<
     ListEventsResponse,
@@ -271,6 +301,21 @@ export type RetrieveEventProps = Omit<
 > &
   RetrieveEventPathParams;
 
+/**
+ * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const RetrieveEvent = ({ id, ...props }: RetrieveEventProps) => (
   <Get<
     Event,
@@ -312,6 +357,21 @@ export type UseRetrieveEventProps = Omit<
 > &
   RetrieveEventPathParams;
 
+/**
+ * Anfragen an die `/events` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Veranstaltungen zurück.
+ *
+ * Über die Parameter `minDate` und `maxDate` lässt sich die Rückgabemenge
+ * bezüglich des Anfangs der Veranstaltungen beschränken.
+ * Datumsformat hier ist `JJJJ-MM-DD` (ISO 8601).
+ *
+ * Mittels Parametern `location` und `organizer` lassen sich Veranstaltungen
+ * für bestimmte [Orte](/locations) und oder [Veranstalter](/organizers)
+ * filtern. Beide Parameter
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useRetrieveEvent = ({ id, ...props }: UseRetrieveEventProps) =>
   useGet<
     Event,
@@ -366,6 +426,13 @@ export type ListEventSourcesProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const ListEventSources = (props: ListEventSourcesProps) => (
   <Get<
     ListEventSourcesResponse,
@@ -400,6 +467,13 @@ export type UseListEventSourcesProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useListEventSources = (props: UseListEventSourcesProps) =>
   useGet<
     ListEventSourcesResponse,
@@ -437,6 +511,13 @@ export type RetrieveEventSourceProps = Omit<
 > &
   RetrieveEventSourcePathParams;
 
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const RetrieveEventSource = ({
   id,
   ...props
@@ -473,6 +554,13 @@ export type UseRetrieveEventSourceProps = Omit<
 > &
   RetrieveEventSourcePathParams;
 
+/**
+ * Anfragen an die `/sources` Schnittstelle geben die aktuell in der Datenbank
+ * verfügbaren Quellen von Veranstaltungen zurück.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useRetrieveEventSource = ({
   id,
   ...props
@@ -527,6 +615,16 @@ export type ListLocationsProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const ListLocations = (props: ListLocationsProps) => (
   <Get<
     ListLocationsResponse,
@@ -561,6 +659,16 @@ export type UseListLocationsProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useListLocations = (props: UseListLocationsProps) =>
   useGet<
     ListLocationsResponse,
@@ -598,6 +706,16 @@ export type RetrieveLocationProps = Omit<
 > &
   RetrieveLocationPathParams;
 
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const RetrieveLocation = ({ id, ...props }: RetrieveLocationProps) => (
   <Get<
     Location,
@@ -631,6 +749,16 @@ export type UseRetrieveLocationProps = Omit<
 > &
   RetrieveLocationPathParams;
 
+/**
+ * Anfragen an die `/locations` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Orte von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Ortes kann als `location` Parameter
+ * in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useRetrieveLocation = ({
   id,
   ...props
@@ -685,6 +813,16 @@ export type ListOrganizersProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const ListOrganizers = (props: ListOrganizersProps) => (
   <Get<
     ListOrganizersResponse,
@@ -719,6 +857,16 @@ export type UseListOrganizersProps = Omit<
   "path"
 >;
 
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useListOrganizers = (props: UseListOrganizersProps) =>
   useGet<
     ListOrganizersResponse,
@@ -756,6 +904,16 @@ export type RetrieveOrganizerProps = Omit<
 > &
   RetrieveOrganizerPathParams;
 
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const RetrieveOrganizer = ({ id, ...props }: RetrieveOrganizerProps) => (
   <Get<
     Organizer,
@@ -789,6 +947,16 @@ export type UseRetrieveOrganizerProps = Omit<
 > &
   RetrieveOrganizerPathParams;
 
+/**
+ * Anfragen an die `/organizers` Schnittstelle geben die aktuell in der
+ * Datenbank verfügbaren Veranstalter von Veranstaltungen zurück.
+ *
+ * Die im Feld `id` enthaltene ID eines Veranstalters kann als `organizer`
+ * Parameter in der [`/events`](/events) Schnittstelle verwendet werden.
+ *
+ * Weitere Informationen zum Rückgabeschema und Parametern im
+ * [Swagger UI](/docs/) oder [ReDoc](/redoc/).
+ */
 export const useRetrieveOrganizer = ({
   id,
   ...props
