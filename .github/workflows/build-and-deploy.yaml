@@ -339,7 +339,7 @@ jobs:
 
       - name: STAGING Copy docker-compose file to server
         if: steps.branch_info.outputs.branch_name == 'master'
-        uses: easingthemes/ssh-deploy@v2.1.6
+        uses: easingthemes/ssh-deploy@v2.1.7
         env:
             SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
             # z = compress
@@ -368,7 +368,7 @@ jobs:
 
       - name: PRODUCTION Copy docker-compose file to server
         if: steps.branch_info.outputs.branch_name == 'production'
-        uses: easingthemes/ssh-deploy@v2.1.6
+        uses: easingthemes/ssh-deploy@v2.1.7
         env:
             SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
             # z = compress
