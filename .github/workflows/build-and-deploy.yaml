@@ -22,7 +22,7 @@ jobs:
         ports:
           - 5000:5000
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           fetch-depth: '2' # for comparison
 
@@ -128,7 +128,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           fetch-depth: '2' # for comparison
 
@@ -219,7 +219,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           fetch-depth: '2' # for comparison
 
@@ -309,7 +309,7 @@ jobs:
     name: Validate deployment docker-compose
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
 
       - name: Run docker-compose config
         run: |
@@ -324,7 +324,7 @@ jobs:
       - validate-compose
     if: github.event_name == 'push'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
 
       - name: Extract branch name
         id: branch_info
