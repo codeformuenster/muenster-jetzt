@@ -78,7 +78,7 @@ jobs:
           tox
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v1.3.0
         with:
           driver-opts: network=host
 
