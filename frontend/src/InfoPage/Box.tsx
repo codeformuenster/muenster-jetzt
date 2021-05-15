@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import type { LocationDescriptor } from "history";
-import { Link } from "react-router-dom";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
+import type { LocationDescriptor } from "history";
 import styles from "./LandingPage.module.scss";
 
 interface IBox {
