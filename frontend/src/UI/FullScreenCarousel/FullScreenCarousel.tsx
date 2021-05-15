@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import useAutoplayResume from "../../hooks/useAutoplayResume";
 
 import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
+import "swiper/components/navigation/navigation.scss"; // eslint-disable-line import/no-extraneous-dependencies
 import styles from "./FullScreenCarousel.module.css";
 
 import Slide from "./Slide";
@@ -18,10 +18,8 @@ interface IFullScreenCarousel {
 }
 
 const FullScreenCarousel: FC<IFullScreenCarousel> = ({ slides }) => {
-  const {
-    sendRequest: sendTrackingRequest,
-    onSlide: onSlideTracking,
-  } = useKioskTracking();
+  const { sendRequest: sendTrackingRequest, onSlide: onSlideTracking } =
+    useKioskTracking();
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
   const { startAutoplayResume, stopAutoplayResume } = useAutoplayResume(30000);

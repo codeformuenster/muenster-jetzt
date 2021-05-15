@@ -7,13 +7,10 @@ import { apiInfoRoute, infoRootRoute } from "../../utils/routes";
 import ExternalLink from "../../Helpers/ExternalLink";
 
 const Nav: FC = () => {
-  const [
-    referenceElement,
-    setReferenceElement,
-  ] = useState<HTMLButtonElement | null>(null);
-  const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
-    null
-  );
+  const [referenceElement, setReferenceElement] =
+    useState<HTMLButtonElement | null>(null);
+  const [popperElement, setPopperElement] =
+    useState<HTMLDivElement | null>(null);
   const { styles: popperStyles, attributes } = usePopper(
     referenceElement,
     popperElement,
