@@ -35,3 +35,5 @@ Whenever you need to name a property, try to use the name that is used in https:
 We're using [pip-tools](https://github.com/jazzband/pip-tools) to make sure all deployments are using the same dependency versions.
 
 If you want to add a new dependency, add it into the `setup.py` file and run `pip-compile`. Don't forget to run `pip install -r requirements.txt` to install your added/updated dependency.
+
+Same goes for upgrading dependencies. Execute `pip-compile --upgrade` to upgrade all dependencies, flag `--upgrade-package <name>` will upgrade only the requested package.
