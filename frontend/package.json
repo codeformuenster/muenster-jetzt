@@ -8,8 +8,8 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.8",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.12.5",
-    "@types/react": "^17.0.11",
+    "@types/node": "^15.14.1",
+    "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
     "@types/react-router-dom": "^5.1.7",
     "bootstrap": "^4.6.0",
@@ -25,10 +25,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
     "restful-react": "^15.5.1",
-    "swiper": "^6.7.1",
+    "swiper": "^6.7.5",
     "timeago-react": "^3.0.2",
     "timeago.js": "^4.0.2",
-    "typescript": "^4.3.4"
+    "typescript": "^4.3.5"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -39,7 +39,8 @@
     "lint": "tsc --noEmit && prettier --check src/**/*.ts{,x} && eslint src/**/*.ts{,x}",
     "format-and-lint": "npm run format && npm run lint",
     "generate-client": "restful-react import --url http://localhost:8000/openapi.json --output src/generated-api-client.tsx",
-    "postgenerate-client": "prettier src/generated-api-client.tsx --write"
+    "postgenerate-client": "prettier src/generated-api-client.tsx --write",
+    "upgrade-all": "npm ci && npm upgrade && REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de npm run start"
   },
   "eslintConfig": {
     "extends": "react-app"
