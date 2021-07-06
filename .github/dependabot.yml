@@ -9,15 +9,26 @@ updates:
     labels:
       - "dependencies"
       - "component/frontend"
+  # github-actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    labels:
+      - "dependencies"
+  # backend
+  - package-ecosystem: "pip"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "component/backend"
   # infrastructure
   - package-ecosystem: "docker"
     directory: "/infrastructure/https_proxy/files/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     reviewers:
       - "bCyberBasti"
     labels:
