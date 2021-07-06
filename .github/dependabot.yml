@@ -9,6 +9,8 @@ updates:
     labels:
       - "dependencies"
       - "component/frontend"
+    registries:
+      - dockerhub
   # github-actions
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -16,6 +18,8 @@ updates:
       interval: "weekly"
     labels:
       - "dependencies"
+    registries:
+      - dockerhub
   # backend
   - package-ecosystem: "pip"
     directory: "/backend"
@@ -24,6 +28,8 @@ updates:
     labels:
       - "dependencies"
       - "component/backend"
+    registries:
+      - dockerhub
   # infrastructure
   - package-ecosystem: "docker"
     directory: "/infrastructure/https_proxy/files/"
@@ -34,3 +40,12 @@ updates:
     labels:
       - "dependencies"
       - "deployment"
+    registries:
+      - dockerhub
+
+registries:
+  dockerhub:
+    type: docker-registry
+    url: https://registry.hub.docker.com
+    username: ${{ secrets.DOCKER_HUB_USER }}
+    password: ${{ secrets.DOCKER_HUB_PASS }}
