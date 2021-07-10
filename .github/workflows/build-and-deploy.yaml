@@ -83,6 +83,7 @@ jobs:
           driver-opts: network=host
 
       - name: Login to DockerHub
+        if: github.event_name == 'push' && steps.branch_info.outputs.changes != '0'
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
@@ -292,18 +293,21 @@ jobs:
           echo "Executing npm run build with env REACT_APP_VERSION='$REACT_APP_VERSION' and REACT_APP_BACKEND_BASE_PATH='$REACT_APP_BACKEND_BASE_PATH'"
           npm run build
 
-      - name: Build frontend container image (and push to Docker Hub on master branch)
-        if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v1
+      - name: Login to DockerHub
+        if: github.event_name == 'push' && steps.branch_info.outputs.changes != '0'
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASS }}
-          repository: codeformuenster/muenster-jetzt-frontend
-          dockerfile: frontend/deployment/Dockerfile.prod
-          tags: ${{ steps.branch_info.outputs.branch_name }},${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
-          path: frontend
-          tag_with_ref: true
+
+      - name: Build frontend container image (and push to Docker Hub on master branch)
+        if: steps.branch_info.outputs.changes != '0'
+        uses: docker/build-push-action@v2
+        with:
           push: ${{ github.event_name == 'push' }}
+          tags: docker.io/codeformuenster/muenster-jetzt-frontend:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-frontend:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
+          file: frontend/deployment/Dockerfile.prod
+          context: frontend
 
   validate-compose:
     name: Validate deployment docker-compose
