@@ -18,9 +18,7 @@ const App: FC = () => {
   return (
     <Layout
       header={
-        <h4 className={styles.title}>
-          Veranstaltungen am {dateWithoutYear} dummy-revert-me
-        </h4>
+        <h4 className={styles.title}>Veranstaltungen am {dateWithoutYear}</h4>
       }
     >
       <div className={styles.maxWidthContainer}>
