@@ -5,6 +5,9 @@ on:
     # run every hour
     - cron: '0 * * * *'
 
+  # Allows to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   staging:
     name: crawl events in staging
