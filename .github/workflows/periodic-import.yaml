@@ -35,4 +35,4 @@ jobs:
           script: |
             set -e
             cd muenster-jetzt/production
-            docker-compose exec -T api python -m mj crawl
+            docker-compose exec -T api ./manage.py crawl
