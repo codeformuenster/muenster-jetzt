@@ -10,7 +10,9 @@ Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and
 
 ### Production deployment
 
-**to be implemented**
+The production deployment is deployed through CI triggered by pushes to the `production` branch. Check [`.github/workflows/build-and-deploy.yaml`](https://github.com/codeformuenster/muenster-jetzt/blob/master/.github/workflows/build-and-deploy.yaml).
+
+Easiest way to do so is to create a pull request from [master into production](https://github.com/codeformuenster/muenster-jetzt/compare/production...master) branches.
 
 ## Dev Setup
 ### Intro
