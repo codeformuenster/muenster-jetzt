@@ -58,7 +58,7 @@
     ]
   },
   "devDependencies": {
-    "@types/history": "^4.7.8",
+    "@types/history": "^4.7.9",
     "@types/lodash-es": "^4.17.4",
     "@types/qrcode.react": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
