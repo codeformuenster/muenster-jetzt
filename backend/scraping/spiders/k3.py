@@ -41,12 +41,16 @@ class K3Spider(EventSpider):
                 i.xpath("text()").get() for i in item.xpath("k3:COL/k3:DATA")
             ]
 
-            if raw_data[1] != "Münster":
-                continue
-
             event_data = dict(zip(fields, raw_data))
 
-            # TODO: address = query by nominatim
+            if (
+                event_data["Stadt"] != "Münster"
+                or event_data["Sprache"] != "Deutsch"
+            ):
+                continue
+
+            # TODO:
+            # address = coordinates in event_data["TreffpunktGeodaten"]
 
             parsed_date = datetime.strptime(event_data["Datum"], "%d.%m.%Y")
             start_time = datetime.strptime(
