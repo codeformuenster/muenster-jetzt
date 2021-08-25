@@ -1,5 +1,4 @@
-import os
-from datetime import date
+from datetime import datetime
 
 import scrapy
 
@@ -17,7 +16,7 @@ class K3Spider(EventSpider):
 
     def start_requests(self):
 
-        URL = "http://download.k3.de/OpenData/Open_Data_Veranstaltungen_von_k3_stadtfuehrungen_FMPXMLRESULT.xml"
+        URL = "http://download.k3.de/OpenData/Open_Data_Veranstaltungen_von_k3_stadtfuehrungen_FMPXMLRESULT.xml"  # noqa
 
         yield scrapy.Request(
             URL,
@@ -47,8 +46,13 @@ class K3Spider(EventSpider):
 
             event_data = dict(zip(fields, raw_data))
 
-            # address = query by nominatim
-            # start parse + format
+            # TODO: address = query by nominatim
+
+            parsed_date = datetime.strptime(event_data["Datum"], "%d.%m.%Y")
+            start_time = datetime.strptime(
+                event_data["UhrzeitBeginn"], "%H:%M:%S"
+            )
+            end_time = datetime.strptime(event_data["UhrzeitEnde"], "%H:%M:%S")
 
             event = {
                 "source_event_id": str(event_data["Nummer"]),
@@ -57,11 +61,11 @@ class K3Spider(EventSpider):
                 ).strip(),
                 "description": event_data["Beschreibung"],
                 "url": event_data["Buchungslink"],
-                "start_date": event_data["Datum"],
-                "start_time": event_data["UhrzeitBeginn"],
-                "end_date": event_data["Datum"],
-                "end_time": event_data["UhrzeitEnde"],
-                # "location": address,
+                "start_date": parsed_date,
+                "start_time": start_time,
+                "end_date": parsed_date,
+                "end_time": end_time,
+                "location": event_data["Stadt"],
                 "mode": event_data["Veranstaltung"],
                 "organizer": "K3 Stadtführungen",
             }
