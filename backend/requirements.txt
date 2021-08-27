@@ -64,6 +64,8 @@ hyperframe==5.2.0
     # via h2
 hyperlink==21.0.0
     # via twisted
+icalendar==4.0.7
+    # via mj (setup.py)
 idna==3.2
     # via hyperlink
 incremental==21.3.0
@@ -108,12 +110,16 @@ pyopenssl==20.0.1
     # via scrapy
 pyparsing==2.4.7
     # via packaging
+python-dateutil==2.8.2
+    # via icalendar
 python-dotenv==0.19.0
     # via
     #   mj (setup.py)
     #   uvicorn
 pytz==2021.1
-    # via django
+    # via
+    #   django
+    #   icalendar
 pyyaml==5.4.1
     # via
     #   mj (setup.py)
@@ -131,6 +137,7 @@ six==1.16.0
     #   parsel
     #   protego
     #   pyopenssl
+    #   python-dateutil
     #   service-identity
     #   w3lib
 sqlparse==0.4.1
