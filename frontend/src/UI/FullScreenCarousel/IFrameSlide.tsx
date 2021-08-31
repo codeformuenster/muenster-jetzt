@@ -53,4 +53,8 @@ const IFrameSlide: FC<IIFrameSlide> = ({ iFrame, title }) => (
   />
 );
 
+IFrameSlide.defaultProps = {
+  title: undefined,
+};
+
 export default IFrameSlide;

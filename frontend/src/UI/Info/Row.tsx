@@ -26,4 +26,9 @@ const Row: FC<IRowProps> = ({ children, singleColumnClassName, rowTitle }) => {
   );
 };
 
+Row.defaultProps = {
+  singleColumnClassName: undefined,
+  rowTitle: undefined,
+};
+
 export default Row;
