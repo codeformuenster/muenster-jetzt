@@ -48,4 +48,10 @@ const Box: FC<IBox> = ({
   );
 };
 
+Box.defaultProps = {
+  disabled: false,
+  preview: false,
+  target: undefined,
+};
+
 export default Box;
