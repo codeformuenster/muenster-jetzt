@@ -133,7 +133,7 @@ six==1.16.0
     #   pyopenssl
     #   service-identity
     #   w3lib
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via django
 twisted[http2]==21.7.0
     # via scrapy
