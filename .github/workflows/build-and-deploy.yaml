@@ -61,7 +61,7 @@ jobs:
 
       - name: Cache python dependencies
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2.1.7
         env:
           cache-name: cache-python-deps
         with:
@@ -160,7 +160,7 @@ jobs:
 
       - name: Cache node modules
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2.1.7
         env:
           cache-name: cache-node-modules
         with:
@@ -261,7 +261,7 @@ jobs:
 
       - name: Cache node modules
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2.1.7
         env:
           cache-name: cache-node-modules
         with:
