@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@popperjs/core": "^2.11.0",
+    "@popperjs/core": "^2.11.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -40,6 +40,7 @@
     "format-and-lint": "npm run format && npm run lint",
     "generate-client": "restful-react import --url http://localhost:8000/openapi.json --output src/generated-api-client.tsx",
     "postgenerate-client": "prettier src/generated-api-client.tsx --write",
+    "prepare-upgrade": "git checkout master && git pull origin master && git checkout -b frontend-deps-upgrade-$(date -Idate)",
     "upgrade-all": "npm ci && npm upgrade && REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de npm run start"
   },
   "eslintConfig": {
