@@ -14,7 +14,7 @@
     "@types/react-router-dom": "^5.3.3",
     "bootstrap": "^4.6.1",
     "clsx": "^1.1.1",
-    "interweave": "^12.9.0",
+    "interweave": "^13.0.0",
     "ky": "^0.29.0",
     "path-to-regexp": "^6.2.0",
     "purecss": "^2.0.6",
