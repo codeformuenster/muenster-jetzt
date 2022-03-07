@@ -15,7 +15,7 @@
     "bootstrap": "^4.6.1",
     "clsx": "^1.1.1",
     "interweave": "^12.9.0",
-    "ky": "^0.29.0",
+    "ky": "^0.30.0",
     "path-to-regexp": "^6.2.0",
     "purecss": "^2.0.6",
     "qrcode.react": "^1.0.1",
