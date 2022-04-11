@@ -1,6 +1,6 @@
-FROM alpine:3.12 AS compress
+FROM alpine:3.15 AS compress
 
-RUN apk --no-cache add gzip=1.10-r0 findutils=4.7.0-r0
+RUN apk --no-cache add gzip=1.12-r0 findutils=4.8.0-r0
 
 COPY build /www
 
@@ -10,7 +10,7 @@ RUN find /www \
   -iregex '.*\.(css|html?|js|svg|txt|json)' \
   -exec gzip -9 -k '{}' \;
 
-FROM nginxinc/nginx-unprivileged:1.18-alpine
+FROM nginxinc/nginx-unprivileged:1.21-alpine
 
 COPY --chown=101 deployment/muenster-jetzt.nginx.conf /etc/nginx/conf.d/default.conf
 
