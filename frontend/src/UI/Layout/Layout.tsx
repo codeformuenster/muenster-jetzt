@@ -1,11 +1,11 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, PropsWithChildren } from "react";
 import "../../styles/base.scss";
 import styles from "./Layout.module.scss";
 
 import logo from "../../images/ms-jetzt-logo-icon.svg";
 import Nav from "../Nav/Nav";
 
-interface ILayout {
+interface ILayout extends PropsWithChildren<unknown> {
   header?: ReactNode;
 }
 
