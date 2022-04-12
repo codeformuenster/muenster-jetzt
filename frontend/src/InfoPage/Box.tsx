@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, PropsWithChildren } from "react";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 import type { LocationDescriptor } from "history";
 import styles from "./LandingPage.module.scss";
 
-interface IBox {
+interface IBox extends PropsWithChildren<unknown> {
   title: string;
   linkText: string;
   linkTo: LocationDescriptor;
