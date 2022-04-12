@@ -1,6 +1,6 @@
 FROM alpine:3.15 AS compress
 
-RUN apk --no-cache add gzip=1.12-r0 findutils=4.8.0-r0
+RUN apk --no-cache add gzip=1.12-r0 findutils=4.8.0-r1
 
 COPY build /www
 
