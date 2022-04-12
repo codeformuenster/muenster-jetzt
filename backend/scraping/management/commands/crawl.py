@@ -34,5 +34,4 @@ class Command(BaseCommand):
             runner.crawl(spider_loader.load(spider_name))
         deferred = runner.join()
         deferred.addBoth(lambda _: reactor.stop())
-
-        reactor.run()  # the script will block here until all crawling jobs are finished
+        reactor.run()
