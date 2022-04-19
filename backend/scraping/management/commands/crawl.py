@@ -1,5 +1,7 @@
 from django.core.management.base import BaseCommand
-from scrapy.crawler import CrawlerProcess
+from twisted.internet import reactor
+from scrapy.crawler import CrawlerRunner
+from scrapy.utils.log import configure_logging
 from scrapy.settings import Settings
 from scrapy.spiderloader import SpiderLoader
 
@@ -26,7 +28,10 @@ class Command(BaseCommand):
         spider_loader = SpiderLoader(settings)
         # Run all spiders if none specified
         spiders = options["spider"] or spider_loader.list()
-        process = CrawlerProcess(settings=settings)
+        configure_logging()
+        runner = CrawlerRunner(settings=settings)
         for spider_name in spiders:
-            process.crawl(spider_loader.load(spider_name))
-        process.start()
+            runner.crawl(spider_loader.load(spider_name))
+        deferred = runner.join()
+        deferred.addBoth(lambda _: reactor.stop())
+        reactor.run()
