@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Interweave from "interweave";
+import { Interweave } from "interweave";
 import { IAugmentedEvent } from "../../hooks/useGetEvents";
 import styles from "./EventListItem.module.scss";
 import ExternalLink from "../../Helpers/ExternalLink";

@@ -34,11 +34,6 @@
   background-color: white;
 }
 
-.qr {
-  width: 170px;
-  height: 170px;
-}
-
 .title {
   text-align: center;
   font-size: var(--kiosk-title-font-size);

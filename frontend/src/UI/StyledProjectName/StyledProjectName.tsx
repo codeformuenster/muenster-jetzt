@@ -4,7 +4,6 @@ import styles from "./StyledProjectName.module.scss";
 
 interface IStyledProjectNameProps {
   noBackground?: boolean;
-  // className?: string;
 }
 
 const StyledProjectName: FC<IStyledProjectNameProps> = ({ noBackground }) => (
@@ -16,5 +15,9 @@ const StyledProjectName: FC<IStyledProjectNameProps> = ({ noBackground }) => (
     Münster Jetzt
   </span>
 );
+
+StyledProjectName.defaultProps = {
+  noBackground: false,
+};
 
 export default StyledProjectName;

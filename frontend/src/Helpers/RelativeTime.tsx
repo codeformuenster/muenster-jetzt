@@ -17,4 +17,8 @@ const RelativeTime: FC<IRelativeTime> = ({ datetime }) => {
   return <TimeAgo locale="de" datetime={datetime} />;
 };
 
+RelativeTime.defaultProps = {
+  datetime: undefined,
+};
+
 export default RelativeTime;
