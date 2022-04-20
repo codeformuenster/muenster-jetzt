@@ -16,12 +16,12 @@ def str_or_none(vevent_item, key):
 
 class ICalendarSpider(EventSpider):
     def start_requests(self):
-        yield scrapy.Request(
+        resp = scrapy.Request(
             self.ics_url,
             errback=self.handle_error,
         )
+        yield resp
 
-    @staticmethod
     def parse(self, response):
 
         ics_data = Calendar.from_ical(response.text)
@@ -48,16 +48,3 @@ class ICalendarSpider(EventSpider):
             }
 
             yield event
-
-
-
-class PengImproSpider(ICalendarSpider):
-
-    name = "kshg"
-
-    defaults = {
-        "source": "Eine-Welt-Forum Münster e.V.",
-        "source_license": None,
-    }
-
-    ics_url = "https://www.peng-impro.de/termine/liste/?ical=1"  # noqa
