@@ -22,7 +22,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         settings = Settings(
             {
-                "SPIDER_MODULES": ["scraping.spiders"],
+                "SPIDER_MODULES": ["scraping.spiders", "scraping.spiders.ics"],
             }
         )
         spider_loader = SpiderLoader(settings)

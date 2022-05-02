@@ -64,6 +64,8 @@ httptools==0.4.0
     # via uvicorn
 hyperlink==21.0.0
     # via twisted
+icalendar==4.0.9
+    # via mj (setup.py)
 idna==3.3
     # via
     #   anyio
@@ -106,12 +108,16 @@ pydispatcher==2.0.5
     # via scrapy
 pyopenssl==22.0.0
     # via scrapy
+python-dateutil==2.8.2
+    # via icalendar
 python-dotenv==0.20.0
     # via
     #   mj (setup.py)
     #   uvicorn
 pytz==2022.1
-    # via djangorestframework
+    # via
+    #   djangorestframework
+    #   icalendar
 pyyaml==6.0
     # via
     #   mj (setup.py)
@@ -134,6 +140,7 @@ six==1.16.0
     #   bleach
     #   parsel
     #   protego
+    #   python-dateutil
     #   requests-file
     #   service-identity
     #   w3lib
@@ -145,7 +152,7 @@ tldextract==3.2.1
     # via scrapy
 twisted==22.4.0
     # via scrapy
-typing-extensions==4.1.1
+typing-extensions==4.2.0
     # via twisted
 uritemplate==4.1.1
     # via mj (setup.py)
@@ -164,7 +171,7 @@ watchgod==0.8.2
     # via uvicorn
 webencodings==0.5.1
     # via bleach
-websockets==10.2
+websockets==10.3
     # via uvicorn
 zope-interface==5.4.0
     # via
