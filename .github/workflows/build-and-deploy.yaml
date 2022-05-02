@@ -139,7 +139,7 @@ jobs:
 
       - name: Install Node.js 14
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/setup-node@v3.1.0
+        uses: actions/setup-node@v3.1.1
         with:
           node-version: 14
           cache: 'npm'
@@ -228,7 +228,7 @@ jobs:
 
       - name: Install Node.js 14
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/setup-node@v3.1.0
+        uses: actions/setup-node@v3.1.1
         with:
           node-version: 14
           cache: 'npm'
