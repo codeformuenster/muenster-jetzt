@@ -63,7 +63,7 @@ jobs:
 
       - name: Set up Docker Buildx
         if: steps.branch_info.outputs.changes != '0'
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
         with:
           driver-opts: network=host
 
