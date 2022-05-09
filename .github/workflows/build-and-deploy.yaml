@@ -69,7 +69,7 @@ jobs:
 
       - name: Login to DockerHub
         if: github.event_name == 'push' && steps.branch_info.outputs.changes != '0'
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASS }}
@@ -257,7 +257,7 @@ jobs:
 
       - name: Login to DockerHub
         if: github.event_name == 'push' && steps.branch_info.outputs.changes != '0'
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASS }}
