@@ -5,7 +5,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/frontend"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     labels:
       - "dependencies"
       - "component/frontend"
@@ -15,7 +15,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     labels:
       - "dependencies"
     registries:
@@ -24,7 +24,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/backend"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     labels:
       - "dependencies"
       - "component/backend"
@@ -34,7 +34,7 @@ updates:
   - package-ecosystem: "docker"
     directory: "/infrastructure/https_proxy/files/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     reviewers:
       - "bCyberBasti"
     labels:
