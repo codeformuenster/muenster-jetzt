@@ -12,7 +12,7 @@ on:
 jobs:
   backend:
     name: Build backend
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         working-directory: backend
@@ -108,7 +108,7 @@ jobs:
 
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     needs: backend
     defaults:
       run:
@@ -188,7 +188,7 @@ jobs:
 
   frontend:
     name: Validate, test and build frontend
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         working-directory: frontend
@@ -273,7 +273,7 @@ jobs:
 
   validate-compose:
     name: Validate deployment docker-compose
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
 
@@ -283,7 +283,7 @@ jobs:
 
   deploy:
     name: deploy to server
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     needs:
       - backend
       - frontend
