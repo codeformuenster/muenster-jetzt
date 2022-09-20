@@ -16,6 +16,12 @@ The app uses some custom environment variables for configuration at runtime and 
 | `REACT_APP_BACKEND_BASE_PATH` | The URL used by the frontend to reach the api. Default is `http://localhost:8000`. CI sets this to `https://api(.staging).muenster-jetzt.de` depending on the branch. |
 | `REACT_APP_VERSION` | Version string used in a meta tag in index.html. CI sets this to `{branch}-{short_sha}` where `branch` is the current branch and `short_sha` are the first 7 characters of the git commit sha. |
 
+## Development in container
+
+```
+docker run --rm -it -v $(pwd):/app:Z --entrypoint /bin/bash -p 3000:3000 node:14
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

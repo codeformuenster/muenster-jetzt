@@ -8,6 +8,33 @@ framework](https://www.django-rest-framework.org/), and
 ## Development Quickstart
 
 1. Copy `.env.example` to `.env` and edit it to match your local setup.
+
+### Create a database
+
+Run this inside the root of this repository:
+
+```
+docker-compose up db
+```
+
+### Develop in a container
+
+Change into the `backend` directory.
+
+To open a shell inside a container with all dependencies installed, run:
+
+```
+# do this only once or if your requirements.txt changes
+docker build -t muenster-jetzt-backend -f deployment/Dockerfile.prod .
+# start a container
+docker run --rm -it -v $(pwd):/app:Z --entrypoint /bin/bash --network muenster-jetzt_default -p 8000:8000 --env-file .env muenster-jetzt-backend
+```
+
+Inside the container, `./manage.py` commands work as described below.
+
+### Start the backend locally
+
+1. In your `.env` change the database vars to match your database.
 2. Create and activate a virtual environment. e.g. with: `python -m virtualenv .venv && .venv/bin/activate`
 
    Run only `.venv/bin/activate` to activate an existing environment
@@ -15,7 +42,7 @@ framework](https://www.django-rest-framework.org/), and
 3. Install all dependencies via `pip install -r requirements.txt`
 4. Run `./manage.py migrate` to migrate your database.
 5. Run `./manage.py crawl` to crawl events and store them in your database.
-6. Run `./manage.py runserver` to start the API. Append `0.0.0.0:8000` if you want to expose the dev server.
+6. Run `./manage.py runserver 0.0.0.0:8000` to start the API.
 
 
 # Database schema
