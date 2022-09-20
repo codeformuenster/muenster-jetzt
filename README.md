@@ -6,7 +6,7 @@ We use GitHub Actions and docker-compose to deploy the master branch to a stagin
 
 ### Staging deployment
 
-Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and pushes container images [`docker.io/muenster-jetzt-frontend:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and [`docker.io/muenster-jetzt-api:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api). Then it deploys them in on our staging server environment.
+Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and pushes container images [`docker.io/codeformuenster/muenster-jetzt-frontend:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and [`docker.io/codeformuenster/muenster-jetzt-api:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api). Then it deploys them in on our staging server environment.
 
 ### Production deployment
 
@@ -14,7 +14,10 @@ The production deployment is deployed through CI triggered by pushes to the `pro
 
 Easiest way to do so is to create a pull request from [master into production](https://github.com/codeformuenster/muenster-jetzt/compare/production...master) branches.
 
-## Dev Setup
+## Dev Setup with VS Code
+
+If you don't want to use VS Code or the proprietary remote development extension pack, check the README files of the back and frontend.
+
 ### Intro
 
 There is no need to clutter your dev machine with different versions of every tool (like nodejs, python).
