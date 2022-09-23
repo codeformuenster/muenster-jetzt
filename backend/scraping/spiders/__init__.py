@@ -80,7 +80,7 @@ class DatabaseExportPipeline:
             except Location.DoesNotExist:
                 logger.debug(f"Geocoding description {item['location']}...")
                 # geocode location
-                geolocator = Nominatim(user_agent="testo")
+                geolocator = Nominatim(user_agent="muenster-jetzt")
                 location = geolocator.geocode(item["location"])
                 # write location to database
                 values["location"], _ = Location.objects.get_or_create(
