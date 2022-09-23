@@ -4,7 +4,6 @@ Based on [Django](https://www.djangoproject.com/), [Django REST
 framework](https://www.django-rest-framework.org/), and
 [Scrapy](https://scrapy.org/).
 
-
 ## Development Quickstart
 
 1. Copy `.env.example` to `.env` and edit it to match your local setup.
@@ -13,7 +12,7 @@ framework](https://www.django-rest-framework.org/), and
 
 Run this inside the root of this repository:
 
-```
+```bash
 docker-compose up db
 ```
 
@@ -23,7 +22,7 @@ Change into the `backend` directory.
 
 To open a shell inside a container with all dependencies installed, run:
 
-```
+```bash
 # do this only once or if your requirements.txt changes
 docker build -t muenster-jetzt-backend -f deployment/Dockerfile.prod .
 # start a container
@@ -44,20 +43,17 @@ Inside the container, `./manage.py` commands work as described below.
 5. Run `./manage.py crawl` to crawl events and store them in your database.
 6. Run `./manage.py runserver 0.0.0.0:8000` to start the API.
 
-
-# Database schema
+## Database schema
 
 The database schema is managed via Django. If you need to alter it, just add a
 new model in `events/models.py` (or edit an existing one) and run `./manage.py
 makemigrations` to create a new migration.
 
+### Naming Convention
 
-## Naming Convention
+Whenever you need to name a property, try to use the name that is used in <https://schema.org/> e.g. for events take a look at: <https://schema.org/Event>
 
-Whenever you need to name a property, try to use the name that is used in https://schema.org/ e.g. for events take a look at: https://schema.org/Event
-
-
-## Dependency management
+### Dependency management
 
 We're using [pip-tools](https://github.com/jazzband/pip-tools) to make sure all deployments are using the same dependency versions.
 
