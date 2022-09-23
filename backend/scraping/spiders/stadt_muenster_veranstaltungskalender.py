@@ -16,7 +16,7 @@ class StadtMuensterKalenderSpider(EventSpider):
     }
 
     def start_requests(self):
-        URL = "https://www.muenster.de/veranstaltungskalender/scripts/frontend/suche.php"
+        URL = "https://www.muenster.de/veranstaltungskalender/scripts/frontend/suche.php"  # noqa
 
         yield scrapy.Request(
             URL,
@@ -27,7 +27,8 @@ class StadtMuensterKalenderSpider(EventSpider):
         start_date = datetime.now()
         end_date = start_date + timedelta(days=5)
         formdata = {
-            "zeitraum": "heute",  # use string "zeitraum"(!) instead of "heute" to get results for all days, not only for the first
+            "zeitraum": "heute",  # use string "zeitraum"(!)
+            # instead "heute" to get results for all days, not only the first
             "datum_von": start_date.strftime("%d.%m.%Y"),
             "datum_bis": end_date.strftime("%d.%m.%Y"),
             "suchstring": "",
@@ -37,7 +38,7 @@ class StadtMuensterKalenderSpider(EventSpider):
         }
 
         self.logger.debug(
-            "-----------------------------------------------------------------------> formdata: %s",
+            "---------------------------------------------> formdata: %s",
             formdata,
         )
 
@@ -63,10 +64,8 @@ class StadtMuensterKalenderSpider(EventSpider):
                 element.css("div.datum-uhrzeit::text").get().strip()
             )
             dateparts = date_complete.split(",")
-            date_day = dateparts[0].strip()  # e.g. "Montag"
             date_date = dateparts[1].strip()
             date_time = dateparts[2].strip().replace(".", ":")[0:5]
-
             parsed_date = str(datetime.strptime(date_date, "%d.%m.%Y"))[0:10]
 
             self.logger.debug("event: %s", title)
@@ -79,11 +78,13 @@ class StadtMuensterKalenderSpider(EventSpider):
 
             location = element.css("div.location-adresse::text").get().strip()
 
-            # TODO: What to do with these values?
-            untertitel = element.css("div.untertitel").get()
-            link = element.css("div.detail-link").get()
+            # TODO: We COULD use these values, but we don't do it right now!
+            # untertitel = element.css("div.untertitel").get()
+            # link = element.css("div.detail-link").get()
+            # date_day = dateparts[0].strip()  # e.g. "Montag"
 
-            # TODO: We should parse the date string format for end time, instead of setting it to None
+            # TODO: We should parse the date string format for
+            # end time, instead of setting it to None
             end_datetime = None
 
             yield {
