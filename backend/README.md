@@ -4,20 +4,32 @@ Based on [Django](https://www.djangoproject.com/), [Django REST
 framework](https://www.django-rest-framework.org/), and
 [Scrapy](https://scrapy.org/).
 
-## Development Quickstart
+## Development setup for backend
 
-1. Copy `.env.example` to `.env` and edit it to match your local setup.
+All following commands are to be executed from the root of this repository.
 
+### 1. Setup Python with virtual environment
 
-### Create a database
+1. Make sure your local python version matches version in file `backend/deployment/Dockerfile.prod`
+2. Create a virtual environment, if it does not exist yet: `python -m venv .venv`
+3. Activate virtual envrionment: `source .venv/bin/activate`
+4. Install all dependencies via `pip install -r backend/requirements.txt`
 
-Run this inside the root of this repository:
+### 2. Initialize Database
 
-```bash
-docker-compose up db
-```
+1. Configure environmental variables, based on example:
 
-### Develop in a container
+    ```bash
+    cp backend/.env.example backend/.env
+    ```
+
+   Optionally, these variables and credentials can be changed. But development will work without any change, too.
+2. Start database: `docker-compose up -d db`
+3. Migrate your database: `./backend/manage.py migrate`
+4. Crawl events and store them in the database: `./backend/manage.py crawl`
+5. Start the API: `./backend/manage.py runserver 0.0.0.0:8000`
+
+### DEPRECATED ALTERNATIVE: Develop in a container
 
 Change into the `backend` directory.
 
@@ -30,26 +42,9 @@ docker build -t muenster-jetzt-backend -f deployment/Dockerfile.prod .
 docker run --rm -it -v $(pwd):/app:Z --entrypoint /bin/bash --network muenster-jetzt_default -p 8000:8000 --env-file .env muenster-jetzt-backend
 ```
 
-Inside the container, `./manage.py` commands work as described below (see "Start the backend").
+## General information
 
-
-### Develop locally without container
-
-1. In your `.env` change the database vars to match your database.
-2. Create and activate a virtual environment. e.g. with: `python -m virtualenv .venv && .venv/bin/activate`
-
-   Run only `.venv/bin/activate` to activate an existing environment
-
-3. Install all dependencies via `pip install -r requirements.txt`
-
-
-### Start the backend
-
-1. Run `./manage.py migrate` to initially create your database, and run again to migrate your database.
-2. Run `./manage.py crawl` to crawl events and store them in your database.
-3. Run `./manage.py runserver 0.0.0.0:8000` to start the API.
-
-## Database schema
+### Database schema
 
 The database schema is managed via Django. If you need to alter it, just add a
 new model in `events/models.py` (or edit an existing one) and run `./manage.py
@@ -67,10 +62,10 @@ If you want to add a new dependency, add it into the `setup.py` file and run `pi
 
 Same goes for upgrading dependencies. Execute `pip-compile --upgrade` to upgrade all dependencies, flag `--upgrade-package <name>` will upgrade only the requested package.
 
+## Troubleshooting
 
-### Troubleshooting
+### Backend has trouble connecting to the database
 
-**Backend has trouble connecting to the database**
 ```bash
 # Do this to debug the database container
 docker ps                                 # find out name of db container
