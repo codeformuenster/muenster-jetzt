@@ -65,7 +65,7 @@ add it into the `setup.py` file and run:
 # activate virtual environment
 source .venv/bin/activate
 # compile dependency versions from setup.py to requirements.txt
-pip-compile backend/setup.py -o backend/requirements.txt
+pip-compile -o backend/requirements.txt backend/setup.py
 # update installed dependencies
 pip install -r backend/requirements.txt
 ```
