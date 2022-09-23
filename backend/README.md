@@ -10,7 +10,14 @@ All following commands are to be executed from the root of this repository.
 
 ### Create and start database
 
-1. Configure environmental variables: `backend/.env.example` to `backend/.env` and edit as desired.
+1. Configure environmental variables, based on example:
+
+    ```bash
+    cp backend/.env.example` to `backend/.env`.
+    ```
+
+   Optionally, these variables and credentials can be changed. But development will work without any change, too.
+
 2. Start database: `docker-compose up -d db`
 
 ### OPTION A: Develop in virtual environment
