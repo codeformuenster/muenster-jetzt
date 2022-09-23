@@ -8,7 +8,14 @@ framework](https://www.django-rest-framework.org/), and
 
 All following commands are to be executed from the root of this repository.
 
-### 1. Create and start database
+### 1. Setup Python with virtual environment
+
+1. Make sure your local python version matches version in file `backend/deployment/Dockerfile.prod`
+2. Create a virtual environment, if it does not exist yet: `python -m venv .venv`
+3. Activate virtual envrionment: `source .venv/bin/activate`
+4. Install all dependencies via `pip install -r backend/requirements.txt`
+
+### 2. Initialize Database
 
 1. Configure environmental variables, based on example:
 
@@ -17,17 +24,12 @@ All following commands are to be executed from the root of this repository.
     ```
 
    Optionally, these variables and credentials can be changed. But development will work without any change, too.
-
 2. Start database: `docker-compose up -d db`
+3. Migrate your database: `./backend/manage.py migrate`
+4. Crawl events and store them in the database: `./backend/manage.py crawl`
+5. Start the API: `./backend/manage.py runserver 0.0.0.0:8000`
 
-### 2a. DEV SETUP A: Develop in virtual environment
-
-1. Make sure your local python version matches version in `backend/deployment/Dockerfile.prod`.
-2. Create a virtual environment, if it does not exist yet: `python -m venv .venv`
-3. Activate virtual envrionment: `source .venv/bin/activate`
-4. Install all dependencies via `pip install -r backend/requirements.txt`
-
-### 2b. DEV SETUP B: Develop in a container (DEPRECATED)
+### DEPRECATED ALTERNATIVE: Develop in a container
 
 Change into the `backend` directory.
 
@@ -39,12 +41,6 @@ docker build -t muenster-jetzt-backend -f deployment/Dockerfile.prod .
 # start a container
 docker run --rm -it -v $(pwd):/app:Z --entrypoint /bin/bash --network muenster-jetzt_default -p 8000:8000 --env-file .env muenster-jetzt-backend
 ```
-
-### 3. Initialize Database
-
-1. Migrate your database: `./backend/manage.py migrate`
-2. Crawl events and store them in the database: `./backend/manage.py crawl`
-3. Start the API: `./backend/manage.py runserver 0.0.0.0:8000`
 
 ## General information
 
