@@ -66,6 +66,8 @@ class SanitizeHTMLPipeline:
 
 
 from geopy.geocoders import Nominatim
+
+
 class DatabaseExportPipeline:
     def process_item(self, item, spider):
         with transaction.atomic():
@@ -76,7 +78,7 @@ class DatabaseExportPipeline:
             values["location"], _ = Location.objects.get_or_create(
                 description=item["location"],
                 lat=location.latitude,
-                lon=location.longitude
+                lon=location.longitude,
             )
             if item["organizer"]:
                 values["organizer"], _ = Organizer.objects.get_or_create(
