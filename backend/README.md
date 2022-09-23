@@ -13,7 +13,7 @@ All following commands are to be executed from the root of this repository.
 1. Configure environmental variables, based on example:
 
     ```bash
-    cp backend/.env.example` to `backend/.env`.
+    cp backend/.env.example backend/.env
     ```
 
    Optionally, these variables and credentials can be changed. But development will work without any change, too.
