@@ -65,12 +65,20 @@ class SanitizeHTMLPipeline:
         return item
 
 
+from geopy.geocoders import Nominatim
+
+
 class DatabaseExportPipeline:
     def process_item(self, item, spider):
         with transaction.atomic():
             values = item.copy()
+            geolocator = Nominatim(user_agent="testo")
+            location = geolocator.geocode(item["location"])
+
             values["location"], _ = Location.objects.get_or_create(
-                description=item["location"]
+                description=item["location"],
+                lat=location.latitude,
+                lon=location.longitude,
             )
             if item["organizer"]:
                 values["organizer"], _ = Organizer.objects.get_or_create(
