@@ -18,6 +18,7 @@ setup(
         "django-filter",
         "djangorestframework",
         "djangorestframework-camel-case",
+        "flake8",
         "geopy",
         "gunicorn",
         "icalendar",
