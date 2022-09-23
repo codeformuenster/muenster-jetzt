@@ -1,0 +1,7 @@
+
+commonLabels:
+  app.kubernetes.io/component: backend-static
+
+resources:
+- deployment.yaml
+- service.yaml

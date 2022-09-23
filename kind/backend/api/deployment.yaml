@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-api
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    spec:
+      containers:
+      - image: codeformuenster/muenster-jetzt-api:master
+        name: backend-api
+        resources: {}
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: postgres
+              key: name
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgres
+              key: password
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres
+              key: user
+        - name: DB_HOST
+          value: postgres
+        - name: DB_PORT
+          value: "5432"
+        - name: DJANGO_HOSTS
+          value: 0.0.0.0
+        - name: DJANGO_DEBUG
+          value: "False"
+        - name: DJANGO_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: backend-api
+              key: django-secret-key
+        - name: MUENSTERLAND_API_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: muensterland-api-token
+              key: django-secret-key
+        - name: DATENPORTAL_USER
+          valueFrom:
+            secretKeyRef:
+              name: datenportal-user
+              key: django-secret-key
+        - name: DATENPORTAL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: datenportal-password
+              key: django-secret-key

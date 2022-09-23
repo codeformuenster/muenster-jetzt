@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/static"
+        backend:
+          service:
+            name: backend-static
+            port:
+              number: 8001
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: backend-api
+            port:
+              number: 8000

@@ -1,0 +1,29 @@
+
+namespace: muensterjetzt
+
+commonLabels:
+  app.kubernetes.io/name: muensterjetzt
+
+resources:
+- namespace.yaml
+- postgis
+- frontend
+- backend
+
+images:
+- name: postgis/postgis
+  newTag: 12
+  # newTag: 14-3.3
+- name: codeformuenster/muenster-jetzt-api
+  newTag: master-5dec1ca
+- name: codeformuenster/muenster-jetzt-api-static
+  newTag: master-5dec1ca
+- name: codeformuenster/muenster-jetzt-frontend
+  newTag: master-5dec1ca
+  digest: sha256:b7227e77e7911b73265ff27446c193f6165cae2be68adaa676655f367187ff88
+
+
+# - backend
+# namePrefix: demo-
+# patchesStrategicMerge:
+# - patch.yaml
