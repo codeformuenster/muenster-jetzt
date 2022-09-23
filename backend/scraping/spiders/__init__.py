@@ -76,19 +76,26 @@ class DatabaseExportPipeline:
             # check if location is in DB. if not, geocode and add.
             try:
                 location_description = item["location"]
-                Location.objects.get(description=location_description)
+                values["location"] = Location.objects.get(
+                    description=location_description
+                )
             except Location.DoesNotExist:
                 logger.debug(f"Geocoding description {item['location']}...")
                 # geocode location
                 geolocator = Nominatim(user_agent="muenster-jetzt")
                 location = geolocator.geocode(item["location"])
-                # write location to database
-                values["location"], _ = Location.objects.get_or_create(
-                    description=location_description,
-                    geometry_source="Nominatim",
-                    lat=location.latitude,
-                    lon=location.longitude,
-                )
+                if location:
+                    # write location to database
+                    values["location"], _ = Location.objects.get_or_create(
+                        description=location_description,
+                        geometry_source="Nominatim",
+                        lat=location.latitude,
+                        lon=location.longitude,
+                    )
+                else:
+                    values["location"], _ = Location.objects.get_or_create(
+                        description=location_description
+                    )
 
             if item["organizer"]:
                 values["organizer"], _ = Organizer.objects.get_or_create(
