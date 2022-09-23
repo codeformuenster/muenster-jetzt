@@ -70,6 +70,18 @@ export interface Event {
      * Description of event location (address or similar)
      */
     description: string;
+    /**
+     * Latitude of the event location
+     */
+    lat?: number | null;
+    /**
+     * Longitude of the event location
+     */
+    lon?: number | null;
+    /**
+     * Source of the geometry in lat and lon fields
+     */
+    geometrySource?: string | null;
   };
   organizer: {
     id: number;
@@ -101,6 +113,18 @@ export interface Location {
    * Description of event location (address or similar)
    */
   description: string;
+  /**
+   * Latitude of the event location
+   */
+  lat?: number | null;
+  /**
+   * Longitude of the event location
+   */
+  lon?: number | null;
+  /**
+   * Source of the geometry in lat and lon fields
+   */
+  geometrySource?: string | null;
 }
 
 export interface Organizer {
