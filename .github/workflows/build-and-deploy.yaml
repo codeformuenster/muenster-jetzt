@@ -318,7 +318,7 @@ jobs:
 
       - name: STAGING  Run remote commands
         if: steps.branch_info.outputs.branch_name == 'master'
-        uses: appleboy/ssh-action@v0.1.4
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: "staging.muenster-jetzt.de"
           username: root
@@ -347,7 +347,7 @@ jobs:
 
       - name: PRODUCTION  Run remote commands
         if: steps.branch_info.outputs.branch_name == 'production'
-        uses: appleboy/ssh-action@v0.1.4
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: "www.muenster-jetzt.de"
           username: root
