@@ -5,7 +5,6 @@ import logging
 import bleach
 import scrapy
 from django.db import transaction
-from geopy.geocoders import Nominatim
 from scrapy.exceptions import DropItem
 
 from events.models import Event, EventSource, Location, Organizer
