@@ -4,6 +4,7 @@ import logging
 
 import bleach
 import scrapy
+from geopy import Point
 from django.db import transaction
 from geopy.geocoders import Nominatim
 from scrapy.exceptions import DropItem
@@ -82,7 +83,10 @@ class DatabaseExportPipeline:
             except Location.DoesNotExist:
                 logger.debug(f"Geocoding description {item['location']}...")
                 # geocode location
-                geolocator = Nominatim(user_agent="muenster-jetzt")
+                geolocator = Nominatim(
+                    user_agent="muenster-jetzt",
+                    view_box=[Point(51.8375, 7.471), Point(52.061, 7.775)],
+                )
                 location = geolocator.geocode(item["location"])
                 if location:
                     # write location to database
