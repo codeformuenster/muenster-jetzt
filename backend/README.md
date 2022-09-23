@@ -67,7 +67,7 @@ source .venv/bin/activate
 # compile dependency versions from setup.py to requirements.txt
 pip-compile backend/setup.py -o backend/requirements.txt
 # update installed dependencies
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
 Same goes for upgrading dependencies.
