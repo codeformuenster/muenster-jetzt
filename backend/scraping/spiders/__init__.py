@@ -1,3 +1,5 @@
+"""General spider functionality."""
+
 import logging
 
 import bleach

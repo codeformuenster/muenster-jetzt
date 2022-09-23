@@ -56,11 +56,23 @@ Whenever you need to name a property, try to use the name that is used in <https
 
 ### Dependency management
 
-We're using [pip-tools](https://github.com/jazzband/pip-tools) to make sure all deployments are using the same dependency versions.
+This project [pip-tools](https://github.com/jazzband/pip-tools) to make sure all deployments are using exactly the same dependency versions.
 
-If you want to add a new dependency, add it into the `setup.py` file and run `pip-compile`. Don't forget to run `pip install -r requirements.txt` to install your added/updated dependency.
+If you want to add a new dependency for production use,
+add it into the `setup.py` file and run:
 
-Same goes for upgrading dependencies. Execute `pip-compile --upgrade` to upgrade all dependencies, flag `--upgrade-package <name>` will upgrade only the requested package.
+```bash
+# activate virtual environment
+source .venv/bin/activate
+# compile dependency versions from setup.py to requirements.txt
+pip-compile -o backend/requirements.txt backend/setup.py
+# update installed dependencies
+pip install -r backend/requirements.txt
+```
+
+Same goes for upgrading dependencies.
+Execute `pip-compile --upgrade` to upgrade all dependencies.
+The optional flag `--upgrade-package <name>` will upgrade only the requested package.
 
 ## Troubleshooting
 
