@@ -23,6 +23,22 @@ class Location(models.Model):
         unique=True,
         help_text="Description of event location (address or similar)",
     )
+    lat = models.FloatField(
+        null=True,
+        blank=True,
+        help_text="Latitude of the event location",
+    )
+    lon = models.FloatField(
+        null=True,
+        blank=True,
+        help_text="Longitude of the event location",
+    )
+    geometry_source = models.CharField(
+        max_length=1023,
+        null=True,
+        blank=True,
+        help_text="Source of the geometry in lat and lon fields",
+    )
 
 
 class Organizer(models.Model):
