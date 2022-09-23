@@ -10,4 +10,4 @@ class RareGuitarSpider(ICalendarSpider):
         "source_license": None,
     }
 
-    ics_url = "http://www.rareguitar.de/events?ical=1&tribe_display=list"  # noqa
+    ics_url = "http://www.rareguitar.de/events?ical=1&tribe_display=list"
