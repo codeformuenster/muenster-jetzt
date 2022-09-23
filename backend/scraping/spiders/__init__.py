@@ -77,7 +77,9 @@ class DatabaseExportPipeline:
             # check if location is in DB. if not, geocode and add.
             try:
                 location_description = item["location"]
-                Location.objects.get(description=location_description)
+                values["location"] = Location.objects.get(
+                    description=location_description
+                )
             except Location.DoesNotExist:
                 logger.debug(f"Geocoding description {item['location']}...")
                 # geocode location
@@ -86,13 +88,18 @@ class DatabaseExportPipeline:
                     view_box=[Point(51.8375, 7.471), Point(52.061, 7.775)],
                 )
                 location = geolocator.geocode(item["location"])
-                # write location to database
-                values["location"], _ = Location.objects.get_or_create(
-                    description=location_description,
-                    geometry_source="Nominatim",
-                    lat=location.latitude,
-                    lon=location.longitude,
-                )
+                if location:
+                    # write location to database
+                    values["location"], _ = Location.objects.get_or_create(
+                        description=location_description,
+                        geometry_source="Nominatim",
+                        lat=location.latitude,
+                        lon=location.longitude,
+                    )
+                else:
+                    values["location"], _ = Location.objects.get_or_create(
+                        description=location_description
+                    )
 
             if item["organizer"]:
                 values["organizer"], _ = Organizer.objects.get_or_create(

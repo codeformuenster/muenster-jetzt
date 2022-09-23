@@ -26,7 +26,7 @@ All following commands are to be executed from the root of this repository.
    Optionally, these variables and credentials can be changed. But development will work without any change, too.
 2. Start database: `docker-compose up -d db`
 3. Migrate your database: `./backend/manage.py migrate`
-4. Crawl events and store them in the database: `./backend/manage.py crawl`
+4. Crawl events and store them in the database: `./backend/manage.py crawl [crawler_name]`
 5. Start the API: `./backend/manage.py runserver 0.0.0.0:8000`
 
 ### DEPRECATED ALTERNATIVE: Develop in a container
