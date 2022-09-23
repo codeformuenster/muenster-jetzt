@@ -13,7 +13,7 @@ All following commands are to be executed from the root of this repository.
 1. Configure environmental variables: `backend/.env.example` to `backend/.env` and edit as needed.
 2. Start database: `docker-compose up -d db`
 
-### Develop in virtual environment
+### OPTION A: Develop in virtual environment
 
 1. Make sure your local python version matches version in `backend/deployment/Dockerfile.prod`.
 2. Create a virtual environment, if it does not exist yet: `python -m venv .venv`
@@ -23,7 +23,7 @@ All following commands are to be executed from the root of this repository.
 6. Crawl events and store them in the database: `./backend/manage.py crawl`
 7. Start the API: `./backend/manage.py runserver 0.0.0.0:8000`
 
-### Develop in a container (deprecated)
+### OPTION B: Develop in a container (DEPRECATED)
 
 Change into the `backend` directory.
 
