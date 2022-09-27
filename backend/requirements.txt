@@ -46,7 +46,7 @@ cssselect==1.1.0
     # via
     #   parsel
     #   scrapy
-django==4.0.4
+django==4.0.7
     # via
     #   django-cors-headers
     #   django-filter
@@ -94,7 +94,7 @@ itemloaders==1.0.4
     # via scrapy
 jmespath==1.0.0
     # via itemloaders
-lxml==4.8.0
+lxml==4.9.1
     # via
     #   parsel
     #   scrapy
@@ -162,7 +162,7 @@ requests==2.27.1
     #   tldextract
 requests-file==1.5.1
     # via tldextract
-scrapy==2.6.1
+scrapy==2.6.2
     # via mj (backend/setup.py)
 service-identity==21.1.0
     # via scrapy
