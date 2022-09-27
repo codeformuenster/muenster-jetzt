@@ -1,11 +1,11 @@
-import React, { FC, useLayoutEffect } from "react";
+import React, { FC, useLayoutEffect, PropsWithChildren } from "react";
 import styles from "./KioskLayout.module.css";
 
 import "purecss/build/base.css";
 import "./variables.css";
 import "./base.css";
 
-const KioskLayout: FC = ({ children }) => {
+const KioskLayout: FC<PropsWithChildren<unknown>> = ({ children }) => {
   useLayoutEffect(() => {
     [
       ["html", styles.kioskLayout_html_body],

@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from "react";
-import QRCode from "qrcode.react";
+import { QRCodeSVG } from "qrcode.react";
 import SwiperCore from "swiper";
 import styles from "./Slide.module.css";
 import IFrameSlide from "./IFrameSlide";
@@ -85,7 +85,7 @@ const Slide: FC<ISlideComponent> = ({
         )}
         {externalUrl && (
           <div className={styles.qrContainer}>
-            <QRCode value={qrUrl} renderAs="svg" className={styles.qr} />
+            <QRCodeSVG value={qrUrl} size={170} />
           </div>
         )}
       </div>

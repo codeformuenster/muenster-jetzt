@@ -1,28 +1,29 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, PropsWithChildren } from "react";
 import "../../styles/base.scss";
 import styles from "./Layout.module.scss";
 
 import logo from "../../images/ms-jetzt-logo-icon.svg";
 import Nav from "../Nav/Nav";
 
-interface ILayout {
-  hideHeader?: boolean;
+interface ILayout extends PropsWithChildren<unknown> {
   header?: ReactNode;
 }
 
-const Layout: FC<ILayout> = ({ children, hideHeader, header }) => (
+const Layout: FC<ILayout> = ({ children, header }) => (
   <>
-    {!hideHeader && (
-      <header className={styles.header}>
-        <img src={logo} alt="Münster Jetzt" className={styles.logo} />
-        <div className={styles.titleContainer}>{header}</div>
-        <Nav />
-      </header>
-    )}
+    <header className={styles.header}>
+      <img src={logo} alt="Münster Jetzt" className={styles.logo} />
+      <div className={styles.titleContainer}>{header}</div>
+      <Nav />
+    </header>
     <section className={styles.mainSection}>
       <div className={styles.container}>{children}</div>
     </section>
   </>
 );
+
+Layout.defaultProps = {
+  header: null,
+};
 
 export default Layout;

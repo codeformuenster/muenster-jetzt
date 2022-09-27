@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, PropsWithChildren } from "react";
 import styles from "./Info.module.scss";
 
-interface IRowProps {
+interface IRowProps extends PropsWithChildren<unknown> {
   singleColumnClassName?: string;
   rowTitle?: string;
 }
@@ -24,6 +24,11 @@ const Row: FC<IRowProps> = ({ children, singleColumnClassName, rowTitle }) => {
       {children}
     </div>
   );
+};
+
+Row.defaultProps = {
+  singleColumnClassName: undefined,
+  rowTitle: undefined,
 };
 
 export default Row;

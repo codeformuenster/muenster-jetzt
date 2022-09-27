@@ -1,8 +1,12 @@
+"""General spider functionality."""
+
 import logging
 
 import bleach
 import scrapy
+from geopy import Point
 from django.db import transaction
+from geopy.geocoders import Nominatim
 from scrapy.exceptions import DropItem
 
 from events.models import Event, EventSource, Location, Organizer
@@ -69,9 +73,34 @@ class DatabaseExportPipeline:
     def process_item(self, item, spider):
         with transaction.atomic():
             values = item.copy()
-            values["location"], _ = Location.objects.get_or_create(
-                description=item["location"]
-            )
+
+            # check if location is in DB. if not, geocode and add.
+            try:
+                location_description = item["location"]
+                values["location"] = Location.objects.get(
+                    description=location_description
+                )
+            except Location.DoesNotExist:
+                logger.debug(f"Geocoding description {item['location']}...")
+                # geocode location
+                geolocator = Nominatim(user_agent="muenster-jetzt")
+                location = geolocator.geocode(
+                    query=item["location"],
+                    viewbox=[Point(51.8375, 7.471), Point(52.061, 7.775)],
+                )
+                if location:
+                    # write location to database
+                    values["location"], _ = Location.objects.get_or_create(
+                        description=location_description,
+                        geometry_source="Nominatim",
+                        lat=location.latitude,
+                        lon=location.longitude,
+                    )
+                else:
+                    values["location"], _ = Location.objects.get_or_create(
+                        description=location_description
+                    )
+
             if item["organizer"]:
                 values["organizer"], _ = Organizer.objects.get_or_create(
                     name=item["organizer"]
