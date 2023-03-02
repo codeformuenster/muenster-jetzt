@@ -55,7 +55,7 @@ jobs:
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
           registry_password: ${{ secrets.DOCKER_HUB_PASS }}
           image_repository: codeformuenster/muenster-jetzt-api-static
-          dockerfile_path: backend/deployment/Dockerfile-nginx.prod
+          dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
           build_target: staticfiles
           #push_to_registry: ${{ github.event_name != 'pull_request' }}
