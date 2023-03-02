@@ -165,18 +165,7 @@ jobs:
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de" >> $GITHUB_ENV
           fi
 
-          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
-            echo "changes=1" >> $GITHUB_OUTPUT
-          else
-            echo "changes=$(git diff --name-only HEAD^1 -- . | wc -l)" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Debug
-        run: |
-          echo "Number of changed files in frontend directory: '${{ steps.branch_info.outputs.changes }}'"
-
       - name: Install Node.js 14
-        if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-node@v3
         with:
           node-version: 14
@@ -184,22 +173,18 @@ jobs:
           cache-dependency-path: 'frontend/package-lock.json'
 
       - name: Run 'npm ci' to install frontend dependencies
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm ci
 
       - name: Check frontend code style
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm run lint
 
       - name: Run frontend tests
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm run test
 
       - name: Build frontend
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           echo "Executing npm run build with env REACT_APP_VERSION='$REACT_APP_VERSION' and REACT_APP_BACKEND_BASE_PATH='$REACT_APP_BACKEND_BASE_PATH'"
           npm run build
