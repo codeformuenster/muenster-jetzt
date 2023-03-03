@@ -49,7 +49,7 @@ jobs:
           push_to_registry: true
 
       - name: Build and push backend nginx container image
-        uses: bCyberGmbH/build-container-image-action@add-target-input
+        uses: bCyberGmbH/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
