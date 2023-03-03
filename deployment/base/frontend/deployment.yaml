@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: frontend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: frontend
+    spec:
+      containers:
+      - image: codeformuenster/muenster-jetzt-frontend:master
+        name: frontend
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 101
+          runAsNonRoot: true
+          runAsUser: 101
+          seccompProfile:
+            type: RuntimeDefault
+        ports:
+        - containerPort: 8080
+          name: http
+        volumeMounts:
+        - name: tmpdir
+          mountPath: /tmp
+      volumes:
+      - name: tmpdir
+        emptyDir:
+          medium: Memory

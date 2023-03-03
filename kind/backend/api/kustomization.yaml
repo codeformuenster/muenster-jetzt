@@ -1,7 +1,0 @@
-
-commonLabels:
-  app.kubernetes.io/component: backend-api
-
-resources:
-- deployment.yaml
-- secret.yaml

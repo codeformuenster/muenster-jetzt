@@ -6,3 +6,5 @@ spec:
   ports:
   - name: http
     port: 8000
+  selector:
+    app.kubernetes.io/component: api

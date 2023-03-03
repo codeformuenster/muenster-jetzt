@@ -6,3 +6,6 @@ spec:
   ports:
   - name: http
     port: 8080
+  selector:
+    app.kubernetes.io/app: muenster-jetzt
+    app.kubernetes.io/component: frontend

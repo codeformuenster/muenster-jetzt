@@ -1,8 +1,0 @@
-
-commonLabels:
-  app.kubernetes.io/component: database
-
-resources:
-- deployment.yaml
-- service.yaml
-- secret.yaml

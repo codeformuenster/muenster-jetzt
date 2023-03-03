@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: muenster-jetzt
+
+commonLabels:
+  app.kubernetes.io/app: muenster-jetzt
+
+resources:
+- frontend
+- backend
