@@ -14,7 +14,7 @@ spec:
     spec:
       serviceAccountName: backend-static
       containers:
-      - image: codeformuenster/muenster-jetzt-api-static:master
+      - image: docker.io/codeformuenster/muenster-jetzt-api-static:master
         name: backend-static
         resources: {}
         securityContext:

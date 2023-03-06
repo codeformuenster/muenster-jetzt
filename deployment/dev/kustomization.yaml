@@ -1,0 +1,46 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: muenster-jetzt
+
+resources:
+- namespace.yaml
+- backend-secret.yaml
+- ../base
+
+images:
+- name: docker.io/codeformuenster/muenster-jetzt-frontend
+  newTag: pr-772@sha256:b8bc93a4e77d333ca3ecfa533003405119b1be792b2f28954b227e9718ed0fbb
+- name: docker.io/codeformuenster/muenster-jetzt-api
+  newTag: pr-772@sha256:502fe0533fa1f8e18297299f567d1e578b5d926d49ad074e22bcc92a7aafcb63
+- name: docker.io/codeformuenster/muenster-jetzt-api
+  newTag: pr-772@sha256:aad6f4d36a36e6999db930c251d24617467506bb8e45245b7fe60fa49fd8b9a5
+
+patches:
+- patch: |
+    - op: add
+      path: /spec/ingressClassName
+      value: traefik
+  target:
+    kind: Ingress
+- patch: |
+    - op: add
+      path: /spec/rules/0/host
+      value: api.dev.muenster-jetzt.codeformuenster.org
+  target:
+    kind: Ingress
+    name: backend
+- patch: |
+    - op: add
+      path: /spec/rules/0/host
+      value: dev.muenster-jetzt.codeformuenster.org
+  target:
+    kind: Ingress
+    name: frontend
+- patch: |
+    - op: add
+      path: /spec/template/metadata/labels/host
+      value: api.dev.muenster-jetzt.codeformuenster.org
+  target:
+    kind: Deployment
+    name: backend-api
