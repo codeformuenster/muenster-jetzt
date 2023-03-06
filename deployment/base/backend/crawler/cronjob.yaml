@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: scraper
+  name: crawler
 spec:
   schedule: "@hourly"
   concurrencyPolicy: Forbid
@@ -15,10 +15,10 @@ spec:
           restartPolicy: OnFailure
           containers:
           - image: docker.io/codeformuenster/muenster-jetzt-api:master
-            name: scraper
+            name: crawler
             args:
             - ./manage.py
-            - migrate
+            - crawl
             resources: {}
             securityContext:
               allowPrivilegeEscalation: false

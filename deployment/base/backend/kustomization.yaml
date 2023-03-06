@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
 - api
 - static
-- scraper
+- crawler
 - ingress.yaml
