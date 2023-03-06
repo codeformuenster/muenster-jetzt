@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: scraper
+spec:
+  schedule: "@hourly"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      parallelism: 1
+      template:
+        spec:
+          serviceAccountName: backend-api
+          restartPolicy: OnFailure
+          containers:
+          - image: docker.io/codeformuenster/muenster-jetzt-api:master
+            name: scraper
+            args:
+            - ./manage.py
+            - migrate
+            resources: {}
+            securityContext:
+              allowPrivilegeEscalation: false
+              capabilities:
+                drop:
+                - ALL
+              readOnlyRootFilesystem: true
+              runAsGroup: 1000
+              runAsNonRoot: true
+              runAsUser: 1000
+              seccompProfile:
+                type: RuntimeDefault
+            envFrom:
+            - secretRef:
+                name: backend-api
+                optional: false
+            env:
+            - name: DJANGO_DEBUG
+              value: "False"
+            volumeMounts:
+            - name: tmpdir
+              mountPath: /tmp
+          volumes:
+          - name: tmpdir
+            emptyDir:
+              medium: Memory
