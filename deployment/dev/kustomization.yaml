@@ -10,11 +10,11 @@ resources:
 
 images:
 - name: docker.io/codeformuenster/muenster-jetzt-frontend
-  newTag: pr-772@sha256:b8bc93a4e77d333ca3ecfa533003405119b1be792b2f28954b227e9718ed0fbb
+  newTag: pr-772@sha256:1e5961eee872bf08c77a8ce224dfa693a69778cde9a412f0490c03db56aa0fab
 - name: docker.io/codeformuenster/muenster-jetzt-api
-  newTag: pr-772@sha256:502fe0533fa1f8e18297299f567d1e578b5d926d49ad074e22bcc92a7aafcb63
-- name: docker.io/codeformuenster/muenster-jetzt-api
-  newTag: pr-772@sha256:aad6f4d36a36e6999db930c251d24617467506bb8e45245b7fe60fa49fd8b9a5
+  newTag: pr-772@sha256:804e34a6c9ce116de9e2bc4c773fa6ea3d4ad6963ccba09a83fb94e9700c9cda
+- name: docker.io/codeformuenster/muenster-jetzt-api-static
+  newTag: pr-772@sha256:c7c98f00d6e1a9359544db2bbaf274ea3e04f69e76177aa7edb470df16c165fb
 
 patches:
 - patch: |
