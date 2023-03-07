@@ -4,51 +4,21 @@ on:
   push:
     branches:
       - master
-      - production
   pull_request:
     branches:
       - master
 
 jobs:
-  backend:
-    name: Build backend
-    runs-on: ubuntu-22.04
+  test-backend:
+    name: Test backend
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: backend
-    services:
-      registry:
-        image: registry:2
-        ports:
-          - 5000:5000
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: '2' # for comparison
-
-      - name: Gather branch information
-        id: branch_info
-        continue-on-error: true
-        run: |
-          branch_name=${GITHUB_REF##*/}
-          short_sha=${GITHUB_SHA:0:7}
-          echo "##[set-output name=branch_name;]${branch_name}"
-          echo "##[set-output name=short_sha;]${short_sha}"
-
-          echo "We're running on ${branch_name} (${short_sha})"
-
-          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
-            echo "##[set-output name=changes;]1"
-          else
-            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
-          fi
-
-      - name: Debug
-        run: |
-          echo "Number of changed files in backend directory: '${{ steps.branch_info.outputs.changes }}'"
 
       - name: Install python 3.10
-        if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-python@v4
         with:
           python-version: '3.10.x'
@@ -56,60 +26,43 @@ jobs:
           cache-dependency-path: 'backend/requirements.txt'
 
       - name: Install and execute 'tox'
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           pip install tox
           tox
 
-      - name: Set up Docker Buildx
-        if: steps.branch_info.outputs.changes != '0'
-        uses: docker/setup-buildx-action@v2
-        with:
-          driver-opts: network=host
+  build-backend:
+    name: Build backend container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-      - name: Login to DockerHub
-        if: github.event_name == 'push' && steps.branch_info.outputs.changes != '0'
-        uses: docker/login-action@v2
+      - name: Build and push backend container image
+        uses: bCyberGmbH/build-container-image-action@main
         with:
-          username: ${{ secrets.DOCKER_HUB_USER }}
-          password: ${{ secrets.DOCKER_HUB_PASS }}
+          registry_name: docker.io
+          registry_username: ${{ secrets.DOCKER_HUB_USER }}
+          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
+          image_repository: codeformuenster/muenster-jetzt-api
+          dockerfile_path: backend/deployment/Dockerfile.prod
+          build_context: backend
+          push_to_registry: ${{ github.event_name != 'pull_request' }}
 
-      - name: Build backend container image (and push to Docker Hub on master branch)
-        if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v3
+      - name: Build and push backend nginx container image
+        uses: bCyberGmbH/build-container-image-action@main
         with:
-          push: ${{ github.event_name == 'push' }}
-          tags: docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-api:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
-          file: backend/deployment/Dockerfile.prod
-          context: backend
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
-
-      - name: Build backend container image and push to local registry
-        if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: localhost:5000/mj-backend:ci
-          file: backend/deployment/Dockerfile.prod
-          context: backend
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
-
-      - name: Build backend nginx container image (and push to Docker Hub on master branch)
-        if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v3
-        with:
-          push: ${{ github.event_name == 'push' }}
-          tags: docker.io/codeformuenster/muenster-jetzt-api-static:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-api-static:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
-          file: backend/deployment/Dockerfile-nginx.prod
-          context: backend
-          cache-from: type=local,src=/tmp/.buildx-cache
-          build-args: |
-            SOURCE_IMAGE=localhost:5000/mj-backend:ci
+          registry_name: docker.io
+          registry_username: ${{ secrets.DOCKER_HUB_USER }}
+          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
+          image_repository: codeformuenster/muenster-jetzt-api-static
+          dockerfile_path: backend/deployment/Dockerfile.prod
+          build_context: backend
+          build_target: staticfiles
+          push_to_registry: ${{ github.event_name != 'pull_request' }}
 
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
-    runs-on: ubuntu-22.04
-    needs: backend
+    runs-on: ubuntu-latest
+    needs: test-backend
     defaults:
       run:
         working-directory: frontend
@@ -124,17 +77,16 @@ jobs:
         run: |
           branch_name=${GITHUB_REF##*/}
           short_sha=${GITHUB_SHA:0:7}
-          echo "##[set-output name=branch_name;]${branch_name}"
-          echo "##[set-output name=short_sha;]${short_sha}"
+
+          echo "branch_name=${branch_name}" >> $GITHUB_OUTPUT
+          echo "short_sha=${short_sha}" >> $GITHUB_OUTPUT
 
           echo "We're running on ${branch_name} (${short_sha})"
 
           if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
-            echo "##[set-output name=changes;]1"
-            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:${branch_name}"
+            echo "changes=1" >> $GITHUB_OUTPUT
           else
-            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- .. | wc -l)"
-            echo "##[set-output name=cache_from_container_image;]codeformuenster/muenster-jetzt-api:master"
+            echo "changes=$(git diff --name-only HEAD^1 -- . | wc -l)" >> $GITHUB_OUTPUT
           fi
 
       - name: Install Node.js 14
@@ -149,11 +101,6 @@ jobs:
         if: steps.branch_info.outputs.changes != '0'
         run: |
           npm ci
-
-      - name: Replace FROM in backend Dockerfile to speed up build
-        if: steps.branch_info.outputs.changes != '0'
-        run: |
-          sed -i 's|FROM .*|FROM ${{ steps.branch_info.outputs.cache_from_container_image }}|' ../backend/deployment/Dockerfile.prod
 
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
@@ -188,7 +135,7 @@ jobs:
 
   frontend:
     name: Validate, test and build frontend
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: frontend
@@ -204,8 +151,8 @@ jobs:
           branch_name=${GITHUB_REF##*/}
           short_sha=${GITHUB_SHA:0:7}
 
-          echo "##[set-output name=branch_name;]${branch_name}"
-          echo "##[set-output name=short_sha;]${short_sha}"
+          echo "branch_name=${branch_name}" >> $GITHUB_OUTPUT
+          echo "short_sha=${short_sha}" >> $GITHUB_OUTPUT
 
           echo "We're running on ${branch_name} (${short_sha})"
 
@@ -216,18 +163,7 @@ jobs:
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de" >> $GITHUB_ENV
           fi
 
-          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
-            echo "##[set-output name=changes;]1"
-          else
-            echo "##[set-output name=changes;]$(git diff --name-only HEAD^1 -- . | wc -l)"
-          fi
-
-      - name: Debug
-        run: |
-          echo "Number of changed files in frontend directory: '${{ steps.branch_info.outputs.changes }}'"
-
       - name: Install Node.js 14
-        if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-node@v3
         with:
           node-version: 14
@@ -235,128 +171,37 @@ jobs:
           cache-dependency-path: 'frontend/package-lock.json'
 
       - name: Run 'npm ci' to install frontend dependencies
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm ci
 
       - name: Check frontend code style
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm run lint
 
       - name: Run frontend tests
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           npm run test
 
       - name: Build frontend
-        if: steps.branch_info.outputs.changes != '0'
         run: |
           echo "Executing npm run build with env REACT_APP_VERSION='$REACT_APP_VERSION' and REACT_APP_BACKEND_BASE_PATH='$REACT_APP_BACKEND_BASE_PATH'"
           npm run build
 
-      - name: Login to DockerHub
-        if: github.event_name == 'push' && steps.branch_info.outputs.changes != '0'
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_HUB_USER }}
-          password: ${{ secrets.DOCKER_HUB_PASS }}
-
-      - name: Build frontend container image (and push to Docker Hub on master branch)
-        if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v3
-        with:
-          push: ${{ github.event_name == 'push' }}
-          tags: docker.io/codeformuenster/muenster-jetzt-frontend:${{ steps.branch_info.outputs.branch_name }},docker.io/codeformuenster/muenster-jetzt-frontend:${{ steps.branch_info.outputs.branch_name }}-${{ steps.branch_info.outputs.short_sha }}
-          file: frontend/deployment/Dockerfile.prod
-          context: frontend
-
-  validate-compose:
-    name: Validate deployment docker-compose
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run docker-compose config
+      - name: Precompress static files
         run: |
-          docker-compose -f deployment/docker-compose.yml config --quiet
+          find build \
+            -type f -regextype posix-extended \
+            -size +512c \
+            -iregex '.*\.(css|csv|html?|js|svg|txt|xml|json|webmanifest|ttf)' \
+            -exec gzip -9 -k '{}' \;
 
-  deploy:
-    name: deploy to server
-    runs-on: ubuntu-22.04
-    needs:
-      - backend
-      - frontend
-      - validate-compose
-    if: github.event_name == 'push'
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Extract branch name
-        id: branch_info
-        run: |
-          branch_name=${GITHUB_REF##*/}
-          short_sha=${GITHUB_SHA:0:7}
-
-          echo "##[set-output name=branch_name;]${branch_name}"
-          echo "##[set-output name=short_sha;]${short_sha}"
-
-          echo "We're running on ${branch_name} (${short_sha})"
-
-      - name: STAGING Copy docker-compose file to server
-        if: steps.branch_info.outputs.branch_name == 'master'
-        uses: easingthemes/ssh-deploy@v2.2.11
-        env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-            # z = compress
-            # v = verbose
-            ARGS: "-zv"
-            SOURCE: deployment/docker-compose.yml
-            REMOTE_HOST: "staging.muenster-jetzt.de"
-            REMOTE_USER: root
-            TARGET: "/root/muenster-jetzt/staging/"
-
-      - name: STAGING  Run remote commands
-        if: steps.branch_info.outputs.branch_name == 'master'
-        uses: appleboy/ssh-action@v0.1.5
+      - name: Build and push frontend container image
+        uses: bCyberGmbH/build-container-image-action@main
         with:
-          host: "staging.muenster-jetzt.de"
-          username: root
-          key: ${{ secrets.SSH_DEPLOY_KEY }}
-          script_stop: true
-          script: |
-            set -e
-            cd muenster-jetzt/staging
-            docker-compose pull
-            docker-compose up --detach --remove-orphans
-            docker-compose exec -T api ./manage.py migrate
-            docker image prune --all --force
-
-      - name: PRODUCTION Copy docker-compose file to server
-        if: steps.branch_info.outputs.branch_name == 'production'
-        uses: easingthemes/ssh-deploy@v2.2.11
-        env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-            # z = compress
-            # v = verbose
-            ARGS: "-zv"
-            SOURCE: deployment/docker-compose.yml
-            REMOTE_HOST: "www.muenster-jetzt.de"
-            REMOTE_USER: root
-            TARGET: "/root/muenster-jetzt/production/"
-
-      - name: PRODUCTION  Run remote commands
-        if: steps.branch_info.outputs.branch_name == 'production'
-        uses: appleboy/ssh-action@v0.1.5
-        with:
-          host: "www.muenster-jetzt.de"
-          username: root
-          key: ${{ secrets.SSH_DEPLOY_KEY }}
-          script_stop: true
-          script: |
-            set -e
-            cd muenster-jetzt/production
-            docker-compose pull
-            docker-compose up --detach --remove-orphans
-            docker-compose exec -T api ./manage.py migrate
-            docker image prune --all --force
+          registry_name: docker.io
+          registry_username: ${{ secrets.DOCKER_HUB_USER }}
+          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
+          image_repository: codeformuenster/muenster-jetzt-frontend
+          dockerfile_path: frontend/deployment/Dockerfile.prod
+          build_context: frontend
+          push_to_registry: ${{ github.event_name != 'pull_request' }}
