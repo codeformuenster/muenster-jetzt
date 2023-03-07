@@ -15,7 +15,13 @@ spec:
       containers:
       - image: docker.io/codeformuenster/muenster-jetzt-frontend:master
         name: frontend
-        resources: {}
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:

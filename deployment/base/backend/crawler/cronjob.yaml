@@ -19,7 +19,13 @@ spec:
             args:
             - ./manage.py
             - crawl
-            resources: {}
+            resources:
+              requests:
+                memory: "128Mi"
+                cpu: "150m"
+              limits:
+                memory: "2048Mi"
+                cpu: "2000m"
             securityContext:
               allowPrivilegeEscalation: false
               capabilities:

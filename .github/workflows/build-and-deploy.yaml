@@ -37,7 +37,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build and push backend container image
-        uses: bCyberGmbH/build-container-image-action@v0.1.0
+        uses: bCyberGmbH/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -45,8 +45,7 @@ jobs:
           image_repository: codeformuenster/muenster-jetzt-api
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
-          #push_to_registry: ${{ github.event_name != 'pull_request' }}
-          push_to_registry: true
+          push_to_registry: ${{ github.event_name != 'pull_request' }}
 
       - name: Build and push backend nginx container image
         uses: bCyberGmbH/build-container-image-action@main
@@ -58,8 +57,7 @@ jobs:
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
           build_target: staticfiles
-          #push_to_registry: ${{ github.event_name != 'pull_request' }}
-          push_to_registry: true
+          push_to_registry: ${{ github.event_name != 'pull_request' }}
 
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
@@ -162,7 +160,7 @@ jobs:
           if [ "$branch_name" = "production" ]; then
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.muenster-jetzt.de" >> $GITHUB_ENV
           else
-            echo "REACT_APP_BACKEND_BASE_PATH=http://api.dev.muenster-jetzt.codeformuenster.org/" >> $GITHUB_ENV
+            echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de" >> $GITHUB_ENV
           fi
 
       - name: Install Node.js 14
@@ -198,7 +196,7 @@ jobs:
             -exec gzip -9 -k '{}' \;
 
       - name: Build and push frontend container image
-        uses: bCyberGmbH/build-container-image-action@v0.1.0
+        uses: bCyberGmbH/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -206,5 +204,4 @@ jobs:
           image_repository: codeformuenster/muenster-jetzt-frontend
           dockerfile_path: frontend/deployment/Dockerfile.prod
           build_context: frontend
-          #push_to_registry: ${{ github.event_name != 'pull_request' }}
-          push_to_registry: true
+          push_to_registry: ${{ github.event_name != 'pull_request' }}

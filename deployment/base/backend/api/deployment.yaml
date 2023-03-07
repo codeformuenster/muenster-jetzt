@@ -19,7 +19,13 @@ spec:
         args:
         - ./manage.py
         - migrate
-        resources: {}
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "150m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
@@ -48,7 +54,13 @@ spec:
       containers:
       - image: docker.io/codeformuenster/muenster-jetzt-api:master
         name: backend-api
-        resources: {}
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "150m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
