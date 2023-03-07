@@ -189,6 +189,14 @@ jobs:
           echo "Executing npm run build with env REACT_APP_VERSION='$REACT_APP_VERSION' and REACT_APP_BACKEND_BASE_PATH='$REACT_APP_BACKEND_BASE_PATH'"
           npm run build
 
+      - name: Precompress static files
+        run: |
+          find build \
+            -type f -regextype posix-extended \
+            -size +512c \
+            -iregex '.*\.(css|csv|html?|js|svg|txt|xml|json|webmanifest|ttf)' \
+            -exec gzip -9 -k '{}' \;
+
       - name: Build and push frontend container image
         uses: bCyberGmbH/build-container-image-action@v0.1.0
         with:
