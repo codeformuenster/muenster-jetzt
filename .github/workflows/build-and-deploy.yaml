@@ -162,7 +162,7 @@ jobs:
           if [ "$branch_name" = "production" ]; then
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.muenster-jetzt.de" >> $GITHUB_ENV
           else
-            echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de" >> $GITHUB_ENV
+            echo "REACT_APP_BACKEND_BASE_PATH=http://api.dev.muenster-jetzt.codeformuenster.org/" >> $GITHUB_ENV
           fi
 
       - name: Install Node.js 14
