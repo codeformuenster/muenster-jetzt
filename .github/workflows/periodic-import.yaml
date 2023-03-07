@@ -9,21 +9,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  staging:
-    name: crawl events in staging
-    runs-on: ubuntu-22.04
-    steps:
-      - name: STAGING  Run remote commands
-        uses: appleboy/ssh-action@v0.1.5
-        with:
-          host: "staging.muenster-jetzt.de"
-          username: root
-          key: ${{ secrets.SSH_DEPLOY_KEY }}
-          script_stop: true
-          script: |
-            set -e
-            cd muenster-jetzt/staging
-            docker-compose exec -T api ./manage.py crawl
   production:
     name: crawl events in production
     runs-on: ubuntu-22.04
