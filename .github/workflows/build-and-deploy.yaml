@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    tags:
+      - v**
   pull_request:
     branches:
       - master
@@ -83,7 +85,7 @@ jobs:
 
           echo "We're running on ${branch_name} (${short_sha})"
 
-          if [ "$branch_name" = "master" ] || [ "$branch_name" = "production" ]; then
+          if [ "$branch_name" = "master" ] || [ "$GITHUB_REF_TYPE" = "tag" ]; then
             echo "changes=1" >> $GITHUB_OUTPUT
           else
             echo "changes=$(git diff --name-only HEAD^1 -- . | wc -l)" >> $GITHUB_OUTPUT
@@ -157,7 +159,7 @@ jobs:
           echo "We're running on ${branch_name} (${short_sha})"
 
           echo "REACT_APP_VERSION=${branch_name}-${short_sha}" >> $GITHUB_ENV
-          if [ "$branch_name" = "production" ]; then
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.muenster-jetzt.de" >> $GITHUB_ENV
           else
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de" >> $GITHUB_ENV
