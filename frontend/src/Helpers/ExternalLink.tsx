@@ -5,12 +5,7 @@ const ExternalLink: FC<HTMLProps<HTMLLinkElement>> = ({
   href,
   className,
 }) => (
-  <a
-    href={href}
-    className={className}
-    target="_blank"
-    rel="noopener"
-  >
+  <a href={href} className={className} target="_blank" rel="noopener">
     {children}
   </a>
 );
