@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { FC, HTMLProps } from "react";
 
 const ExternalLink: FC<HTMLProps<HTMLLinkElement>> = ({
@@ -5,12 +6,7 @@ const ExternalLink: FC<HTMLProps<HTMLLinkElement>> = ({
   href,
   className,
 }) => (
-  <a
-    href={href}
-    className={className}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <a href={href} className={className} target="_blank" rel="noopener">
     {children}
   </a>
 );
