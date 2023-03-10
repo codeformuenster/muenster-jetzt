@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { FC, HTMLProps } from "react";
 
 const ExternalLink: FC<HTMLProps<HTMLLinkElement>> = ({
