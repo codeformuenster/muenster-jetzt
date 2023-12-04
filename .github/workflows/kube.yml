@@ -20,5 +20,5 @@ jobs:
         uses: ubergesundheit/kube-check-action@main
         with:
           kustomize_build_input: deployment/base
-          kubeconform_flags: "-strict -kubernetes-version 1.25.8 -schema-location 'https://raw.githubusercontent.com/ubergesundheit/kube-check-action/main/kubeconform-schemas/{{.ResourceKind}}.json' -schema-location default"
+          kubeconform_flags: "-strict -kubernetes-version 1.26.10 -schema-location 'https://raw.githubusercontent.com/ubergesundheit/kube-check-action/main/kubeconform-schemas/{{.ResourceKind}}.json' -schema-location default"
           kube-linter_flags: "--config deployment/base/.kube-linter.yaml"
