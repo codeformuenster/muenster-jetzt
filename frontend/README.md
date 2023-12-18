@@ -73,7 +73,7 @@ Execute this each time the backend API schema changes.
 
 ## How to update the font
 
-We're using a font called [Recursive](https://www.recursive.design/) for which we're self hosting the required files in directory `src/styles/fonts`.
+We're using a font called [Recursive](https://www.recursive.design/) for which we're self hosting the required files in directory `src/styles/fonts`. The logo uses a font called [Catamaran ExtraBold](https://fonts.adobe.com/fonts/catamaran).
 
 To update (in case the font received an update), go to [https://github.com/arrowtype/recursive/releases](https://github.com/arrowtype/recursive/releases) and:
 

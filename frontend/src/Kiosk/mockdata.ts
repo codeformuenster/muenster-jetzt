@@ -1,4 +1,4 @@
-import msjlogo from "../images/ms-jetzt-logo.svg";
+import msjlogo from "../images/ms-update-logo.svg";
 import bahnLogo from "../images/logo_db_gobeta.svg";
 
 const toIEvent = function toIEvent(slides: IEventBase[]) {
