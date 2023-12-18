@@ -12,7 +12,7 @@ const StyledProjectName: FC<IStyledProjectNameProps> = ({ noBackground }) => (
       [styles.styledNameBackground]: !noBackground,
     })}
   >
-    Münster Jetzt
+    Münster Update
   </span>
 );
 

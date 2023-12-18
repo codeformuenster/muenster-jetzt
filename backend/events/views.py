@@ -16,10 +16,10 @@ from .serializers import (
 
 
 schema_metadata = {
-    "title": "Münster Jetzt API",
+    "title": "Münster Update API",
     "description": (
         "This is the OpenAPI v3 schema specification of the "
-        "[Münster Jetzt](https://muenster-jetzt.de) API.<br>"
+        "[Münster Update](https://muenster-update.de) API.<br>"
         "For more information, check out the "
         "[source code](https://github.com/codeformuenster/muenster-jetzt)."
     ),
@@ -120,14 +120,14 @@ class OrganizersViewSet(viewsets.ReadOnlyModelViewSet):
 
 class MünsterJetztView(routers.APIRootView):
     """
-    ## Willkommen auf der API-Dokumentation zu [Münster Jetzt].
+    ## Willkommen auf der API-Dokumentation zu [Münster Update].
 
-    Über die [Münster Jetzt] API können Anwendungen maschinenlesbare
+    Über die [Münster Update] API können Anwendungen maschinenlesbare
     Veranstaltungsinformationen abrufen.
 
     Herzstück des Datenschemas sind die [Events](/events).
 
-    [Münster Jetzt]: https://muenster-jetzt.de
+    [Münster Update]: https://muenster-update.de
     """
 
     pass

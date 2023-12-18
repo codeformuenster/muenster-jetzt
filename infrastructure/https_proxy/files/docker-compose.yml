@@ -23,7 +23,7 @@ services:
     restart: unless-stopped
     ports:
       - 80:80
-      - 443:443 
+      - 443:443
     volumes:
       - "./traefik.toml:/etc/traefik/traefik.toml"
       - "./letsencrypt:/letsencrypt"
@@ -44,5 +44,5 @@ services:
       - "traefik.http.routers.msj-redirect.tls.certresolver=letsencrypt"
       - "traefik.http.routers.msj-redirect.middlewares=msj-main-redirect"
       - "traefik.http.middlewares.msj-main-redirect.redirectRegex.regex=.*"
-      - "traefik.http.middlewares.msj-main-redirect.redirectRegex.replacement=https://muenster-jetzt.de"
+      - "traefik.http.middlewares.msj-main-redirect.redirectRegex.replacement=https://muenster-update.de"
       - "traefik.http.middlewares.msj-main-redirect.redirectRegex.permanent=true"

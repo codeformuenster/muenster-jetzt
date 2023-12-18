@@ -41,7 +41,7 @@
     "generate-client": "restful-react import --url http://localhost:8000/openapi.json --output src/generated-api-client.tsx",
     "postgenerate-client": "prettier src/generated-api-client.tsx --write",
     "prepare-upgrade": "git checkout master && git pull origin master && git checkout -b frontend-deps-upgrade-$(date -Idate)",
-    "upgrade-all": "npm ci && npm upgrade && REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de npm run start"
+    "upgrade-all": "npm ci && npm upgrade && REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-update.de npm run start"
   },
   "eslintConfig": {
     "extends": "react-app"

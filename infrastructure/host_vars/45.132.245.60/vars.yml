@@ -8,7 +8,7 @@ grant_ssh_access_for:
 
 is_webserver: true
 
-application_domain: "muenster-jetzt.de"
+application_domain: "muenster-update.de"
 
 db_user_staging: "{{vault_db_user_staging}}"
 db_password_staging: "{{vault_db_password_staging}}"

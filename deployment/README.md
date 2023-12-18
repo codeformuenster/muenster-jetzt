@@ -1,4 +1,4 @@
-# Münster Jetzt Deployment Guide
+# Münster Update Deployment Guide
 
 ## Kustomize / Kubernetes
 
@@ -8,7 +8,7 @@ The kustomization in `dev` is an example for a deployment. Check out the `backen
 
 ## Plain docker / docker-compose
 
-This document attempts to describe the deployment of Münster Jetzt to a linux server.
+This document attempts to describe the deployment of Münster Update to a linux server.
 
 ### Requirements
 

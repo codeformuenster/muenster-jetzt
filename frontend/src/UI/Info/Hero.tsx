@@ -9,7 +9,7 @@ interface IHeroProps extends PropsWithChildren<unknown> {
 const Hero: FC<IHeroProps> = ({ children, subtitle }) => (
   <>
     <div className={styles.logoContainer}>
-      <img src={logo} alt="Münster Jetzt" className={styles.logo} />
+      <img src={logo} alt="Münster Update" className={styles.logo} />
     </div>
     <div className={styles.heroText}>{subtitle}</div>
     <div className={styles.heroText2}>

@@ -16,7 +16,7 @@ import Row from "../UI/Info/Row";
 import Footer from "../UI/Info/Footer";
 
 const dataSources = [
-  ["Münster Jetzt", ""],
+  ["Münster Update", ""],
   ["münsterland.digital", "https://www.muensterland.digital/api"],
   ["DB goBeta", "https://gobeta.de/alle-veranstaltungen/"],
   [

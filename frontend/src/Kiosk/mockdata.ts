@@ -6,16 +6,16 @@ const toIEvent = function toIEvent(slides: IEventBase[]) {
 };
 
 const lambusEvent: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/lambus.jpg",
 };
 
 const lambusApp: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus-app.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/lambus-app.jpg",
   externalUrl: "https://www.lambus.io/",
 };
 
 const lambusMap: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/lambus-map.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/lambus-map.jpg",
 };
 
 const msHack: Omit<ISlide, "id"> = {
@@ -31,18 +31,18 @@ const msHack: Omit<ISlide, "id"> = {
 };
 
 const hygiene: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/hygienemassnahmen.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/hygienemassnahmen.jpg",
   externalUrl: "https://www.gemeinsamgehtdas.de/muenster",
 };
 
 const nafeEvent: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/nafe.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/nafe.jpg",
   externalUrl:
     "https://gobeta.de/news/probiere-die-neue-mikromobilitaetsapp-nafe-aus/",
 };
 
 const vesputi: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/vesputi.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/vesputi.jpg",
 };
 
 const demoIntro: Omit<ISlide, "id"> = {
@@ -62,7 +62,7 @@ const goBetaMs: Omit<ISlide, "id"> = {
     "#MünsterHbf ruft zum großen Sommertest: Im Rahmen des Projekts „Zukunftsbahnhof“ zeigen spannende Startups und lokale Partner ihre aktuellen Projekte rund um neue, komfortablere Mobilität. Und testen sie vor Ort, lokal, und mit echten Reisenden: Mit Euch!",
   style: {
     backgroundImage:
-      "url(https://muenster-jetzt.de/static/uploads/go-beta-background.jpg)",
+      "url(https://muenster-update.de/static/uploads/go-beta-background.jpg)",
     backgroundSize: "cover",
     color: "white",
   },
@@ -70,68 +70,69 @@ const goBetaMs: Omit<ISlide, "id"> = {
 };
 
 const arWagenreihung: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/ar-wagenreihung.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/ar-wagenreihung.jpg",
   externalUrl:
     "https://gobeta.de/projekte/zuginformationen-per-app-mit-augmented-reality-ar-testen/",
 };
 
 const singleton: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/singleton.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/singleton.jpg",
 };
 
 const infabSpaet: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-spaetdran.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/infab-spaetdran.jpg",
 };
 
 // const infabMitmachen: IEventBase = {
-//   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-mitmachen.jpg",
+//   imageUrl: "https://muenster-update.de/static/uploads/v1/infab-mitmachen.jpg",
 // };
 
 const infabMock: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/infab-mock.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/infab-mock.jpg",
   externalUrl:
     "https://gobeta.de/projekte/radparken-der-zukunft-gemeinsam-mobile-perspektiven-schaffen/",
 };
 
 const tretty: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/tretty.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/tretty.jpg",
   externalUrl:
     "https://gobeta.de/projekte/tretty-tretroller-100-oekologisch-mit-muskelkraft-durch-muenster/",
 };
 
 const icePortal: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/ice-portal.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/ice-portal.jpg",
 };
 
 const motiontagMuensterBewegt: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_bike_mb.png",
+  imageUrl:
+    "https://muenster-update.de/static/uploads/v1/motiontag_bike_mb.png",
 };
 
 const motiontagSchritte: IEventBase = {
   imageUrl:
-    "https://muenster-jetzt.de/static/uploads/v1/motiontag_schritte_klima.png",
+    "https://muenster-update.de/static/uploads/v1/motiontag_schritte_klima.png",
 };
 
 // const motiontagPreiseGruen: IEventBase = {
-//   imageUrl: "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_gruen.png",
+//   imageUrl: "https://muenster-update.de/static/uploads/v1/motiontag_preise_gruen.png",
 // };
 
 const motiontagPreiseWeiss: IEventBase = {
   imageUrl:
-    "https://muenster-jetzt.de/static/uploads/v1/motiontag_preise_weiss.png",
+    "https://muenster-update.de/static/uploads/v1/motiontag_preise_weiss.png",
 };
 
 const muensterlandmoment: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/muensterland.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/muensterland.jpg",
   externalUrl: "https://www.muensterland.com/deinmuensterlandmoment/",
 };
 
 const gornationTeam: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/gornation-team.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/gornation-team.jpg",
 };
 
 const veomo: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/veomo-v2.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/veomo-v2.jpg",
 };
 
 const veomoFrame: Omit<ISlide, "id"> = {
@@ -140,12 +141,12 @@ const veomoFrame: Omit<ISlide, "id"> = {
 
 const gornationSocialmedia: IEventBase = {
   imageUrl:
-    "https://muenster-jetzt.de/static/uploads/v1/gornation-socialmedia.jpg",
+    "https://muenster-update.de/static/uploads/v1/gornation-socialmedia.jpg",
   externalUrl: "https://gobeta.de/projekte/pop-up-store-lokal-digital/",
 };
 
 const liefergruen: IEventBase = {
-  imageUrl: "https://muenster-jetzt.de/static/uploads/v1/liefergruen.jpg",
+  imageUrl: "https://muenster-update.de/static/uploads/v1/liefergruen.jpg",
   externalUrl: "https://liefergruen.com",
 };
 
@@ -153,8 +154,8 @@ const msj: Omit<ISlide, "id"> = {
   imageUrl: msjlogo,
   title: "Alle Veranstaltungen im Überblick",
   description:
-    "Münster Jetzt ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.\nKostenlos und Open-Source!",
-  externalUrl: "https://muenster-jetzt.de/",
+    "Münster Update ist deine zentrale Anlaufstelle für alle Veranstaltungen in Münster.\nKostenlos und Open-Source!",
+  externalUrl: "https://muenster-update.de/",
   cssClassNames: ["vertical", "spaced"],
 };
 
@@ -164,37 +165,37 @@ const infabFrame: Omit<ISlide, "id"> = {
 
 // const infabVideo: Omit<ISlide, "id"> = {
 //   video: {
-//     url: "https://muenster-jetzt.de/static/uploads/v1/infab.mov",
+//     url: "https://muenster-update.de/static/uploads/v1/infab.mov",
 //   },
 // };
 
 // const motiontagVideo: Omit<ISlide, "id"> = {
 //   video: {
-//     url: "https://muenster-jetzt.de/static/uploads/v1/motiontag.mp4",
+//     url: "https://muenster-update.de/static/uploads/v1/motiontag.mp4",
 //   },
 // };
 
 const bahnhofLiveAppVideo: Omit<ISlide, "id"> = {
   video: {
-    url: "https://muenster-jetzt.de/static/uploads/testvideo-notpublic.mp4",
+    url: "https://muenster-update.de/static/uploads/testvideo-notpublic.mp4",
   },
 };
 
 const trettyVideo: Omit<ISlide, "id"> = {
   video: {
-    url: "https://muenster-jetzt.de/static/uploads/v1/tretty.mp4",
+    url: "https://muenster-update.de/static/uploads/v1/tretty.mp4",
   },
 };
 
 const goBetaVideo: Omit<ISlide, "id"> = {
   video: {
-    url: "https://muenster-jetzt.de/static/uploads/raysono-v3.mp4",
+    url: "https://muenster-update.de/static/uploads/raysono-v3.mp4",
   },
 };
 
 // const muensterlandRadVideo: Omit<ISlide, "id"> = {
 //   video: {
-//     url: "https://muenster-jetzt.de/static/uploads/v1/muensterland-radtour.mp4",
+//     url: "https://muenster-update.de/static/uploads/v1/muensterland-radtour.mp4",
 //   },
 // };
 
