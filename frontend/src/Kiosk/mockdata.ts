@@ -104,7 +104,8 @@ const icePortal: IEventBase = {
 };
 
 const motiontagMuensterBewegt: IEventBase = {
-  imageUrl: "https://muenster-update.de/static/uploads/v1/motiontag_bike_mb.png",
+  imageUrl:
+    "https://muenster-update.de/static/uploads/v1/motiontag_bike_mb.png",
 };
 
 const motiontagSchritte: IEventBase = {
