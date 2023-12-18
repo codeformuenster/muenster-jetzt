@@ -2,7 +2,7 @@
 
 ## Deployment
 
-We use GitHub Actions and docker-compose to deploy the master branch to a staging environment at <https://staging.muenster-jetzt.de>
+We use GitHub Actions and docker-compose to deploy the master branch to a staging environment at <https://staging.muenster-update.de>
 
 ### Staging deployment
 

@@ -1,6 +1,6 @@
-# Münster Jetzt Frontend
+# Münster Update Frontend
 
-The front end to Münster Jetzt. It includes a web app for mobile, tablet and desktop browsers and a kiosk mode for big displays.
+The front end to Münster Update. It includes a web app for mobile, tablet and desktop browsers and a kiosk mode for big displays.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You can learn more about [Create React App](https://github.com/facebook/create-react-app) in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
@@ -13,7 +13,7 @@ The app uses some custom environment variables for configuration at runtime and 
 
 | var | description |
 | --- | --- |
-| `REACT_APP_BACKEND_BASE_PATH` | The URL used by the frontend to reach the api. Default is `http://localhost:8000`. CI sets this to `https://api(.staging).muenster-jetzt.de` depending on the branch. |
+| `REACT_APP_BACKEND_BASE_PATH` | The URL used by the frontend to reach the api. Default is `http://localhost:8000`. CI sets this to `https://api(.staging).muenster-update.de` depending on the branch. |
 | `REACT_APP_VERSION` | Version string used in a meta tag in index.html. CI sets this to `{branch}-{short_sha}` where `branch` is the current branch and `short_sha` are the first 7 characters of the git commit sha. |
 
 ## Development in container
@@ -37,7 +37,7 @@ You will also see any lint errors in the console.
 To use the staging (or production) api for development, start the app like this:
 
 ```
-REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de npm run start
+REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-update.de npm run start
 ```
 
 ### `npm test`

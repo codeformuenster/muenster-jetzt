@@ -7,7 +7,7 @@ setup(
     name="mj",
     version=mj.__version__,
     description="Database management, data import, and API for muenster-jetzt",
-    url="https://muenster-jetzt.de/",
+    url="https://muenster-update.de/",
     packages=["mj", "events", "scraping"],
     install_requires=[
         "black",

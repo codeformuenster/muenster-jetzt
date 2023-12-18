@@ -12,7 +12,7 @@ interface ILayout extends PropsWithChildren<unknown> {
 const Layout: FC<ILayout> = ({ children, header }) => (
   <>
     <header className={styles.header}>
-      <img src={logo} alt="Münster Jetzt" className={styles.logo} />
+      <img src={logo} alt="Münster Update" className={styles.logo} />
       <div className={styles.titleContainer}>{header}</div>
       <Nav />
     </header>

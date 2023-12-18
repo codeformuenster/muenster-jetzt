@@ -160,9 +160,9 @@ jobs:
 
           echo "REACT_APP_VERSION=${branch_name}-${short_sha}" >> $GITHUB_ENV
           if [ "$GITHUB_REF_TYPE" = "tag" ]; then
-            echo "REACT_APP_BACKEND_BASE_PATH=https://api.muenster-jetzt.de" >> $GITHUB_ENV
+            echo "REACT_APP_BACKEND_BASE_PATH=https://api.muenster-update.de" >> $GITHUB_ENV
           else
-            echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-jetzt.de" >> $GITHUB_ENV
+            echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-update.de" >> $GITHUB_ENV
           fi
 
       - name: Install Node.js 14

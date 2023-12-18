@@ -1,6 +1,6 @@
 {% extends "rest_framework/base.html" %}
 
-{% block title %}{% if name %}{{ name }} – {% endif %}Münster Jetzt API{% endblock %}
+{% block title %}{% if name %}{{ name }} – {% endif %}Münster Update API{% endblock %}
 
 {% block meta %}
 {% load static %}
@@ -29,7 +29,7 @@
 
 {% block branding %}
 <a class="navbar-brand" rel="nofollow" href="/">
-  Münster Jetzt API
+  Münster Update API
 </a>
 {% endblock %}
 
@@ -67,5 +67,5 @@
 <li><a href="https://github.com/codeformuenster/muenster-jetzt">Code</a></li>
 <li><a href="{% url "swagger-ui" %}">Swagger UI</a></li>
 <li><a href="{% url "redoc" %}">ReDoc</a></li>
-<li><a href="https://muenster-jetzt.de/info">Info</a></li>
+<li><a href="https://muenster-update.de/info">Info</a></li>
 {% endblock %}
