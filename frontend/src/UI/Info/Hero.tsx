@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from "react";
 import styles from "./Info.module.scss";
-import logo from "../../images/ms-jetzt-logo.svg";
+import logo from "../../images/ms-update-logo.svg";
 
 interface IHeroProps extends PropsWithChildren<unknown> {
   subtitle: string;
