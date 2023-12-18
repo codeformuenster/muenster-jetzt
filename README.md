@@ -58,5 +58,3 @@ This setup does a few cool things:
 
 * forwards your ssh agent to allow git push from within the container
 * exposes the container ports in a way that network access from the host looks is like local host access in the container (no need to bind to `0.0.0.0`)
-
-[workflow 'Build and deploy']: .github/workflows/build-and-deploy.yaml
