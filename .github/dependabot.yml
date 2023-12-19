@@ -30,18 +30,6 @@ updates:
       - "component/backend"
     registries:
       - dockerhub
-  # infrastructure
-  - package-ecosystem: "docker"
-    directory: "/infrastructure/https_proxy/files/"
-    schedule:
-      interval: "monthly"
-    reviewers:
-      - "bCyberBasti"
-    labels:
-      - "dependencies"
-      - "deployment"
-    registries:
-      - dockerhub
 
 registries:
   dockerhub:

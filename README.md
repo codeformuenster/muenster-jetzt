@@ -2,17 +2,17 @@
 
 ## Deployment
 
-We use GitHub Actions and docker-compose to deploy the master branch to a staging environment at <https://staging.muenster-update.de>
+We use GitHub Actions to build and push the application container images to Docker Hub ([frontend](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend), [backend](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api)). The rest of the deployment is handeled on a kubernetes cluster ([Kustomization files](./deployment/)).
+
+Deployments live at https://staging.muenster-update.de ([Staging API](https://api.staging.muenster-update.de/)) and https://muenster-update.de ([Production API](https://api.muenster-update.de/)).
 
 ### Staging deployment
 
-Each run of workflow [workflow 'Build and deploy'] on branch `master` builds and pushes container images [`docker.io/codeformuenster/muenster-jetzt-frontend:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend) and [`docker.io/codeformuenster/muenster-jetzt-api:master`](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api). Then it deploys them in on our staging server environment.
+Staging follows the `master` branch.
 
 ### Production deployment
 
-The production deployment is deployed through CI triggered by pushes to the `production` branch. Check [`.github/workflows/build-and-deploy.yaml`](https://github.com/codeformuenster/muenster-jetzt/blob/master/.github/workflows/build-and-deploy.yaml).
-
-Easiest way to do so is to create a pull request from [master into production](https://github.com/codeformuenster/muenster-jetzt/compare/production...master) branches.
+The production should run the lastest git tag.
 
 ## Dev Setup with VS Code
 
@@ -58,5 +58,3 @@ This setup does a few cool things:
 
 * forwards your ssh agent to allow git push from within the container
 * exposes the container ports in a way that network access from the host looks is like local host access in the container (no need to bind to `0.0.0.0`)
-
-[workflow 'Build and deploy']: .github/workflows/build-and-deploy.yaml
