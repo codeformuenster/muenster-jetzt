@@ -91,11 +91,8 @@ const ApiInfoPage: FC = () => (
         <ExternalLink href="https://twitter.com/codeformuenster">
           Twitter
         </ExternalLink>{" "}
-        oder{" "}
-        <a href="mailto:muenster-jetzt@codeformuenster.org?subject=API">
-          per Mail
-        </a>{" "}
-        zu erreichen.
+        oder <a href="mailto:muenster@codefor.de?subject=API">per Mail</a> zu
+        erreichen.
       </p>
       <p className={styles.prosaText}>
         Sowohl API als auch die App lassen sich auch auf eigenen Servern hosten.{" "}
