@@ -9,8 +9,11 @@ updates:
     labels:
       - "dependencies"
       - "component/frontend"
-    registries:
-      - dockerhub
+    groups:
+      frontend-dependencies:
+        patterns:
+          - "*"
+
   # github-actions
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -18,8 +21,11 @@ updates:
       interval: "monthly"
     labels:
       - "dependencies"
-    registries:
-      - dockerhub
+    groups:
+      github-actions-dependencies:
+        patterns:
+          - "*"
+
   # backend
   - package-ecosystem: "pip"
     directory: "/backend"
@@ -28,12 +34,20 @@ updates:
     labels:
       - "dependencies"
       - "component/backend"
-    registries:
-      - dockerhub
+    groups:
+      backend-dependencies:
+        patterns:
+          - "*"
 
-registries:
-  dockerhub:
-    type: docker-registry
-    url: https://registry.hub.docker.com
-    username: ${{ secrets.DOCKER_HUB_USER }}
-    password: ${{ secrets.DOCKER_HUB_PASS }}
+  # docker compose / container images
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+      - "component/docker"
+    groups:
+      docker-dependencies:
+        patterns:
+          - "*"
