@@ -2,7 +2,6 @@ from scraping.spiders.ics import ICalendarSpider
 
 
 class RareGuitarSpider(ICalendarSpider):
-
     name = "rare_guitar"
 
     defaults = {
@@ -10,4 +9,4 @@ class RareGuitarSpider(ICalendarSpider):
         "source_license": None,
     }
 
-    ics_url = "http://www.rareguitar.de/events?ical=1&tribe_display=list"
+    ics_url = "https://bar.rareguitar.de/?ical=1&tribe_display=list"

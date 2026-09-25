@@ -2,7 +2,6 @@ from scraping.spiders.ics import ICalendarSpider
 
 
 class PengImproSpider(ICalendarSpider):
-
     name = "peng_impro"
 
     defaults = {
@@ -10,4 +9,4 @@ class PengImproSpider(ICalendarSpider):
         "source_license": None,
     }
 
-    ics_url = "https://www.peng-impro.de/termine/liste/?ical=1"  # noqa
+    ics_url = "https://www.yesticket.org/ical/peng-impro.ics"

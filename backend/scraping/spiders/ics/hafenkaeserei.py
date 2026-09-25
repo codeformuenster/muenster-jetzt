@@ -2,7 +2,6 @@ from scraping.spiders.ics import ICalendarSpider
 
 
 class HafenkaesereiSpider(ICalendarSpider):
-
     name = "hafenkaeserei"
 
     defaults = {
@@ -10,4 +9,4 @@ class HafenkaesereiSpider(ICalendarSpider):
         "source_license": None,
     }
 
-    ics_url = "https://hafenkaeserei.de/?ical=1"  # noqa
+    ics_url = "https://hafenkaeserei.de/?ical=1"
