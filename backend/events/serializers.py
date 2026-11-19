@@ -1,9 +1,17 @@
 from rest_framework import serializers
 
+from . import links
 from .models import Event, EventSource, Location, Organizer
 
 
 class EventSerializer(serializers.ModelSerializer):
+    external_link = serializers.SerializerMethodField(
+        help_text=(
+            "Signed redirect link to the event website, relative to the API "
+            "base URL (null if the event has no usable website)"
+        ),
+    )
+
     class Meta:
         model = Event
         exclude = ["dirty_fields", "visible"]
@@ -12,6 +20,9 @@ class EventSerializer(serializers.ModelSerializer):
 
     def get_field_names(self, *args):
         return super().get_field_names(*args) + self.Meta.extra_fields
+
+    def get_external_link(self, obj) -> str:
+        return links.external_link(obj.url)
 
 
 class EventSourceSerializer(serializers.ModelSerializer):
