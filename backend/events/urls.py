@@ -12,6 +12,7 @@ router.register(r"organizers", views.OrganizersViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("external/", views.external_redirect, name="external-link"),
     path("openapi.json", views.schema_json, name="openapi.json"),
     path("openapi.yml", views.schema_yml),
     path(

@@ -6,6 +6,10 @@ export const SPEC_VERSION = "0.2.0";
 export interface Event {
   id: number;
   /**
+   * Signed redirect link to the event website, relative to the API base URL (null if the event has no usable website)
+   */
+  externalLink: string;
+  /**
    * Event ID used at source
    */
   sourceEventId: string;
