@@ -108,13 +108,12 @@ jobs:
         if: steps.branch_info.outputs.changes != '0'
         uses: docker/build-push-action@v7
         with:
+          context: backend
+          file: backend/deployment/Dockerfile.prod
+          tags: muenster-jetzt-api:in-ci
+          load: true
           push: false
-          repository: muenster-jetzt-api
-          dockerfile: backend/deployment/Dockerfile.prod
-          tags: in-ci
-          path: backend
-          always_pull: true
-          cache_froms: ${{ steps.branch_info.outputs.cache_from_container_image }}
+          pull: true
 
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
