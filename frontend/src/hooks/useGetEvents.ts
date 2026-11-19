@@ -92,7 +92,7 @@ const useGetEvents: IUseGetEvents = (date) => {
                 externalUrl: augmentUrl(event.externalLink),
               };
             })
-          : undefined,
+          : [],
       };
     },
   });

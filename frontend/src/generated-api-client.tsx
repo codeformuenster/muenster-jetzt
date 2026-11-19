@@ -140,19 +140,19 @@ export interface Organizer {
 }
 
 export type ListEventsResponse = {
-  count?: number;
+  count: number;
   next?: string | null;
   previous?: string | null;
-  results?: Event[];
+  results: Event[];
 };
 
 export interface ListEventsQueryParams {
   /**
-   * A page number within the paginated result set.
+   * Eine Seitenzahl in der paginierten Ergebnismenge.
    */
   page?: number;
   /**
-   * Number of results to return per page.
+   * Anzahl der pro Seite zurückzugebenden Ergebnisse.
    */
   limit?: number;
   /**
@@ -304,7 +304,7 @@ export interface RetrieveEventQueryParams {
 
 export interface RetrieveEventPathParams {
   /**
-   * A unique integer value identifying this event.
+   * Ein eindeutiger Ganzzahl-Wert, der event identifiziert.
    */
   id: string;
 }
@@ -421,19 +421,19 @@ export const useRetrieveEvent = ({ id, ...props }: UseRetrieveEventProps) =>
   });
 
 export type ListEventSourcesResponse = {
-  count?: number;
+  count: number;
   next?: string | null;
   previous?: string | null;
-  results?: EventSource[];
+  results: EventSource[];
 };
 
 export interface ListEventSourcesQueryParams {
   /**
-   * A page number within the paginated result set.
+   * Eine Seitenzahl in der paginierten Ergebnismenge.
    */
   page?: number;
   /**
-   * Number of results to return per page.
+   * Anzahl der pro Seite zurückzugebenden Ergebnisse.
    */
   limit?: number;
 }
@@ -518,7 +518,7 @@ export const useListEventSources = (props: UseListEventSourcesProps) =>
 
 export interface RetrieveEventSourcePathParams {
   /**
-   * A unique integer value identifying this event source.
+   * Ein eindeutiger Ganzzahl-Wert, der event source identifiziert.
    */
   id: string;
 }
@@ -610,19 +610,19 @@ export const useRetrieveEventSource = ({
   );
 
 export type ListLocationsResponse = {
-  count?: number;
+  count: number;
   next?: string | null;
   previous?: string | null;
-  results?: Location[];
+  results: Location[];
 };
 
 export interface ListLocationsQueryParams {
   /**
-   * A page number within the paginated result set.
+   * Eine Seitenzahl in der paginierten Ergebnismenge.
    */
   page?: number;
   /**
-   * Number of results to return per page.
+   * Anzahl der pro Seite zurückzugebenden Ergebnisse.
    */
   limit?: number;
 }
@@ -713,7 +713,7 @@ export const useListLocations = (props: UseListLocationsProps) =>
 
 export interface RetrieveLocationPathParams {
   /**
-   * A unique integer value identifying this location.
+   * Ein eindeutiger Ganzzahl-Wert, der location identifiziert.
    */
   id: string;
 }
@@ -808,19 +808,19 @@ export const useRetrieveLocation = ({
   );
 
 export type ListOrganizersResponse = {
-  count?: number;
+  count: number;
   next?: string | null;
   previous?: string | null;
-  results?: Organizer[];
+  results: Organizer[];
 };
 
 export interface ListOrganizersQueryParams {
   /**
-   * A page number within the paginated result set.
+   * Eine Seitenzahl in der paginierten Ergebnismenge.
    */
   page?: number;
   /**
-   * Number of results to return per page.
+   * Anzahl der pro Seite zurückzugebenden Ergebnisse.
    */
   limit?: number;
 }
@@ -911,7 +911,7 @@ export const useListOrganizers = (props: UseListOrganizersProps) =>
 
 export interface RetrieveOrganizerPathParams {
   /**
-   * A unique integer value identifying this organizer.
+   * Ein eindeutiger Ganzzahl-Wert, der organizer identifiziert.
    */
   id: string;
 }

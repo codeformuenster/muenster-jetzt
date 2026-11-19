@@ -17,7 +17,6 @@ from .serializers import (
     OrganizerSerializer,
 )
 
-
 schema_metadata = {
     "title": "Münster Update API",
     "description": (

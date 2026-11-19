@@ -42,3 +42,11 @@ class ExternalLinkTests(SimpleTestCase):
     def test_post_not_allowed(self):
         link = links.external_link(EVENT_URL)
         self.assertEqual(self.client.post(link).status_code, 405)
+
+
+class OpenAPISchemaTests(SimpleTestCase):
+    def test_schema_contains_external_link(self):
+        response = self.client.get("/openapi.json")
+        self.assertEqual(response.status_code, 200)
+        event = response.json()["components"]["schemas"]["Event"]
+        self.assertIn("externalLink", event["properties"])
