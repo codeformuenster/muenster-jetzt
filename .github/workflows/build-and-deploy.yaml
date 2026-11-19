@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Build and push backend container image
-        uses: lab481/build-container-image-action@main
+        uses: Lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -50,7 +50,7 @@ jobs:
           push_to_registry: ${{ github.event_name != 'pull_request' }}
 
       - name: Build and push backend nginx container image
-        uses: lab481/build-container-image-action@main
+        uses: Lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -196,8 +196,31 @@ jobs:
             -iregex '.*\.(css|csv|html?|js|svg|txt|xml|json|webmanifest|ttf)' \
             -exec gzip -9 -k '{}' \;
 
+      - name: Build frontend test image
+        uses: docker/build-push-action@v7
+        with:
+          context: frontend
+          file: frontend/deployment/Dockerfile.prod
+          tags: muenster-jetzt-frontend:ci
+          load: true
+          push: false
+
+      # Gate for base image updates (see renovate.json): the page must be
+      # served and the image must have no fixable critical CVEs
+      - name: Smoke test and CVE scan
+        uses: Lab481/build-container-image-action/static-site-check@main
+        with:
+          image: muenster-jetzt-frontend:ci
+          expect_text: "Münster Update"
+          ok_paths: |
+            /manifest.json
+            /favicon.ico
+            /robots.txt
+          # SPA: unknown paths fall back to index.html, so nothing is 404
+          missing_paths: ""
+
       - name: Build and push frontend container image
-        uses: lab481/build-container-image-action@main
+        uses: Lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
