@@ -2,8 +2,7 @@
 
 The front end to Münster Update. It includes a web app for mobile, tablet and desktop browsers and a kiosk mode for big displays.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-You can learn more about [Create React App](https://github.com/facebook/create-react-app) in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Built with [Vite](https://vite.dev/) (migrated from Create React App). Environment variables keep the `REACT_APP_` prefix and are read via `import.meta.env`.
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
@@ -43,7 +42,7 @@ REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-update.de npm run start
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tests run with [Vitest](https://vitest.dev/).
 
 ### `npm run build`
 

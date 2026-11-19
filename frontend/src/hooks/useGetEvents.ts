@@ -7,6 +7,7 @@ import {
   useListEvents,
 } from "../generated-api-client";
 import { parseDate, formatTime, formatDuration } from "../utils/eventTime";
+import backendBasePath from "../utils/config";
 
 interface HTTPValidationError {
   page?: string[];
@@ -41,9 +42,6 @@ export interface IUseGetEventsResult {
 interface IUseGetEvents {
   (date?: string): IUseGetEventsResult;
 }
-
-const backendBasePath =
-  process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
 
 // The backend signs the event URL; unsigned redirect links are rejected.
 const augmentUrl: (externalLink?: string | null) => string | undefined = (
