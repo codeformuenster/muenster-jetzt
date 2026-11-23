@@ -106,17 +106,19 @@ jobs:
         run: |
           npm ci
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
         uses: docker/build-push-action@v7
         with:
           push: false
-          repository: muenster-jetzt-api
-          dockerfile: backend/deployment/Dockerfile.prod
-          tags: in-ci
-          path: backend
-          always_pull: true
-          cache_froms: ${{ steps.branch_info.outputs.cache_from_container_image }}
+          file: backend/deployment/Dockerfile.prod
+          tags: muenster-jetzt-api:in-ci
+          context: backend
+          pull: true
+          cache-froms: ${{ steps.branch_info.outputs.cache_from_container_image }}
 
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
