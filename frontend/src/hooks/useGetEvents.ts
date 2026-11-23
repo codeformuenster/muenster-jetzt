@@ -42,9 +42,15 @@ interface IUseGetEvents {
   (date?: string): IUseGetEventsResult;
 }
 
-const augmentUrl: (url?: string | null) => string | undefined = (url) => {
-  if (url) {
-    return `${window.location.origin}/external/?url=${encodeURI(url)}`;
+const backendBasePath =
+  process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
+
+// The backend signs the event URL; unsigned redirect links are rejected.
+const augmentUrl: (externalLink?: string | null) => string | undefined = (
+  externalLink
+) => {
+  if (externalLink) {
+    return `${backendBasePath}${externalLink}`;
   }
 
   return undefined;
@@ -83,10 +89,10 @@ const useGetEvents: IUseGetEvents = (date) => {
                 formattedStart: formatTime(start),
                 formattedEnd: formatTime(end),
                 duration: formatDuration(start, end),
-                externalUrl: augmentUrl(event.url),
+                externalUrl: augmentUrl(event.externalLink),
               };
             })
-          : undefined,
+          : [],
       };
     },
   });

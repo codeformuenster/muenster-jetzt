@@ -1,4 +1,4 @@
-FROM python:3.10 AS django
+FROM docker.io/library/python:3.13-slim-trixie AS django
 
 WORKDIR /app
 
