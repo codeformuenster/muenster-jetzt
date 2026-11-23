@@ -1,4 +1,4 @@
-FROM ghcr.io/nginx/nginx-unprivileged:1.31.9-alpine3.24-slim
+FROM ghcr.io/nginx/nginx-unprivileged:1.31.10-alpine3.24-slim@sha256:f4afc48254dc77ea692ec6979d220e5b1176331c636a4d51c502ffdded6789bd
 
 COPY --chown=101 deployment/muenster-jetzt.nginx.conf /etc/nginx/conf.d/default.conf
 
