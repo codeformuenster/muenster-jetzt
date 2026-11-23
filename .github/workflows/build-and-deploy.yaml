@@ -118,6 +118,7 @@ jobs:
           tags: muenster-jetzt-api:in-ci
           context: backend
           pull: true
+          load: true
           cache-froms: ${{ steps.branch_info.outputs.cache_from_container_image }}
 
       - name: Start container from backend image
