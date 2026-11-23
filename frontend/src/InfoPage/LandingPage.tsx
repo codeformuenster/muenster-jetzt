@@ -72,7 +72,7 @@ const LandingPage: FC = () => (
         Veranstaltungskalender vereinen.
       </p>
       <a
-        href="mailto:muenster-jetzt@codeformuenster.org?subject=Hallo"
+        href="mailto:muenster@codefor.de?subject=Hallo"
         className={styles.contactLink}
       >
         Kontakt aufnehmen
