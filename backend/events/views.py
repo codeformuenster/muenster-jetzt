@@ -1,3 +1,5 @@
+from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.views.decorators.http import require_safe
 from django_filters import FilterSet
 from django_filters import rest_framework as filters
 from rest_framework import viewsets, routers
@@ -6,6 +8,7 @@ from rest_framework.schemas import get_schema_view
 
 import mj
 
+from . import links
 from .models import Event, EventSource, Location, Organizer
 from .serializers import (
     EventSerializer,
@@ -13,7 +16,6 @@ from .serializers import (
     LocationSerializer,
     OrganizerSerializer,
 )
-
 
 schema_metadata = {
     "title": "Münster Update API",
@@ -135,3 +137,16 @@ class MünsterJetztView(routers.APIRootView):
 
 class DocumentedRouter(routers.DefaultRouter):
     APIRootView = MünsterJetztView
+
+
+@require_safe
+def external_redirect(request):
+    """Redirect to an external event website, only for backend-signed URLs."""
+    url = request.GET.get("url", "")
+    signature = request.GET.get("sig", "")
+    if not (links.is_redirectable(url) and links.verify(url, signature)):
+        return HttpResponseForbidden("Invalid link", content_type="text/plain")
+    response = HttpResponseRedirect(url)
+    response["Referrer-Policy"] = "no-referrer"
+    response["X-Robots-Tag"] = "noindex"
+    return response

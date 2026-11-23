@@ -8,9 +8,8 @@ import Row from "../UI/Info/Row";
 import ExternalLink from "../Helpers/ExternalLink";
 import Footer from "../UI/Info/Footer";
 import { makeAppRouteLink } from "../utils/routes";
+import backendBasePath from "../utils/config";
 
-const backendBasePath =
-  process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
 const apiDocsUrl = new URL("/", backendBasePath).toString();
 
 const ApiInfoPage: FC = () => (
@@ -91,11 +90,8 @@ const ApiInfoPage: FC = () => (
         <ExternalLink href="https://twitter.com/codeformuenster">
           Twitter
         </ExternalLink>{" "}
-        oder{" "}
-        <a href="mailto:muenster-jetzt@codeformuenster.org?subject=API">
-          per Mail
-        </a>{" "}
-        zu erreichen.
+        oder <a href="mailto:muenster@codefor.de?subject=API">per Mail</a> zu
+        erreichen.
       </p>
       <p className={styles.prosaText}>
         Sowohl API als auch die App lassen sich auch auf eigenen Servern hosten.{" "}

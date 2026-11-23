@@ -11,7 +11,6 @@ from scrapy.exceptions import DropItem
 
 from events.models import Event, EventSource, Location, Organizer
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -83,7 +82,7 @@ class DatabaseExportPipeline:
             except Location.DoesNotExist:
                 logger.debug(f"Geocoding description {item['location']}...")
                 # geocode location
-                geolocator = Nominatim(user_agent="muenster-jetzt")
+                geolocator = Nominatim(user_agent="muenster-update")
                 location = geolocator.geocode(
                     query=item["location"],
                     viewbox=[Point(51.8375, 7.471), Point(52.061, 7.775)],

@@ -21,9 +21,7 @@ import {
   infoRootRoute,
 } from "./utils/routes";
 import InfoPage from "./InfoPage/InfoPage.";
-
-const backendBasePath =
-  process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
+import backendBasePath from "./utils/config";
 
 const fallbackLink = makeAppRouteLink(isoFormat(new Date()));
 

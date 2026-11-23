@@ -3,12 +3,12 @@ name: Build and deploy
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - v**
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   test-backend:
@@ -18,12 +18,12 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
-      - name: Install python 3.10
-        uses: actions/setup-python@v4
+      - name: Install python 3.13
+        uses: actions/setup-python@v7
         with:
-          python-version: '3.10.x'
+          python-version: '3.13'
           cache: 'pip'
           cache-dependency-path: 'backend/requirements.txt'
 
@@ -36,10 +36,10 @@ jobs:
     name: Build backend container
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
       - name: Build and push backend container image
-        uses: bCyberGmbH/build-container-image-action@main
+        uses: Lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -50,7 +50,7 @@ jobs:
           push_to_registry: ${{ github.event_name != 'pull_request' }}
 
       - name: Build and push backend nginx container image
-        uses: bCyberGmbH/build-container-image-action@main
+        uses: Lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -69,7 +69,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           fetch-depth: '2' # for comparison
 
@@ -85,17 +85,17 @@ jobs:
 
           echo "We're running on ${branch_name} (${short_sha})"
 
-          if [ "$branch_name" = "master" ] || [ "$GITHUB_REF_TYPE" = "tag" ]; then
+          if [ "$branch_name" = "main" ] || [ "$GITHUB_REF_TYPE" = "tag" ]; then
             echo "changes=1" >> $GITHUB_OUTPUT
           else
             echo "changes=$(git diff --name-only HEAD^1 -- . | wc -l)" >> $GITHUB_OUTPUT
           fi
 
-      - name: Install Node.js 14
+      - name: Install Node.js 24
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
-          node-version: 14
+          node-version: 24
           cache: 'npm'
           cache-dependency-path: 'frontend/package-lock.json'
 
@@ -104,17 +104,19 @@ jobs:
         run: |
           npm ci
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v7
         with:
+          context: backend
+          file: backend/deployment/Dockerfile.prod
+          tags: muenster-jetzt-api:in-ci
+          load: true
           push: false
-          repository: muenster-jetzt-api
-          dockerfile: backend/deployment/Dockerfile.prod
-          tags: in-ci
-          path: backend
-          always_pull: true
-          cache_froms: ${{ steps.branch_info.outputs.cache_from_container_image }}
+          pull: true
 
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
@@ -142,7 +144,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           fetch-depth: '2' # for comparison
 
@@ -165,10 +167,10 @@ jobs:
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-update.de" >> $GITHUB_ENV
           fi
 
-      - name: Install Node.js 14
-        uses: actions/setup-node@v3
+      - name: Install Node.js 24
+        uses: actions/setup-node@v7
         with:
-          node-version: 14
+          node-version: 24
           cache: 'npm'
           cache-dependency-path: 'frontend/package-lock.json'
 
@@ -197,8 +199,31 @@ jobs:
             -iregex '.*\.(css|csv|html?|js|svg|txt|xml|json|webmanifest|ttf)' \
             -exec gzip -9 -k '{}' \;
 
+      - name: Build frontend test image
+        uses: docker/build-push-action@v7
+        with:
+          context: frontend
+          file: frontend/deployment/Dockerfile.prod
+          tags: muenster-jetzt-frontend:ci
+          load: true
+          push: false
+
+      # Gate for base image updates (see renovate.json): the page must be
+      # served and the image must have no fixable critical CVEs
+      - name: Smoke test and CVE scan
+        uses: Lab481/build-container-image-action/static-site-check@main
+        with:
+          image: muenster-jetzt-frontend:ci
+          expect_text: "Münster Update"
+          ok_paths: |
+            /manifest.json
+            /favicon.ico
+            /robots.txt
+          # SPA: unknown paths fall back to index.html, so nothing is 404
+          missing_paths: ""
+
       - name: Build and push frontend container image
-        uses: bCyberGmbH/build-container-image-action@main
+        uses: Lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
