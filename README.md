@@ -1,4 +1,6 @@
-# muenster-jetzt
+# muenster-update
+
+(previously muenster-jetzt)
 
 ## Deployment
 
