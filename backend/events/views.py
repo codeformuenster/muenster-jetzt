@@ -1,5 +1,4 @@
 from django.http import HttpResponseForbidden, HttpResponseRedirect
-from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.decorators.http import require_safe
 from django_filters import FilterSet
 from django_filters import rest_framework as filters
@@ -146,12 +145,6 @@ def external_redirect(request):
     url = request.GET.get("url", "")
     signature = request.GET.get("sig", "")
     if not (links.is_redirectable(url) and links.verify(url, signature)):
-        return HttpResponseForbidden("Invalid link", content_type="text/plain")
-    if not url_has_allowed_host_and_scheme(
-        url=url,
-        allowed_hosts={request.get_host()},
-        require_https=request.is_secure(),
-    ):
         return HttpResponseForbidden("Invalid link", content_type="text/plain")
     response = HttpResponseRedirect(url)
     response["Referrer-Policy"] = "no-referrer"
