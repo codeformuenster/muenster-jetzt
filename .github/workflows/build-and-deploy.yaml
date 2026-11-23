@@ -18,10 +18,12 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
+      - name: Install python 3.10
+        uses: actions/setup-python@v7
       - name: Install python 3.13
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
           cache: 'pip'
@@ -36,10 +38,10 @@ jobs:
     name: Build backend container
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
       - name: Build and push backend container image
-        uses: bCyberGmbH/build-container-image-action@main
+        uses: lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -50,7 +52,7 @@ jobs:
           push_to_registry: ${{ github.event_name != 'pull_request' }}
 
       - name: Build and push backend nginx container image
-        uses: bCyberGmbH/build-container-image-action@main
+        uses: lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
@@ -69,7 +71,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           fetch-depth: '2' # for comparison
 
@@ -93,7 +95,7 @@ jobs:
 
       - name: Install Node.js 14
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
           node-version: 14
           cache: 'npm'
@@ -106,7 +108,7 @@ jobs:
 
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v7
         with:
           push: false
           repository: muenster-jetzt-api
@@ -142,7 +144,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           fetch-depth: '2' # for comparison
 
@@ -166,7 +168,7 @@ jobs:
           fi
 
       - name: Install Node.js 14
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
           node-version: 14
           cache: 'npm'
@@ -198,7 +200,7 @@ jobs:
             -exec gzip -9 -k '{}' \;
 
       - name: Build and push frontend container image
-        uses: bCyberGmbH/build-container-image-action@main
+        uses: lab481/build-container-image-action@main
         with:
           registry_name: docker.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
