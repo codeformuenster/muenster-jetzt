@@ -1,0 +1,35 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "labels": ["dependencies", "renovate"],
+  "dependencyDashboard": {
+    "enabled": true
+  },
+  "schedule": ["before 6am on monday"],
+  "packageRules": [
+    {
+      "description": "Container base images: pin digests so rebuilt images also trigger an update",
+      "matchDatasources": ["docker"],
+      "pinDigests": true
+    },
+    {
+      "description": "nginx base image: patch and digest updates are merged once CI (incl. smoke test and Trivy scan) is green; main then goes to staging",
+      "matchPackageNames": ["ghcr.io/nginx/nginx-unprivileged"],
+      "matchUpdateTypes": ["patch", "digest", "pin", "pinDigest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "schedule": ["at any time"]
+    },
+    {
+      "description": "Group frontend dev tooling",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "frontend dev dependencies"
+    },
+    {
+      "description": "Backend: requirements.txt is compiled from setup.py (uv pip compile)",
+      "matchManagers": ["pip_requirements"],
+      "groupName": "backend dependencies"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import {
   useListEvents,
 } from "../generated-api-client";
 import { parseDate, formatTime, formatDuration } from "../utils/eventTime";
+import backendBasePath from "../utils/config";
 
 interface HTTPValidationError {
   page?: string[];
@@ -42,9 +43,12 @@ interface IUseGetEvents {
   (date?: string): IUseGetEventsResult;
 }
 
-const augmentUrl: (url?: string | null) => string | undefined = (url) => {
-  if (url) {
-    return `${window.location.origin}/external/?url=${encodeURI(url)}`;
+// The backend signs the event URL; unsigned redirect links are rejected.
+const augmentUrl: (externalLink?: string | null) => string | undefined = (
+  externalLink
+) => {
+  if (externalLink) {
+    return `${backendBasePath}${externalLink}`;
   }
 
   return undefined;
@@ -83,10 +87,10 @@ const useGetEvents: IUseGetEvents = (date) => {
                 formattedStart: formatTime(start),
                 formattedEnd: formatTime(end),
                 duration: formatDuration(start, end),
-                externalUrl: augmentUrl(event.url),
+                externalUrl: augmentUrl(event.externalLink),
               };
             })
-          : undefined,
+          : [],
       };
     },
   });

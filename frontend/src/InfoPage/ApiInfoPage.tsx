@@ -8,9 +8,8 @@ import Row from "../UI/Info/Row";
 import ExternalLink from "../Helpers/ExternalLink";
 import Footer from "../UI/Info/Footer";
 import { makeAppRouteLink } from "../utils/routes";
+import backendBasePath from "../utils/config";
 
-const backendBasePath =
-  process?.env?.REACT_APP_BACKEND_BASE_PATH || "http://localhost:8000";
 const apiDocsUrl = new URL("/", backendBasePath).toString();
 
 const ApiInfoPage: FC = () => (

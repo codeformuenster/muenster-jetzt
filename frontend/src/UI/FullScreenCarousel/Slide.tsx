@@ -18,7 +18,8 @@ const useQRURL: (externalUrl?: string) => string = (externalUrl) => {
       return "";
     }
 
-    return `https://muenster-update.de/qr/?url=${encodeURI(externalUrl)}`;
+    // Kiosk slides are static content, so the QR code links directly.
+    return externalUrl;
   }, [externalUrl]);
 };
 
