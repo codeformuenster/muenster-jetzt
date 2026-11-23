@@ -3,12 +3,12 @@ name: Build and deploy
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - v**
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   test-backend:
@@ -85,7 +85,7 @@ jobs:
 
           echo "We're running on ${branch_name} (${short_sha})"
 
-          if [ "$branch_name" = "master" ] || [ "$GITHUB_REF_TYPE" = "tag" ]; then
+          if [ "$branch_name" = "main" ] || [ "$GITHUB_REF_TYPE" = "tag" ]; then
             echo "changes=1" >> $GITHUB_OUTPUT
           else
             echo "changes=$(git diff --name-only HEAD^1 -- . | wc -l)" >> $GITHUB_OUTPUT

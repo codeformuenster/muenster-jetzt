@@ -11,7 +11,7 @@
       "pinDigests": true
     },
     {
-      "description": "nginx base image: patch and digest updates are merged once CI (incl. smoke test and Trivy scan) is green; master then goes to staging",
+      "description": "nginx base image: patch and digest updates are merged once CI (incl. smoke test and Trivy scan) is green; main then goes to staging",
       "matchPackageNames": ["ghcr.io/nginx/nginx-unprivileged"],
       "matchUpdateTypes": ["patch", "digest", "pin", "pinDigest"],
       "automerge": true,

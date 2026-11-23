@@ -56,13 +56,13 @@ Your app is ready to be deployed!
 
 Formats your code according the code style of this project.
 
-**Code which is not formatted correctly will not be accepted into the `master` branch**
+**Code which is not formatted correctly will not be accepted into the `main` branch**
 
 ### `npm run lint`
 
 Checks your code against the code style of this project.
 
-**Code which is fails to satisfy the linter will not be accepted into the `master` branch**
+**Code which is fails to satisfy the linter will not be accepted into the `main` branch**
 
 ### `npm run generate-client`
 

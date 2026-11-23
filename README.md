@@ -10,7 +10,7 @@ Deployments live at https://staging.muenster-update.de ([Staging API](https://ap
 
 ### Staging deployment
 
-Staging follows the `master` branch.
+Staging follows the `main` branch.
 
 ### Production deployment
 
