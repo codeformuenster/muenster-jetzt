@@ -104,6 +104,9 @@ jobs:
         run: |
           npm ci
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
         uses: docker/build-push-action@v7
