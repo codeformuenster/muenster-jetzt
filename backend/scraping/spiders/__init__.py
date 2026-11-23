@@ -11,7 +11,6 @@ from scrapy.exceptions import DropItem
 
 from events.models import Event, EventSource, Location, Organizer
 
-
 logger = logging.getLogger(__name__)
 
 

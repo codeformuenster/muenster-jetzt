@@ -3,7 +3,6 @@ from django.views.generic import TemplateView
 
 from . import views
 
-
 router = views.DocumentedRouter(trailing_slash=False)
 router.register(r"events", views.EventsViewSet)
 router.register(r"sources", views.EventSourcesViewSet)
@@ -12,6 +11,7 @@ router.register(r"organizers", views.OrganizersViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("external/", views.external_redirect, name="external-link"),
     path("openapi.json", views.schema_json, name="openapi.json"),
     path("openapi.yml", views.schema_yml),
     path(

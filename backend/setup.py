@@ -2,7 +2,6 @@ from setuptools import setup
 
 import mj
 
-
 setup(
     name="mj",
     version=mj.__version__,
@@ -13,15 +12,16 @@ setup(
         "black",
         "bleach",
         "click",
-        "django",
+        "django>=5.2,<6",  # 5.2 LTS
         "django-cors-headers",
-        "django-filter",
+        "django-filter<25",  # 25.x dropped DRF schema generation support
         "djangorestframework",
         "djangorestframework-camel-case",
         "flake8",
         "geopy",
         "gunicorn",
         "icalendar",
+        "inflection",  # OpenAPI schema generation (DRF)
         "markdown",
         "pip-tools",
         "psycopg2-binary",
