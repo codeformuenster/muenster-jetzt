@@ -4,7 +4,9 @@ kind: Kustomization
 namespace: muenster-update
 
 commonLabels:
-  app.kubernetes.io/app: muenster-update
+  # Keep: changing it would alter immutable Deployment selectors and the
+  # pg_hba podSelectorRefs in codeformuenster/kubernetes-deployment
+  app.kubernetes.io/app: muenster-jetzt
 
 resources:
 - frontend
