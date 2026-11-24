@@ -1,5 +1,7 @@
+from unittest.mock import patch
 from urllib.parse import parse_qs, urlsplit
 
+from django.db import DatabaseError
 from django.test import SimpleTestCase
 
 from . import links
@@ -42,6 +44,38 @@ class ExternalLinkTests(SimpleTestCase):
     def test_post_not_allowed(self):
         link = links.external_link(EVENT_URL)
         self.assertEqual(self.client.post(link).status_code, 405)
+
+
+class HealthTests(SimpleTestCase):
+    def test_health_endpoint(self):
+        response = self.client.get("/healthz")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {"status": "ok"})
+
+
+class ReadinessTests(SimpleTestCase):
+    @patch("events.views.pending_migrations", return_value=set())
+    def test_ready_without_pending_migrations(self, _):
+        response = self.client.get("/readyz")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {"status": "ok"})
+
+    @patch(
+        "events.views.pending_migrations",
+        return_value={("events", "0001_initial")},
+    )
+    def test_not_ready_with_pending_migrations(self, _):
+        response = self.client.get("/readyz")
+        self.assertEqual(response.status_code, 503)
+
+    @patch(
+        "events.views.pending_migrations",
+        side_effect=DatabaseError("down"),
+    )
+    def test_not_ready_when_database_is_unavailable(self, _):
+        response = self.client.get("/readyz")
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(response.json(), {"status": "database unavailable"})
 
 
 class OpenAPISchemaTests(SimpleTestCase):

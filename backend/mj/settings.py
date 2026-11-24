@@ -10,11 +10,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
-DEBUG = bool(os.getenv("DJANGO_DEBUG", False))
+DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in (
+    "1",
+    "true",
+    "yes",
+    "on",
+)
 
 ALLOWED_HOSTS = os.getenv("DJANGO_HOSTS", "localhost,127.0.0.1,[::1]").split(
     ","
 )
+# required for kubernetes probes
+if "localhost" not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append("localhost")
 
 # Application definition
 

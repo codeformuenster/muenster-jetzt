@@ -7,4 +7,5 @@ spec:
   - name: http
     port: 8000
   selector:
+    app.kubernetes.io/app: muenster-jetzt
     app.kubernetes.io/component: api

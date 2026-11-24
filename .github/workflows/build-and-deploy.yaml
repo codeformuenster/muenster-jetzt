@@ -48,6 +48,7 @@ jobs:
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
           push_to_registry: ${{ github.event_name != 'pull_request' }}
+          skip_login: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
 
       - name: Build and push backend nginx container image
         uses: Lab481/build-container-image-action@main
@@ -60,6 +61,7 @@ jobs:
           build_context: backend
           build_target: staticfiles
           push_to_registry: ${{ github.event_name != 'pull_request' }}
+          skip_login: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
 
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
@@ -232,3 +234,4 @@ jobs:
           dockerfile_path: frontend/deployment/Dockerfile.prod
           build_context: frontend
           push_to_registry: ${{ github.event_name != 'pull_request' }}
+          skip_login: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}

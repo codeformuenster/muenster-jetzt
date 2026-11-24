@@ -13,6 +13,7 @@ spec:
         app.kubernetes.io/component: backend-static
     spec:
       serviceAccountName: backend-static
+      enableServiceLinks: false
       containers:
       - image: docker.io/codeformuenster/muenster-jetzt-api-static:master
         name: backend-static
@@ -37,6 +38,16 @@ spec:
         ports:
         - containerPort: 8001
           name: http
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 30
         volumeMounts:
         - name: tmpdir
           mountPath: /tmp

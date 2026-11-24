@@ -12,6 +12,8 @@ spec:
       labels:
         app.kubernetes.io/component: frontend
     spec:
+      serviceAccountName: frontend
+      enableServiceLinks: false
       containers:
       - image: docker.io/codeformuenster/muenster-jetzt-frontend:master
         name: frontend
@@ -36,6 +38,16 @@ spec:
         ports:
         - containerPort: 8080
           name: http
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 30
         volumeMounts:
         - name: tmpdir
           mountPath: /tmp
