@@ -14,10 +14,10 @@ export const formatDuration: IFormatDuration = (start, end) => {
     durationMs = end.getTime() - start.getTime();
   }
 
-  if (durationMs > oneDay) {
+  if (durationMs >= oneDay) {
     const days: number = Math.floor(durationMs / oneDay);
 
-    if (days >= 1) {
+    if (days === 1) {
       return "ein Tag";
     }
 
@@ -27,7 +27,7 @@ export const formatDuration: IFormatDuration = (start, end) => {
   if (durationMs >= oneHour) {
     const hours: number = Math.floor(durationMs / oneHour);
 
-    if (hours >= 1) {
+    if (hours === 1) {
       return "eine Stunde";
     }
 
@@ -45,15 +45,13 @@ export const formatDuration: IFormatDuration = (start, end) => {
   return "";
 };
 
-const hhmmTimeFormat = new Intl.DateTimeFormat("de-DE", {
-  hour: "2-digit",
-  minute: "2-digit",
-}).format;
+export const isoFormat: (date: Date) => string = (date) => {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, "0");
+  const day = `${date.getDate()}`.padStart(2, "0");
 
-// let's hope sweden never changes its date format
-// https://stackoverflow.com/a/58633686
-export const isoFormat: (date: Date) => string = (date) =>
-  date.toLocaleDateString("sv-SE");
+  return `${year}-${month}-${day}`;
+};
 
 interface IFormatFunction {
   (date?: Date): string;
@@ -61,7 +59,10 @@ interface IFormatFunction {
 
 export const formatTime: IFormatFunction = (date) => {
   if (date) {
-    return hhmmTimeFormat(date);
+    const hours = `${date.getHours()}`.padStart(2, "0");
+    const minutes = `${date.getMinutes()}`.padStart(2, "0");
+
+    return `${hours}:${minutes}`;
   }
 
   return "";
@@ -82,5 +83,5 @@ export const parseDate: IParseDate = (date, time) => {
   const timeParts = time.split(":");
   const [hour, minute, second] = timeParts.map((d) => parseInt(d, 10));
 
-  return new Date(year, month - 1, day, hour, minute, second, 0);
+  return new Date(year, month - 1, day, hour, minute || 0, second || 0, 0);
 };
