@@ -19,7 +19,7 @@ RUN pip install .
 RUN useradd -u 5000 app && chown app:app /app
 USER app:app
 
-CMD ["gunicorn", "--bind", ":8000", "-k", "uvicorn.workers.UvicornWorker", "mj.asgi:application"]
+CMD ["gunicorn", "--bind", ":8000", "--access-logfile", "-", "--error-logfile", "-", "-k", "uvicorn.workers.UvicornWorker", "mj.asgi:application"]
 
 # static files
 FROM django AS staticfiles-prep
