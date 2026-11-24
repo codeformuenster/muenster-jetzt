@@ -10,10 +10,18 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test-backend:
     name: Test backend
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: backend
@@ -35,6 +43,7 @@ jobs:
   build-backend:
     name: Build backend container
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
 
@@ -66,6 +75,7 @@ jobs:
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     needs: test-backend
     defaults:
       run:
@@ -142,6 +152,7 @@ jobs:
   frontend:
     name: Validate, test and build frontend
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     defaults:
       run:
         working-directory: frontend
