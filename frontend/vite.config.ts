@@ -11,20 +11,9 @@ const cspPolicy = (backendBasePath: string): string =>
     "object-src": ["'none'"],
     "script-src": ["'self'"],
     "style-src": ["'self'"],
-    "img-src": [
-      "'self'",
-      "https://muenster-update.de",
-      "https://www.bleker-it.de",
-      "https://www.muensterhack.de",
-      "https://gobeta.de",
-    ],
+    "img-src": ["'self'"],
     "font-src": ["'self'", "data:"],
-    "frame-src": [
-      "https://bike-frontend.azurewebsites.net",
-      "https://db-muenster.veomo.com/",
-    ],
     "connect-src": ["'self'", backendBasePath],
-    "media-src": ["https://muenster-update.de"],
   })
     .map(([directive, sources]) => `${directive} ${sources.join(" ")}`)
     .join("; ");

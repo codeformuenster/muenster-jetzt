@@ -1,6 +1,6 @@
 # Münster Update Frontend
 
-The front end to Münster Update. It includes a web app for mobile, tablet and desktop browsers and a kiosk mode for big displays.
+The front end to Münster Update. It includes a web app for mobile, tablet and desktop browsers.
 
 Built with [Vite](https://vite.dev/) (migrated from Create React App). Environment variables keep the `REACT_APP_` prefix and are read via `import.meta.env`.
 
