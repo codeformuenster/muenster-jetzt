@@ -2,7 +2,6 @@ from scraping.spiders.ics import ICalendarSpider
 
 
 class StudierendenwerkMsSpider(ICalendarSpider):
-
     name = "studierendenwerk_ms"
 
     defaults = {
