@@ -158,7 +158,7 @@ def pending_migrations():
         node
         for leaf in loader.graph.leaf_nodes()
         for node in loader.graph.forwards_plan(leaf)
-    } - applied
+    } - applied.keys()
 
 
 @require_safe
