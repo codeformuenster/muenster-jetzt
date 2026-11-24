@@ -20,9 +20,14 @@ DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in (
 ALLOWED_HOSTS = os.getenv("DJANGO_HOSTS", "localhost,127.0.0.1,[::1]").split(
     ","
 )
+
 # required for kubernetes probes
 if "localhost" not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append("localhost")
+
+CSRF_TRUSTED_ORIGINS = [
+    f"https://{host}" for host in ALLOWED_HOSTS if host != "localhost"
+]
 
 # Application definition
 
@@ -149,6 +154,8 @@ REST_FRAMEWORK = {
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Security
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 SESSION_COOKIE_SECURE = True
 
