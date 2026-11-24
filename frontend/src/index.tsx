@@ -9,15 +9,12 @@ import {
 import { RestfulProvider } from "restful-react";
 
 import App from "./App/App";
-import Kiosk from "./Kiosk/Kiosk";
-import TrackingWrapper from "./TrackingWrapper";
 import ScrollToTop from "./Helpers/ScrollToTop";
 import { isoFormat } from "./utils/eventTime";
 import {
   appRootRoute,
   appDayRoute,
   makeAppRouteLink,
-  kioskRootRoute,
   infoRootRoute,
 } from "./utils/routes";
 import InfoPage from "./InfoPage/InfoPage.";
@@ -29,7 +26,6 @@ ReactDOM.render(
   <React.StrictMode>
     <RestfulProvider base={backendBasePath}>
       <Router>
-        <TrackingWrapper />
         <ScrollToTop />
         <Switch>
           <Route exact path={appRootRoute}>
@@ -37,9 +33,6 @@ ReactDOM.render(
           </Route>
           <Route path={appDayRoute}>
             <App />
-          </Route>
-          <Route path={kioskRootRoute}>
-            <Kiosk />
           </Route>
           <Route path={infoRootRoute}>
             <InfoPage />

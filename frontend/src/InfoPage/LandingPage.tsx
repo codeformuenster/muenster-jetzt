@@ -5,11 +5,7 @@ import Layout from "../UI/Layout/Layout";
 import Box from "./Box";
 import ExternalLink from "../Helpers/ExternalLink";
 import styles from "./LandingPage.module.scss";
-import {
-  makeAppRouteLink,
-  apiInfoRoute,
-  kioskRootRoute,
-} from "../utils/routes";
+import { makeAppRouteLink, apiInfoRoute } from "../utils/routes";
 import StyledProjectName from "../UI/StyledProjectName/StyledProjectName";
 import Hero from "../UI/Info/Hero";
 import Row from "../UI/Info/Row";
@@ -44,10 +40,6 @@ const LandingPage: FC = () => (
       <Box title="API" linkText="Dokumentation" linkTo={apiInfoRoute} preview>
         Für Alle, die schnell und einfach maschinen&shy;lesbare
         Veranstaltungs&shy;informationen brauchen.
-      </Box>
-      <Box title="Kiosk" linkText="zur Kiosk-Ansicht" linkTo="/kiosk" preview>
-        Die Kiosk-Ansicht ist für große Displays geeignet und zeigt
-        Informationen zu ausgewählten Veranstaltungen.
       </Box>
     </Row>
     <Row rowTitle="Datenquellen" singleColumnClassName={styles.singleColumn}>
@@ -93,23 +85,6 @@ const LandingPage: FC = () => (
           <br />
           In Zukunft wollen wir weitere Datenquellen anbinden sowie die App und{" "}
           <Link to={apiInfoRoute}>API-Dokumentation</Link> ausbauen.
-        </p>
-      </div>
-      <div className={styles.projectPlanColumn}>
-        <h5 className={styles.projectPlanTitle}>Kiosk</h5>
-        <p className={styles.projectPlanText}>
-          Im Rahmen des Projekts{" "}
-          <ExternalLink href="https://gobeta.de/projekte/bahnhof-muenster/">
-            Zukunftsbahnhof Münster
-          </ExternalLink>{" "}
-          entwickeln wir speziell für große Displays eine{" "}
-          <Link to={kioskRootRoute}>Kiosk-Ansicht</Link>.
-          <br />
-          Weitere Informationen auf{" "}
-          <ExternalLink href="https://gobeta.de/projekte/muenster-jetzt/">
-            gobeta.de
-          </ExternalLink>
-          .
         </p>
       </div>
     </Row>
