@@ -1,4 +1,11 @@
-from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.db import DatabaseError, connection
+from django.db.migrations.loader import MigrationLoader
+from django.db.migrations.recorder import MigrationRecorder
+from django.http import (
+    HttpResponseForbidden,
+    HttpResponseRedirect,
+    JsonResponse,
+)
 from django.views.decorators.http import require_safe
 from django_filters import FilterSet
 from django_filters import rest_framework as filters
@@ -137,6 +144,32 @@ class MünsterJetztView(routers.APIRootView):
 
 class DocumentedRouter(routers.DefaultRouter):
     APIRootView = MünsterJetztView
+
+
+@require_safe
+def healthz(request):
+    return JsonResponse({"status": "ok"})
+
+
+def pending_migrations():
+    loader = MigrationLoader(connection, ignore_no_migrations=True)
+    applied = MigrationRecorder(connection).applied_migrations()
+    return {
+        node
+        for leaf in loader.graph.leaf_nodes()
+        for node in loader.graph.forwards_plan(leaf)
+    } - applied
+
+
+@require_safe
+def readyz(request):
+    try:
+        pending = pending_migrations()
+    except DatabaseError:
+        return JsonResponse({"status": "database unavailable"}, status=503)
+    if pending:
+        return JsonResponse({"status": "migrations pending"}, status=503)
+    return JsonResponse({"status": "ok"})
 
 
 @require_safe

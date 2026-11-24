@@ -13,6 +13,7 @@ spec:
         app.kubernetes.io/component: api
     spec:
       serviceAccountName: backend-api
+      enableServiceLinks: false
       initContainers:
       - image: docker.io/codeformuenster/muenster-jetzt-api:master
         name: migrations
@@ -75,6 +76,22 @@ spec:
         ports:
         - containerPort: 8000
           name: http
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: http
+            httpHeaders:
+            - name: Host
+              value: localhost
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+            httpHeaders:
+            - name: Host
+              value: localhost
+          periodSeconds: 30
         envFrom:
         - secretRef:
             name: backend-api

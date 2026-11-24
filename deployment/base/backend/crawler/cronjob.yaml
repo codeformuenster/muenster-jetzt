@@ -5,14 +5,21 @@ metadata:
 spec:
   schedule: "@hourly"
   concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 600
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       backoffLimit: 2
       parallelism: 1
+      activeDeadlineSeconds: 3300
+      ttlSecondsAfterFinished: 86400
       template:
         spec:
-          serviceAccountName: backend-api
+          serviceAccountName: backend-crawler
+          enableServiceLinks: false
           restartPolicy: OnFailure
+
           containers:
           - image: docker.io/codeformuenster/muenster-jetzt-api:master
             name: crawler
@@ -44,6 +51,8 @@ spec:
             env:
             - name: DJANGO_DEBUG
               value: "False"
+            - name: HOME
+              value: /tmp
             volumeMounts:
             - name: tmpdir
               mountPath: /tmp

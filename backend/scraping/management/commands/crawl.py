@@ -21,6 +21,8 @@ class Command(BaseCommand):
         settings = Settings(
             {
                 "SPIDER_MODULES": ["scraping.spiders"],
+                "REMOTE_CONTROL_ENABLED": False,
+                "TELNETCONSOLE_ENABLED": False,
             }
         )
         spider_loader = SpiderLoader(settings)
