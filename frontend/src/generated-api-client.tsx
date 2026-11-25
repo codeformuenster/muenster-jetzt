@@ -606,7 +606,7 @@ export const useRetrieveEventSource = ({
   >(
     (paramsInPath: RetrieveEventSourcePathParams) =>
       `/sources/${paramsInPath.id}`,
-    { pathParams: { id }, ...props }
+    { pathParams: { id }, ...props },
   );
 
 export type ListLocationsResponse = {
@@ -804,7 +804,7 @@ export const useRetrieveLocation = ({
   >(
     (paramsInPath: RetrieveLocationPathParams) =>
       `/locations/${paramsInPath.id}`,
-    { pathParams: { id }, ...props }
+    { pathParams: { id }, ...props },
   );
 
 export type ListOrganizersResponse = {
@@ -1002,5 +1002,5 @@ export const useRetrieveOrganizer = ({
   >(
     (paramsInPath: RetrieveOrganizerPathParams) =>
       `/organizers/${paramsInPath.id}`,
-    { pathParams: { id }, ...props }
+    { pathParams: { id }, ...props },
   );

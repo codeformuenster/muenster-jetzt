@@ -17,7 +17,7 @@ const renderApp = (date: string) =>
           <App />
         </Route>
       </Switch>
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 
 describe("App", () => {

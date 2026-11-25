@@ -38,7 +38,7 @@ const CalendarBody: FC<ICalendarBody> = ({ close }) => {
       now.setDate(1);
 
       return now;
-    })()
+    })(),
   );
 
   const setBaseDateMonth: (month: number) => void = (month) => {

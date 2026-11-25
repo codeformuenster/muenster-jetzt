@@ -22,7 +22,8 @@
     "restful-react": "^15.9.4",
     "timeago-react": "^3.0.5",
     "timeago.js": "^4.0.2",
-    "typescript": "^7.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   },
   "scripts": {
     "start": "vite",
@@ -38,7 +39,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/history": "^5.0.0",
+    "@eslint/eslintrc": "^3.3.7",
+    "@types/history": "^4.7.11",
     "@types/lodash-es": "^4.17.6",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",

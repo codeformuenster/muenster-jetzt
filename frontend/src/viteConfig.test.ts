@@ -10,12 +10,12 @@ const resolveConfig = (mode: string): UserConfig => {
 
 const pluginNames = (resolved: UserConfig): string[] =>
   ((resolved.plugins as Plugin[]) ?? []).flatMap((plugin) =>
-    plugin ? [plugin.name] : []
+    plugin ? [plugin.name] : [],
   );
 
 const cspContent = (resolved: UserConfig): string => {
   const plugin = (resolved.plugins as Plugin[]).find(
-    (item) => item && item.name === "csp-meta-tag"
+    (item) => item && item.name === "csp-meta-tag",
   );
   const transform = plugin?.transformIndexHtml as unknown as () => {
     attrs: Record<string, string>;
