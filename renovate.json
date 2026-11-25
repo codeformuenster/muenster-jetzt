@@ -30,6 +30,12 @@
       "description": "Backend: requirements.txt is compiled from setup.py (uv pip compile)",
       "matchManagers": ["pip_requirements"],
       "groupName": "backend dependencies"
+    },
+    {
+      "description": "Look up frozenlist via the PyPI simple API to avoid no-result failures",
+      "matchDatasources": ["pypi"],
+      "matchPackageNames": ["frozenlist"],
+      "registryUrls": ["https://pypi.org/simple/"]
     }
   ]
 }
