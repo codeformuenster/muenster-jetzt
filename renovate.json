@@ -5,6 +5,9 @@
   "dependencyDashboard": {
     "enabled": true
   },
+  "kustomize": {
+    "enabled": false
+  },
   "schedule": ["before 6am on monday"],
   "packageRules": [
     {
@@ -34,7 +37,7 @@
     {
       "description": "Look up frozenlist via the PyPI simple API to avoid no-result failures",
       "matchDatasources": ["pypi"],
-      "matchPackageNames": ["frozenlist"],
+      "matchPackageNames": ["frozenlist","aiohttp"],
       "registryUrls": ["https://pypi.org/simple/"]
     }
   ]
