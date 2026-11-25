@@ -13,7 +13,7 @@ jobs:
     name: Lint kubernetes manifests
     # kube-check-action calls `mktemp --suffix -kube-check-action`, which
     # the Rust coreutils on ubuntu-26.04 reject; pin until fixed upstream
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
