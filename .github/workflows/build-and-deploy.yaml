@@ -28,10 +28,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Install python 3.13
+      - name: Install python 3.15
         uses: actions/setup-python@v7
         with:
-          python-version: '3.13'
+          python-version: '3.15'
           cache: 'pip'
           cache-dependency-path: 'backend/requirements.txt'
 
