@@ -79,7 +79,7 @@ services:
       options:
         loki-url: "${LOKI_URL}"
   db:
-    image: postgres:12.10
+    image: postgres:12.10@sha256:3dc81d3f5988f9e4dda4fa18b769743df01bc4eba3fac2fe60b91a3075f6f4cf
     restart: unless-stopped
     shm_size: 256MB
     expose:
