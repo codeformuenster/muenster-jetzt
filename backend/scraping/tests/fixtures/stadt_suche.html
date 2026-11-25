@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+
+
+<!-- ### HEAD BEGIN ### -->
+<head>
+
+
+			<title>muenster.de - M&uuml;nster in Westfalen: Veranstaltungskalender M&uuml;nster - Suche</title>
+			
+
+			<meta charset='utf-8' />
+			
+
+			<meta name='author' content='Presseamt Münster - Online-Redaktion' />
+			<meta name='organization' content='Stadt Münster' />
+			<meta name='description' content='Veranstaltungskalender für die Stadt Münster' />
+			<meta name='keywords' content='Veranstaltungskalender, Veranstaltungen, Münster, Termine, Terminkalender, Events' />
+			<meta name='robots' content='index, follow' />
+			
+
+			<!-- ### META END ### -->
+
+	<link rel="shortcut icon" href="/skin/muenster/pics/favicon.ico" />
+	<!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="rssfeed.rss" /> -->
+
+
+	<link href="/stadt/lightbox.css" rel="stylesheet" type="text/css" media="screen, projection">
+	<link rel="StyleSheet" href="/skin/muenster/style_neu.css" media="screen,projection"/>
+	<link media="print" href="/skin/muenster/style_neu_print.css" type="text/css" rel="stylesheet" />
+
+	<style type="text/css">
+	<!--
+	#kopf {
+		background-image: url(/skin/muenster/pics/6152_2_mitte.jpg) !important;
+		background-repeat: no repeat !important;
+	}
+
+	#rechts, #dienste {
+		background-image: url(/skin/muenster/pics/6152_2_rechts.jpg) !important;
+	}
+	-->
+	</style>
+
+				<!-- jQuery UI CSS -->
+				<link rel='stylesheet' type='text/css' href='https://www.muenster.de/veranstaltungskalender/static/css/jquery-ui.css' /> <!-- Wird für UI- und Plugin-Datepicker benötigt. -->
+				<!-- jQuery timepicker plugin CSS -->
+				<link rel='stylesheet' type='text/css' href='https://www.muenster.de/veranstaltungskalender/static/css/jquery.timepicker.css' />
+				<!-- jQuery datepick Plugin CSS - Keith Wood Datepicker 5.0 -->
+				<link rel='stylesheet' type='text/css' href='https://www.muenster.de/veranstaltungskalender/static/js/jquery.datepicker/ui-cupertino.datepick.css' />
+				<!-- eigenes CSS -->
+				<link rel='stylesheet' type='text/css' href='https://www.muenster.de/veranstaltungskalender/static/css/base.css' media='' /> <!-- static/css/base.css -->
+
+				
+
+				<!-- ### CSS END ### -->
+	
+<!-- ### CSS TEMPLATE BEGIN ### -->
+			<style type="text/css">
+    <!--
+    #dienste h4 {
+    padding: 4px 5px 0px 5px; !important;
+    }
+    #dienste ul.vk {
+	border-bottom: none;
+	padding: 2px 4px 10px 4px;
+}
+#dienste p.modul2 {
+	border-bottom: none;
+	padding: 0 2px 0 5px;
+	line-height: 1.2em;
+}
+#inhalt h3.termin{
+	padding-top: 4px;
+	padding-bottom: 6px;
+	display: block;
+	font-size: 1.1em;
+	color: #005395;
+}
+
+#inhalt p.termin {
+ margin-bottom: 1em;
+ line-height: 1.3em;
+ font-size: 0.9em;
+}
+#inhalt li.sprung {
+  padding-left: 16px;
+  margin-left: 2px;
+}
+#inhalt .terminmenue {
+ margin-bottom: 10px;
+ font-size: 0.8em;
+}
+
+#inhalt .terminmenue a {
+float: left;
+margin-right: 10px;
+margin-bottom: 5px;
+text-transform: uppercase;
+width: 11.5em;
+}
+#inhalt .terminmenue a.teaserlink,
+#inhalt .terminmenue a.teaserlink:link,
+#inhalt .terminmenue a.teaserlink:visited {
+    color: #4a5059;
+    font-weight: bold;
+    line-height: 1.4em;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    padding: 2px 3px;
+    border: solid 1px #005395;
+}
+
+#inhalt .terminmenue a.teaserlink:hover,
+#inhalt .terminmenue a.teaserlink_aktiv {
+    color: #ffffff;
+    background-color: #005395;
+    font-weight: bold;
+    line-height: 1.4em;
+    text-decoration: none;
+    text-align: center;
+    xmargin-right: 1px;
+    padding: 2px 3px;
+    border: solid 1px #000000;
+}
+table.trefferliste tr{
+vertical-align: top;
+}
+table.trefferliste td {
+padding: 5px;
+border: 1px solid #005395;
+}
+table.trefferliste th {
+padding: 5px;
+border: 1px solid #005395;
+color: #005395; 
+}
+table.trefferliste td img {
+float: right;
+}
+table.trefferliste td a.intern,
+table.trefferliste td a.intern:link,
+table.trefferliste td a.intern:visited {
+ color: #005494;
+ background-image:  url(http://www.muenster.de/skin/muenster/pics/hg_link_intern.gif);
+ background-repeat: no-repeat;
+ background-position: right;
+ padding-right: 17px;
+ display: inline-block;
+}
+table.trefferliste td a.intern:hover,
+table.trefferliste td a.intern:active,
+table.trefferliste td a.intern:focus {
+ background-color: #f0f0f0;
+}
+
+
+.auswahl {
+float: left;
+margin-right: 20px;
+}
+select {
+border: 1px solid #cccccc;
+}
+input {
+margin-bottom: none;
+}
+input.checkbox {
+border: none;
+margin: 0;
+position: absolute;
+top: 2px;
+left: 2px;
+}
+*html input.checkbox {
+top: -1px;
+}
+.inputpulldown {
+width: 3em;
+}
+.inputpulldown2 {
+width: 4em;
+}
+   
+    -->
+    </style>	<!-- ### CSS TEMPLATE END ### -->
+	
+	<!--[if lte IE 8]>
+   <style type="text/css" media="screen">
+
+	#seite, #kopf	{
+			width: expression(document.body.clientWidth < 802? "800px" : document.body.clientWidth > 1022? "1024px" : "auto");
+			}
+	#inhalt {
+	height: expression(document.body.clientHeight < 658? "660%" : "auto");
+		   }
+
+#hg-links {
+height: 1%;
+}
+   </style>
+	<![endif]-->
+
+
+				<!-- jQuery und jQuery UI JavaScript-->
+				<script src='https://www.muenster.de/veranstaltungskalender/static/js/jquery-2.1.1.js'></script>
+				<script src='https://www.muenster.de/veranstaltungskalender/static/js/jquery-ui.js'></script>
+				<!-- jQuery timepicker plugin JavaScript -->
+				<script src='https://www.muenster.de/veranstaltungskalender/static/js/jquery.timepicker.js'></script>
+				<!-- jQuery datepick Plugin JavaScript - Keith Wood Datepicker 5.0 -->
+				<script type='text/javascript' src='https://www.muenster.de/veranstaltungskalender/static/js/jquery.datepicker/jquery.plugin.js'></script>
+				<script type='text/javascript' src='https://www.muenster.de/veranstaltungskalender/static/js/jquery.datepicker/jquery.datepick.js'></script>
+				<script type='text/javascript' src='https://www.muenster.de/veranstaltungskalender/static/js/jquery.datepicker/jquery.datepick.ext.js'></script>	<!-- Extension, notwendig für altern. Rendering und damit CSS-Theme -->
+				<script type='text/javascript' src='https://www.muenster.de/veranstaltungskalender/static/js/base.js'></script>
+				<script type="text/javascript" src="https://www.muenster.de/veranstaltungskalender/static/js/guest.js"></script>
+				
+
+				<!-- ### SCRIPT END ### -->
+
+</head>
+<!-- ### HEAD END ### -->
+
+
+<body>
+<a name="top"></a>
+ <div id="seite">
+	<div id="kopf">
+		<h1 class="u">muenster.de - Münster in Westfalen</h1>
+					<ul class="u">
+<li><a href="#navi">Zur Hauptnavigation</a>.</li>
+<li><a href="#navi_rechts">Zur Rubriknavigation</a>.</li>
+<li><a href="#inhalt">Zum Inhalt der Seite</a>.</li>
+</ul>				<p>
+		<a href="/" title="muenster.de: Zur Startseite"><img src="/skin/muenster/pics/muensterde.gif" width="212" height="40" border="0" alt="muenster.de: Zur Startseite" /></a>&nbsp; Münster in Westfalen</p>
+		<div class="english"><a href="http://www.stadt-muenster.de/english" title="Information in English" class="text"><img src="/skin/muenster/pics/english.gif" alt="Information in English" />English</a> <div class="u">-</div>
+		<a href="http://www.muenster.de/stadt/tourismus/nl/" title="Nederlands" target="_blank"><img src="/skin/muenster/pics/nederlands.gif" alt="Nederlands" /></a> <div class="u">-</div>
+		<a href="http://www.muenster.de/stadt/tourismus/f_index.html" title="fran&ccedil;ais" target="_blank"><img src="/skin/muenster/pics/francais.gif" alt="Fran&ccedil;ais" /></a> <div class="u">-</div>
+		<a href="http://www.muenster.de/stadt/tourismus/it_index.html" title="Italiano" target="_blank"><img src="/skin/muenster/pics/italiano.gif" alt="Italiano" /></a> <div class="u">-</div>
+		<a href="http://www.muenster.de/stadt/tourismus/es_index.html" title="Espa&ntilde;ol" target="_blank"><img src="/skin/muenster/pics/espanol.gif" alt="Espa&ntilde;ol" /></a> <div class="u">-</div>
+		<a href="http://www.muenster.de/stadt/tourismus/ja/ja_index.html" title="Japanese" target="_blank"><img src="/skin/muenster/pics/japanisch.gif" alt="Japanese" /></a> <div class="u">-</div>
+		</div>
+	</div>
+	<div id="hg-rechts">
+	 <div id="hg-links">
+			<div id="navi">
+			
+				<a name="navi"></a>
+				<h2 class="u">Hauptnavigation</h2>
+	<ul>
+		<li><a href="http://www.muenster.de/stadt" class="rathaus">Rathaus</a></li>
+		
+
+
+	
+	
+		
+  								<!-- nichts tun -->
+									
+  							<li><a href="/tourismus.html" class="tourismus">Tourismus</a>
+				
+		
+
+		</li>
+						
+  				<li>
+					<a href="/jung_alt.html">Münster für ...</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/bildung_wissenschaft.html">Bildung &amp; Wissenschaft</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/wirtschaft_technologie.html">Wirtschaft &amp; Technologie</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/freizeit_sport.html">Freizeit &amp; Sport</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/soziales_gesundheit.html">Soziales &amp; Gesundheit</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/planen_bauen_wohnen.html">Planen, Bauen, Wohnen</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/verkehr_umwelt.html">Verkehr &amp; Umwelt</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/kultur.html">Kultur</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/medien.html">Medien</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/buergernetz.html">Bürgernetz</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/stadtteile.html">Stadtteile</a>
+		
+				</li>
+		 		
+  				<li>
+					<a href="/westfalen.html">Westfalen</a>
+		
+				</li>
+		 		</ul>
+  <img src="/skin/muenster/pics/wissenschaft-lebensart.gif" width="211" height="151" alt="Stempel: 'Münster - Wissenschaft und Lebensart'" />
+			</div>
+			
+							<div id="dienste">
+	
+
+	
+				
+		
+		
+									
+			
+				
+				
+				
+									<!-- p -->
+				
+									<h3 class="text">Kontakt</h3>
+<p class="modul2">Verein Bürgernetz<br />
+Telefon: 02 51/5 45 22<br />
+Fax: 02 51/5 45 38</p>
+<ul class="modul2">
+<li class="mail"><a href="mailto:veranstaltungen@muenster.de">veranstaltungen@muenster.de</a> </ul>
+
+					<h3 class="text">Mehr Termine</h3>
+				 <h4 class="vk">Kino</h4>
+	      	<ul class="vk">
+           <li class="extern"><a href="http://www.cineplex.de/muenster" target="_blank" title="öffnet Seite im neuen Fenster">Cineplex &amp; Schloßtheater</a></li>
+           <li class="extern"><a href="http://www.cinema-muenster.de/" target="_blank" title="öffnet Seite im neuen Fenster">Cinema/Die Linse</a></li>
+          </ul>
+         
+         <h4>Stadtführungen</h4>
+          <ul class="vk">
+           <li class="extern"><a href="http://www.stadt-lupe.de/" target="_blank" title="öffnet Seite im neuen Fenster">Stadt Lupe Münster</a></li>
+           <li class="extern"><a href="http://www.stattreisen-muenster.de" target="_blank" title="öffnet Seite im neuen Fenster">Stattreisen</a></li>
+           <li class="extern"><a href="http://www.stadtfuehrungen-in-muenster.de" target="_blank" title="öffnet Seite im neuen Fenster">k3 Stadtführungen</a></li>
+           <li class="extern"><a href="http://www.eat-the-world.com/muenster.html" target="_blank" title="öffnet Seite im neuen Fenster">eat-the-world Münster</a><br />
+           Kulinarisch-kulturelle Touren</li>
+ <li class="extern"><a href="http://www.make-history.de/" target="_blank" title="öffnet Seite im neuen Fenster">make! history</a><br />
+           Stadthistorische Führungen</li>
+           <li class="extern"><a href="http://www.muenster.org/schwarze-witwe/rundgang.htm" target="_blank" title="öffnet Seite im neuen Fenster">Frauenhistorische Stadtrundgänge</a><br />
+           von Frauen für Frauen</li>
+           <li class="extern"><a href="http://www.muenster.org/frauenstadtrundgang" target="_blank" title="öffnet Seite im neuen Fenster">Stadtspaziergänge zur Frauengeschichte</a></li>
+           <li class="extern"><a href="http://www.moellenbaum.de/node/2" target="_blank" title="öffnet Seite im neuen Fenster">Frau Möllenbaums<br>Stadtführungen</a></li>
+           <li class="extern"><a href="http://www.muensteraner-stadtrundfahrten.de" target="_blank" title="öffnet Seite im neuen Fenster">Stadtrundfahrten</a></li> 
+           <li class="extern"><a href="http://www.muensterbus.ms" target="_blank" title="öffnet Seite im neuen Fenster">Der Münsterbus</a></li>
+ <li class="extern"><a href="http://www.muensterradguide.de/touren/in-muenster" target="_blank" title="öffnet Seite im neuen Fenster">MünsterRadGuide</a><br />Geführte Fahrradtouren</li>
+					</ul>
+					<h4>Märkte</h4>
+					<ul class="vk">
+					 <li class="extern"><a href="http://www.muenster.de/stadt/maerkte/markt.html" target="_blank" title="öffnet Seite im neuen Fenster">Wochenmärkte</a></li>
+					</ul>
+				
+				
+									<!-- </p> -->
+				
+			
+							
+		
+	 
+</div>													<!-- body.html existiert -->		<div id="inhalt">
+		  <a name="inhalt"></a>
+		<h2 class="u">Seiteninhalt</h2>
+		<!-- content BEGIN -->
+				   <div id="brot">
+   <a href="http://www.muenster.de/index.html">Homepage</a>
+<a href="http://termine.muenster.org">Veranstaltungskalender Münster</a>
+   </div>
+
+    <!-- <h1>Veranstaltungen in Münster</h1> -->
+
+		<div id="veranstaltungskalender">
+
+
+
+			<h1> Veranstaltungskalender M&uuml;nster </h1>
+			<div class="suche">
+
+
+						<!-- <h2></h2> -->
+		<div class="navigation">
+			<div class="aktiv "> <a href="https://www.muenster.de/veranstaltungskalender/scripts/frontend/suche.php">Termine suchen</a> </div>
+			<div class=" "> <a href=" https://www.muenster.de/veranstaltungskalender/scripts/frontend/top-veranstaltungen.php ">Top-Tipps</a> </div>
+			<div class=" "> <a href=" https://www.muenster.de/veranstaltungskalender/scripts/frontend/eingabe.php?emptyInput=1 ">Veranstaltung eintragen</a> </div>
+			<!-- <div class=" "> <a href="  ">Hilfe</a> </div> -->
+		</div>
+		<!-- ENDE navigation -->
+		
+								<h2>Veranstaltungssuche</h2>
+				<div class="einleitung">
+					<span style="font-weight: bold;">Willkommen beim Veranstaltungskalender des Presseamts der Stadt M&uuml;nster.</span><br />
+					Um die Terminsuche einzuschr&auml;nken, bitte Zeitraum, Rubrik, Zielpublikum und/oder Stichwort vorgeben. Wenn Sie eine Veranstaltung vermissen, können Sie den Termin hier selbst eingeben.
+				</div>
+				<!-- ENDE einleitung -->
+		
+						<form id="vk-suchformular" method="post" action="https://www.muenster.de/veranstaltungskalender/scripts/frontend/sucheVerarbeiten.php" accept-charset="UTF-8">
+
+			<fieldset class="zeitraum">
+
+				<legend>Wann?</legend>
+
+								<div class="radio-group zeitraum-content">
+
+					<!-- <div class="radio-group-label">Zeitraum</div> -->
+					<div class="type-radio heute-wrapper">
+						<input type="radio" name="zeitraum" value="heute" id="heute"  />
+						<label for="heute">Heute, 10.3.17 </label>
+					</div>
+					<div class="type-radio morgen-wrapper">
+						<input type="radio" name="zeitraum" value="morgen" id="morgen"  />
+						<label for="morgen">Morgen, 11.3.17 </label>
+					</div>
+					<div class="type-radio aktuelles-wochenende-wrapper">
+						<input type="radio" name="zeitraum" value="aktuelles-wochenende" id="aktuelles-wochenende"  />
+						<label for="aktuelles-wochenende">aktuelles Wochenende, 10.3.17 - 12.3.17						</label>
+					</div>
+					<div class="type-radio naechstes-wochenende-wrapper">
+						<input type="radio" name="zeitraum" value="naechstes-wochenende" id="naechstes-wochenende"  />
+						<label for="naechstes-wochenende">n&auml;chstes Wochenende, 17.3.17 - 19.3.17						</label>
+					</div>
+					<div class="type-radio zeitraum-wrapper">
+												<input type="radio" name="zeitraum" value="zeitraum" id="zeitraum" checked="checked" />
+												<label for="zeitraum">Zeitraum: </label>
+						<div class="zeitraum-eingabefelder">
+														<div class="type-text datum-von">
+								<span>von</span> <input type="text" name="datum_von" id="datum-von" value="" />
+							</div>
+														<div class="type-text datum-bis">
+								<span>bis</span> <input type="text" name="datum_bis" id="datum-bis" value="" />
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</fieldset>
+
+
+			<fieldset class="rubriken-suchstring">
+
+				<legend>Was?</legend>
+
+				<div class="type-text anmerkung">
+					<span>Anmerkung:</span> Ohne Kategorieauswahl wird in allen Kategorien gesucht.
+				</div>
+
+								<div class="checkbox-group rubriken">
+
+					<!-- <div class="checkbox-group-label">Rubriken</div> -->
+					<div class="spalte-1">
+						<div class="type-check ausstellungen-wrapper">
+							<input type="checkbox" name="rubriken[]" value="ausstellungen" id="ausstellungen"  />
+							<label for="ausstellungen">Ausstellungen</label>
+						</div>
+						<div class="type-check bildung-information-wrapper">
+							<input type="checkbox" name="rubriken[]" value="bildung-information" id="bildung-information"  />
+							<label for="bildung-information">Bildung, Information, Diskussion</label>
+						</div>
+						<div class="type-check fuehrungen-wrapper">
+							<input type="checkbox" name="rubriken[]" value="fuehrungen" id="fuehrungen"  />
+							<label for="fuehrungen">F&uuml;hrungen</label>
+						</div>
+						<div class="type-check kabarett-lesungen-wrapper">
+							<input type="checkbox" name="rubriken[]" value="kabarett-lesungen" id="kabarett-lesungen"  />
+							<label for="kabarett-lesungen">Kabarett, Comedy, Lesungen</label>
+						</div>
+						<div class="type-check konzerte-wrapper">
+							<input type="checkbox" name="rubriken[]" value="konzerte" id="konzerte"  />
+							<label for="konzerte">Konzerte</label>
+						</div>
+						<div class="type-check messen-maerkte-wrapper">
+							<input type="checkbox" name="rubriken[]" value="messen-maerkte" id="messen-maerkte"  />
+							<label for="messen-maerkte">Messen &amp; M&auml;rkte</label>
+						</div>
+					</div>
+					<!-- ENDE spalte-1 -->
+					<div class="spalte-2">
+						<div class="type-check party-wrapper">
+							<input type="checkbox" name="rubriken[]" value="party" id="party"  />
+							<label for="party">Partys &amp; Feste</label>
+						</div>
+						<div class="type-check politik-buergerbeteiligung-wrapper">
+							<input type="checkbox" name="rubriken[]" value="politik-buergerbeteiligung" id="politik-buergerbeteiligung"  />
+							<label for="politik-buergerbeteiligung">Politik &amp; B&uuml;rgerbeteiligung</label>
+						</div>
+						<div class="type-check sport-wrapper">
+							<input type="checkbox" name="rubriken[]" value="sport" id="sport"  />
+							<label for="sport">Sport</label>
+						</div>
+						<div class="type-check theater-tanz-wrapper">
+							<input type="checkbox" name="rubriken[]" value="theater-tanz" id="theater-tanz"  />
+							<label for="theater-tanz">Theater &amp; Tanz</label>
+						</div>
+						<div class="type-check stadt-mix-wrapper">
+							<input type="checkbox" name="rubriken[]" value="stadt-mix" id="stadt-mix"  />
+							<label for="stadt-mix">Stadt-Mix</label>
+						</div>
+											</div>
+					<!-- ENDE spalte-2 -->
+
+				</div>
+
+								<div class="type-text suchstring-wrapper">
+					<label for="suchstring">Suchbegriffe</label>
+										<input type="text" name="suchstring" id="suchstring" value="optional (max. 6)" onFocus="if(this.value=='optional (max. 6)') this.value=''; this.style.color='#000';" onChange="this.style.color='#000';" />
+					
+					<div class="radio-group volltextsuche-verknuepfung">
+						<!-- <div class="radio-group-label">Zeitraum</div> -->
+						<div class="type-radio und-wrapper">
+
+														<input type="radio" name="volltextsuche-verknuepfung" value="und" id="und" checked="checked" />
+														<label for="und">UND</label>
+						</div>
+						<div class="type-radio oder-wrapper">
+							<input type="radio" name="volltextsuche-verknuepfung" value="oder" id="oder"  />
+							<label for="oder">ODER</label>
+						</div>
+					</div>
+
+				</div>
+
+			</fieldset>
+
+
+			<fieldset class="zielpublikum">
+
+				<legend>Für wen?</legend>
+
+								<div class="radio-group zielgruppe">
+
+					<!-- <div class="radio-group-label">Zielpublikum</div> -->
+					<div class="spalte-1">
+						<div class="type-radio alle-wrapper">
+														<input type="radio" name="zielgruppe" value="alle" id="alle" checked="checked" />
+														<label for="alle">alle (keine Einschr&auml;nkung)</label>
+						</div>
+					</div>
+					<!-- ENDE spalte-1 -->
+					<div class="spalte-2">
+						<div class="type-radio kinder-wrapper">
+							<input type="radio" name="zielgruppe" value="kinder" id="kinder"  />
+							<label for="kinder">f&uuml;r Kinder</label>
+						</div>
+						<div class="type-radio senioren-wrapper">
+							<input type="radio" name="zielgruppe" value="senioren" id="senioren"  />
+							<label for="senioren">f&uuml;r &auml;ltere Menschen</label>
+						</div>
+					</div>
+					<!-- ENDE spalte-2 -->
+
+
+				</div>
+
+			</fieldset>
+
+
+
+			<div class="form-control-buttons">
+				<span class="type-button reset">
+					<input type="reset" name="reset" value="Alle Angaben l&ouml;schen" class="doNotDelVal" />
+				</span>
+				<span class="type-button submit">
+					<input type="submit" name="submit" value="Suchen" class="doNotDelVal" />
+				</span>
+			</div>
+
+
+		</form>
+		
+
+			</div>
+			<!-- ENDE suche -->
+
+
+
+		</div>
+		<!-- ENDE veranstaltungskalender -->
+
+		</div>
+<!-- ENDE inhalt --><div id="social">
+			<p class="r"><a href="#top" class="top">Seitenanfang</a></p>
+		 <p>Diese Seite bookmarken bei<span id="socialText">...</span></p>
+		 <p><a href="http://de.facebook.com/share.php" onclick="socialDo('facebook');return false;"><img src="/skin/muenster/pics/facebook.gif" alt="Facebook" title="Facebook" onmouseover="socialOver('facebook');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://twitter.com" onclick="socialDo('twitter');return false;"><img src="/skin/muenster/pics/twitter.gif" alt="Twitter" title="Twitter" onmouseover="socialOver('Twitter');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://del.icio.us/" onclick="socialDo('delicious');return false;"><img src="/skin/muenster/pics/delicious.gif" alt="del.icio.us" title="del.icio.us" onmouseover="socialOver('del.icio.us');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://www.folkd.com" onclick="socialDo('folkd');return false;"><img src="/skin/muenster/pics/folkd.gif" alt="Folkd" title="Folkd" onmouseover="socialOver('Folkd');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://www.google.com" onclick="socialDo('google');return false;"><img src="/skin/muenster/pics/google.gif" alt="Google" title="Google" onmouseover="socialOver('Google');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://linkarena.com" onclick="socialDo('linkarena');return false;"><img src="/skin/muenster/pics/linkarena.gif" alt="Linkarena" title="Linkarena" onmouseover="socialOver('Linkarena');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://digg.com" onclick="socialDo('digg');return false;"><img src="/skin/muenster/pics/digg.gif" alt="digg" title="digg" onmouseover="socialOver('digg');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://www.oneview.de" onclick="socialDo('oneview');return false;"><img src="/skin/muenster/pics/oneview.gif" alt="oneview" title="OneView" onmouseover="socialOver('OneView');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://www.webnews.de" onclick="socialDo('webnews');return false;"><img src="/skin/muenster/pics/webnews.gif" alt="Webnews" title="Webnews" onmouseover="socialOver('Webnews');" onmouseout="socialOver('');" height="20" width="20" border="0" /></a><a href="http://de.wikipedia.org/wiki/Social_Bookmarks" target="_blank" title="Was sind social bookmarks?"><img src="/skin/muenster/pics/fragezeichen.gif" class="help" alt="" height="11" width="11" border="0" /></a></p>
+		</div>
+			<div id="fuss">
+				<p><a href="/informationen.html" class="intern">Informationen zu muenster.de</a> - <a href="/impressum.html" class="intern">Impressum</a></p>
+			</div>
+			<hr class="clear" />
+		</div> <!-- hg-rechts -->
+		</div> <!-- hg-links -->
+	</div> <!-- seite -->
+<script type="text/javascript">
+	var pkBaseURL = "/";
+	document.write(unescape("%3Cscript src=\'" + pkBaseURL + "piwik.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+	
+</script>
+
+<noscript>
+	<p>
+			</p>
+</noscript></body>
+</html>

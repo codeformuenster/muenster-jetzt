@@ -1,0 +1,471 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hafenkäserei - ECPv6.18.4.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Hafenkäserei
+X-ORIGINAL-URL:https://hafenkaeserei.de
+X-WR-CALDESC:Veranstaltungen für Hafenkäserei
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+X-Robots-Tag:noindex
+X-PUBLISHED-TTL:PT1H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:20250330T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:20251026T010000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:20260329T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:20261025T010000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:20270328T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:20271031T010000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261126T160000
+DTEND;TZID=Europe/Berlin:20261126T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002335-1795708800-1795723200@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-11-26/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261127T160000
+DTEND;TZID=Europe/Berlin:20261127T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002336-1795795200-1795809600@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-11-27/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261129T080000
+DTEND;TZID=Europe/Berlin:20261129T170000
+DTSTAMP:20261110T084016Z
+CREATED:20261110T083739Z
+LAST-MODIFIED:20261110T084016Z
+UID:10002450-1795939200-1795971600@hafenkaeserei.de
+SUMMARY:Frühstücksbuffet
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/fruehstuecksbuffet/2026-11-29/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2025/08/Hafenkaeserei_Fruehstuecksbuffet.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261129T120000
+DTEND;TZID=Europe/Berlin:20261129T170000
+DTSTAMP:20251210T152050Z
+CREATED:20251208T115635Z
+LAST-MODIFIED:20251210T152050Z
+UID:10001944-1795953600-1795971600@hafenkaeserei.de
+SUMMARY:Kaffee\, Kuchen & Käse
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaffee-kuchen-kaese/2026-11-29/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2021/04/bistro-bei-offener-fensterfront.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261129T130000
+DTEND;TZID=Europe/Berlin:20261129T150000
+DTSTAMP:20261102T085519Z
+CREATED:20260224T094909Z
+LAST-MODIFIED:20261102T085519Z
+UID:10002309-1795957200-1795964400@hafenkaeserei.de
+SUMMARY:Käseglück
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaeseglueck-2/2026-11-29/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/02/Hafenkaeserei_Affinage.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261203T160000
+DTEND;TZID=Europe/Berlin:20261203T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002337-1796313600-1796328000@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-03/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261203T170000
+DTEND;TZID=Europe/Berlin:20261203T190000
+DTSTAMP:20261102T085519Z
+CREATED:20260224T094909Z
+LAST-MODIFIED:20261102T085519Z
+UID:10002312-1796317200-1796324400@hafenkaeserei.de
+SUMMARY:Käseglück
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaeseglueck-2/2026-12-03/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/02/Hafenkaeserei_Affinage.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261204T160000
+DTEND;TZID=Europe/Berlin:20261204T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002338-1796400000-1796414400@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-04/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261206T080000
+DTEND;TZID=Europe/Berlin:20261206T170000
+DTSTAMP:20261110T084016Z
+CREATED:20261110T083739Z
+LAST-MODIFIED:20261110T084016Z
+UID:10002451-1796544000-1796576400@hafenkaeserei.de
+SUMMARY:Frühstücksbuffet
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/fruehstuecksbuffet/2026-12-06/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2025/08/Hafenkaeserei_Fruehstuecksbuffet.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261206T120000
+DTEND;TZID=Europe/Berlin:20261206T170000
+DTSTAMP:20251210T152050Z
+CREATED:20251208T115635Z
+LAST-MODIFIED:20251210T152050Z
+UID:10001945-1796558400-1796576400@hafenkaeserei.de
+SUMMARY:Kaffee\, Kuchen & Käse
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaffee-kuchen-kaese/2026-12-06/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2021/04/bistro-bei-offener-fensterfront.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261206T130000
+DTEND;TZID=Europe/Berlin:20261206T150000
+DTSTAMP:20261102T085519Z
+CREATED:20260224T094909Z
+LAST-MODIFIED:20261102T085519Z
+UID:10002313-1796562000-1796569200@hafenkaeserei.de
+SUMMARY:Käseglück
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaeseglueck-2/2026-12-06/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/02/Hafenkaeserei_Affinage.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261210T160000
+DTEND;TZID=Europe/Berlin:20261210T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002339-1796918400-1796932800@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-10/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261210T183000
+DTEND;TZID=Europe/Berlin:20261210T220000
+DTSTAMP:20261117T135252Z
+CREATED:20260909T132019Z
+LAST-MODIFIED:20261117T135252Z
+UID:10002508-1796927400-1796940000@hafenkaeserei.de
+SUMMARY:Käsefondue
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaesefondue/2026-12-10/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2024/06/Hafenkaeserei_Kaesefondue-2.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261211T160000
+DTEND;TZID=Europe/Berlin:20261211T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002340-1797004800-1797019200@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-11/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261213T080000
+DTEND;TZID=Europe/Berlin:20261213T170000
+DTSTAMP:20261110T084016Z
+CREATED:20261110T083739Z
+LAST-MODIFIED:20261110T084016Z
+UID:10002452-1797148800-1797181200@hafenkaeserei.de
+SUMMARY:Frühstücksbuffet
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/fruehstuecksbuffet/2026-12-13/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2025/08/Hafenkaeserei_Fruehstuecksbuffet.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261213T120000
+DTEND;TZID=Europe/Berlin:20261213T170000
+DTSTAMP:20251210T152050Z
+CREATED:20251208T115635Z
+LAST-MODIFIED:20251210T152050Z
+UID:10001946-1797163200-1797181200@hafenkaeserei.de
+SUMMARY:Kaffee\, Kuchen & Käse
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaffee-kuchen-kaese/2026-12-13/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2021/04/bistro-bei-offener-fensterfront.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261213T130000
+DTEND;TZID=Europe/Berlin:20261213T150000
+DTSTAMP:20261102T085519Z
+CREATED:20260224T094909Z
+LAST-MODIFIED:20261102T085519Z
+UID:10002314-1797166800-1797174000@hafenkaeserei.de
+SUMMARY:Käseglück
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaeseglueck-2/2026-12-13/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/02/Hafenkaeserei_Affinage.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261216T183000
+DTEND;TZID=Europe/Berlin:20261216T220000
+DTSTAMP:20261117T135252Z
+CREATED:20260909T132019Z
+LAST-MODIFIED:20261117T135252Z
+UID:10002509-1797445800-1797458400@hafenkaeserei.de
+SUMMARY:Käsefondue
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaesefondue/2026-12-16/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2024/06/Hafenkaeserei_Kaesefondue-2.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261217T160000
+DTEND;TZID=Europe/Berlin:20261217T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002341-1797523200-1797537600@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-17/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261217T170000
+DTEND;TZID=Europe/Berlin:20261217T190000
+DTSTAMP:20261102T085519Z
+CREATED:20260224T094909Z
+LAST-MODIFIED:20261102T085519Z
+UID:10002315-1797526800-1797534000@hafenkaeserei.de
+SUMMARY:Käseglück
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaeseglueck-2/2026-12-17/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/02/Hafenkaeserei_Affinage.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261218T160000
+DTEND;TZID=Europe/Berlin:20261218T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002342-1797609600-1797624000@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-18/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261219T180000
+DTEND;TZID=Europe/Berlin:20261219T200000
+DTSTAMP:20261119T075302Z
+CREATED:20251110T095122Z
+LAST-MODIFIED:20261119T075302Z
+UID:10002326-1797703200-1797710400@hafenkaeserei.de
+SUMMARY:Käse-Bier Pairing
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaese-bier-pairing-2/2026-12-19/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2021/06/Kaese-Bier.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261219T183000
+DTEND;TZID=Europe/Berlin:20261219T220000
+DTSTAMP:20261117T135252Z
+CREATED:20260909T132019Z
+LAST-MODIFIED:20261117T135252Z
+UID:10002510-1797705000-1797717600@hafenkaeserei.de
+SUMMARY:Käsefondue
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaesefondue/2026-12-19/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2024/06/Hafenkaeserei_Kaesefondue-2.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261220T080000
+DTEND;TZID=Europe/Berlin:20261220T170000
+DTSTAMP:20261110T084016Z
+CREATED:20261110T083739Z
+LAST-MODIFIED:20261110T084016Z
+UID:10002453-1797753600-1797786000@hafenkaeserei.de
+SUMMARY:Frühstücksbuffet
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/fruehstuecksbuffet/2026-12-20/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2025/08/Hafenkaeserei_Fruehstuecksbuffet.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261220T120000
+DTEND;TZID=Europe/Berlin:20261220T170000
+DTSTAMP:20251210T152050Z
+CREATED:20251208T115635Z
+LAST-MODIFIED:20251210T152050Z
+UID:10001947-1797768000-1797786000@hafenkaeserei.de
+SUMMARY:Kaffee\, Kuchen & Käse
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaffee-kuchen-kaese/2026-12-20/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2021/04/bistro-bei-offener-fensterfront.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261220T130000
+DTEND;TZID=Europe/Berlin:20261220T150000
+DTSTAMP:20261102T085519Z
+CREATED:20260224T094909Z
+LAST-MODIFIED:20261102T085519Z
+UID:10002316-1797771600-1797778800@hafenkaeserei.de
+SUMMARY:Käseglück
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaeseglueck-2/2026-12-20/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/02/Hafenkaeserei_Affinage.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261224T160000
+DTEND;TZID=Europe/Berlin:20261224T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002343-1798128000-1798142400@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-24/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261225T160000
+DTEND;TZID=Europe/Berlin:20261225T200000
+DTSTAMP:20261106T074205Z
+CREATED:20261106T074205Z
+LAST-MODIFIED:20261106T074205Z
+UID:10002344-1798214400-1798228800@hafenkaeserei.de
+SUMMARY:Werksverkauf 2.0
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/werksverkauf-2-0/2026-12-25/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2026/09/Lager31-scaled-1-e1790327449789.jpeg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261227T080000
+DTEND;TZID=Europe/Berlin:20261227T170000
+DTSTAMP:20261110T084016Z
+CREATED:20261110T083739Z
+LAST-MODIFIED:20261110T084016Z
+UID:10002454-1798358400-1798390800@hafenkaeserei.de
+SUMMARY:Frühstücksbuffet
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/fruehstuecksbuffet/2026-12-27/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2025/08/Hafenkaeserei_Fruehstuecksbuffet.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261227T120000
+DTEND;TZID=Europe/Berlin:20261227T170000
+DTSTAMP:20251210T152050Z
+CREATED:20251208T115635Z
+LAST-MODIFIED:20251210T152050Z
+UID:10001948-1798372800-1798390800@hafenkaeserei.de
+SUMMARY:Kaffee\, Kuchen & Käse
+DESCRIPTION:Handgemacht\, ehrlich\, direkt aus Münsters Hafen – mit unseren Geschenkpaketen bringst du echten Geschmack unter die Leute. Ob für echte Seebären\, Genießer oder als Mitbringsel für den nächsten Heimathafen: Hier ist für jeden Geschmack das Richtige an Bord! Mit dem beigelegten  Pairing – Guide können die ausgewählten Käse und Biersorten perfekt kombiniert werden.  Jetzt online HIER bestellen > Abholung am 20. / 21. & 22.12.2026 zwischen 10.00 h und 15.00 h bei uns an der Hafenkäserei.   1. Paket: „Der Matrose“ – Der perfekte Einsteiger für Deichgrafen und Hafen-Entdecker. Kompakt\, ehrlich und lecker! Das Paket „Matrose“ vereint feinsten Käse aus der Hafenkäserei mit einem kühlen\, ehrlichen Hellen von der Finnebrauerei gleich nebenan. Dazu gibt es einen 10€-Gutschein für den nächsten Stopp bei uns im Hafen. Das ideale Geschenk\, um echtes Münsteraner Handwerk zu verschenken! Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 10\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)  2. Paket: „ Der Matrose Deluxe“ Für alle\, die eine Schippe drauflegen wollen.Wenn der kleine Hunger nach Meer ruft\, aber das Genusserlebnis noch etwas größer sein darf! Im Paket „Matrose Deluxe“ wartet neben unserem charaktervollen Käse und dem spritzigen Finne Hellen ein dickerer 20€-Gutschein auf den Beschenkten. Perfekt\, um sich im Laden direkt noch ein Lieblingsstück auszusuchen. Inhalt: 1 Stück Hafenkäse1 Flasche frisches Finne Helles (0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 20\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort) 3. Paket: „Der Kapitän“ Für die große Fahrt und echte Genuss-Kapitäne.Für die große Fahrt und echte Genuss-Kapitäne.Hier übernimmt der Kapitän das Ruder! Dieses Paket ist vollgepackt mit gleich zwei verschiedenen Käsespezialitäten aus der Hafenkäserei und drei verschiedene Flaschen feinstem Finnebier. Mit dem 30€-Gutschein im Gepäck steht dem nächsten Käsestreifzug durch den Hafen nichts mehr im Weg. Ein echtes Statement für Genießer! Inhalt: 2 Stücke Hafenkäse3 Flaschen frisches Finne Helles (je 0\,33 l)1 Hafenkäserei Feigensenf1 Gutschein im Wert von 30\,00 € (einlösbar an der Online Käsetheke\, für unsere Events oder bei uns vor Ort)
+URL:https://hafenkaeserei.de/event/kaffee-kuchen-kaese/2026-12-27/
+LOCATION:Hafenkäserei\, Am Mittelhafen 20\, Münster\, Nordrhein-Westfalen\, 48155\, Deutschland
+ATTACH;FMTTYPE=image/jpeg:https://hafenkaeserei.de/wp-content/uploads/2021/04/bistro-bei-offener-fensterfront.jpg
+ORGANIZER;CN="Genusshafen M%C3%BCnster GmbH":MAILTO:info@hafenkaeserei.de
+END:VEVENT
+END:VCALENDAR

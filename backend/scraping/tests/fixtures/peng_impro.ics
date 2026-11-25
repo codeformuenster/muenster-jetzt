@@ -1,0 +1,140 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:spatie/icalendar-generator
+NAME:Peng! Impro
+X-WR-CALNAME:Peng! Impro
+DESCRIPTION:www.YesTicket.org-Peng! Impro
+X-WR-CALDESC:www.YesTicket.org-Peng! Impro
+REFRESH-INTERVAL;VALUE=DURATION:PT1440M
+X-PUBLISHED-TTL:PT1440M
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+DTSTART:20260329T020000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:20261025T030000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20270328T020000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:20271031T030000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20280326T020000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:UTC
+BEGIN:STANDARD
+DTSTART:20260228T095014
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:26515_7cb495cff4c04c84ba9d02e7e38cf3f6
+DTSTAMP:20261125T095014Z
+DTSTART;TZID=Europe/Berlin:20261130T193000
+DTEND;TZID=Europe/Berlin:20261130T213000
+SUMMARY:Peng! Stark-Strom-Impro (Peng! Impro)
+DESCRIPTION:Peng! Impro wagt den völligen Freiflug: Geschichten\, Szenen\,
+  Spielfilme … Alles aus dem Nichts. Völlig ungeplant – nur mit Euren 
+ Vorgaben. Wie Kopfkino - nur in echt. Top? Flop? Alles! Mit Hochspannung.\
+ n\nSpieldauer ca. 2 Stunden inkl. einer Pause.\n\nFür diese Show kannst d
+ u unsere Gutscheine einlösen. Schreib dann einfach eine Mail an peng.impr
+ o@gmail.com.
+URL:https://www.yesticket.org/event/de/peng-stark-strom-impro-30-11-26
+LOCATION:Alter Steinweg 37\, Münster\, Nordrhein-Westfalen\, Deutschland
+ORGANIZER;CN=Peng! Impro:MAILTO:peng.impro@gmail.com
+END:VEVENT
+BEGIN:VEVENT
+UID:30666_7cb495cff4c04c84ba9d02e7e38cf3f6
+DTSTAMP:20261125T095014Z
+DTSTART;TZID=Europe/Berlin:20270117T180000
+DTEND;TZID=Europe/Berlin:20270117T200000
+SUMMARY:Geschichten aus dem Leben mit Frau Line und Peng! Impro  (Peng! Imp
+ ro)
+DESCRIPTION:Diese Improshow gibt Erlebnissen und Erinnerungen Raum\, lädt 
+ ein\, in das Leben anderer zu tauchen.\n\nIn dieser Ausgabe von „Geschic
+ hten aus dem Leben“ richten wir den Blick auf die Geschichten und Arbeit
+ en von Inga. Sie ist Designerin\, Autorin und der kreative Kopf hinter @by
+ frauline.\n\nIn ihrer Arbeit verbindet sie Handarbeit mit Feminismus und m
+ acht Geschichten sichtbar\, die sonst oft unerzählt bleiben. Mit ihrem In
+ stagram-Format Hooked on Her Story erzählt sie regelmäßig von Frauen\, 
+ die in unserer Geschichtsschreibung nicht den Platz bekommen haben\, den s
+ ie verdienen.\n\nNeben ihren gehäkelten Frauenfiguren bringt Inga auch ih
+ r ganz neues Buch mit und liest daraus vor.\n\nGemeinsam entsteht ein viel
+ schichtiges Bild: Geschichten von Frauen und Geschichten von der Arbeit un
+ d dem Leben von Inga. Inspiriert davon lässt Peng! auf der Bühne Szenen\
+ , Geschichten\, Lieder und Charaktere entstehen. Geschichten aus dem Leben
+  eben!
+URL:https://www.yesticket.org/event/de/geschichten-aus-dem-leben-mit-frau-l
+ ine-und-peng-impro-17-01-27
+LOCATION:Diepenbrockstraße 28\, Münster\, Nordrhein-Westfalen\, Deutschla
+ nd
+ORGANIZER;CN=Peng! Impro:MAILTO:peng.impro@gmail.com
+END:VEVENT
+BEGIN:VEVENT
+UID:31035_7cb495cff4c04c84ba9d02e7e38cf3f6
+DTSTAMP:20261125T095014Z
+DTSTART;TZID=Europe/Berlin:20270214T180000
+DTEND;TZID=Europe/Berlin:20270214T200000
+SUMMARY: Her*story mit Momentum\, Peng! & Rosa Pfeffer (Peng! Impro)
+DESCRIPTION:In dieser Improshow widmen wir uns den vielen Facetten weiblich
+ er und FLINTA* Geschichte: den leisen Momenten des Zweifelns\, den lauten 
+ des Aufbegehrens\, dem Stolz\, der Wut\, dem Lachen. Wir erkunden reale un
+ d erdachte Biografien und erschaffen Figuren\, die uns mitnehmen in Zeiten
+ \, Räume und Gefühle.\n\nInspiriert von unseren Schuhen und unseren ganz
+  persönlichen Erlebnissen entstehen Geschichten: mutig\, zärtlich\, albe
+ rn oder unbequem. Manche Schuhe stehen für Revolution\, manche für Allta
+ g. Und jede erzählt von FLINTA*\, die waren\, die sind oder sein könnten
+ .\n \nGemeinsam erfinden wir Szenen\, Worte\, Körper und Stimmen voller K
+ raft\, Irrsinn\, Melancholie und Humor. Her*story wird zur Einladung\, wei
+ bliche und FLINTA* Perspektiven zu feiern\, zu hinterfragen und neu zu spi
+ nnen. Bring deine Freund:innen und deine Lust auf Neues mit!\n\nFLINTA* is
+ t ein Begriff\, der für Frauen\, Lesben\, Intergeschlechtliche\, Nichtbin
+ äre und Agender Personen steht.
+URL:https://www.yesticket.org/event/de/-herstory-mit-momentum-peng-rosa-pfe
+ ffer-14-02-27
+LOCATION:Diepenbrockstraße 28\, Münster\, Nordrhein-Westfalen\, Deutschla
+ nd
+ORGANIZER;CN=Peng! Impro:MAILTO:peng.impro@gmail.com
+END:VEVENT
+BEGIN:VEVENT
+UID:25831_7cb495cff4c04c84ba9d02e7e38cf3f6
+DTSTAMP:20261125T095014Z
+DTSTART;TZID=Europe/Berlin:20271111T180000
+DTEND;TZID=Europe/Berlin:20271111T210000
+SUMMARY:International Workshop: Shining through supporting (Peng! Impro)
+DESCRIPTION:True power lies in the people who don’t let you fall when you
+  take that step in the unknown. It is the improvisers on stage that strive
+  to lift up others that shine the brightest. It is the ones\, who master t
+ he art of letting go of their own ego\, in order to serve and soar\, that 
+ generate a safe and inviting space\, where we feel loved\, heard and calle
+ d to play. Their cunning eye always notices little twitches\, nervousness 
+ of their coplayers and through unconditional support\, they bring out the 
+ best of us.\nDuring the workshop we will revisit the concepts of supportin
+ g on stage\, we will devise supporting mechanisms and hopefully\, discover
+  new ones! More than ever we need to remind ourselves of the fact that an 
+ ensemble on stage is a (temporary) community.\n\nAlexandre Dumas said it b
+ est through his famous three musketeers: All for one\, one for all!\n\nKur
+ sleitung: Sara Šoukal
+URL:https://www.yesticket.org/event/de/international-workshop-shining-throu
+ gh-supporting-11-11-27
+LOCATION:Diepenbrockstraße 28\, Münster\, Nordrhein-Westfalen\, Deutschla
+ nd
+ORGANIZER;CN=Peng! Impro:MAILTO:peng.impro@gmail.com
+END:VEVENT
+END:VCALENDAR
