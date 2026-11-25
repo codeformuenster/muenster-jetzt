@@ -1,0 +1,481 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Rare Guitar - ECPv6.17.5.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Rare Guitar
+X-ORIGINAL-URL:https://bar.rareguitar.de
+X-WR-CALDESC:Veranstaltungen für Rare Guitar
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+X-Robots-Tag:noindex
+X-PUBLISHED-TTL:PT1H
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:20250330T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:20251026T010000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:20260329T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:20261025T010000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:20270328T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:20271031T010000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:20280326T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:20281029T010000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261127T200000
+DTEND;TZID=Europe/Berlin:20261127T200000
+DTSTAMP:20261118T215401Z
+CREATED:20260122T121655Z
+LAST-MODIFIED:20261118T215401Z
+UID:60782-1795809600-1795809600@bar.rareguitar.de
+SUMMARY:Fällt leider aus: Electric Gypsies - Jimi Hendrix Tribute
+DESCRIPTION:https://www.facebook.com/theelectricgypsies \n\n\nhttps://youtu.be/JmEuBGwYvSQ?si=J2Y8O0tQvZDvawr8 \nDie Gruppe wurde 2013 offiziell gegründet. Das Trio sollte fortan unter dem Namen Electric Gypsies bekannt sein. Ihr erster Auftritt war schnell gebucht\, und viele weitere folgten. Sie spielten auf Festivals wie Brielle Blues\, Oerol\, dem Welons Festival\, Dijkrock\, dem Nijmegen Tribute-Oost Festival und vielen mehr. Darüber hinaus gab es zahlreiche Konzerte und Tourneen von Eindhoven\, Tilburg und Helmond bis Den Haag\, Zoetermeer und Rotterdam\, wo die Electric Gypsies mit ihren energiegeladenen Shows die Bühnen rockten. Mit den Electric Gypsies wollen wir keine Jimi-Hendrix-Imitation schaffen; es gibt nur einen Jimi Hendrix. Mit den Electric Gypsies wollen wir die Musik von Jimi ehren. Obwohl wir als Gruppe Jimi nie live erleben konnten\, versuchen wir\, die Atmosphäre seiner Konzerte einzufangen. Wir möchten mit unseren Konzerten Menschen erreichen\, die Jimis Musik genauso lieben wie wir. Wir hoffen\, seine Musik so am Leben zu erhalten\, damit auch zukünftige Generationen ihn in Erinnerung behalten. Electric Gypsies laden alle herzlich zu einer Live-Show ein. „Lasst uns dieses Erlebnis teilen!“ \n\n\nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/electric-gypsies-jimi-hendrix-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261128T200000
+DTEND;TZID=Europe/Berlin:20261128T200000
+DTSTAMP:20260106T100930Z
+CREATED:20240119T110557Z
+LAST-MODIFIED:20260106T100930Z
+UID:59687-1795896000-1795896000@bar.rareguitar.de
+SUMMARY:Blizzard Of Ozz - Ozzy Osbourne Tribute
+DESCRIPTION:Blizzard of Ozz: \n \n \nEine neue Ära beginnt – No More Tears… \nBlizzard of Ozz\, die gefragteste Ozzy Osbourne und Black Sabbath Tributeband in Europa bietet das dazu passende Programm. \nEine Mischung professioneller Musiker aus Deutschland & England. \nNicht nur die populären Hits wie I donʼt Know\,Mr Crowley\, Bark At The Moon\, War Pigs\, Paranoid\, Dreamer\, No More Tears\, Crazy Train oder Suicide Solution werden absolut authentisch umgesetzt. \nFür wahre Ozz Fans – die ultimativen Songs von den Großmeistern des Heavy Rock & Metal The Prince Of Darkness Mr. Ozzy Osbourne & Black Sabbath! \nLet the madness begin… \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/blizzard-of-ozz-ozzy-osbourne-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2023/12/261128-ozzy.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261203T200000
+DTEND;TZID=Europe/Berlin:20261203T200000
+DTSTAMP:20260730T065757Z
+CREATED:20260715T081407Z
+LAST-MODIFIED:20260730T065757Z
+UID:61044-1796328000-1796328000@bar.rareguitar.de
+SUMMARY:Jamie McLean (US Roots Rock / Americana) + HIERER
+DESCRIPTION:Die Jamie McLean Band vereint Roots Rock\, Southern Soul\, New Orleans Funk\, Delta Blues und eine ordentliche Portion New York Swagger zu einem energiegeladenen und mitreißenden Sound\, der direkt ins Herz und in die Beine geht. Mit ihrer elektrisierenden Bühnenpräsenz\, kraftvollen Vocals\, virtuosem Gitarrenspiel und starken Songs begeistert die Band ihr Publikum weltweit. \nJamie McLean ist ein echter musikalischer Tausendsassa: Er stand bereits mit Größen wie Gregg Allman\, Aaron Neville\, Derek Trucks\, Dr. John\, Taj Mahal\, Johnny Winter\, Tedeschi Trucks Band\, Los Lobos\, Blues Traveler und Marc Broussard auf der Bühne – von der legendären Madison Square Garden Arena bis zum Fuji Rock Festival in Japan. Seine soulige Stimme\, sein ehrliches Songwriting und seine Bühnenpräsenz machen jedes Konzert zu einem unvergesslichen Erlebnis. \nAuf ihrer Europa-Tour 2025 präsentiert die Band ihr brandneues Album „One Step Forward“ (Harmonized Records)\, das in den renommierten Grand Street Studios in Brooklyn\, New York\, aufgenommen und von Ken Coomer (Wilco) produziert wurde. Das Album zeigt die Band auf dem Höhepunkt ihres kreativen Schaffens mit Songs wie der Sommer-Hymne „Summer of Who Knows When“\, der Rocknummer „Too Little Too Late“ oder dem souligen Liebeslied „Calendar Girl“. \nEin besonderes Highlight der Tour ist die Verstärkung an der Gitarre durch den New Yorker Gitarristen Ben Forrester\, der für seine Arbeit mit internationalen Blues-\, Soul- und Americana-Künstlern bekannt ist. \nEin Muss für alle Fans von handgemachter amerikanischer Musik! \n+ HIERER \n \nHIERER macht Musik\, die was will.\nMusik\, die nicht beliebig sein möchte\, ohne krampfhaft anders zu sein.\nTexte\, die ein Anliegen haben\, auch wenns mal weh tut.\nMichael HIERER ist Musiker und tobt sich in jeder Richtung aus\, die ihm spannend erscheint.\nMulti-Instrumentalist mit Studium als Keyboarder\, Sänger mit Musical-Background\, Texter\nmit Stipendium\, Komponist\, Arranger\, Produzent\, Kaffee-Nerd. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/jamie-mclean-us-roots-rock-americana
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/07/Kopie-von-RG-FLyer19.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261205T200000
+DTEND;TZID=Europe/Berlin:20261205T200000
+DTSTAMP:20261010T061722Z
+CREATED:20260219T092656Z
+LAST-MODIFIED:20261010T061722Z
+UID:60823-1796500800-1796500800@bar.rareguitar.de
+SUMMARY:AUSVERKAUFT - AC/DC Tribute - Dirty Deeds
+DESCRIPTION:Dirty Deeds: \n \nSeit über dreizehn Jahren mischen „Dirty Deeds“ aus Osnabrück die Bühnen von Clubs\, Konzerthallen und Stadtfesten mit originalgetreu gecoverten AC/DC Songs auf. Hierbei werden ausschließlich Stücke aus der Ära des legendären ersten Sängers Bon Scott präsentiert\, und das ohne Kompromisse. Schließt man die Augen\, so fühlt man sich zurückversetzt in die Zeit\, als die Band mit dem Album „Highway to hell“ die ersten großen kommerziellen Erfolge feiern konnte. „Dirty Deeds“ hat schon vor Tausenden begeisterten Rockfans gespielt – die mitreißende Bühnenshow und Live-Power der Gruppe ist stets eine Hommage an eine der größten Bands des harten Rock‘n Roll. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/ac-dc-tribute-dirty-deeds-6
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/02/261208-dirtydeeds.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261207T193000
+DTEND;TZID=Europe/Berlin:20261207T233000
+DTSTAMP:20261104T070038Z
+CREATED:20261104T070038Z
+LAST-MODIFIED:20261104T070038Z
+UID:61214-1796671800-1796686200@bar.rareguitar.de
+SUMMARY:Hakan (IT) + Deaf Lingo (IT)
+DESCRIPTION:HAKAN + DEAF LINGO\n2 Punk Bands aus Italien\nEintritt frei!\nUm Spenden wird gebeten! \nHakan formed in 2014 in Bergamo\, a town in the very North of Italy\, by guitarist Andrea Carminati\, bass player Andrea Facheris and drummer Marco Facheris. All of them share singing and songwriting duties. They released four albums\n(the fifth one is in the making) and two 7″. Played Europe several times\, USA\, Canada and Turkey. Their music incorporates the right amounts of punk\, power pop\, garage\, melodic songwriting and\nbrilliantly stupid lyrics. Short and lightning-fast pieces (which rarely reach two minutes)\, double voices\, infectious choirs\, flat guitars and many greetings. Among my favorite pieces\n(okay\, it would be easier to say: all of them) are „King of Edonè“\, „They don’t like it“\, „Pita for breakfast“ and „Hangover girl“.\nSome might say Hakan are Bergamo/Italy’s Garage punk band #1 .playing a killer mix of garage punk and power pop. Think early Marked Men with a snottier edge\,\nRadioactivity\, Kidnappers\, even Mind Spiders! Coincidence? Well…\,the Bergamo based group has a lot in common with the Texas bands: first the taste for acidic and\nmelancholic melodies and then the unhealthy tendency to pop-punk with a thousand per hour. Nevertheless\, the Hakan remain the Hakan and don’t miss a beat on their records!! \n  \nDeaf Lingo began in 2015 as a bedroom solo project and soon evolved into a full band with the desire to perform live.\nTheir first EP\, Split Pee (2015)\, features three tracks marked by a chaotic sound and heavy distortion\, recorded at home with limited gear and makeshift equipment.\nTwo years later\, they released their debut album Bug (2017) on One Chord Wonder and Fatty Liver Records\, showcasing a raw\, lo-fi sound.\nOver the years\, the band has been active on the live circuit\, touring extensively in Italy and across Europe.\nIn 2022\, they signed with Swedish label Lövely Records and released Lingonberry\, a ten-track album blending rock riffs\, pop melodies\, and punk attitude\, marking a clear sonic evolution.\nIn fall 2024\, they released the digital EP Cheesy\, preceded by the single and music video The Ballad of the Eternal Spin.
+URL:https://bar.rareguitar.de/event/hakan-it-deaf-lingo-it
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/jpeg:https://bar.rareguitar.de/wp-content/uploads/2026/11/flyer-hakan-deaf-lingo.jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261209T200000
+DTEND;TZID=Europe/Berlin:20261209T230000
+DTSTAMP:20260914T092832Z
+CREATED:20260914T092832Z
+LAST-MODIFIED:20260914T092832Z
+UID:61140-1796846400-1796857200@bar.rareguitar.de
+SUMMARY:Fuzzing Nation + Last Bølt Ceremony
+DESCRIPTION:Fuzzing nation (Athen/greece) \n \nEntstanden im sonnenverbrannten Untergrund Griechenlands\, bietet Fuzzing Nation aus Athen ein kraftvolles\, mitreißendes Heavy-Rock-Erlebnis. Auf der Grundlage massiver\, fuzzgeladener Riffs\, tiefgründiger\, grooviger Rhythmen und einer rauen Klangtextur fängt die Band die Essenz von Freiheit\, Staub und endloser Bewegung ein. \nLBC- Last bølt Ceremony \n \nRöhrender gitarrensound\, voluminöser Bass und treibende Drums! Das powertrio aus Dortmund verbindet perfekt stoner \, grunge \, psychedelic und post punk in ihren abwechslungsreichen Kompositionen . Seit erscheinen ihres November 2024\, von den Indie Medien gefeierten Erstlingsalbums „Neuzeit“\, begeisterten die drei\, Musikfans auf mehr als 60 Shows in ganz Europa! Ihr im Oktober erschienes zweites Studioalbum delir.ium begeistert durch breitere psychedelischere Klangstrukturen wo die Verquickung verschiedenster Genres von Grunge über Postpunk bis hin zu Stoner\, teilweise in einem Song das Markenzeichen des Powertrios aus Dortmund ist ! \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/fuzzing-nation-last-bolt-ceremony
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/09/RG-FLyer51.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261211T200000
+DTEND;TZID=Europe/Berlin:20261211T230000
+DTSTAMP:20260918T201107Z
+CREATED:20260918T201107Z
+LAST-MODIFIED:20260918T201107Z
+UID:61164-1797019200-1797030000@bar.rareguitar.de
+SUMMARY:Sharktic Thrash Assault: Grindpad + Taskforce Toxicator + Paranoiac
+DESCRIPTION:Sharktic Thrash Assault steht an!\n2026 endet mit einem Knall. Die Thrash-Metal-Bands Grindpad und Taskforce Toxicator schließen sich für zwei exklusive Shows zusammen\, um den Jahresabschluss zu feiern. \nAm 11. Dezember schlägt der Sharktic Thrash Assault bei Rare Guitar in Münster zu. Paranoiac sind als Support am Start. \nDoors: 20:00\nShow: 20:30\nVVK: 18€\nAK: 20€ \nTickets hier: https://shop.taskforce-toxicator.de/produkt/rare-guitar-11-12-26/ \nPresented by:\nBaalphemor\nmetal.de\nSchwermetallisch Reviews \n 
+URL:https://bar.rareguitar.de/event/sharktic-thrash-assault-grindpad-taskforce-toxicator-paranoiac
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/jpeg:https://bar.rareguitar.de/wp-content/uploads/2026/09/773359844_2097164877816649_1418522507594900307_n.jpeg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261212T200000
+DTEND;TZID=Europe/Berlin:20261212T233000
+DTSTAMP:20260122T115110Z
+CREATED:20241210T165859Z
+LAST-MODIFIED:20260122T115110Z
+UID:60140-1797105600-1797118200@bar.rareguitar.de
+SUMMARY:Cowboys from Hell - Italy Pantera Tribute
+DESCRIPTION:  \nAm 8.12.04 wurde „Dimebag“ Darrell Lance Abbott auf einem Konzert seiner Band Damageplan erschossen. Am 22.06.18 starb sein Bruder Vinnie Paul. Weltweiten Ruhm in der Metalszene erlangten die Brüder durch ihre vorherige Band Pantera! Cowboys From Hell – Italy Pantera Tribute zollen dem absoluten Ausnahmegitarristen\, dem Dampfhammer hinter der Schiessbude und der Musik von Pantera Tribut! „WALK!“… to your Ticketdealer!! \nTickets: https://bar.rareguitar.de/tickets \n 
+URL:https://bar.rareguitar.de/event/cowboys-from-hell-italy-pantera-tribute-2
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2024/12/261212-pantera.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261216T200000
+DTEND;TZID=Europe/Berlin:20261216T200000
+DTSTAMP:20260909T072734Z
+CREATED:20260610T103055Z
+LAST-MODIFIED:20260909T072734Z
+UID:61000-1797451200-1797451200@bar.rareguitar.de
+SUMMARY:Greenleaf (SWE) + Black Trail
+DESCRIPTION:Like clockwork\, Swedish stoner rockers GREENLEAF spread their concentrated sludgy energy to disciples of the genre by releasing Echoes From A Mass in 2021\, the successor to their 2018 epic\, Hear The Rivers. The album opener\, “Tides”\, immediately draws the listener into a swirl of guitar driven soundscapes\, while Arvid Hällagård’s remarkable voice merges with hypnotizing background vocals\, ceremonially inviting the listener into a heavy reverie. Floating hypnotic grooves set the stage for the compelling yet chilling “Needle In My Eye” — with its incisive\, driving drums and roaring riffs\, the record’s third song accumulates piece by piece into a modern rock standout\, taking the mind by storm. “Love Undone” breaks in with Tommi Holappa’s acclaimed\, blistering guitar riffs that will keep the listener moving to the mesmerizing\, distinctive sonic layers of GREENLEAF. The bluesy mid-tempo track “Bury Me My Son” digs deep with its poignant lyrics and an extensive\, grooving bass solo\, reminiscent of their roots in the Dozer days. With “March On Higher Grounds”\, the Swedes deliver a dusting of desert-vibes\, merging into a truly catchy refrain\, while closer “What Have We Become” offers a hallucinatory realm of calmness\, setting a bold exclamation mark at the album’s epic end. Once again\, GREENLEAF prove that they dare to think outside the box and deliver a heavy roller comprised of Sebastian Olsson’s rumbling drumming performance\, fuzzy guitars\, Fröhlich’s haunting bass lines\, Arvid Hällagård’s powerful yet ghoulish vocals and undeniable\, heavy stoner\, southern desert and blues vibes. Echoes From A Mass was recorded at Studio Gröndahl in October 2020 by former band member Karl Daniel Lidén\, who also mixed and mastered the record at Tri-Lamb Studios. Lidén is recognized for his work with well-known acts such as Katatonia\, Bloodbath\, Lowrider and Crippled Black Phoenix\, to name a few. \n+ Black Trail \n \nStoner Rock and Sludge Metal from Essen\, Germany  \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/greenleaf-swe-2
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/06/Kopie-von-RG-FLyer22.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261219T200000
+DTEND;TZID=Europe/Berlin:20261219T200000
+DTSTAMP:20260219T094933Z
+CREATED:20260219T094933Z
+LAST-MODIFIED:20260219T094933Z
+UID:60826-1797710400-1797710400@bar.rareguitar.de
+SUMMARY:Spin My Fate + Soul Kite
+DESCRIPTION:Spin My Fate: \n \nSpin My Fate ist moderner\, energiegeladener Rock aus Münster / DE. \nDie fünf langjährigen Freunde Jan\, Simon\, Patrick\, Marcel und Jonas beweisen\, dass man auch ohne großen Geldbeutel einen massiven Sound auf der Bühne und im Studio in vollständiger Eigenregie auf die Beine stellen kann\, ohne Abstriche an Qualität oder gar Emotionalität hinnehmen zu müssen. \nIhr aktuelles Werk Tides (veröffentlicht unter eigenem Label BigVish Records) gleicht einer Flutwelle\, die dich unwiderstehlich mitreißt\, um Dich Dir selbst auszusetzten.\nDenn sowohl musikalisch als auch lyrisch wird schnell klar: Dieses Werk ist persönlich. Nicht nur Gefühlsabgründe werden deutlich thematisiert\, auch politisch und ethisch nimmt Sänger und Texter Jan kein Blatt vor den Mund. Das Ganze wird musikalisch durch robuste Gitarren\, schlabbernde Bass-Saiten und groovige Drums untermalt.\nDes Weiteren laden verträumte Melodien zum Nachdenken ein und runden das Werk eindrucksvoll ab: hier treffen einprägsame Melodien auf dichte\, druckvolle Musik! \nProduziert und geschrieben von Gitarrist Simon und Sänger Jan in ihrem eigenen Kreativhaus in der Nähe Münsters\, wurde das Album vom renommierten Studioengineer Dennis Koehne gemischt\, der schon für den Sound von Bands wie Caliban\, Sodom\, Lacuna Coil und verschiedenen Tatortproduktionen verantwortlich zeichnete. \nSMF sind Familie. Punkt. Drummer Jonas und Gitarrist Simon kennen sich seit dem Kindergarten und fingen schon früh an\, gemeinsam Musik zu schreiben. Sänger Jan lernten sie in ihrer Jugend durch erste Bandprojekte kennen. Beide Seiten bemerkten schnell\, dass die Chemie stimmt\, da Musik aus völliger Überzeugung und purer Leidenschaft – sowohl auf der Bühne als auch im Studio – als absolutes Muss betrachtet wird. Nach dem Eintritt des Bassisten und langjährigen Freundes Patrick\, welcher der Band im Jahre 2018 beitrat\, wird die Band durch den Gitarristen und langjährigen Freund Marcel im Jahr 2020 abgerundet. \nNeben 250 + gespielten Konzerten\, u.a. mit Emil Bulls\, 4Lyn\, Itchy Poopzkid oder Miss Montreal\, gewannen Spin My Fate einige Bandwettbewerbe und tourten\, ohne Hilfe externer Booking Agenturen\, quer durch Deutschland. Im Ausland spielten SMF in Polen und den Niederlanden. Sämtliche Tonträger wurden in Eigenregie veröffentlicht. Mit dem neuen Werk „Tides“ haben Spin My Fate laut eigener Aussage nach einem langen\, unabhängigen Weg schließlich ihre musikalische DNA gefunden. Nun will sich die Band einem möglichst großen Publikum mitteilen. Sie will zeigen\, wer SMF sind und beweisen\, dass es im Leben wichtig ist zusammenzuhalten und konstruktiv nach vorne zu schauen\, um alles Destruktive hinter sich zu lassen! \n+ Soul Kite \n \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/spin-my-fate-soul-kite
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/02/261219-spin.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20261223T200000
+DTEND;TZID=Europe/Berlin:20261223T233000
+DTSTAMP:20260925T113911Z
+CREATED:20260925T113911Z
+LAST-MODIFIED:20260925T113911Z
+UID:61168-1798056000-1798068600@bar.rareguitar.de
+SUMMARY:ReConnected - Souly Night 2026
+DESCRIPTION:reConnected – Münster’s hardest working Band! \nDiese 13-köpfige Truppe bringt neben dem Old-School Soul der 60er und dem Disco-Funk der 70er und 80er auch den Neo-Soul der 2000er auf die Bühne.  \nHier wechseln sich die Blues Brothers mit Earth\, Wind & Fire ab und James Brown gibt Joe Cocker die Klinke in die Hand\, während Aretha Franklin und Tina Turner ihre Mikros an Amy Winehouse und Bruno Mars weiterreichen.  \nDiese geniale Mischung aus alten und neuen Hits im klassischen Motown-Sound zeigt deren musikalische Verwandtschaft aus ansteckenden Grooves und ausgefeilten Arrangements\, die von reConnected bei jeder Show authentisch dargeboten und zelebriert werden. \nFür die groovende Basis sorgt die 4-köpfige Rhythmusgruppe\, für knackige Einwürfe der 5-stimmige Bläsersatz.  \nDie Band schafft dadurch perfekte Bedingungen\, in der sich die Reibeisenstimme des Frontmanns und die Performance der drei Sängerinnen entfalten können. \nSo wird jedes Konzert\, jede Gala\, Betriebsfest\, Hochzeit\, Stadtfest… zu einem Erlebnis\, welches mehrere Generationen begeistert und keinen Fuß stillstehen lässt! \nENJOY THE SHOW & GET (RE)CONNECTED WITH MÜNSTER’S HARDEST WORKING BAND! \nSoundbeispiele\, Fotos\, Infos: \nhttps://www.facebook.com/reconnected.ms \nreconnected\, Jubiläumskonzert\, 20 years\, Clubschiene Münster\, Soulband\, Münster\, 20 Jahr reConnected (youtube.com) \nwww.reconnected.de \nBesetzung: \nAndré René Kastirke (voc)\, Julia Hoffmann (voc) Sandra Busse (voc)\, Kavita Hüffner (voc)\, Matthias Beckmann (tp)\, Markus Wohlgemuth (tp)\, Ian Bartlett (tb)\, Jens Ludewig (sax)\, Werner Beckmann (sax)\, Wilderich Daniel (pno/kb)\, Philipp Scholz (g)\, Tony Turek (b)\, Stefan Schemmelmann (dr) \nLink zum Ticketverkauf   https://weeztix.shop/v44stsys
+URL:https://bar.rareguitar.de/event/reconnected-souly-night-2026
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/jpeg:https://bar.rareguitar.de/wp-content/uploads/2026/09/Souly-Night-rare-guitar.jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270109T200000
+DTEND;TZID=Europe/Berlin:20270109T200000
+DTSTAMP:20260122T120132Z
+CREATED:20231109T145132Z
+LAST-MODIFIED:20260122T120132Z
+UID:59584-1799524800-1799524800@bar.rareguitar.de
+SUMMARY:Foo Fighters Tribute - Monkey Wrench
+DESCRIPTION:Eine der größten Bands dieser Ära – entstanden aus einer der einflussreichsten Bands aller Zeiten (Nirvana). So lässt sich am besten beschreiben welchen Stellenwert die legendären Foo Fighters heute haben. Jeder\, der jemals ein Konzert der Band live erlebt hat\, weiß\, dass sie derzeit eine der energiegeladensten und explosivsten Bands der Welt ist. Vom ersten Ton bis zum letzten Sound ist es laut\, schnell\, melodisch und dynamisch – einfach eine legendäre Rockshow. Monkey Wrench ehrt die Foo Fighters\, indem sie es dem Original gleich tun! Monkey Wrench sind 200% Energie\, Spaß und vor allem kompromissloser\, ehrlicher Rock. Die fünf Bandmitglieder von Monkey Wrench spielen seit über 10 Jahren zusammen und haben Rockmusik im Blut. Sie alle wuchsen mit der Musik der Foo Fighters auf und entwickelten sich mit ihnen. Im Set findet sich alles\, was das Foo Fighters Fan-Herz schneller schlagen lässt: Monkey Wrench\, Hey Johnny Park\, Everlong\, Waiting on a war\, Learn to Fly\, Breakout\, Bridge Burning\, All my life\, The Pretender und mit dem kürzlichen Tod des Helden Taylor Hawkins eine besonders laute Version von „My Hero“. Das beste aus dem Foo Fighters Repertoire live erleben\, mit der Foo Fighters Tribute Band Monkey Wrench in einer fulminanten Bühnenshow. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/foo-fighters-tribute-fly-fighters
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2023/11/270109-monkey.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270115T200000
+DTEND;TZID=Europe/Berlin:20270115T200000
+DTSTAMP:20260311T083714Z
+CREATED:20260311T083714Z
+LAST-MODIFIED:20260311T083714Z
+UID:60877-1800043200-1800043200@bar.rareguitar.de
+SUMMARY:Purple Rising - Deep Purple Tribute
+DESCRIPTION:Deep Purple gilt zusammen mit Led Zeppelin und Black Sabbath als Wegbereiter des klassischen Hard Rock. Mit Titeln wie Black Night\, Smoke on the Water\, Child in Time oder Burn schuf die Band Klassiker für die Ewigkeit\, die auch nach 50 Jahren nichts von ihrer Frische und Authentizität eingebüßt haben. \nPurple Rising interpretiert die Musik von Deep Purple gekonnt virtuos\, ganz im Stil der Siebziger: Furiose Improvisationen und wilde Duelle zwischen Gitarrist Joachim Villwock und Tastenmann Andreas König\, der bereits mit Deep-Purple-Legende Jon Lord auf der Bühne stand\, lassen Songs wie Child in Time und Space Truckin’ gerne auch einmal die 20-Minuten-Marke sprengen. Scheinbar spielend meistert dabei der charismatische\, stimmgewaltige Frontmann Michael Baum den Spagat zwischen sämtlichen Deep-Purple-Sängern. Wie beim Original anno 1970 wird so jedes Konzert zu einem einzigartigen Erlebnis. \nPurple Rising weiß jedoch nicht nur musikalisch\, sondern auch mit einer energiegeladenen Bühnenshow auf Original-Instrumenten zu begeistern. Marshall-Türme\, ein Ludwig-Drumset\, eine Hammond C-3 nebst zwei Leslies und die Fender Stratocaster sind für eine authentische Darbietung ebenso obligatorisch wie die extravaganten Showeinlagen des Gitarristen\, die Erinnerungen an die Bühnenpräsenz des jungen Ritchie Blackmore wach werden lassen. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/purple-rising-deep-purple-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/03/270115-purple.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270116T200000
+DTEND;TZID=Europe/Berlin:20270116T200000
+DTSTAMP:20260219T101611Z
+CREATED:20260219T101611Z
+LAST-MODIFIED:20260219T101611Z
+UID:60829-1800129600-1800129600@bar.rareguitar.de
+SUMMARY:Motörblast - Europe's No.1 Motörhead Tribute Band
+DESCRIPTION:Motörblast ist geballte Motörhead Power seit 2006!! \n \nHier wird nicht nur gecovert\, sondern die Musik und Show von Lemmy und seinen Jungs – in Gedenken an den Motörhead-Frontmann – bis ins Detail zelebriert! \nDr. Ape\, unser deutscher „Lemmy“\, spielt den gleichen legendären Bass-Sound!! Er gleicht mit der angeborenen Warze wie Lemmys Zwilling. VORSICHT die Verwechslungsgefahr ist sehr groß!!! „Ist Lemmy wieder auferstanden?“ werden sich einige hier Fragen! Der Frontmann wurde schon als Double auf dem Wacken Festival eingesetzt und hat dort den feierwütigen Fans das Wein- und Bier Sortiment präsentiert. Die Setliste der Jungs\, liest sich wie eine Greatest Hits Show und beinhaltet Songs der frühen Motörhead-Ära (Bomber)\, genauso wie die letzten Rocker des infernalischen Trios. \nGeboten wird eine totale Motörhead-Illusion\, also eine Rockshow der Xtra-Klasse. Inzwischen ist Motörblast eine feste Institution in Sachen Tribute to Motörhead. Supported wurden international erfolgreiche Acts wie JBO\, Pro Pain\, Motorjesus\, Regner\, Zakk Wylde und viele mehr. Auch bekannte Clubs wie das Colos Saal in Aschaffenburg \, Z7 in Pratteln (Schweiz) und das Graspop Festival (Belgien) standen auf dem Programm. MOTÖRBLAST ist geballte Motörhead Power auf höchstem Niveau\, eine Rock-Show der x.tra-Klasse. \nMOTÖRBLAST are: \nDr. Ape – Lemmy (bass / vocals) \nDr. Overkill – Mikkey (drums) \nH.P. Hammersmith – Phil (guitar / b.vocals) \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/motoerblast-europes-no-1-motoerhead-tribute-band
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/02/270116-motoerblast.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270120T190000
+DTEND;TZID=Europe/Berlin:20270120T230000
+DTSTAMP:20261112T200414Z
+CREATED:20261111T143858Z
+LAST-MODIFIED:20261112T200414Z
+UID:61236-1800471600-1800486000@bar.rareguitar.de
+SUMMARY:AUSVERKAUFT! - Ignite - "Still Wide Awake" Record Release Show
+DESCRIPTION:Ignite are firing on all cylinders with Still Wide Awake\, their highly anticipated new full-length. The album arrives in 2027\, with a string of singles lighting the fuse throughout late 2026. This upcoming release also marks a major milestone for the band with the launch of their very own record label\, 93RPM Records. Taking control of the release from top to bottom\, Ignite are choosing their global partners carefully\, working only with people who share their passion for the band and the music. \nOperating once again as a focused four-piece\, Ignite return to the streamlined roots of their 90s formation with vocalist Eli Santana\, bassist Brett Rasmussen\, guitarist Nik Hill\, and drummer Craig Anderson. The result is a collection of some of the fastest\, angriest songs of their career\, proving that looking backwards is sometimes the best way to move forward musically. \nRooted firmly in their hardcore and punk DNA\, Still Wide Awake weaves in a deliberate fusion of their metal and dark goth influences\, driven by internal inspiration rather than outside trends. As bassist Brett Rasmussen stated\, “We have to be moved by our own music and lyrics for something to make the record. If the song doesn’t hit us emotionally\, then it’s not worth recording.” That uncompromising conviction translates into fearless lyricism that tackles urgent political and personal issues. Tracks like “Worst is Yet to Come” confront American immigration enforcement and the erosion of basic human rights\, while “Cold Comfort” confronts the political fight over who should have the authority to make deeply personal decisions regarding reproductive rights. Elsewhere\, the record turns inward\, with “Dissonate” examining mental health and the societal pressures that discourage men from acknowledging and confronting their struggles. The opening title track\, “Still Wide Awake\,” is a melodic hardcore barnburner that calls on us to take responsibility for ourselves and each other rather than sleepwalking through life. \nTo understand where Ignite are going\, it helps to look at where they started. Bursting out of Orange County’s punk and hardcore scene in 1993\, Ignite quickly established a sound built on raw intensity\, soaring melody\, and lyrics that carried real weight. Their debut EP Where They Talk in 1994 set the tone\, and by the time Our Darkest Days arrived in 2006\, Ignite had built a worldwide following\, packing clubs and tearing up festival stages across the globe. In 2022\, they opened a powerful new chapter with their self-titled album\, introducing Eli Santana and proving that their passion burns just as strong as ever. \nOver the years\, Ignite have shared stages with Bad Religion\, Suicidal Tendencies\, Avenged Sevenfold\, Rise Against\, Madball\, and Comeback Kid\, among countless others. Their decades of touring have also taken them to some of the biggest festivals in the world. With an aggressive touring schedule taking shape to support Still Wide Awake and spread the new material across the globe\, Ignite are showing no signs of slowing down. The core goal has never changed: to play aggressive\, melodic music\, and inspire people to live better lives\, make changes\, and help others. After more than three decades\, Ignite continue to pour everything into every new song and every show\, carrying that message forward and proving that punk and hardcore are still very much alive. \n  \n\n\n\n\n\n\nTickets: https://www.ignitebandofficial-shop.de/
+URL:https://bar.rareguitar.de/event/ignite-still-wide-awake-record-release-show
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/jpeg:https://bar.rareguitar.de/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-11-at-15.03.11.jpeg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270122T200000
+DTEND;TZID=Europe/Berlin:20270122T200000
+DTSTAMP:20261118T080615Z
+CREATED:20260717T084721Z
+LAST-MODIFIED:20261118T080615Z
+UID:61052-1800648000-1800648000@bar.rareguitar.de
+SUMMARY:Lord Bishop Rocks (USA) + Support
+DESCRIPTION:LORD BISHOP ROCKS! \nPrepare yourself for a wall of thunderous riffs\, deep grooves\, soaring vocals\, and electrifying solos. LORD BISHOP ROCKS delivers a powerful blend of hard rock\, funk\, blues\, and soul that hits with incredible force while staying deeply musical. Every song is packed with passion\, raw energy\, and world-class musicianship that pulls you in from the very first note. \nThis isn’t just music you hear—it’s music you feel. If you love big guitar sounds\, crushing rhythms\, and performances that ignite the crowd\, this is the show you’ve been waiting for. \n  \nwww.lordbishoprocks.com \nhttps://open.spotify.com/track/59hMSGOOqtLvAlLYi72Zzq?autoplay_ok=1 \n+ Support \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/lord-bishop-usa-support
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/07/Kopie-von-RG-FLyer23.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270123T200000
+DTEND;TZID=Europe/Berlin:20270123T200000
+DTSTAMP:20260122T122412Z
+CREATED:20260122T122412Z
+LAST-MODIFIED:20260122T122412Z
+UID:60785-1800734400-1800734400@bar.rareguitar.de
+SUMMARY:The Muse Experience - Muse Tribute
+DESCRIPTION:https://youtu.be/huD4HrlblZ0?si=M-P80QzIKFln-msl \nhttps://www.facebook.com/themuseexperience \nSeit 2017 begeistert The MUSE Experience Europa wie ein unaufhaltsamer Rakete und ihre Fangemeinde wächst rasant. Als Tribute-Sensation des Jahres 2019 ausgezeichnet\, bietet The MUSE Experience\, wie der Name schon sagt\, ein authentisches Muse-Erlebnis mit mitreißendem Sound und spektakulärer Show\, inklusive Spezialeffekten und einer atemberaubenden Lichtshow. Die dynamischen und interaktiven Shows sind vollgepackt mit den größten Muse-Hits wie Psycho\, Uprising\, Plug In Baby\, Supermassive Black Hole und Starlight\, bei denen das Publikum lauthals mitsingen wird! Im Rahmen ihrer LEGENDS of ROCK Tribute-Tour spielt The MUSE Experience regelmäßig in den besten Musikclubs Europas\, darunter das Poppodium Metropool (Hengelo)\, das Effenaar (Eindhoven)\, das MEZZ (Breda)\, das Brabanthal (Leuven\, Belgien)\, De Bonte Wever (Assen)\, das Podium de Vorstin (Hilversum) und natürlich das jährliche Highlight: das SilverDome LEGENDS of ROCK Tribute Festival (Zoetermeer). Für jeden Rockfan und insbesondere für Muse-Fans ist The MUSE Experience ein absolutes Muss! Diese Band nimmt euch mit Leidenschaft und Hingabe vom ersten Ton an mit auf eine unvergessliche Reise und lässt euch bis zum letzten verklungenen Abend nicht mehr los! \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/the-muse-experience-muse-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/01/270123-muse.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270206T200000
+DTEND;TZID=Europe/Berlin:20270206T200000
+DTSTAMP:20260219T153423Z
+CREATED:20260219T153418Z
+LAST-MODIFIED:20260219T153423Z
+UID:60841-1801944000-1801944000@bar.rareguitar.de
+SUMMARY:Europe's Greatest Rolling Stones Show: Voodoo Lounge
+DESCRIPTION:Erlebe die unvergessliche Rock-Show von Voodoo Lounge\, der besten Rolling Stones Tribute Band! \nTauche ein in die legendären Hits der Stones und feiere die Musik einer der größten Rockbands aller Zeiten. \nEin Muss für alle Stones-Fans! Sichere dir jetzt dein Ticket und erlebe die Legende live! \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/europes-greatest-rolling-stones-show-voodoo-lounge-2
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/02/270206-stones.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270212T190000
+DTEND;TZID=Europe/Berlin:20270212T233000
+DTSTAMP:20261012T090824Z
+CREATED:20261012T090824Z
+LAST-MODIFIED:20261012T090824Z
+UID:61179-1802458800-1802475000@bar.rareguitar.de
+SUMMARY:Laut für BRILLEN OHNE GRENZEN mit WATCH OUT STAMPEDE\, FRESSE + TRUTHAN
+DESCRIPTION:Laut für Brillen ohne Grenzen \nPunk und Hardcore für den guten Zweck bei Rare Guitar\nAm 12. Februar 2027 wird es bei Rare Guitar laut – und das für einen guten Zweck: Beim Festival „Laut für Brillen ohne Grenzen“\, einer Initiative von Hilbk&Blome Augenoptik\, treffen Punk und Hardcore aufeinander. Mit Fresse und Truthahn stehen zwei Punkbands auf der Bühne. Den Headliner-Slot übernimmt die Hardcoreband Watchout Stampede.\nAnlass für das Festival ist eine besondere Sammelaktion\, die von Hilbk&Blome Augenoptik initiiert und gemeinsam mit dem Club Rare Guitar sowie den Bands Fresse und Truthahn unterstützt wurde. Dabei konnten beeindruckende 500 Kilogramm Kronkorken für Brillen ohne Grenzen gesammelt werden. Dieser Erfolg soll nun gebührend gefeiert und gleichzeitig die wichtige Arbeit der Organisation weiter unterstützt werden.\nAuch mit dem Eintritt kann Gutes getan werden: Ein Teil der Eintrittsgelder wird an Brillen ohne Grenzen gespendet. Die Organisation sammelt alte und nicht mehr benötigte Brillen\, bereitet sie auf und leitet sie an Menschen weiter\, die sich keine geeignete Sehhilfe leisten können.\nDas Festival verbindet Musik\, Engagement und gelebte Solidarität. Gemeinsam feiern\, laut werden und dabei Gutes tun – genau darum geht es bei „Laut für Brillen ohne Grenzen“.\n„Laut für Brillen ohne Grenzen“\n📅 12. Februar 2027\n📍 Rare Guitar\n🎸 Fresse · Truthahn · Watchout Stampede\n❤️ Musik für den guten Zweck\n👓 Eine Initiative von Hilbk&Blome Augenoptik \n19h – Einlass\n(mit Sektempfang solange der Vorrat reicht)\n19:30h – Truthan\n20:45h – Fresse\n22:15h – Watch Out Stampede \nVVK: 10\,- IM Rare Guitar oder über gansman-26zoll@web.de\nAbendkasse: 12\,-
+URL:https://bar.rareguitar.de/event/laut-fuer-brillen-ohne-grenzen-mit-watch-out-stampede-fresse-truthan
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/jpeg:https://bar.rareguitar.de/wp-content/uploads/2026/10/01-10-2026_Hilbk_Plakat_Konzert_A3_Korr3_261002_091435.jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270219T200000
+DTEND;TZID=Europe/Berlin:20270219T233000
+DTSTAMP:20261109T105331Z
+CREATED:20261109T105312Z
+LAST-MODIFIED:20261109T105331Z
+UID:61217-1803067200-1803079800@bar.rareguitar.de
+SUMMARY:Mike Stewart Theory - Retro Futuristic Stoner Groove
+DESCRIPTION:MIKE STEWART THEORY\nThe Mike Stewart Theory ist kein Projekt für die Schublade: Produzent\, Toningenieur und\nSongwriter Mike Stewart\, alter Hase im Geschäft\, schart ein internationales Netzwerk von\nMusiker*innen um sich. London\, Amsterdam\, Deutschland\, Austin\, Dänemark – überall dort\, wo\nkreative Funken fliegen\, erwacht die Musik von MST zum Leben. Das Ergebnis dieses\ndynamischen\, grenzüberschreitenden Projektes: Songs ohne Genre-Regeln! Rock\, Groove\, Indie\,\nCountry\, Balladen und sogar tanzbare Nummern wechseln einander ab.\nAufgenommen wurde überwiegend in der Mühle der Freundschaft in Bad Iburg\, mit alten\nWeggefährten und Co-Produzenten: Marcus Praed\, Dirk „Deko“ Pellman\, Heinz Rebellius und\nMartin Schmeing.\nIm Februar 2027 geht diese Studioband zum ersten Mal auf die Bühne. Ein Blick auf die Credits\ngenügt: Das wird magisch. Hier spielen Leute\, die ihr Handwerk verstehen\, jammen können\,\nrocksolide sind und einfach Spaß machen. Mikes nach vorn gerichtete Songs mit Live-Band zu\nhören\, wird richtig gut! \nMIKE STEWART THEORY ist:\nMike Stewart (Gitarre\, Gesang\, Songwriting)\nMusik-Netzwerker aus Austin\, Produzent\, Songwriter\, Geschichtenerzähler: Mike Stewart\nproduziert\, nimmt auf und schreibt Songs\, seit es ihn gibt\, und das mit Namen wie The Gourds\,\nDead Milkmen\, Doug Sahm\, True Believers\, Austin City Limits\, Poi Dog Pondering\, Timbuk3\, Ed\nHall und Calvin Russell. Jetzt hat er endlich seinen eigenen Song-Tresor aufgemacht\, gefüllt mit\nliebevoll geschriebenen\, oft herrlich schrägen Songs\, vergleichbar mit denen von Todd Snider und\nLou Reed. Als Mikey2Hats spielt er auch Solo- und Duoshows in den USA\, den Niederlanden und\nDänemark.\nMarcus Praed (Gitarre\, Keyboards\, Mixing-Maestro)\nHochgeschätzter Produzent\, Toningenieur und Multiinstrumentalist\, Mitbetreiber des legendären\nStudios Mühle der Freundschaft. Gespielt und produziert hat er unter anderem für Tito & Tarantula\,\nPhillip Boa & The Voodooclub\, Die Angefahrenen Schulkinder und Cliff Barnes And The Fear Of\nWinning.\nHeinz Rebellius (Bass)\nMusikjournalist\, Gitarrenkenner\, virtuoser Spieler. Als Bassist von Mikes deutscher Band sorgt er\nmit enormem Groove und stilistischer Bandbreite für den nötigen Druck. Seine Diskografie ist lang:\nTour- und Studioarbeit mit Cliff Barnes And The Fear Of Winning\, Surplus Stock\, Luca und vielen\nmehr. 2025 erschien sein vielgelobtes Instrumental-Soloalbum 1990.\nMartin Schmeing (Keyboards\, Orgel)\nGefeierter Musiker\, Komponist und Produzent aus Osnabrück\, mit Praed Mitinhaber der Mühle der\nFreundschaft. Bekannt durch Die Angefahrenen Schulkinder\, Cliff Barnes And The Fear Of\nWinning und das Mega-Hit-Projekt Christian Steiffen & das original Haselandorchester.\nDirk „Deko“ Pellman (Schlagzeug\, Gesang)\nFür alle nur „Moses“: das rhythmische Rückgrat der Band. Er sorgt für ein bombenfestes\nFundament und saubere Satzgesänge und war als Drummer bei Cliff Barnes And The Fear Of\nWinning\, gemeinsam mit Praed\, Schmeing und Rebellius. „Deko“ trommelt und singt außerdem bei\nPhillip Boa & The Voodooclub. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/mike-stewart-theory
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/11/RG-FLyer59.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270220T200000
+DTEND;TZID=Europe/Berlin:20270220T233000
+DTSTAMP:20261022T113309Z
+CREATED:20261022T113309Z
+LAST-MODIFIED:20261022T113309Z
+UID:61189-1803153600-1803166200@bar.rareguitar.de
+SUMMARY:Given2Fly - Pearl Jam Tribute
+DESCRIPTION:GIVEN 2 FLY \n \nDie Pearl Jam-Tribute Band. Das sind fünf waschechte Pearl-Jam-Fans der ersten Stunde. Entsprechend tief sitzen die Lieder dieser unglaublichen Band in ihren Herzen. Die unüberhörbare Spielfreude\, mit der diese erfahrenen Musiker die zeitlosen Pearl Jam-Songs auf die Bühne bringen\, springt vom Bühnenrand direkt ins Publikum. Und schickt die Konzertgäste auf eine Zeitreise quer durch die 30-jährige Bandgeschichte von Pearl Jam. \nDank ihres authentischen PJ-Sounds und der vedderesken Stimme ihres Sängers schaffen es Given2Fly ein ums andere Mal den Gästen das Gefühl zu geben\, Pearl Jam stehe wahrhaftig selbst auf der Bühne. Während ihrer Bühnenshow setzt die Tribute-Band schwerpunktmäßig auf die wegweisenden ersten 5 Pearl Jam-Alben inklusive aller Hits und Klassiker. Aber Given2Fly überraschen das Publikum auch immer wieder mit weniger bekannten Perlen aus dem riesigen Fundus der Ikonen aus Seattle. \nHolger Cramm (dr)\, Manuel Knust (vc) Martin Möller (gt)\, Alexander Reich (bs) und Robert Radeka (gt) beamen die Zuschauer während ihrer Konzerte ins Pearl Jam Universum\, mit klassischem Rock\, majestätischen Hymnen\, wütendem Punk und gefühlvollen Balladen. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/given2fly-pearl-jam-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/10/RG-FLyer2.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270227T200000
+DTEND;TZID=Europe/Berlin:20270227T200000
+DTSTAMP:20260328T185317Z
+CREATED:20260328T185317Z
+LAST-MODIFIED:20260328T185317Z
+UID:60906-1803758400-1803758400@bar.rareguitar.de
+SUMMARY:Ragetrack - Rage Against The Machine Tribute
+DESCRIPTION:Ragetrack – rage against the machine tribute band – take the power back! \n \nPünktlich zum 30. Jubiläumsjahr des ersten Albums von Rage against the machine (1992)\, sind die vier Jungs aus Gummersbach von Ragetrack bereit\, für euch die unbeschreiblich kraftvollen Songs von RATM wieder aufleben zu lassen.\nSongs wie Killing in the name\, Bombtrack und Wake up waren wohl in den 90er Jahren die absoluten Abräumer auf jedem Event. Jeder wollte die Band aus Los Angeles/Kalifornien einmal live erleben und hören. Leider hatte sich RATM 2012 aufgelöst.\nAber jedes Ragetrack Konzert ist wie ein Zeitsprung in die neunziger Jahre\, so dass ihr noch einmal die Gelegenheit habt die Songs von „rage against the machine“ live mitzuerleben. \nKaum eine andere Band wie Ragetrack schafft es\, die Kraft und den Sound der wohl kultigsten Funkmetalband so realitätsnah wiederzugeben.\nFette Drums\, knackiger Bass\, originale Gitarrensoli und ein Frontmann\, dem der Begriff „true“ auf den Leib geschneidert zu sein scheint\, garantieren eine unvergessliche rage against the machine Show. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/ragetrack-rage-against-the-machine-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/03/RG-FLyer-1.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270311T200000
+DTEND;TZID=Europe/Berlin:20270311T230000
+DTSTAMP:20261111T072632Z
+CREATED:20261111T072632Z
+LAST-MODIFIED:20261111T072632Z
+UID:61225-1804795200-1804806000@bar.rareguitar.de
+SUMMARY:Ultra World - Industrial Electro Punk
+DESCRIPTION:Ultra World is the soundtrack to a burning world. The female-fronted power trio sounds like what you’d get if Nine Inch Nails and The Prodigy had a furious daughter. \nThe band from Luxembourg combines crushing electronic beats\, live instruments\, and an unapologetic punk attitude. Blending industrial\, EBM\, electro-punk and dance floor energy. \nUltra World has performed at clubs and major national festivals\, including E-Lake and Francofolies\, but also has brought its audiovisual live show to international stages in countries such as Germany\, Czech Republic and Portugal. \nFor fans of Nine Inch Nails\, The Prodigy\, Sextile\, Pixel Grip\, Marilyn Manson and Carpenter Brut.
+URL:https://bar.rareguitar.de/event/ultra-world-industrial-electro-punk
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/11/RG-FLyer61.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270313T200000
+DTEND;TZID=Europe/Berlin:20270313T200000
+DTSTAMP:20260716T122756Z
+CREATED:20260716T122756Z
+LAST-MODIFIED:20260716T122756Z
+UID:61049-1804968000-1804968000@bar.rareguitar.de
+SUMMARY:Uwe Against The Machine - 90ies Classix
+DESCRIPTION:Einst hat Ausnahmekünstler „Uwe“ extra für das Liborifest eine Rockshow mit Coversongs aus den 90ern zusammengestellt. Gemeinsam mit langjährigen Weggefährten – einer Auswahl an exzellenten Musikern aus dem Paderborner Raum\, die seit Jahrzehnten auf den Bühnen der Hardcore-\, Punk-\, Rock- und Metalszene ihr Unwesen treiben und zusammen weit über 1.000 Konzerte in Deutschland und Teilen Europas gespielt haben – kommt er nun nach Münster\, um mit „Uwe against the Machine“ das Rare Guitar zum Beben zu bringen. \nDie Musiker haben nicht nur internationale Bühnenerfahrung\, man munkelt\, sie seien auch aus Funk und Fernsehen bekannt – im Zusammenhang mit verschiedenen Gesetzeskonflikten. \nEin besonderes Highlight: Uwe konnte den aus Wewer stammenden Trompeten-Solokünstler Björn Sommer für die Bühne gewinnen. \nBeim Show-Programm wird für jeden etwas dabei sein\, sodass alle Anwesenden mindestens bei einem Lied komplett durchdrehen können! Uwe empfiehlt\, vorab bitte ausreichend Flüssigkeiten einzunehmen! \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/uwe-against-the-machine-90ies-classix
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/07/RG-FLyer33.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270320T200000
+DTEND;TZID=Europe/Berlin:20270320T200000
+DTSTAMP:20260825T111200Z
+CREATED:20260825T111200Z
+LAST-MODIFIED:20260825T111200Z
+UID:61110-1805572800-1805572800@bar.rareguitar.de
+SUMMARY:ONE OF THESE – A Celebration of Pink Floyd: The Great Gig Tour 2027
+DESCRIPTION:Schon dreimal waren One Of These im Rare Guitar – immer mit der kleinen Besetzung und Early Years\nvon Pink Floyd. Es waren großartige Konzerte in diesem einzigartigen Klub. Nun kommt die Band mit\nder vollen 10-Köpfigen Band nach Münster und spielt ihr neues Programm.\nDark Side Of The Moon\, Wish You Were Here\, Animals\, The Wall\, Division Bell Tour\, dazu die Early\nYears mit Live At Pompeii\, Meddle und dem Besten aus den Anfangsjahren – ONE OF THESE haben in\nden letzten Jahren nahezu das komplette Repertoire von Pink Floyd auf die Bühne gebracht und dabei\nbegeisternde Konzerte im In- und Ausland gespielt. Das Publikum wurde mit allen Highlights verwöhnt\nund – wie bei ONE OF THESE üblich – mit dem ein oder anderen eher selten live gespieltem Song\nüberrascht.\n2027 sind ONE OF THESE nun mit einem Programm unterwegs\, das nur die Sahnestücke aus dem\ngesamten Werk von Pink Floyd enthält. Kein Album\, keine inhaltliche Vorgabe. Die Band hat die Songs\nzusammengestellt\, die in der über 30-jährigen Schaffensperiode von Pink Floyd wichtig und\nunverzichtbar sind – und dazu die Songs\, die der Band einfach nur ganz besonders Spaß machen zu\nspielen. Und da ist wie immer auch das ein oder andere nur wenig gespielte Schätzchen dabei. Und so\nwird jeder Gig automatisch zu einem „Great Gig“\, auf dem sich das Publikum und die Band in der\nwundervollen Musik von Pink Floyd verlieren.\nONE OF THESE begeistert mit der Liebe zur Musik von Pink Floyd bis hin zu den kleinen Details. Die\nBand spielt die Musik von Pink Floyd mit einer musikalischen Hingabe\, die man bei jedem Ton sieht\nund hört. Jedes Konzert ist für die Band ein Fest\, auf dem die Musik von Pink Floyd gefeiert wird\, aber\neben auch das gemeinsame Erlebnis\, diese wunderbare Musik zusammen mit dem Publikum teilen\nund genießen zu dürfen. Und das merkt man von der ersten Note bis zum Meet and Greet nach dem\nKonzert.\nONE OF THESE gilt hierzulande als die vielseitigste Pink Floyd Tribute Band\, die die Musik der britischen\nBand in verschiedensten interessanten Facetten präsentiert. Mit der Tribute-Besetzung werden\nkomplette Alben gespielt (Dark Side The Moon / Wish You Were Here / Animals / The Wall). Daneben\ngibt es ein Unplugged-Programm mit einer um Streicher\, Klarinette und Percussion erweiterten\nBesetzung sowie ein Programm mit komplettem Orchester. Unter dem Zusatz Early Years spielt die\nBand in reduzierter Besetzung die frühen Floyd vor dem großen Erfolg mit der Dark Side Of The Moon\,\naktuell werden die Musik des Konzertfilms „Live At Pompeii“ sowie das komplette Album „Meddle“\ngespielt. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/one-of-these-a-celebration-of-pink-floyd-the-great-gig-tour-2027
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/08/RG-FLyer45.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270410T200000
+DTEND;TZID=Europe/Berlin:20270410T200000
+DTSTAMP:20260219T102841Z
+CREATED:20260219T102841Z
+LAST-MODIFIED:20260219T102841Z
+UID:60832-1807387200-1807387200@bar.rareguitar.de
+SUMMARY:Mad Zeppelin - Led Zeppelin Tribute
+DESCRIPTION:Nach diversen Sonderprogrammen in den letzten Jahren zum 50-jährigen Led Zeppelin- Bandjubiläum sowie den Albumklassikern Led Zeppelin II und Led Zeppelin IV gehen MAD ZEPPELIN mit ihrem aktuellen Programm mal wieder ganz straight in die Vollen und präsentieren eine „Best of“-Tour de Force durch die besten Zep-Stücke aus der kompletten Bandkarriere. Dabei stehen auch einige lange nicht mehr von Mad Zeppelin intonierte Songs auf der Setlist.\nBei ihrer Performance gelingt es der seit Jahren mit dem Ruf eines der besten LED-ZEPPELIN-TributeActs Europas ausgestatteten Mainzer Band bekanntermaßen tatsächlich\, den majestätischen Sound der Original-Band\, die urwüchsige Power der Rhythmusfraktion und die dynamische Interaktion zwischen Lead-Gitarre und Gesang auf die Bühnen im Hier und Jetzt zu zaubern.\nOb nun die intensive Stimmung bei „Stairway To Heaven“ einen ganzen Saal ergreift und plötzlich jeder und jede Einzelne mitsingt\, ob das Schlagzeugsolo bei „Moby Dick“ alle von den Sitzen reißt oder spätestens die schiere Power von „Whole Lotta Love“ zur puren Ekstase gerät: MAD ZEPPELIN erwecken die Musik und das Feeling von LED ZEPPELIN mit beeindruckender Detailfreude wieder zum Leben und sorgen so für unvergessliche\, magisch emotionale Momente. Die Band spielt die Song-Juwelen der Rocklegenden nicht einfach nur nach\, sondern zelebriert sie gemeinsam mit dem Publikum und macht so den Geist der Helden um Jimmy Page und Robert Plant wieder erfahrbar. Ein Fest für gestandene Rockfans mit Sehnsucht nach der guten alten Zeit oder Kids\, die LED ZEPPELIN nie selbst live erleben konnten! \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/mad-zeppelin-led-zeppelin-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/02/270410-zeppelin.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270424T200000
+DTEND;TZID=Europe/Berlin:20270424T200000
+DTSTAMP:20260714T110659Z
+CREATED:20260714T110659Z
+LAST-MODIFIED:20260714T110659Z
+UID:61041-1808596800-1808596800@bar.rareguitar.de
+SUMMARY:Melones - Ramones Tribute
+DESCRIPTION:Hey Ho\, Let´s Go – Vier Lederjacken\, drei Akkorde:  \nMELONES – a tribute to Ramones LIVE 2026  \nMELONES\, die detailgetreuste Ramones Tribute Band des Landes spielen ihre Best Of Show als Hommage an die vier Originalmitglieder Joey\, DeeDee\, Tommy und Johnny der legendären Punkrocker aus Forest Hills\, NY. \nDie ersten Konzerte der MELONES fanden bereits 1987 statt. Unter anderem im Punk-Club UJZ Kornstraße in Hannover\, wo Bands wie Black Flag\, Exploited oder Angelic Upstarts die Bühnenbretter zum Beben brachten.  \nMELONES eröffneten das Punk & Disorderly Festival in Berlin neben Bands wie Peter and the Test Tube Babies\, Cockney Rejects\, Discharge und Red London  \nSeit Gründung der MELONES sind die Brüder Sven an der Gitarre aka Svenni „Holm“ Melone und Lars aka Lütti Melone am Schlagzeug. Komplettiert wird die Formation durch Sänger Christian aka Dicki Melone aus Berlin und Bassist Thomas aka Tommi Melone aus Hamburg. \nMELONES nähern sich dem Original musikalisch und optisch sehr überzeugend – dem Publikum wird ein perfektes Ramones Live-Erlebnis geboten. Mit ihren schwarzen Lederjacken\, zerschlissenen Jeans\, den detailgetreuen Perücken und der Soundwand von unermüdlichen Drei-Akkord-Gassenhauern ist der Time Warp in die späten 70er Jahre\, als die Ramones die damalige Musikwelt auf den Kopf gestellt hatten\, perfekt. „Sheena Is A Punkrocker“\, „Rock ´n Roll High School“\, „Blitzkrieg Bop“\, „Pet Semetary“ und „Rockaway Beach“ gehören neben vielen anderen Klassikern zum MELONES Live-Set. Dabei wird in legendärer energiegeladener DeeDee Ramones Manier zwischen den Songs sein „iconic“ One-Two-Three-Four eingeworfen. Einer der Höhepunkte im MELONES Set ist der Motörhead Cover-Song R.A.M.O.N.E.S. (die Hommage von Lemmy an seine Freunde)\, gesungen vom Bassisten Tommi Melone. \nMELONES sind „featured artist“ im neu erschienenen Ramones Fan-Buch „Cretin Family“. Der US Autor Mark Leadon aus Florida führt auf 600 Seiten durch die Historie der Ramones und präsentiert dabei Ramones Tribute Bands über den gesamten Globus verteilt\, inklusive eines umfangreichen MELONES Band Portraits – GABBA GABBA HEY! \n2026 feiern MELONES 50 Years Ramones „first album“. Der Beginn einer einzigartigen Punk Rock Ära\, geprägt durch die\, wie Svenni\, Lütti\, Dicki und Tommi sie nennen: beste Band der Welt.  \nMELONES Links:  \nWebsite: https://www.melones.net/ \nYouTube: https://www.youtube.com/channel/UCYQb738ajFSMn15O61sCV4w \nInstagram: https://www.instagram.com/melones_punkrock/ \nFacebook: https://www.facebook.com/Melones.Punkrock \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/melones-ramones-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/07/RG-FLyer29.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270507T200000
+DTEND;TZID=Europe/Berlin:20270507T200000
+DTSTAMP:20260714T105341Z
+CREATED:20260714T105341Z
+LAST-MODIFIED:20260714T105341Z
+UID:61038-1809720000-1809720000@bar.rareguitar.de
+SUMMARY:The Legacy of Black Sabbath
+DESCRIPTION:The Legacy of Black Sabbath \nEuropas authentischste Black Sabbath Tribute Band. \nDie Setlist bietet all die Black Sabbath Hits\, die unverkennbar Meilensteine in der Musikgeschichte der Band sind. \nUnser Ziel und hoher Anspruch ist es\, ganz nah an das Original anzuknüpfen. \nDie Setlist umfasst die Highlights der musikalischen Karriere Black Sabbaths mit den unvergeßlichen Hits wie Black Sabbath\, Paranoid\, Iron man\, Children of the Grave\, Changes\, The Wizzard\, Never say die\, Fairies wear Boots\, War pigs\, Sweat leaf\, Snowblind\, Symptom of the Universe…… \nFrontmann Mojos Stage Acting\, die brachialen Power Riffs Martins und die treibende Backline Michael und Werner bringen dem Zuschauer ein Live Erlebnis im Stil der Originalbesetzung mit Ozzy Osbourne\, Tony Iommi\, Geezer Butler und Bill Ward \nDie ultimative Tribute Show nicht nur für echte Black Sabbath Fans!!!!! \nThe Legacy of Black Sabbath mehr als nur eine Tribute Band \nTickets: https://bar.rareguitar.de/tickets \n 
+URL:https://bar.rareguitar.de/event/the-legacy-of-black-sabbath-2
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/07/RG-FLyer27.png
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270508T200000
+DTEND;TZID=Europe/Berlin:20270508T200000
+DTSTAMP:20261023T121657Z
+CREATED:20260506T082859Z
+LAST-MODIFIED:20261023T121657Z
+UID:60974-1809806400-1809806400@bar.rareguitar.de
+SUMMARY:Fällt leider aus: System Of A STU - System Of A Down Tribute
+DESCRIPTION:SYSTEM OF A STU ist Deutschlands Top SOAD Tribute-Band und das schon seit der Gründung 2019.  So beschreibt sich die Band selbstironisch\, denn es gibt schlichtweg keine zweite SYSTEM OF A DOWN Tribute-Band in Deutschland. Eine Aussage\, die im Grunde vom Original hätte stammen können\, denn System ist ganz sicher eine selbstironische Band\, und das mögen die Fans. \n \nSYSTEM OF A STU spielt quer durch die SOAD-Alben mit der gleich hohen Emotionalität des Originals. Die Musik geht dabei direkt in die Beine und unter die Haut\, Dopamin für’s Gehirn und Schweißtreiber für den Körper. Genauso kraftvoll performt SOAS auf der Bühne und das kostet die Band voll aus. \nSystem prägte ein ganz eigenes Genre mit einzigartigem Wiedererkennungswert. Dieses Paket transportieren SYSTEM OF A STU live voller Hingabe und die Fans lieben es.\nDas sich die Jungs um SOAS bereits seit Jahren kennen und genauso lange als Hard-Rock Coverband ROCK STU zusammen spielen\, merkt man dem routinierten Zusammenspiel auf der Bühne ganz klar an. \nDer erste Song auf SOADs Album „Steal This Album“ heißt Chic´N´Stu. Da „STU“ bereits im Namen ROCK STU auftaucht\, machte dies die Namensfindung sehr leicht. Woher allerdings „STU“ ursprünglich stammt bleibt ungeklärt. Vielleicht ist „Disco Stu“ von den Simpsons dafür verantwortlich. 🙂 \nDie gemeinsame Verehrung für SOAD\, brachte die Musiker nun auf den Pfad der kalifornischen Alternative-Metal-Band\, wobei der Zuspruch der Fans nicht besser hätte sein können. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/system-of-a-stu-system-of-a-down-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20270515T200000
+DTEND;TZID=Europe/Berlin:20270515T233000
+DTSTAMP:20261111T135104Z
+CREATED:20261111T135104Z
+LAST-MODIFIED:20261111T135104Z
+UID:61233-1810411200-1810423800@bar.rareguitar.de
+SUMMARY:Dirty Deeds - AC/DC Tribute
+DESCRIPTION:Dirty Deeds: \n \nSeit über dreizehn Jahren mischen „Dirty Deeds“ aus Osnabrück die Bühnen von Clubs\, Konzerthallen und Stadtfesten mit originalgetreu gecoverten AC/DC Songs auf. Hierbei werden ausschließlich Stücke aus der Ära des legendären ersten Sängers Bon Scott präsentiert\, und das ohne Kompromisse. Schließt man die Augen\, so fühlt man sich zurückversetzt in die Zeit\, als die Band mit dem Album „Highway to hell“ die ersten großen kommerziellen Erfolge feiern konnte. „Dirty Deeds“ hat schon vor Tausenden begeisterten Rockfans gespielt – die mitreißende Bühnenshow und Live-Power der Gruppe ist stets eine Hommage an eine der größten Bands des harten Rock‘n Roll. \nTickets: https://bar.rareguitar.de/tickets
+URL:https://bar.rareguitar.de/event/dirty-deeds-ac-dc-tribute
+LOCATION:Rare Guitar\, Hafenstraße 64\, Münster\, 48153\, Deutschland
+CATEGORIES:Konzert
+ATTACH;FMTTYPE=image/png:https://bar.rareguitar.de/wp-content/uploads/2026/11/RG-FLyer64.png
+END:VEVENT
+END:VCALENDAR

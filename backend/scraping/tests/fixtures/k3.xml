@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FMPXMLRESULT xmlns="http://www.filemaker.com/fmpxmlresult">
+  <ERRORCODE>0</ERRORCODE>
+  <PRODUCT BUILD="05-17-2019" NAME="FileMaker" VERSION="Server 16.0.5"/>
+  <DATABASE DATEFORMAT="D.m.yyyy" LAYOUT="" NAME="Buchungssystem.fmp12" RECORDS="4" TIMEFORMAT="k:mm:ss "/>
+  <METADATA>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Nummer" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Stadt" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Veranstaltung" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Ticketverfügbarkeit" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="UhrzeitBeginn" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="UhrzeitEnde" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Datum" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Dauer" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="BildLink" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Beschreibung" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="TicketPreisAb" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="TreffpunktGeodaten" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Buchungslink" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Sprache" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Treffpunkt" TYPE="TEXT"/>
+  </METADATA>
+  <RESULTSET>
+    <ROW>
+      <COL>
+        <DATA>45791</DATA>
+      </COL>
+      <COL>
+        <DATA>Münster</DATA>
+      </COL>
+      <COL>
+        <DATA>Sightseeing Tour - Hop-On Hop-Off Bus</DATA>
+      </COL>
+      <COL>
+        <DATA>Tickets available!</DATA>
+      </COL>
+      <COL>
+        <DATA>09:50:00</DATA>
+      </COL>
+      <COL>
+        <DATA>17:50:00</DATA>
+      </COL>
+      <COL>
+        <DATA>01.01.2019</DATA>
+      </COL>
+      <COL>
+        <DATA>1</DATA>
+      </COL>
+      <COL>
+        <DATA>http://download.k3.de/Eventim/city-sightseeing-tour.jpg</DATA>
+      </COL>
+      <COL>
+        <DATA>After purchasing a ticket you will receive an e-mail in German language containing a link (starting with www.pdf.k3.de/Ticketbuchung) Please click on the link to access your ticket. Should you have any questions or difficulities in downloading the ticket, please call us at 0049 251 – 459 33.
+Enjoy Münster's most beautiful sights during a comfortable City Tour with the red double-decker "Münsterbus". The bus frequents bus stops in and around the historic city centre every hour - during peak season even every half hour.
+Get off the bus at a station of your choice with your all-day hop-on hop-off ticket and continue your tour with one of the next busses.
+Leave for example at the bus stop Goldene Brücke / Aaseeterassen for a stroll around the Aasee, Münsters manmade lake near the city centre which is not only a cherished recreational area but also the location of some world renowned exhibits of the "Skulptur Projekte". The bus stops in the historic city centre also offer great opportunities for further exploration. Take a closer look at attractions such as St. Paul's Cathedral, St. Lambert's Church and the Historic City Hall or simply observe the bustling life in the city from one of the many cafés.</DATA>
+      </COL>
+      <COL>
+        <DATA>7.5</DATA>
+      </COL>
+      <COL>
+        <DATA></DATA>
+      </COL>
+      <COL>
+        <DATA>https://k3.de/veranstaltung/sightseeing-tour-hop-on-hop-off-bus-45791</DATA>
+      </COL>
+      <COL>
+        <DATA>Englisch</DATA>
+      </COL>
+      <COL>
+        <DATA>schedule at the bus stops and at k3.de/sightseeing</DATA>
+      </COL>
+    </ROW>
+    <ROW>
+      <COL>
+        <DATA>50211</DATA>
+      </COL>
+      <COL>
+        <DATA>Hamburg</DATA>
+      </COL>
+      <COL>
+        <DATA>Hafenrundfahrt</DATA>
+      </COL>
+      <COL>
+        <DATA>Noch Tickets verfügbar!</DATA>
+      </COL>
+      <COL>
+        <DATA>12:00:00</DATA>
+      </COL>
+      <COL>
+        <DATA>13:00:00</DATA>
+      </COL>
+      <COL>
+        <DATA>01.01.2019</DATA>
+      </COL>
+      <COL>
+        <DATA>1</DATA>
+      </COL>
+      <COL>
+        <DATA>http://download.k3.de/Eventim/hafenrundfahrt.jpg</DATA>
+      </COL>
+      <COL>
+        <DATA>Erleben Sie einen der größten Häfen der Welt. Bei dieser einstündigen Hafenrundfahrt bekommen Sie einen guten Überblick über Leben und Treiben im Hamburger Hafen. Von den alten Lagerhäusern in der Speicherstadt bis zur Containerverladung, vorbei an der traditionsreichen Schiffswerft Flint zur größten Schiffswerft Deutschlands, Blohm &amp; Voss: Im Hamburger Hafen werden kleine Hafenfahrzeuge repariert und Ozeanriesen neu gebaut. Darüber hinaus werden Sie vom Wohnen mit Blick auf die Elbe in den modernen Bauten der neu entstandenen HafenCity hören und natürlich auch das neue Wahrzeichen Hamburgs, die Elbphilharmonie von Herzog &amp; de Meuron entdecken. An Bord werden verschiedene Kaltgetränke angeboten.&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Abfahrten von Jan. 2024 bis März 2024 // von Nov. 2024 bis Dez. 2024&lt;/strong&gt;&lt;br&gt;
+Täglich um 12:00 Uhr &amp; 14:00 Uhr.&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Abfahrten von Apr. 2024 bis Okt. 2024&lt;/strong&gt;&lt;br&gt;
+Täglich stündlich von 11:00 Uhr bis 17:00 Uhr.&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Dauer der Hafenrundfahrt:&lt;/strong&gt; eine Stunde&lt;br&gt;&lt;br&gt;</DATA>
+      </COL>
+      <COL>
+        <DATA>12.5</DATA>
+      </COL>
+      <COL>
+        <DATA>53.543585, 9.979264</DATA>
+      </COL>
+      <COL>
+        <DATA>https://k3.de/veranstaltung/grosse-hafenrundfahrt-50211</DATA>
+      </COL>
+      <COL>
+        <DATA>Deutsch</DATA>
+      </COL>
+      <COL>
+        <DATA>am Vorsetzen-Anleger am roten Feuerschiff (U-Bahn Baumwall)</DATA>
+      </COL>
+    </ROW>
+    <ROW>
+      <COL>
+        <DATA>50943</DATA>
+      </COL>
+      <COL>
+        <DATA>Münster</DATA>
+      </COL>
+      <COL>
+        <DATA>Stadtrundfahrt</DATA>
+      </COL>
+      <COL>
+        <DATA>Noch Tickets verfügbar!</DATA>
+      </COL>
+      <COL>
+        <DATA>09:50:00</DATA>
+      </COL>
+      <COL>
+        <DATA>17:50:00</DATA>
+      </COL>
+      <COL>
+        <DATA>01.01.2019</DATA>
+      </COL>
+      <COL>
+        <DATA>1</DATA>
+      </COL>
+      <COL>
+        <DATA>http://download.k3.de/Eventim/stadtrundfahrt.jpg</DATA>
+      </COL>
+      <COL>
+        <DATA>Erleben Sie Münsters schönste Sehenswürdigkeiten ganz komfortabel bei einer Stadtrundfahrt im roten Münsterbus-Doppeldecker. Der Bus fährt stündlich – in der Hochsaison sogar halbstündlich – Haltestellen in und um die münsterische Altstadt an.
+Nach dem Hop-On Hop-Off Prinzip können Sie dabei den Bus beliebig oft an Stationen Ihrer Wahl verlassen und Ihre Fahrt mit dem nächsten Bus fortsetzen. 
+Nutzen Sie zum Beispiel an der Haltestelle "Goldene Brücke / Aaseeterassen" die Gelegenheit zu einem kleinen Spaziergang am Aasee, Münsters grüner Lunge, die zudem Dank der Skulptur Projekte mit zahlreichen Arbeiten renommierter Künstler punkten kann. Auch die Haltestellen in der Altstadt bieten sich für eine kleine Fahrtpause an, in der Sie sich Attraktionen wie Dom, Lambertikirche und Rathaus etwas näher ansehen oder von einem der vielen Cafés das bunte Treiben in der Innenstadt beobachten können.</DATA>
+      </COL>
+      <COL>
+        <DATA>7.5</DATA>
+      </COL>
+      <COL>
+        <DATA>51.962458, 7.628414</DATA>
+      </COL>
+      <COL>
+        <DATA>https://k3.de/veranstaltung/stadtrundfahrt-tagesticket-50943</DATA>
+      </COL>
+      <COL>
+        <DATA>Deutsch</DATA>
+      </COL>
+      <COL>
+        <DATA>Fahrplan an den Haltestellen und auf k3.de/stadtrundfahrt</DATA>
+      </COL>
+    </ROW>
+    <ROW>
+      <COL>
+        <DATA>51370</DATA>
+      </COL>
+      <COL>
+        <DATA>Münster</DATA>
+      </COL>
+      <COL>
+        <DATA>Stadtführung</DATA>
+      </COL>
+      <COL>
+        <DATA></DATA>
+      </COL>
+      <COL>
+        <DATA>13:00:00</DATA>
+      </COL>
+      <COL>
+        <DATA>14:00:00</DATA>
+      </COL>
+      <COL>
+        <DATA>01.01.2019</DATA>
+      </COL>
+      <COL>
+        <DATA>1</DATA>
+      </COL>
+      <COL>
+        <DATA>http://download.k3.de/Eventim/</DATA>
+      </COL>
+      <COL>
+        <DATA> </DATA>
+      </COL>
+      <COL>
+        <DATA></DATA>
+      </COL>
+      <COL>
+        <DATA>51.960988, 7.623219</DATA>
+      </COL>
+      <COL>
+        <DATA>https://k3.de/veranstaltung/stadtfuehrung-51370</DATA>
+      </COL>
+      <COL>
+        <DATA>Deutsch</DATA>
+      </COL>
+      <COL>
+        <DATA>am "Aegidiimarkt 7" an der Bushaltestelle (Anfahrt über Bispinghof/Johannisstraße)</DATA>
+      </COL>
+    </ROW>
+  </RESULTSET>
+</FMPXMLRESULT>

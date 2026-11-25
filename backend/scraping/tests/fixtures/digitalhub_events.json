@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "id": 2507,
+      "title": "Hub Feuer - Jahresausklang",
+      "start_date": "2026-12-10",
+      "end_date": null,
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "address": "Digital Hub münsterLAND, Hafenweg 16",
+      "city": "Münster",
+      "district": "Münster",
+      "speaker": null,
+      "flag": "Hub-Event",
+      "mode": "Meetup",
+      "link_url": "https://www.meetup.com/digitalhubms/events/317172752/",
+      "desc": "Zum Jahresausklang im Digital Hub münsterLAND ist es Zeit im Hub-Netzwerk noch einmal zusammenzukommen. Bei Glühwein, Früchtepunsch und weihnachtlichen Snacks lassen wir das Jahr Revue passieren und blicken im gemütlichen Netzwerkausklang mit der Community und Coworkern nach vorne.",
+      "organizer": "Digital Hub münsterLAND"
+    },
+    {
+      "id": 2506,
+      "title": "NRW Hub-Battle KI-Spezial",
+      "start_date": "2026-12-15",
+      "end_date": null,
+      "start_time": "17:00",
+      "end_time": "22:00",
+      "address": "Westfalen AG | Westfalen Forum, Industrieweg 43",
+      "city": "Münster",
+      "district": "Münster",
+      "speaker": null,
+      "flag": "Hub-Event",
+      "mode": "Pitch",
+      "link_url": "http://www.digitalhub.ms/events/nrw-hubbattle-spezial",
+      "desc": "Wo sitzt das spannendste KI-Startup in Nordrhein-Westfalen? Der ultimative NRW Hub-Battle bringt es an den Tag! 8 Startups aus 8 Regionen kämpfen um den Titel des NRW-Startup Champions. Jedes hat nur drei Minuten Zeit um die Jury von sich zu überzeugen. Die NRW-HUBs und ihre Partner schicken Startups ins Rennen. Gemeinsam küren die hochkarätige Jury und Zuschauer die Sieger.",
+      "organizer": "Digital Hub münsterLAND"
+    },
+    {
+      "id": 2508,
+      "title": "techfest münsterLAND",
+      "start_date": "2027-01-27",
+      "end_date": null,
+      "start_time": "13:30",
+      "end_time": "",
+      "address": "Digital Hub münsterLAND, Hafenweg 16",
+      "city": "Münster",
+      "district": "Münster",
+      "speaker": null,
+      "flag": "Hub-Event",
+      "mode": "Konferenz",
+      "link_url": "http://www.digitalhub.ms/events/techfest",
+      "desc": "Beim techfest verwandeln wir das Münsterland wieder in einen der Hotspots für Tech-Interessierte und Zukunftsdenker. Ein Tag voller Innovationen, Inspirationen und Chancen, die Tech-Community der Region kennenzulernen. Unser Event bringt Tech-Enthusiasten, führende Köpfe und Unternehmen der Technologiebranche zusammen – mitten im Herzen des Münsterlands, bei uns im Digital Hub! Freu dich auf Keynotes, Diskussionen und tiefgehende Einblicke in die Tech-Trends, die die Welt von morgen bewegen.",
+      "organizer": "Digital Hub münsterLAND / FabLab"
+    }
+  ]
+}
