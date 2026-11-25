@@ -4,7 +4,7 @@
 #-------------------------------------------------------------------------------------------------------------
 
 # Update the VARIANT arg in docker-compose.yml to pick a Python version: 3, 3.8, 3.7, 3.6 
-ARG VARIANT=3.8
+ARG VARIANT=3.15@sha256:6e261c4a01a94ab86485a6b9d08083c3e968ea51440c0c24b6efaa771c33312d
 FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 
 ENV PYTHONUNBUFFERED 1
