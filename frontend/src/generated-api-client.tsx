@@ -226,6 +226,7 @@ export const ListEvents = (props: ListEventsProps) => (
     void
   >
     path={`/events`}
+
     {...props}
   />
 );
@@ -361,6 +362,7 @@ export const RetrieveEvent = ({ id, ...props }: RetrieveEventProps) => (
     RetrieveEventPathParams
   >
     path={`/events/${id}`}
+
     {...props}
   />
 );
@@ -475,6 +477,7 @@ export const ListEventSources = (props: ListEventSourcesProps) => (
     void
   >
     path={`/sources`}
+
     {...props}
   />
 );
@@ -562,6 +565,7 @@ export const RetrieveEventSource = ({
     RetrieveEventSourcePathParams
   >
     path={`/sources/${id}`}
+
     {...props}
   />
 );
@@ -667,6 +671,7 @@ export const ListLocations = (props: ListLocationsProps) => (
     void
   >
     path={`/locations`}
+
     {...props}
   />
 );
@@ -757,6 +762,7 @@ export const RetrieveLocation = ({ id, ...props }: RetrieveLocationProps) => (
     RetrieveLocationPathParams
   >
     path={`/locations/${id}`}
+
     {...props}
   />
 );
@@ -865,6 +871,7 @@ export const ListOrganizers = (props: ListOrganizersProps) => (
     void
   >
     path={`/organizers`}
+
     {...props}
   />
 );
@@ -955,6 +962,7 @@ export const RetrieveOrganizer = ({ id, ...props }: RetrieveOrganizerProps) => (
     RetrieveOrganizerPathParams
   >
     path={`/organizers/${id}`}
+
     {...props}
   />
 );
