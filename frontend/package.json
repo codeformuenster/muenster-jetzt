@@ -22,7 +22,7 @@
     "restful-react": "^15.9.4",
     "timeago-react": "^3.0.5",
     "timeago.js": "^4.0.2",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.0"
   },
   "scripts": {
     "start": "vite",
