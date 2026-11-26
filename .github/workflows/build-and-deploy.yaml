@@ -44,6 +44,8 @@ jobs:
     name: Build backend container
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      packages: write
     steps:
       - uses: actions/checkout@v7
 
@@ -156,6 +158,8 @@ jobs:
     defaults:
       run:
         working-directory: frontend
+    permissions:
+      packages: write
     steps:
       - uses: actions/checkout@v7
         with:
