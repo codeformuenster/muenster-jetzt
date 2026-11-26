@@ -15,7 +15,7 @@ spec:
       serviceAccountName: backend-api
       enableServiceLinks: false
       initContainers:
-      - image: docker.io/codeformuenster/muenster-jetzt-api:master
+      - image: ghcr.io/codeformuenster/muenster-update/api:master
         name: migrations
         args:
         - ./manage.py
@@ -53,7 +53,7 @@ spec:
         - name: tmpdir
           mountPath: /tmp
       containers:
-      - image: docker.io/codeformuenster/muenster-jetzt-api:master
+      - image: ghcr.io/codeformuenster/muenster-update/api:master
         name: backend-api
         resources:
           requests:

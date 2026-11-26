@@ -5,9 +5,7 @@ namespace: muenster-update
 
 labels:
 - pairs:
-    # Keep: changing it would alter immutable Deployment selectors and the
-    # pg_hba podSelectorRefs in codeformuenster/kubernetes-deployment
-    app.kubernetes.io/app: muenster-jetzt
+    app.kubernetes.io/app: muenster-update
   includeSelectors: true
 
 resources:

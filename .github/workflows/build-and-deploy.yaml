@@ -50,10 +50,10 @@ jobs:
       - name: Build and push backend container image
         uses: Lab481/build-container-image-action@main
         with:
-          registry_name: docker.io
+          registry_name: ghcr.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
           registry_password: ${{ secrets.DOCKER_HUB_PASS }}
-          image_repository: codeformuenster/muenster-jetzt-api
+          image_repository: codeformuenster/muenster-update/api
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
           push_to_registry: ${{ github.event_name != 'pull_request' }}
@@ -62,10 +62,10 @@ jobs:
       - name: Build and push backend nginx container image
         uses: Lab481/build-container-image-action@main
         with:
-          registry_name: docker.io
+          registry_name: ghcr.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
           registry_password: ${{ secrets.DOCKER_HUB_PASS }}
-          image_repository: codeformuenster/muenster-jetzt-api-static
+          image_repository: codeformuenster/muenster-update/api-static
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
           build_target: staticfiles
@@ -125,7 +125,7 @@ jobs:
         with:
           context: backend
           file: backend/deployment/Dockerfile.prod
-          tags: muenster-jetzt-api:in-ci
+          tags: muenster-update-api:in-ci
           load: true
           push: false
           pull: true
@@ -133,7 +133,7 @@ jobs:
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          docker run -d --name backend -p 8000:8000 --env-file ../backend/.env.example muenster-jetzt-api:in-ci
+          docker run -d --name backend -p 8000:8000 --env-file ../backend/.env.example muenster-update-api:in-ci
 
       - name: Run 'npm run generate-client'
         if: steps.branch_info.outputs.changes != '0'
@@ -217,7 +217,7 @@ jobs:
         with:
           context: frontend
           file: frontend/deployment/Dockerfile.prod
-          tags: muenster-jetzt-frontend:ci
+          tags: muenster-update-frontend:ci
           load: true
           push: false
 
@@ -226,7 +226,7 @@ jobs:
       - name: Smoke test and CVE scan
         uses: Lab481/build-container-image-action/static-site-check@main
         with:
-          image: muenster-jetzt-frontend:ci
+          image: muenster-update-frontend:ci
           expect_text: "Münster Update"
           ok_paths: |
             /manifest.json
@@ -238,10 +238,10 @@ jobs:
       - name: Build and push frontend container image
         uses: Lab481/build-container-image-action@main
         with:
-          registry_name: docker.io
+          registry_name: ghcr.io
           registry_username: ${{ secrets.DOCKER_HUB_USER }}
           registry_password: ${{ secrets.DOCKER_HUB_PASS }}
-          image_repository: codeformuenster/muenster-jetzt-frontend
+          image_repository: codeformuenster/muenster-update/frontend
           dockerfile_path: frontend/deployment/Dockerfile.prod
           build_context: frontend
           push_to_registry: ${{ github.event_name != 'pull_request' }}
