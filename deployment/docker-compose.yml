@@ -11,7 +11,7 @@ networks:
 services:
   frontend:
     restart: unless-stopped
-    image: codeformuenster/muenster-jetzt-frontend:${TAG_NAME}
+    image: codeformuenster/muenster-update/frontend:${TAG_NAME}
     expose:
       - "8080"
     labels:
@@ -31,7 +31,7 @@ services:
         loki-url: "${LOKI_URL}"
   api:
     restart: unless-stopped
-    image: codeformuenster/muenster-jetzt-api:${TAG_NAME}
+    image: codeformuenster/muenster-update/api:${TAG_NAME}
     expose:
       - "8000"
     environment:
@@ -62,7 +62,7 @@ services:
         loki-url: "${LOKI_URL}"
   api-static:
     restart: unless-stopped
-    image: codeformuenster/muenster-jetzt-api-static:${TAG_NAME}
+    image: codeformuenster/muenster-update/api-static:${TAG_NAME}
     expose:
       - "8001"
     labels:

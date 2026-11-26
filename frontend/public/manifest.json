@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "muenster_jetzt192.png",
+      "src": "muenster_update192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "muenster_jetzt512.png",
+      "src": "muenster_update512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

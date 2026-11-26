@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: muenster-jetzt
+namespace: muenster-update
 
 resources:
 - namespace.yaml
@@ -9,11 +9,11 @@ resources:
 - ../base
 
 images:
-- name: docker.io/codeformuenster/muenster-jetzt-frontend
+- name: ghcr.io/codeformuenster/muenster-update/frontend
   newTag: pr-772@sha256:e423b8ea0048cb48720ae40ad196f8767fa6c360a2eb80f97af4328653dd18c1
-- name: docker.io/codeformuenster/muenster-jetzt-api
+- name: ghcr.io/codeformuenster/muenster-update/api
   newTag: pr-772@sha256:804e34a6c9ce116de9e2bc4c773fa6ea3d4ad6963ccba09a83fb94e9700c9cda
-- name: docker.io/codeformuenster/muenster-jetzt-api-static
+- name: ghcr.io/codeformuenster/muenster-update/api-static
   newTag: pr-772@sha256:c7c98f00d6e1a9359544db2bbaf274ea3e04f69e76177aa7edb470df16c165fb
 
 patches:
@@ -26,21 +26,21 @@ patches:
 - patch: |
     - op: add
       path: /spec/rules/0/host
-      value: api.dev.muenster-jetzt.codeformuenster.org
+      value: api.dev.muenster-update.codeformuenster.org
   target:
     kind: Ingress
     name: backend
 - patch: |
     - op: add
       path: /spec/rules/0/host
-      value: dev.muenster-jetzt.codeformuenster.org
+      value: dev.muenster-update.codeformuenster.org
   target:
     kind: Ingress
     name: frontend
 - patch: |
     - op: add
       path: /spec/template/metadata/labels/host
-      value: api.dev.muenster-jetzt.codeformuenster.org
+      value: api.dev.muenster-update.codeformuenster.org
   target:
     kind: Deployment
     name: backend-api

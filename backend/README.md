@@ -1,4 +1,4 @@
-# muenster-jetzt database management, data import, and API
+# muenster-update database management, data import, and API
 
 Based on [Django](https://www.djangoproject.com/), [Django REST
 framework](https://www.django-rest-framework.org/), and
@@ -37,9 +37,9 @@ To open a shell inside a container with all dependencies installed, run:
 
 ```bash
 # do this only once or if your requirements.txt changes
-docker build -t muenster-jetzt-backend -f deployment/Dockerfile.prod .
+docker build -t muenster-update-backend -f deployment/Dockerfile.prod .
 # start a container
-docker run --rm -it -v $(pwd):/app:Z --entrypoint /bin/bash --network muenster-jetzt_default -p 8000:8000 --env-file .env muenster-jetzt-backend
+docker run --rm -it -v $(pwd):/app:Z --entrypoint /bin/bash --network muenster-update_default -p 8000:8000 --env-file .env muenster-update-backend
 ```
 
 ## General information

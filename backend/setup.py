@@ -5,7 +5,8 @@ import mj
 setup(
     name="mj",
     version=mj.__version__,
-    description="Database management, data import, and API for muenster-jetzt",
+    description="Database management, data import, and API for "
+    "muenster-update",
     url="https://muenster-update.de/",
     packages=["mj", "events", "scraping"],
     install_requires=[

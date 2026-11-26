@@ -17,6 +17,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+cache-mode: none
+
 jobs:
   test-backend:
     name: Test backend
@@ -26,14 +28,14 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
 
       - name: Install python 3.15
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: '3.15'
-          cache: 'pip'
-          cache-dependency-path: 'backend/requirements.txt'
 
       - name: Install and execute 'tox'
         run: |
@@ -44,33 +46,39 @@ jobs:
     name: Build backend container
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      packages: write # push container images to GHCR
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
 
       - name: Build and push backend container image
-        uses: Lab481/build-container-image-action@main
+        uses: Lab481/build-container-image-action@db980815573ef8dc98b2a5863b8d7c892e1bf428
         with:
-          registry_name: docker.io
-          registry_username: ${{ secrets.DOCKER_HUB_USER }}
-          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
-          image_repository: codeformuenster/muenster-jetzt-api
+          registry_name: ghcr.io
+          registry_username: ${{ github.repository_owner }}
+          registry_password: ${{ secrets.GITHUB_TOKEN }}
+          image_repository: codeformuenster/muenster-update/api
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
           push_to_registry: ${{ github.event_name != 'pull_request' }}
           skip_login: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
+          use_build_cache: false
 
       - name: Build and push backend nginx container image
-        uses: Lab481/build-container-image-action@main
+        uses: Lab481/build-container-image-action@db980815573ef8dc98b2a5863b8d7c892e1bf428
         with:
-          registry_name: docker.io
-          registry_username: ${{ secrets.DOCKER_HUB_USER }}
-          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
-          image_repository: codeformuenster/muenster-jetzt-api-static
+          registry_name: ghcr.io
+          registry_username: ${{ github.repository_owner }}
+          registry_password: ${{ secrets.GITHUB_TOKEN }}
+          image_repository: codeformuenster/muenster-update/api-static
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
           build_target: staticfiles
           push_to_registry: ${{ github.event_name != 'pull_request' }}
           skip_login: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
+          use_build_cache: false
 
   check-api-client-up-to-date:
     name: Check if generated api client is up to date
@@ -81,9 +89,10 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           fetch-depth: '2' # for comparison
+          persist-credentials: false
 
       - name: Gather branch information
         id: branch_info
@@ -105,11 +114,10 @@ jobs:
 
       - name: Install Node.js 26
         if: steps.branch_info.outputs.changes != '0'
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 26
-          cache: 'npm'
-          cache-dependency-path: 'frontend/package-lock.json'
+          package-manager-cache: false
 
       - name: Run 'npm ci' to install frontend dependencies
         if: steps.branch_info.outputs.changes != '0'
@@ -117,15 +125,15 @@ jobs:
           npm ci
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
 
       - name: Build backend image
         if: steps.branch_info.outputs.changes != '0'
-        uses: docker/build-push-action@v7
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc
         with:
           context: backend
           file: backend/deployment/Dockerfile.prod
-          tags: muenster-jetzt-api:in-ci
+          tags: muenster-update-api:in-ci
           load: true
           push: false
           pull: true
@@ -133,7 +141,7 @@ jobs:
       - name: Start container from backend image
         if: steps.branch_info.outputs.changes != '0'
         run: |
-          docker run -d --name backend -p 8000:8000 --env-file ../backend/.env.example muenster-jetzt-api:in-ci
+          docker run -d --name backend -p 8000:8000 --env-file ../backend/.env.example muenster-update-api:in-ci
 
       - name: Run 'npm run generate-client'
         if: steps.branch_info.outputs.changes != '0'
@@ -156,10 +164,13 @@ jobs:
     defaults:
       run:
         working-directory: frontend
+    permissions:
+      packages: write # push container images to GHCR
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           fetch-depth: '2' # for comparison
+          persist-credentials: false
 
       - name: Gather branch information
         id: branch_info
@@ -181,11 +192,10 @@ jobs:
           fi
 
       - name: Install Node.js 26
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 26
-          cache: 'npm'
-          cache-dependency-path: 'frontend/package-lock.json'
+          package-manager-cache: false
 
       - name: Run 'npm ci' to install frontend dependencies
         run: |
@@ -213,20 +223,20 @@ jobs:
             -exec gzip -9 -k '{}' \;
 
       - name: Build frontend test image
-        uses: docker/build-push-action@v7
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc
         with:
           context: frontend
           file: frontend/deployment/Dockerfile.prod
-          tags: muenster-jetzt-frontend:ci
+          tags: muenster-update-frontend:ci
           load: true
           push: false
 
       # Gate for base image updates (see renovate.json): the page must be
       # served and the image must have no fixable critical CVEs
       - name: Smoke test and CVE scan
-        uses: Lab481/build-container-image-action/static-site-check@main
+        uses: Lab481/build-container-image-action/static-site-check@db980815573ef8dc98b2a5863b8d7c892e1bf428
         with:
-          image: muenster-jetzt-frontend:ci
+          image: muenster-update-frontend:ci
           expect_text: "Münster Update"
           ok_paths: |
             /manifest.json
@@ -236,13 +246,14 @@ jobs:
           missing_paths: ""
 
       - name: Build and push frontend container image
-        uses: Lab481/build-container-image-action@main
+        uses: Lab481/build-container-image-action@db980815573ef8dc98b2a5863b8d7c892e1bf428
         with:
-          registry_name: docker.io
-          registry_username: ${{ secrets.DOCKER_HUB_USER }}
-          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
-          image_repository: codeformuenster/muenster-jetzt-frontend
+          registry_name: ghcr.io
+          registry_username: ${{ github.repository_owner }}
+          registry_password: ${{ secrets.GITHUB_TOKEN }}
+          image_repository: codeformuenster/muenster-update/frontend
           dockerfile_path: frontend/deployment/Dockerfile.prod
           build_context: frontend
           push_to_registry: ${{ github.event_name != 'pull_request' }}
           skip_login: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
+          use_build_cache: false

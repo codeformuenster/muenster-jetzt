@@ -4,7 +4,7 @@
 
 ## Deployment
 
-We use GitHub Actions to build and push the application container images to Docker Hub ([frontend](https://hub.docker.com/r/codeformuenster/muenster-jetzt-frontend), [backend](https://hub.docker.com/r/codeformuenster/muenster-jetzt-api)). The rest of the deployment is handeled on a kubernetes cluster ([Kustomization files](./deployment/)).
+We use GitHub Actions to build and push the application container images to Docker Hub ([frontend](https://hub.docker.com/r/codeformuenster/muenster-update/frontend), [backend](https://hub.docker.com/r/codeformuenster/muenster-update/api)). The rest of the deployment is handeled on a kubernetes cluster ([Kustomization files](./deployment/)).
 
 Deployments live at https://staging.muenster-update.de ([Staging API](https://api.staging.muenster-update.de/)) and https://muenster-update.de ([Production API](https://api.muenster-update.de/)).
 

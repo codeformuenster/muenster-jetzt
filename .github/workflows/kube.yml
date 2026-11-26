@@ -8,16 +8,25 @@ on:
     branches:
       - main
 
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     name: Lint kubernetes manifests
     runs-on: ubuntu-26.04
+    permissions: {}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
 
       - name: Build and validate kustomizations
-        uses: ubergesundheit/kube-check-action@main
+        uses: ubergesundheit/kube-check-action@1e3e1c438d37d26d6e33a23a323d60ffaae0340a
         with:
           kustomize_build_input: deployment/base
           kubeconform_flags: "-strict -kubernetes-version 1.37.2 -schema-location 'https://raw.githubusercontent.com/ubergesundheit/kube-check-action/main/kubeconform-schemas/{{.ResourceKind}}.json' -schema-location default"

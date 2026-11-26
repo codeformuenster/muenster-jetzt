@@ -30,7 +30,7 @@ schema_metadata = {
         "This is the OpenAPI v3 schema specification of the "
         "[Münster Update](https://muenster-update.de) API.<br>"
         "For more information, check out the "
-        "[source code](https://github.com/codeformuenster/muenster-jetzt)."
+        "[source code](https://github.com/codeformuenster/muenster-update)."
     ),
     "version": mj.__version__,
 }
@@ -127,7 +127,7 @@ class OrganizersViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = OrganizerSerializer
 
 
-class MünsterJetztView(routers.APIRootView):
+class MünsterUpdateView(routers.APIRootView):
     """
     ## Willkommen auf der API-Dokumentation zu [Münster Update].
 
@@ -143,7 +143,7 @@ class MünsterJetztView(routers.APIRootView):
 
 
 class DocumentedRouter(routers.DefaultRouter):
-    APIRootView = MünsterJetztView
+    APIRootView = MünsterUpdateView
 
 
 @require_safe

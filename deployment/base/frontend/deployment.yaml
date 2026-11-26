@@ -15,7 +15,7 @@ spec:
       serviceAccountName: frontend
       enableServiceLinks: false
       containers:
-      - image: docker.io/codeformuenster/muenster-jetzt-frontend:master
+      - image: ghcr.io/codeformuenster/muenster-update/frontend:master
         name: frontend
         resources:
           requests:

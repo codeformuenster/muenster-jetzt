@@ -32,14 +32,14 @@ const Footer: FC = () => (
       <small>&nbsp;</small>
       <img
         src={githubLogo}
-        alt="GitHub Logo - Link zum Repository muenster-jetzt"
+        alt="GitHub Logo - Link zum Repository muenster-update"
         className={styles.footerItemImg}
       />
       <small>
         Freie und Offene Software. Quellcode auf{" "}
         <ExternalLink
           className={styles.footerItemLink}
-          href="https://github.com/codeformuenster/muenster-jetzt/"
+          href="https://github.com/codeformuenster/muenster-update/"
         >
           GitHub
         </ExternalLink>

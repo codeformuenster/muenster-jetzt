@@ -15,7 +15,7 @@ spec:
       serviceAccountName: backend-static
       enableServiceLinks: false
       containers:
-      - image: docker.io/codeformuenster/muenster-jetzt-api-static:master
+      - image: ghcr.io/codeformuenster/muenster-update/api-static:master
         name: backend-static
         resources:
           requests:

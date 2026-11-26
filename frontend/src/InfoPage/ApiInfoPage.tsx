@@ -81,8 +81,8 @@ const ApiInfoPage: FC = () => (
       <p className={styles.prosaText}>
         Hinweise, Verbesserungsvorschläge oder Fehlerbeschreibungen rund um API
         und App sollten am Besten als &bdquo;Issue&ldquo; im{" "}
-        <ExternalLink href="https://github.com/codeformuenster/muenster-jetzt">
-          codeformuenster/muenster-jetzt
+        <ExternalLink href="https://github.com/codeformuenster/muenster-update">
+          codeformuenster/muenster-update
         </ExternalLink>{" "}
         Repository auf GitHub angelegt werden.
         <br />
@@ -96,8 +96,8 @@ const ApiInfoPage: FC = () => (
       <p className={styles.prosaText}>
         Sowohl API als auch die App lassen sich auch auf eigenen Servern hosten.{" "}
         Hinweise dazu finden sich ebenfalls im Repository{" "}
-        <ExternalLink href="https://github.com/codeformuenster/muenster-jetzt">
-          codeformuenster/muenster-jetzt
+        <ExternalLink href="https://github.com/codeformuenster/muenster-update">
+          codeformuenster/muenster-update
         </ExternalLink>{" "}
         auf GitHub.
       </p>
