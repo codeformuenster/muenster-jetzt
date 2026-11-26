@@ -103,7 +103,7 @@ jobs:
             echo "changes=$(git diff --name-only HEAD^1 -- . | wc -l)" >> $GITHUB_OUTPUT
           fi
 
-      - name: Install Node.js 24
+      - name: Install Node.js 26
         if: steps.branch_info.outputs.changes != '0'
         uses: actions/setup-node@v7
         with:
@@ -180,7 +180,7 @@ jobs:
             echo "REACT_APP_BACKEND_BASE_PATH=https://api.staging.muenster-update.de" >> $GITHUB_ENV
           fi
 
-      - name: Install Node.js 24
+      - name: Install Node.js 26
         uses: actions/setup-node@v7
         with:
           node-version: 26
