@@ -53,8 +53,8 @@ jobs:
         uses: Lab481/build-container-image-action@main
         with:
           registry_name: ghcr.io
-          registry_username: ${{ secrets.DOCKER_HUB_USER }}
-          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
+          registry_username: ${{ github.repository_owner }}
+          registry_password: ${{ secrets.GITHUB_TOKEN }}
           image_repository: codeformuenster/muenster-update/api
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
@@ -65,8 +65,8 @@ jobs:
         uses: Lab481/build-container-image-action@main
         with:
           registry_name: ghcr.io
-          registry_username: ${{ secrets.DOCKER_HUB_USER }}
-          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
+          registry_username: ${{ github.repository_owner }}
+          registry_password: ${{ secrets.GITHUB_TOKEN }}
           image_repository: codeformuenster/muenster-update/api-static
           dockerfile_path: backend/deployment/Dockerfile.prod
           build_context: backend
@@ -243,8 +243,8 @@ jobs:
         uses: Lab481/build-container-image-action@main
         with:
           registry_name: ghcr.io
-          registry_username: ${{ secrets.DOCKER_HUB_USER }}
-          registry_password: ${{ secrets.DOCKER_HUB_PASS }}
+          registry_username: ${{ github.repository_owner }}
+          registry_password: ${{ secrets.GITHUB_TOKEN }}
           image_repository: codeformuenster/muenster-update/frontend
           dockerfile_path: frontend/deployment/Dockerfile.prod
           build_context: frontend
