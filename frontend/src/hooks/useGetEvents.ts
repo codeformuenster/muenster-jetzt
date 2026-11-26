@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useMemo } from "react";
 import { GetDataError } from "restful-react";
 import {
   ListEventsResponse,
@@ -45,7 +45,7 @@ interface IUseGetEvents {
 
 // The backend signs the event URL; unsigned redirect links are rejected.
 const augmentUrl: (externalLink?: string | null) => string | undefined = (
-  externalLink
+  externalLink,
 ) => {
   if (externalLink) {
     return `${backendBasePath}${externalLink}`;
@@ -94,15 +94,9 @@ const useGetEvents: IUseGetEvents = (date) => {
       };
     },
   });
-  const [events, setEvents] = useState<IAugmentedEvent[] | null>(null);
-
-  useEffect(() => {
-    if (loading) {
-      setEvents(null);
-    } else if (data?.results) {
-      setEvents(data.results as IAugmentedEvent[]);
-    }
-  }, [data, loading]);
+  const events: IAugmentedEvent[] | null = loading
+    ? null
+    : ((data?.results as IAugmentedEvent[] | undefined) ?? null);
 
   return { loading, error, events };
 };

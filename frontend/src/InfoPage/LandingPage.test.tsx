@@ -7,7 +7,7 @@ const renderPage = () =>
   render(
     <MemoryRouter>
       <LandingPage />
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 
 describe("LandingPage", () => {
@@ -16,11 +16,11 @@ describe("LandingPage", () => {
 
     expect(screen.getByRole("link", { name: "Zur App" })).toHaveAttribute(
       "href",
-      "/"
+      "/",
     );
     expect(screen.getByRole("link", { name: "Dokumentation" })).toHaveAttribute(
       "href",
-      "/info/api/"
+      "/info/api/",
     );
   });
 
@@ -28,10 +28,10 @@ describe("LandingPage", () => {
     renderPage();
 
     expect(
-      screen.getByRole("heading", { name: "Datenquellen" })
+      screen.getByRole("heading", { name: "Datenquellen" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "münsterland.digital" })
+      screen.getByRole("link", { name: "münsterland.digital" }),
     ).toHaveAttribute("href", "https://www.muensterland.digital/api");
   });
 });

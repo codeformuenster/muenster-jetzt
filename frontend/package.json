@@ -22,7 +22,8 @@
     "restful-react": "^15.9.4",
     "timeago-react": "^3.0.5",
     "timeago.js": "^4.0.2",
-    "typescript": "^5.9.3"
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   },
   "scripts": {
     "start": "vite",
@@ -38,22 +39,23 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
     "@types/history": "^4.7.11",
     "@types/lodash-es": "^4.17.6",
-    "@typescript-eslint/eslint-plugin": "^3.10.1",
-    "@typescript-eslint/parser": "^3.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "@vitejs/plugin-react": "^6.3.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-typescript": "9.0.0",
-    "eslint-config-prettier": "^6.15.0",
+    "eslint": "^10.0.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-config-airbnb-typescript": "18.0.0",
+    "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.31.8",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
     "jsdom": "^31.0.1",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "sass": "^1.108.2",
     "vite": "^8.3.8",
     "vitest": "^5.1.1"

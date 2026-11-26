@@ -7,7 +7,7 @@ const Calendar: FC = () => {
   const [referenceElement, setReferenceElement] =
     useState<HTMLButtonElement | null>(null);
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
-    null
+    null,
   );
   const { styles: popperStyles, attributes } = usePopper(
     referenceElement,
@@ -22,13 +22,12 @@ const Calendar: FC = () => {
           },
         },
       ],
-    }
+    },
   );
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
       <button
         type="button"
         aria-label="Kalender öffnen"
