@@ -14,7 +14,7 @@
     "bootstrap": "^4.6.2",
     "clsx": "^2.0.0",
     "interweave": "^13.0.0",
-    "path-to-regexp": "^6.2.1",
+    "path-to-regexp": "^9.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-popper": "^2.3.0",
